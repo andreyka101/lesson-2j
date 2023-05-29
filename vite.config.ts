@@ -1,3 +1,3 @@
 export default {
-  base: '/eeeee/'
+  base: '/lesson-2j/'
 }
