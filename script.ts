@@ -11,13 +11,9 @@ function n1 (){
     lowerRightX : 3,
   }
     
-  localStorage.obj = JSON.stringify({
-    name: 'Andrey'
-  })
-  console.log(JSON.parse(localStorage.obj))
-}
-n1()
-
+  n1()
+  
+  
 
 
 // dz 1 /////////////////////////////////////////////
