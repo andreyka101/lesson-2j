@@ -10,6 +10,7 @@ function n1 (){
     lowerRightY : 3,
     lowerRightX : 3,
   }
+}
     
   n1()
   
@@ -26,6 +27,7 @@ function n2 (){
   let car ={
     predictor : "Proton Edar Sdr Holding",
     model : "PROTON PERDANA",
+    
   }
 }
 n2()
