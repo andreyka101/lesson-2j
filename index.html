@@ -8,13 +8,39 @@
   </head>
   <body>
     <a href="https://andreyka101.github.io/collection-of-all-lessons/">назад</a>
-    <span>
-      ooo
-    </span>
+    <h1>
+      dz 1
+    </h1>
+    <div class="block1">
+      <button id="item">
+        номер 1
+      </button>
+      <button id="b1">
+        информация
+      </button>
+      <button id="b2">
+        подсчет
+      </button>
+      <span id="s1">
+        p
+      </span>
+    </div>
     
     <script src="dist/script.js"></script>
     <script>
-      const spanj = document.querySelector('span')
+      function a1 (){
+        alert(`Задание 1
+Создать объект, описывающий автомобиль (производитель, 
+модель, год выпуска, средняя скорость), и следующие функции 
+для работы с этим объектом.
+1. Функция для вывода на экран информации об автомобиле.
+2. Функция для подсчета необходимого времени для преодоления переданного расстояния со средней скоростью. 
+Учтите, что через каждые 4 часа дороги водителю необходимо делать перерыв на 1 час`)
+      }
+      const itemJ1 = document.querySelector('.block1 #item')
+      itemJ1.addEventListener('click',a1)
+      const pelaksana1 = document.querySelector('.block1 #b1')
+      pelaksana1.addEventListener('click',n1)
     </script>
   </body>
 </html>
