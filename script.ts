@@ -1,3 +1,4 @@
+console.log("ggggg")
 
 // dz 1 /////////////////////////////////////////////
 
@@ -11,12 +12,7 @@ let car ={
   yearOfIssue : 2008 ,
   speed : 260 ,
 }
-const jawab = document.querySelector('.block1 #s1')
-function n1 (){
-  // @ts-ignore
-  jawab?.innerText = 'ttt';
-}
-n1()
+
 
 
   // pz 1 /////////////////////////////////////////////
