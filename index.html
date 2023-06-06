@@ -25,6 +25,27 @@
         ответ : 
       </span>
     </div>
+
+    <div class="block2">
+      <button id="item">
+        номер 3
+      </button>
+      <button id="b1">
+        время
+      </button>
+      <button id="b2">
+        изменить секунды
+      </button>
+      <button id="b3">
+        изменить минуты
+      </button>
+      <button id="b4">
+        изменить часы
+      </button>
+      <span id="s1">
+        ответ : 
+      </span>
+    </div>
     
     <script src="script.ts"></script>
     <script>
@@ -43,6 +64,24 @@
       executor1.addEventListener('click',n1)
       const executor2 = document.querySelector('.block1 #b2')
       executor2.addEventListener('click',n2)
+
+      function a2 (){
+        alert(`Задание 3
+Создать объект, описывающий время (часы, минуты, секунды), и следующие функции для работы с этим объектом.
+1. Функция вывода времени на экран.
+2. Функция изменения времени на переданное количество 
+секунд.
+3. Функция изменения времени на переданное количество 
+минут.
+4. Функция изменения времени на переданное количество 
+часов.
+Учтите, что в последних 3-х функциях, при изменении одной 
+части времени, может измениться и другая. Например: если ко 
+времени «20:30:45» добавить 30 секунд, то должно получиться 
+«20:31:15», а не «20:30:75».`)
+      }
+      const itemJ2 = document.querySelector('.block2 #item')
+      itemJ2.addEventListener('click',a2)
     </script>
   </body>
 </html>

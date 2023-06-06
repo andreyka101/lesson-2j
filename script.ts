@@ -43,6 +43,8 @@ function n2 (){
   console.log (wastedTime)
 }
 
+// 3
+let 
 
 
   // pz 1 /////////////////////////////////////////////
