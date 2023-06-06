@@ -62,7 +62,7 @@ function n3 (){
       answer2.innerText = "ответ : " + time.hour + ":" + time.minute + ":0" + time.second
     }
   }
-  if (time.minute < 10){
+  else if (time.minute < 10){
     // @ts-ignore
     answer2.innerText = "ответ : " + time.hour + ":0" + time.minute + ":" + time.second
   }
