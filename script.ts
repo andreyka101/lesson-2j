@@ -40,11 +40,37 @@ function n2 (){
   }
   // @ts-ignore
   answer1.innerText = "ответ : " + wastedTime
-  console.log (wastedTime)
 }
 
 // 3
-let 
+
+let time ={
+  hour : 13,
+  minute : 40,
+  second : 9,
+}
+const answer2 = document.querySelector('.block2 #s1')
+
+function n3 (){
+  if (time.second < 10){
+    if (time.minute < 10){
+      // @ts-ignore
+      answer2.innerText = "ответ : " + time.hour + ":0" + time.minute + ":0" + time.second
+    }
+    else{
+      // @ts-ignore
+      answer2.innerText = "ответ : " + time.hour + ":" + time.minute + ":0" + time.second
+    }
+  }
+  if (time.minute < 10){
+    // @ts-ignore
+    answer2.innerText = "ответ : " + time.hour + ":0" + time.minute + ":" + time.second
+  }
+  else{
+    // @ts-ignore
+    answer2.innerText = "ответ : " + time.hour + ":" + time.minute + ":" + time.second
+  }
+}
 
 
   // pz 1 /////////////////////////////////////////////
