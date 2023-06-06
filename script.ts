@@ -17,8 +17,7 @@ const answer1 = document.querySelector('.block1 #s1')
 function n1 (){
   let strcar = "ответ : "
   for (let i in car){
-    strcar += car[i]
-    strcar += " // "
+    strcar += i + " : " + car[i] + " // "
   }
   // @ts-ignore
   answer1.innerText = strcar
