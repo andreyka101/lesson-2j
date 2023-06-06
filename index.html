@@ -21,12 +21,12 @@
       <button id="b2">
         подсчет
       </button>
-      <span class="s1">
-        p
+      <span id="s1">
+        ответ : 
       </span>
     </div>
     
-    <script src="dist/script.js"></script>
+    <script src="script.ts"></script>
     <script>
       function a1 (){
         alert(`Задание 1
@@ -39,8 +39,10 @@
       }
       const itemJ1 = document.querySelector('.block1 #item')
       itemJ1.addEventListener('click',a1)
-      // const pelaksana1 = document.querySelector('.block1 #b1')
-      // pelaksana1.addEventListener('click',n1)
+      const executor1 = document.querySelector('.block1 #b1')
+      executor1.addEventListener('click',n1)
+      const executor2 = document.querySelector('.block1 #b2')
+      executor2.addEventListener('click',n2)
     </script>
   </body>
 </html>
