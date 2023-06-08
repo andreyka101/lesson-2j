@@ -71,6 +71,18 @@ function n3 (){
   }
 }
 
+// 4
+
+function n4 (){
+  old={
+  tt : "uuuu",
+    num : 70,
+  }
+ localStorage.obj = JSON.stringify(old)
+      console.log(JSON.parse(localStorage.obj))  
+}
+n4()
+
 
   // pz 1 /////////////////////////////////////////////
   
