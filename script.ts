@@ -49,6 +49,7 @@ let time ={
   second : 9,
 }
 const answer2 = document.querySelector('.block2 #s1')
+const stringInput1 = document.querySelector('#input1')
 
 function n3 (){
   if (time.second < 10){
@@ -74,12 +75,7 @@ function n3 (){
 // 4
 
 function n4 (){
-  old={
-  tt : "uuuu",
-    num : 70,
-  }
- localStorage.obj = JSON.stringify(old)
-      console.log(JSON.parse(localStorage.obj))  
+   
 }
 n4()
 
