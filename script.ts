@@ -44,14 +44,21 @@ function n2 (){
 // 3
 
 let time ={
-  hour : 13,
-  minute : 40,
+  hour : 23,
+  minute : 59,
   second : 9,
 }
 const answer2 = document.querySelector('.block2 #s1')
 const stringInput1 = document.querySelector('#input1')
 
 function n3 (){
+  if (localStorage.obj){
+    time = JSON.parse(localStorage.obj)
+  }
+  else{
+    localStorage.obj = JSON.stringify(time)
+  }
+
   if (time.second < 10){
     if (time.minute < 10){
       // @ts-ignore
@@ -75,9 +82,69 @@ function n3 (){
 // 4
 
 function n4 (){
-   
+  // @ts-ignore
+  time.second=stringInput1.value
+  if (time.second>60){
+    let a=0
+    for(;time.second>a*60;a++){}
+    a--
+    time.second -=a*60
+    time.minute+=a
+  }
+  if (time.minute>60){
+    let a=0
+    for(;time.minute>a*60;a++){}
+    a--
+    time.minute -=a*60
+    time.hour+=a
+  }
+  if (time.hour>23){
+    let a = time.hour - 23
+    time.hour = a -1
+  }
+  
+  
+  localStorage.obj = JSON.stringify(time)
+  // @ts-ignore
+  answer2.innerText = "ответ : "
 }
-n4()
+
+
+function n5 (){
+  // @ts-ignore
+  time.minute=stringInput1.value
+  if (time.minute>60){
+    let a=0
+    for(;time.minute>a*60;a++){}
+    a--
+    time.minute -=a*60
+    time.hour+=a
+  }
+  if (time.hour>23){
+    let a = time.hour - 23
+    time.hour = a -1
+  }
+  
+  
+  localStorage.obj = JSON.stringify(time)
+  // @ts-ignore
+  answer2.innerText = "ответ : "
+}
+
+
+function n6 (){
+  // @ts-ignore
+  time.hour=stringInput1.value
+    if (time.hour>23){
+    let a = time.hour - 23
+    time.hour = a -1
+  }
+  
+  
+  localStorage.obj = JSON.stringify(time)
+  // @ts-ignore
+  answer2.innerText = "ответ : "
+}
 
 
   // pz 1 /////////////////////////////////////////////
