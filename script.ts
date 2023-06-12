@@ -106,7 +106,7 @@ function n4 (){
   
   localStorage.obj = JSON.stringify(time)
   // @ts-ignore
-  answer2.innerText = "ответ : "
+  answer2.innerText = "ответ : время задано"
 }
 
 
@@ -128,7 +128,7 @@ function n5 (){
   
   localStorage.obj = JSON.stringify(time)
   // @ts-ignore
-  answer2.innerText = "ответ : "
+  answer2.innerText = "ответ : время задано"
 }
 
 
@@ -143,7 +143,7 @@ function n6 (){
   
   localStorage.obj = JSON.stringify(time)
   // @ts-ignore
-  answer2.innerText = "ответ : "
+  answer2.innerText = "ответ : время задано"
 }
 
 
