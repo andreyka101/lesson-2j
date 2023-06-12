@@ -38,7 +38,7 @@ function n2 (){
     }
   }
   // @ts-ignore
-  answer1.innerText = "ответ : " + wastedTime
+  answer1.innerText = "ответ : " + wastedTime + " ч."
 }
 
 // 3
@@ -98,10 +98,9 @@ function n4 (){
     time.minute -=a*60
     time.hour+=a
   }
-  if (time.hour>23){
-    let a = time.hour - 23
-    time.hour = a -1
-  }
+  while (time.hour>23){
+    time.hour -= 24
+}
   
   
   localStorage.obj = JSON.stringify(time)
@@ -120,10 +119,9 @@ function n5 (){
     time.minute -=a*60
     time.hour+=a
   }
-  if (time.hour>23){
-    let a = time.hour - 23
-    time.hour = a -1
-  }
+  while (time.hour>23){
+    time.hour -= 24
+}
   
   
   localStorage.obj = JSON.stringify(time)
@@ -135,9 +133,8 @@ function n5 (){
 function n6 (){
   // @ts-ignore
   time.hour=stringInput1.value
-    if (time.hour>23){
-    let a = time.hour - 23
-    time.hour = a -1
+  while (time.hour>23){
+      time.hour -= 24
   }
   
   
