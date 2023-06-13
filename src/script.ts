@@ -170,8 +170,21 @@ function n6 (){
       storeInFunction += `${i} : ${rectangle[i]} ; `
     }
     //@ts-ignore
+    storeInFunction = storeInFunction.slice(0, storeInFunction.length-3)
+    //@ts-ignore
     answer3.innerText = storeInFunction
   }
+
+  function n8 (){
+    if (localStorage.objRectangle){
+      rectangle = JSON.parse(localStorage.objRectangle)
+    }
+    else{
+      localStorage.objRectangle = JSON.stringify(rectangle)
+    }
+    let storeInFunction = `ответ : ${rectangle.topLeftX - rectangle.bottomRightX}`
+  }
+
 
       
 
