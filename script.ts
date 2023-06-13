@@ -149,14 +149,15 @@ function n6 (){
   
   // 1
   
-  function n99 (){
-    let rectangle ={
-      topLeftY : 1,
-      topLeftX : 1,
-      lowerRightY : 3,
-      lowerRightX : 3,
-    }
+
+  let rectangle ={
+    topLeftY : 1,
+    topLeftX : 1,
+    bottomRightY : 3,
+    bottomRightX : 3,
+  }
+  function n7 (){
+
   }
       
 
-    // n99()
