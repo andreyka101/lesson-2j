@@ -1,3 +1,8 @@
+const answer1 = document.querySelector('.block1 #s1')
+const answer2 = document.querySelector('.block2 #s1')
+const answer3 = document.querySelector('.block3 #s1')
+
+const stringInput1 = document.querySelector('#input1')
 
 // dz 1 /////////////////////////////////////////////
 
@@ -12,7 +17,6 @@ let car ={
   speed : 260 ,
 }
 
-const answer1 = document.querySelector('.block1 #s1')
 
 function n1 (){
   let strcar = "ответ : "
@@ -48,15 +52,13 @@ let time ={
   minute : 59,
   second : 9,
 }
-const answer2 = document.querySelector('.block2 #s1')
-const stringInput1 = document.querySelector('#input1')
 
 function n3 (){
-  if (localStorage.obj){
-    time = JSON.parse(localStorage.obj)
+  if (localStorage.objTime){
+    time = JSON.parse(localStorage.objTime)
   }
   else{
-    localStorage.obj = JSON.stringify(time)
+    localStorage.objTime = JSON.stringify(time)
   }
 
   if (time.second < 10){
@@ -103,7 +105,7 @@ function n4 (){
 }
   
   
-  localStorage.obj = JSON.stringify(time)
+  localStorage.objTime = JSON.stringify(time)
   // @ts-ignore
   answer2.innerText = "ответ : время задано"
 }
@@ -124,7 +126,7 @@ function n5 (){
 }
   
   
-  localStorage.obj = JSON.stringify(time)
+  localStorage.objTime = JSON.stringify(time)
   // @ts-ignore
   answer2.innerText = "ответ : время задано"
 }
@@ -138,7 +140,7 @@ function n6 (){
   }
   
   
-  localStorage.obj = JSON.stringify(time)
+  localStorage.objTime = JSON.stringify(time)
   // @ts-ignore
   answer2.innerText = "ответ : время задано"
 }
@@ -157,7 +159,19 @@ function n6 (){
     bottomRightX : 3,
   }
   function n7 (){
-
+    if (localStorage.objRectangle){
+      rectangle = JSON.parse(localStorage.objRectangle)
+    }
+    else{
+      localStorage.objRectangle = JSON.stringify(rectangle)
+    }
+    let storeInFunction = `ответ : `
+    for (let i in rectangle){
+      storeInFunction += `${i} : ${rectangle[i]} ; `
+    }
+    //@ts-ignore
+    answer3.innerText = storeInFunction
   }
+
       
 
