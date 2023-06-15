@@ -1,8 +1,11 @@
-const answer1 = document.querySelector('.block1 #s1')
-const answer2 = document.querySelector('.block2 #s1')
-const answer3 = document.querySelector('.block3 #s1')
+import './style.css'
 
-const stringInput1 = document.querySelector('#input1')
+let answer1 = document.querySelector('.block1 #s1')
+let answer2 = document.querySelector('.block2 #s1')
+let answer3 = document.querySelector('.block3 #s1')
+
+let stringInput1 = document.querySelector('#input1')
+
 
 // dz 1 /////////////////////////////////////////////
 
@@ -15,8 +18,9 @@ let car ={
   model : "PROTON PERDANA",
   yearOfIssue : 2008 ,
   speed : 260 ,
-}
+} as any
 
+answer1 = document.querySelector('.block1 #s1')
 
 function n1 (){
   let strcar = "ответ : "
@@ -52,13 +56,15 @@ let time ={
   minute : 59,
   second : 9,
 }
+answer2 = document.querySelector('.block2 #s1')
+stringInput1 = document.querySelector('#input1')
 
 function n3 (){
-  if (localStorage.objTime){
-    time = JSON.parse(localStorage.objTime)
+  if (localStorage.obj){
+    time = JSON.parse(localStorage.obj)
   }
   else{
-    localStorage.objTime = JSON.stringify(time)
+    localStorage.obj = JSON.stringify(time)
   }
 
   if (time.second < 10){
@@ -105,7 +111,7 @@ function n4 (){
 }
   
   
-  localStorage.objTime = JSON.stringify(time)
+  localStorage.obj = JSON.stringify(time)
   // @ts-ignore
   answer2.innerText = "ответ : время задано"
 }
@@ -126,7 +132,7 @@ function n5 (){
 }
   
   
-  localStorage.objTime = JSON.stringify(time)
+  localStorage.obj = JSON.stringify(time)
   // @ts-ignore
   answer2.innerText = "ответ : время задано"
 }
@@ -140,7 +146,7 @@ function n6 (){
   }
   
   
-  localStorage.objTime = JSON.stringify(time)
+  localStorage.obj = JSON.stringify(time)
   // @ts-ignore
   answer2.innerText = "ответ : время задано"
 }
@@ -157,34 +163,113 @@ function n6 (){
     topLeftX : 1,
     bottomRightY : 3,
     bottomRightX : 3,
-  }
+  } as any
   function n7 (){
-    if (localStorage.objRectangle){
-      rectangle = JSON.parse(localStorage.objRectangle)
-    }
-    else{
-      localStorage.objRectangle = JSON.stringify(rectangle)
-    }
-    let storeInFunction = `ответ : `
-    for (let i in rectangle){
-      storeInFunction += `${i} : ${rectangle[i]} ; `
-    }
-    //@ts-ignore
-    storeInFunction = storeInFunction.slice(0, storeInFunction.length-3)
-    //@ts-ignore
-    answer3.innerText = storeInFunction
+
   }
-
-  function n8 (){
-    if (localStorage.objRectangle){
-      rectangle = JSON.parse(localStorage.objRectangle)
-    }
-    else{
-      localStorage.objRectangle = JSON.stringify(rectangle)
-    }
-    let storeInFunction = `ответ : ${rectangle.topLeftX - rectangle.bottomRightX}`
-  }
-
-
       
 
+
+
+  function a1 (){
+    alert(`Задание 1
+Создать объект, описывающий автомобиль (производитель, 
+модель, год выпуска, средняя скорость), и следующие функции 
+для работы с этим объектом.
+1. Функция для вывода на экран информации об автомобиле.
+2. Функция для подсчета необходимого времени для преодоления переданного расстояния со средней скоростью. 
+Учтите, что через каждые 4 часа дороги водителю необходимо делать перерыв на 1 час`)
+  }
+  const itemJ1 = document.querySelector('.block1 #item')
+  itemJ1?.addEventListener('click',a1)
+  const executor1 = document.querySelector('.block1 #b1')
+  executor1?.addEventListener('click',n1)
+  const executor2 = document.querySelector('.block1 #b2')
+  executor2?.addEventListener('click',n2)
+  
+  function a2 (){
+    alert(`Задание 3
+    Создать объект, описывающий время (часы, минуты, секунды), и следующие функции для работы с этим объектом.
+    1. Функция вывода времени на экран.
+    2. Функция изменения времени на переданное количество 
+секунд.
+3. Функция изменения времени на переданное количество 
+минут.
+4. Функция изменения времени на переданное количество 
+часов.
+Учтите, что в последних 3-х функциях, при изменении одной 
+части времени, может измениться и другая. Например: если ко 
+времени «20:30:45» добавить 30 секунд, то должно получиться 
+«20:31:15», а не «20:30:75».`)
+  }
+  const itemJ2 = document.querySelector('.block2 #item')
+  itemJ2?.addEventListener('click',a2)
+  const executor3 = document.querySelector('.block2 #b1')
+  executor3?.addEventListener('click',n3)
+  const executor4 = document.querySelector('.block2 #b2')
+  executor4?.addEventListener('click',n4)
+  const executor5 = document.querySelector('.block2 #b3')
+  executor5?.addEventListener('click',n5)
+  const executor6 = document.querySelector('.block2 #b4')
+  executor6?.addEventListener('click',n6)
+
+
+  function a3 (){
+    alert(`Задание 
+Создать объект, описывающий прямоугольник (хранит координаты левой верхней и правой нижней точек), и написать следующие функции для работы с таким объектом.
+1. Функция принимает объект-прямоугольник и выводит 
+информацию о нем (где какая точка расположена).
+2. Функция принимает объект-прямоугольник и возвращает 
+его ширину.
+3. Функция принимает объект-прямоугольник и возвращает 
+его высоту.
+4. Функция принимает объект-прямоугольник и возвращает 
+его площадь.
+5. Функция принимает объект-прямоугольник и возвращает 
+его периметр.
+6. Функция изменения ширины прямоугольника. Она принимает объект-прямоугольник и на сколько единиц изменить 
+ширину.`)
+  }
+  function a4 (){
+    alert(`7. Функция изменения высоты прямоугольника. Она принимает объект-прямоугольник и на сколько единиц изменить 
+высоту.
+8. Функция изменения ширины и высоты прямоугольника. 
+Она принимает объект-прямоугольник и два значения – 
+для изменения ширины и высоты.
+9. Функция смещения прямоугольника по оси X. Она принимает объект-прямоугольник и на сколько единиц его 
+сдвинуть.
+10. Функция смещения прямоугольника по оси Y. Она принимает объект-прямоугольник и на сколько единиц его 
+сдвинуть.
+11. Функция смещения прямоугольника и по оси X и по 
+оси Y. Она принимает объект-прямоугольник и два значения: сдвиг по оси X и сдвиг по оси Y.
+12. Функция для проверки, находится ли точка внутри прямоугольника. Она принимает объект-прямоугольник и 
+координаты точки.`)
+  }
+  const itemJ3 = document.querySelector('.block3 #item1')
+  itemJ3?.addEventListener('click',a3)
+  const itemJ4 = document.querySelector('.block3 #item2')
+  itemJ4?.addEventListener('click',a4)
+  const executor7 = document.querySelector('.block3 #b1')
+  executor7?.addEventListener('click',n7)
+  // const executor8 = document.querySelector('.block3 #b2')
+  // executor8?.addEventListener('click',n8)
+  // const executor9 = document.querySelector('.block3 #b3')
+  // executor9?.addEventListener('click',n9)
+  // const executor10 = document.querySelector('.block3 #b4')
+  // executor10?.addEventListener('click',n10)
+  // const executor11 = document.querySelector('.block3 #b5')
+  // executor11?.addEventListener('click',n11)
+  // const executor12 = document.querySelector('.block3 #b6')
+  // executor12?.addEventListener('click',n12)
+  // const executor13 = document.querySelector('.block3 #b7')
+  // executor13?.addEventListener('click',n13)
+  // const executor14 = document.querySelector('.block3 #b8')
+  // executor14?.addEventListener('click',n14)
+  // const executor15 = document.querySelector('.block3 #b9')
+  // executor15?.addEventListener('click',n15)
+  // const executor16 = document.querySelector('.block3 #b10')
+  // executor16?.addEventListener('click',n16)
+  // const executor17 = document.querySelector('.block3 #b11')
+  // executor17?.addEventListener('click',n17)
+  // const executor18 = document.querySelector('.block3 #b12')
+  // executor18?.addEventListener('click',n18)
