@@ -166,6 +166,13 @@ function n6 (){
   } as any
 
   function n7 (){
+    if (localRectangle.obj){
+      rectangle = JSON.parse(localRectangle.obj)
+    }
+    else{
+      localRectangle.obj = JSON.stringify(rectangle)
+    }
+
     let str =`ответ : `
     for (let i in rectangle){
       str += `${i} : ${rectangle[i]} / `
@@ -191,9 +198,12 @@ function n6 (){
     // @ts-ignore
     answer3.innerText = 'ответ : периметр - ' + (((rectangle.bottomRightY - rectangle.topLeftY) + 1) * 2 + ((rectangle.bottomRightX - rectangle.topLeftX) + 1) * 2)
   }
-  function n12 (){
-    = parseInt(prompt('введите расстояние которое нужно преодолеть') as string)
-  }
+  // function n12 (){
+  //   let width = parseInt(prompt('введите расстояние которое нужно преодолеть') as string)
+  //   if (width >= 0){
+  //     rectangle.bottomRightX = (width+rectangle.topLeftX) - 1
+  //   }
+  // }
       
 
 
