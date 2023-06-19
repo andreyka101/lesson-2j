@@ -174,9 +174,9 @@ function n6 (){
     answer3.innerText = str
   }
   
-  function n8{
+  function n8 (){
     // @ts-ignore
-    answer3.innerText = 
+    answer3.innerText = (rectangle.bottomRightX - rectangle.topLeftX) + 1
   }
       
 
@@ -267,8 +267,8 @@ function n6 (){
   itemJ4?.addEventListener('click',a4)
   const executor7 = document.querySelector('.block3 #b1')
   executor7?.addEventListener('click',n7)
-  // const executor8 = document.querySelector('.block3 #b2')
-  // executor8?.addEventListener('click',n8)
+  const executor8 = document.querySelector('.block3 #b2')
+  executor8?.addEventListener('click',n8)
   // const executor9 = document.querySelector('.block3 #b3')
   // executor9?.addEventListener('click',n9)
   // const executor10 = document.querySelector('.block3 #b4')
