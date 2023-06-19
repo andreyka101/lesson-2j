@@ -162,7 +162,7 @@ function n6 (){
     topLeftY : 1,
     topLeftX : 1,
     bottomRightY : 3,
-    bottomRightX : 3,
+    bottomRightX : 4,
   } as any
 
   function n7 (){
@@ -176,7 +176,23 @@ function n6 (){
   
   function n8 (){
     // @ts-ignore
-    answer3.innerText = (rectangle.bottomRightX - rectangle.topLeftX) + 1
+    answer3.innerText = 'ответ : ширина - ' + ((rectangle.bottomRightX - rectangle.topLeftX) + 1)
+  }
+
+  function n9 (){
+    // @ts-ignore
+    answer3.innerText = 'ответ : высота - ' + ((rectangle.bottomRightY - rectangle.topLeftY) + 1)
+  }
+  function n10 (){
+    // @ts-ignore
+    answer3.innerText = 'ответ : площадь - ' + (((rectangle.bottomRightY - rectangle.topLeftY) + 1) * ((rectangle.bottomRightX - rectangle.topLeftX) + 1))
+  }
+  function n11 (){
+    // @ts-ignore
+    answer3.innerText = 'ответ : периметр - ' + (((rectangle.bottomRightY - rectangle.topLeftY) + 1) * 2 + ((rectangle.bottomRightX - rectangle.topLeftX) + 1) * 2)
+  }
+  function n12 (){
+    = parseInt(prompt('введите расстояние которое нужно преодолеть') as string)
   }
       
 
@@ -269,14 +285,14 @@ function n6 (){
   executor7?.addEventListener('click',n7)
   const executor8 = document.querySelector('.block3 #b2')
   executor8?.addEventListener('click',n8)
-  // const executor9 = document.querySelector('.block3 #b3')
-  // executor9?.addEventListener('click',n9)
-  // const executor10 = document.querySelector('.block3 #b4')
-  // executor10?.addEventListener('click',n10)
-  // const executor11 = document.querySelector('.block3 #b5')
-  // executor11?.addEventListener('click',n11)
-  // const executor12 = document.querySelector('.block3 #b6')
-  // executor12?.addEventListener('click',n12)
+  const executor9 = document.querySelector('.block3 #b3')
+  executor9?.addEventListener('click',n9)
+  const executor10 = document.querySelector('.block3 #b4')
+  executor10?.addEventListener('click',n10)
+  const executor11 = document.querySelector('.block3 #b5')
+  executor11?.addEventListener('click',n11)
+  const executor12 = document.querySelector('.block3 #b6')
+  executor12?.addEventListener('click',n12)
   // const executor13 = document.querySelector('.block3 #b7')
   // executor13?.addEventListener('click',n13)
   // const executor14 = document.querySelector('.block3 #b8')
