@@ -157,17 +157,33 @@ function n6 (){
   
   // 1
   
-
+  
   let rectangle ={
     topLeftY : 1,
     topLeftX : 1,
     bottomRightY : 3,
     bottomRightX : 3,
   } as any
-  function n7 (){
 
+  function n7 (){
+    let str =`ответ : `
+    for (let i in rectangle){
+      str += `${i} : ${rectangle[i]} / `
+    }
+    // @ts-ignore
+    answer3.innerText = str
+  }
+  
+  function n8{
+    // @ts-ignore
+    answer3.innerText = 
   }
       
+
+
+
+// ...................................................................
+
 
 
 
