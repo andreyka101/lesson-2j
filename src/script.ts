@@ -166,8 +166,12 @@ function n6 (){
   } as any
 
   function n7 (){
-
-
+    if (localStorage.objRectangle){
+      rectangle = JSON.parse(localStorage.objRectangle)
+    }
+    else{
+      localStorage.objRectangle = JSON.stringify(rectangle)
+    }
     let str =`ответ : `
     for (let i in rectangle){
       str += `${i} : ${rectangle[i]} / `
@@ -175,31 +179,197 @@ function n6 (){
     // @ts-ignore
     answer3.innerText = str
   }
-  
+
   function n8 (){
+    if (localStorage.objRectangle){
+      rectangle = JSON.parse(localStorage.objRectangle)
+    }
+    else{
+      localStorage.objRectangle = JSON.stringify(rectangle)
+    }
     // @ts-ignore
     answer3.innerText = 'ответ : ширина - ' + ((rectangle.bottomRightX - rectangle.topLeftX) + 1)
   }
 
   function n9 (){
+    if (localStorage.objRectangle){
+      rectangle = JSON.parse(localStorage.objRectangle)
+    }
+    else{
+      localStorage.objRectangle = JSON.stringify(rectangle)
+    }
     // @ts-ignore
     answer3.innerText = 'ответ : высота - ' + ((rectangle.bottomRightY - rectangle.topLeftY) + 1)
   }
   function n10 (){
+    if (localStorage.objRectangle){
+      rectangle = JSON.parse(localStorage.objRectangle)
+    }
+    else{
+      localStorage.objRectangle = JSON.stringify(rectangle)
+    }
+
+
+
     // @ts-ignore
     answer3.innerText = 'ответ : площадь - ' + (((rectangle.bottomRightY - rectangle.topLeftY) + 1) * ((rectangle.bottomRightX - rectangle.topLeftX) + 1))
   }
   function n11 (){
+    if (localStorage.objRectangle){
+      rectangle = JSON.parse(localStorage.objRectangle)
+    }
+    else{
+      localStorage.objRectangle = JSON.stringify(rectangle)
+    }
     // @ts-ignore
     answer3.innerText = 'ответ : периметр - ' + (((rectangle.bottomRightY - rectangle.topLeftY) + 1) * 2 + ((rectangle.bottomRightX - rectangle.topLeftX) + 1) * 2)
   }
-  // function n12 (){
-  //   let width = parseInt(prompt('введите расстояние которое нужно преодолеть') as string)
-  //   if (width >= 0){
-  //     rectangle.bottomRightX = (width+rectangle.topLeftX) - 1
-  //   }
-  // }
-      
+  function n12 (){
+    if (localStorage.objRectangle){
+      rectangle = JSON.parse(localStorage.objRectangle)
+    }
+    else{
+      localStorage.objRectangle = JSON.stringify(rectangle)
+    }
+    let width = parseInt(prompt('введите ширину') as string)
+    if (width >= 0){
+      rectangle.bottomRightX = (rectangle.topLeftX + width) - 1
+      localStorage.objRectangle = JSON.stringify(rectangle)
+      // @ts-ignore
+      answer3.innerText = 'ответ : действие выполнено'
+    }
+    else{
+      alert ("ошибка::минусовая ширина")
+      // @ts-ignore
+      answer3.innerText = 'ответ : ошибка действия'
+    }
+  }
+  
+  
+  function n13 (){
+    if (localStorage.objRectangle){
+      rectangle = JSON.parse(localStorage.objRectangle)
+    }
+    else{
+      localStorage.objRectangle = JSON.stringify(rectangle)
+    }
+    let height = parseInt(prompt('введите высоту') as string)
+    if (height >= 0){
+      rectangle.bottomRightY = (rectangle.topLeftY + height) - 1
+      localStorage.objRectangle = JSON.stringify(rectangle)
+      // @ts-ignore
+      answer3.innerText = 'ответ : действие выполнено'
+    }
+    else{
+      alert ("ошибка::минусовая высота")
+      // @ts-ignore
+      answer3.innerText = 'ответ : ошибка действия'
+    }
+  }
+
+
+  function n14 (){
+    if (localStorage.objRectangle){
+      rectangle = JSON.parse(localStorage.objRectangle)
+    }
+    else{
+      localStorage.objRectangle = JSON.stringify(rectangle)
+    }
+
+    let height = parseInt(prompt('введите высоту') as string)
+    let width = parseInt(prompt('введите ширину') as string)
+    if (height >= 0 && width >= 0){
+      rectangle.bottomRightY = (rectangle.topLeftY + height) - 1
+      localStorage.objRectangle = JSON.stringify(rectangle)
+
+      rectangle.bottomRightX = (rectangle.topLeftX + width) - 1
+      localStorage.objRectangle = JSON.stringify(rectangle)
+      // @ts-ignore
+      answer3.innerText = 'ответ : действие выполнено'
+    }
+    else{
+      alert ("ошибка::минусовая высота")
+      // @ts-ignore
+      answer3.innerText = 'ответ : ошибка действия'
+    }
+  }
+  
+  
+  function n15 (){
+    if (localStorage.objRectangle){
+    rectangle = JSON.parse(localStorage.objRectangle)
+  }
+  else{
+    localStorage.objRectangle = JSON.stringify(rectangle)
+  }
+  
+  let movementX = parseInt(prompt('на сколько передвинуть прямоугольник по оси X') as string)
+  rectangle.topLeftX += movementX
+  rectangle.bottomRightX += movementX
+  localStorage.objRectangle = JSON.stringify(rectangle)
+  // @ts-ignore
+  answer3.innerText = 'ответ : ты передвинул прямоугольник'
+}
+
+
+function n16 (){
+  if (localStorage.objRectangle){
+    rectangle = JSON.parse(localStorage.objRectangle)
+  }
+else{
+  localStorage.objRectangle = JSON.stringify(rectangle)
+}
+
+let movementY = parseInt(prompt('на сколько передвинуть прямоугольник по оси Y') as string)
+rectangle.topLeftY += movementY
+rectangle.bottomRightY += movementY
+localStorage.objRectangle = JSON.stringify(rectangle)
+// @ts-ignore
+answer3.innerText = 'ответ : ты передвинул прямоугольник'
+}
+
+
+function n17 (){
+  if (localStorage.objRectangle){
+    rectangle = JSON.parse(localStorage.objRectangle)
+}
+else{
+  localStorage.objRectangle = JSON.stringify(rectangle)
+}
+
+let movementX = parseInt(prompt('на сколько передвинуть прямоугольник по оси X') as string)
+let movementY = parseInt(prompt('на сколько передвинуть прямоугольник по оси Y') as string)
+rectangle.topLeftX += movementX
+rectangle.bottomRightX += movementX
+rectangle.topLeftY += movementY
+rectangle.bottomRightY += movementY
+localStorage.objRectangle = JSON.stringify(rectangle)
+// @ts-ignore
+answer3.innerText = 'ответ : ты передвинул прямоугольник'
+}
+
+
+function n18 (){
+  if (localStorage.objRectangle){
+    rectangle = JSON.parse(localStorage.objRectangle)
+  }
+  else{
+    localStorage.objRectangle = JSON.stringify(rectangle)
+  }
+  
+
+  let dotX = parseInt(prompt('введите точку X') as string)
+  let dotY = parseInt(prompt('введите точку Y') as string)
+  if ((dotX>=rectangle.topLeftX && dotX<=rectangle.bottomRightX) && (dotY>=rectangle.topLeftY && dotY<=rectangle.bottomRightY)){
+    // @ts-ignore
+    answer3.innerText = 'ответ : точка в прямоугольнике'
+  }
+  else{
+    // @ts-ignore
+    answer3.innerText = 'ответ : точки нет в прямоугольнике'
+  }
+}
+
 
 
 
@@ -298,15 +468,15 @@ function n6 (){
   executor11?.addEventListener('click',n11)
   const executor12 = document.querySelector('.block3 #b6')
   executor12?.addEventListener('click',n12)
-  // const executor13 = document.querySelector('.block3 #b7')
-  // executor13?.addEventListener('click',n13)
-  // const executor14 = document.querySelector('.block3 #b8')
-  // executor14?.addEventListener('click',n14)
-  // const executor15 = document.querySelector('.block3 #b9')
-  // executor15?.addEventListener('click',n15)
-  // const executor16 = document.querySelector('.block3 #b10')
-  // executor16?.addEventListener('click',n16)
-  // const executor17 = document.querySelector('.block3 #b11')
-  // executor17?.addEventListener('click',n17)
-  // const executor18 = document.querySelector('.block3 #b12')
-  // executor18?.addEventListener('click',n18)
+  const executor13 = document.querySelector('.block3 #b7')
+  executor13?.addEventListener('click',n13)
+  const executor14 = document.querySelector('.block3 #b8')
+  executor14?.addEventListener('click',n14)
+  const executor15 = document.querySelector('.block3 #b9')
+  executor15?.addEventListener('click',n15)
+  const executor16 = document.querySelector('.block3 #b10')
+  executor16?.addEventListener('click',n16)
+  const executor17 = document.querySelector('.block3 #b11')
+  executor17?.addEventListener('click',n17)
+  const executor18 = document.querySelector('.block3 #b12')
+  executor18?.addEventListener('click',n18)
