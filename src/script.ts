@@ -3,6 +3,7 @@ import './style.css'
 let answer1 = document.querySelector('.block1 #s1')
 let answer2 = document.querySelector('.block2 #s1')
 let answer3 = document.querySelector('.block3 #s1')
+let answer4 = document.querySelector('.block4 #s1')
 
 let stringInput1 = document.querySelector('#input1')
 
@@ -480,3 +481,27 @@ function n18 (){
   executor17?.addEventListener('click',n17)
   const executor18 = document.querySelector('.block3 #b12')
   executor18?.addEventListener('click',n18)
+
+
+  function a5 (){
+    alert(`Задание 1
+    Создать массив «Список покупок». Каждый элемент массива 
+    является объектом, который содержит название продукта, необходимое количество и куплен или нет. Написать несколько функций для работы с таким массивом.
+    1. Вывод всего списка на экран таким образом, чтобы сначала 
+    шли некупленные продукты, а потом – купленные.
+    2. Добавление покупки в список. Учтите, что при добавлении 
+    покупки с уже существующим в списке продуктом, необходимо увеличивать количество в существующей покупке, 
+    а не добавлять новую. 
+    3. Покупка продукта. Функция принимает название продукта 
+    и отмечает его как купленный.`)
+  }
+  const itemJ5 = document.querySelector('.block4 #item')
+  itemJ5?.addEventListener('click',a5)
+  // const executor3 = document.querySelector('.block2 #b1')
+  // executor3?.addEventListener('click',n3)
+  // const executor4 = document.querySelector('.block2 #b2')
+  // executor4?.addEventListener('click',n4)
+  // const executor5 = document.querySelector('.block2 #b3')
+  // executor5?.addEventListener('click',n5)
+  // const executor6 = document.querySelector('.block2 #b4')
+  // executor6?.addEventListener('click',n6)
