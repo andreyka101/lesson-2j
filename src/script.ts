@@ -3,7 +3,6 @@ import './style.css'
 let answer1 = document.querySelector('.block1 #s1')
 let answer2 = document.querySelector('.block2 #s1')
 let answer3 = document.querySelector('.block3 #s1')
-let answer4 = document.querySelector('.block4 #s1')
 
 let stringInput1 = document.querySelector('#input1')
 
@@ -161,17 +160,38 @@ function n6 (){
 
 
 let groceryList = [
-  {name : "йогурт" , quantity : 2 , bought : "нет"},
-  {name : "молоко" , quantity : 1 , bought : "нет"},
-  {name : "хлеб" , quantity : 1 , bought : "нет"},
+  {name : "йогурт" , quantity : 2 , bought : "надо купить"},
+  {name : "молоко" , quantity : 1 , bought : "надо купить"},
+  {name : "хлеб" , quantity : 1 , bought : "надо купить"},
 ]
 
 function n19 (){
+  if (localStorage.objGroceryList){
+    groceryList = JSON.parse(localStorage.objGroceryList)
+  }
+  else{
+    localStorage.objGroceryList = JSON.stringify(groceryList)
+  }
 
-}
+  let str = ``
+  for (let i in groceryList){
+    for (let e in groceryList[i]){
+      // @ts-ignore
+      str += `${groceryList[i][e]} `
+    }
+    str += `
+`
+    }
+    alert(str)
+  }
 
 function n20 (){
-
+  if (localStorage.objGroceryList){
+    groceryList = JSON.parse(localStorage.objGroceryList)
+  }
+  else{
+    localStorage.objGroceryList = JSON.stringify(groceryList)
+  }
 }
 
 function n21 (){
