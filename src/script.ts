@@ -8,11 +8,11 @@ let stringInput1 = document.querySelector('#input1')
 let stringInput2 = document.querySelector('#input2')
 
 
-// dz 1 /////////////////////////////////////////////
+// FIXME  dz 1 --999999999999999999999999999999999999999999999999999999999999999999
 
 
 
-// 1
+// TODO  1
 
 let car ={
   predictor : "Proton Edar Sdr Holding",
@@ -31,7 +31,6 @@ function n1 (){
   // @ts-ignore
   answer1.innerText = strcar
 }
-
 function n2 (){
   let distance = parseInt(prompt('введите расстояние которое нужно преодолеть') as string)
   let watch = 0
@@ -50,7 +49,7 @@ function n2 (){
   answer1.innerText = "ответ : " + wastedTime + " ч."
 }
 
-// 3
+// TODO  3
 
 let time ={
   hour : 23,
@@ -152,10 +151,10 @@ function n6 (){
 
 
 
-// pz 1 /////////////////////////////////////////////
+// FIXME  dz 2 ---99999999999999999999999999999999999999999999999999999999999999999999999
 
 
-// 1
+// TODO  1
 
 
 let groceryList = [
@@ -200,10 +199,10 @@ function n21 (){
 }
 
 
-  // pz 1 /////////////////////////////////////////////
+  // FIXME  pz 1 ---9999999999999999999999999999999999999999999999999999999999999999999
   
   
-  // 1
+  // TODO  1
   
   
   let rectangle ={
@@ -420,8 +419,7 @@ function n18 (){
 
 
 
-
-// ...................................................................
+// ANCHOR  .0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0
 
 
 
