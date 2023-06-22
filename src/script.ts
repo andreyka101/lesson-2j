@@ -5,6 +5,7 @@ let answer2 = document.querySelector('.block2 #s1')
 let answer3 = document.querySelector('.block3 #s1')
 
 let stringInput1 = document.querySelector('#input1')
+let stringInput2 = document.querySelector('#input2')
 
 
 // dz 1 /////////////////////////////////////////////
@@ -86,8 +87,6 @@ function n3 (){
     answer2.innerText = "ответ : " + time.hour + ":" + time.minute + ":" + time.second
   }
 }
-
-// 4
 
 function n4 (){
   // @ts-ignore
@@ -192,6 +191,8 @@ function n20 (){
   else{
     localStorage.objGroceryList = JSON.stringify(groceryList)
   }
+  // @ts-ignore
+  // groceryList.push(stringInput2.value)
 }
 
 function n21 (){
