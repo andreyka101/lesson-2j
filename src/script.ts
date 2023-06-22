@@ -153,6 +153,32 @@ function n6 (){
 }
 
 
+
+// pz 1 /////////////////////////////////////////////
+
+
+// 1
+
+
+let groceryList = [
+  {name : "йогурт" , quantity : 2 , bought : "нет"},
+  {name : "молоко" , quantity : 1 , bought : "нет"},
+  {name : "хлеб" , quantity : 1 , bought : "нет"},
+]
+
+function n19 (){
+
+}
+
+function n20 (){
+
+}
+
+function n21 (){
+
+}
+
+
   // pz 1 /////////////////////////////////////////////
   
   
@@ -486,7 +512,7 @@ function n18 (){
   function a5 (){
     alert(`Задание 1
     Создать массив «Список покупок». Каждый элемент массива 
-    является объектом, который содержит название продукта, необходимое количество и куплен или нет. Написать несколько функций для работы с таким массивом.
+    является объектом, который содержит название продукта, необходимое количество и куплен или нет. Написать несколько функций для работы с таким массивом.
     1. Вывод всего списка на экран таким образом, чтобы сначала 
     шли некупленные продукты, а потом – купленные.
     2. Добавление покупки в список. Учтите, что при добавлении 
@@ -497,11 +523,9 @@ function n18 (){
   }
   const itemJ5 = document.querySelector('.block4 #item')
   itemJ5?.addEventListener('click',a5)
-  // const executor3 = document.querySelector('.block2 #b1')
-  // executor3?.addEventListener('click',n3)
-  // const executor4 = document.querySelector('.block2 #b2')
-  // executor4?.addEventListener('click',n4)
-  // const executor5 = document.querySelector('.block2 #b3')
-  // executor5?.addEventListener('click',n5)
-  // const executor6 = document.querySelector('.block2 #b4')
-  // executor6?.addEventListener('click',n6)
+  const executor19 = document.querySelector('.block4 #b1')
+  executor19?.addEventListener('click',n19)
+  const executor20 = document.querySelector('.block4 #b2')
+  executor20?.addEventListener('click',n20)
+  const executor21 = document.querySelector('.block4 #b3')
+  executor21?.addEventListener('click',n21)
