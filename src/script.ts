@@ -190,8 +190,18 @@ function n20 (){
   else{
     localStorage.objGroceryList = JSON.stringify(groceryList)
   }
+  let num = 0
   // @ts-ignore
-  // groceryList.push(stringInput2.value)
+  // stringInput2.value
+  // for (let u in groceryList){
+  //   @ts-ignore
+  //   if (stringInput2.value== groceryList[u]){
+  //     num = 1
+  //   }
+  // }
+  if (num == 1){
+
+  }
 }
 
 function n21 (){
