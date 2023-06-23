@@ -193,12 +193,16 @@ function n20 (){
   let num = 0
   // @ts-ignore
   // stringInput2.value
-  // for (let u in groceryList){
-  //   @ts-ignore
-  //   if (stringInput2.value== groceryList[u]){
-  //     num = 1
-  //   }
-  // }
+  for (let u in groceryList){
+    for (let n in groceryList[u]){
+      corgrnsole.log(n)
+      // @ts-ignore
+    //   if (stringInput2.value== n){
+    //     num = 1
+
+    // }
+    }
+  }
   if (num == 1){
 
   }
