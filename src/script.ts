@@ -3,6 +3,7 @@ import './style.css'
 let answer1 = document.querySelector('.block1 #s1')
 let answer2 = document.querySelector('.block2 #s1')
 let answer3 = document.querySelector('.block3 #s1')
+let answer4 = document.querySelector('.block4 #s1')
 
 let stringInput1 = document.querySelector('#input1')
 let stringInput2 = document.querySelector('#input2')
@@ -191,21 +192,43 @@ function n20 (){
     localStorage.objGroceryList = JSON.stringify(groceryList)
   }
   let num = 0
+  let uuu = ""
   // @ts-ignore
-  // stringInput2.value
-  for (let u in groceryList){
-    for (let n in groceryList[u]){
-      corgrnsole.log(n)
+  let tyt = stringInput2.value
+  if (tyt != ""){
+    for (let u in groceryList){
       // @ts-ignore
-    //   if (stringInput2.value== n){
-    //     num = 1
-
-    // }
+      if (stringInput2.value== groceryList[u].name){
+        num = 1
+        uuu = u
     }
   }
   if (num == 1){
-
+    // @ts-ignore
+    //! groceryList[uuu].quantity += 1
+    // @ts-ignore
+    //* answer4.innerText = "information : " + groceryList[+(uuu)].name + " , " + groceryList[+(uuu)].quantity
   }
+  else{
+    groceryList.push({name : tyt , quantity : 1 , bought : "надо купить"})
+  }
+  console.log(groceryList)
+  // @ts-ignore
+  let a = groceryList[+(uuu)]
+  // @ts-ignore
+  let b = groceryList[uuu]
+  let s = {
+    hh : "tt",
+    ii : "rty"
+  }
+  // @ts-ignore
+  answer4.innerText = "information : " + groceryList[+(uuu)].name + " , " + groceryList[+(uuu)].quantity
+  // console.log(a)
+}
+else{
+  // @ts-ignore
+  answer4.innerText = "information : название продукта пустое"
+}
 }
 
 function n21 (){
