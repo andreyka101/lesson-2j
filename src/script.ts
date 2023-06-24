@@ -159,9 +159,9 @@ function n6 (){
 
 
 let groceryList = [
-  {name : "йогурт" , quantity : 2 , bought : "надо купить"},
-  {name : "молоко" , quantity : 1 , bought : "надо купить"},
-  {name : "хлеб" , quantity : 1 , bought : "надо купить"},
+  {name : "йогурт" , quantity : 2 , bought : "надо купить!!"},
+  {name : "молоко" , quantity : 1 , bought : "надо купить!!"},
+  {name : "хлеб" , quantity : 1 , bought : "надо купить!!"},
 ]
 
 function n19 (){
@@ -205,25 +205,16 @@ function n20 (){
   }
   if (num == 1){
     // @ts-ignore
-    //! groceryList[uuu].quantity += 1
+    groceryList[uuu].quantity += 1
     // @ts-ignore
-    //* answer4.innerText = "information : " + groceryList[+(uuu)].name + " , " + groceryList[+(uuu)].quantity
+    answer4.innerText = "information : " + groceryList[+(uuu)].name + " , " + groceryList[+(uuu)].quantity
   }
   else{
-    groceryList.push({name : tyt , quantity : 1 , bought : "надо купить"})
+    groceryList.push({name : tyt , quantity : 1 , bought : "надо купить!!"})
+    // @ts-ignore
+    answer4.innerText = "information : " + tyt + " , " + 1
   }
-  console.log(groceryList)
-  // @ts-ignore
-  let a = groceryList[+(uuu)]
-  // @ts-ignore
-  let b = groceryList[uuu]
-  let s = {
-    hh : "tt",
-    ii : "rty"
-  }
-  // @ts-ignore
-  answer4.innerText = "information : " + groceryList[+(uuu)].name + " , " + groceryList[+(uuu)].quantity
-  // console.log(a)
+  localStorage.objGroceryList = JSON.stringify(groceryList)
 }
 else{
   // @ts-ignore
@@ -231,8 +222,42 @@ else{
 }
 }
 
-function n21 (){
 
+function n21 (){
+  if (localStorage.objGroceryList){
+    groceryList = JSON.parse(localStorage.objGroceryList)
+  }
+  else{
+    localStorage.objGroceryList = JSON.stringify(groceryList)
+  }
+  let num = 0
+  let uuu = ""
+  // @ts-ignore
+  let tyt = stringInput2.value
+  if (tyt != ""){
+    for (let u in groceryList){
+      // @ts-ignore
+      if (stringInput2.value== groceryList[u].name){
+        num = 1
+        uuu = u
+    }
+  }
+  if (num == 1){
+    // @ts-ignore
+    groceryList[uuu].bought = "куплен"
+    localStorage.objGroceryList = JSON.stringify(groceryList)
+    // @ts-ignore
+    answer4.innerText = "information : " + groceryList[+(uuu)].name + " куплен"
+  }
+  else{
+    // @ts-ignore
+    answer4.innerText = "information : такого продукта нет"
+  }
+}
+else{
+  // @ts-ignore
+  answer4.innerText = "information : название продукта пустое"
+}
 }
 
 
