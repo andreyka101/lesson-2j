@@ -230,8 +230,15 @@ function n21 (){
   else{
     localStorage.objGroceryList = JSON.stringify(groceryList)
   }
-  let 
-  if ()
+
+  let purchasedProducts = 0
+
+  if (localStorage.loPurchasedProducts){
+    purchasedProducts = JSON.parse(localStorage.loPurchasedProducts)
+  }
+  else{
+    localStorage.loPurchasedProducts = JSON.stringify(purchasedProducts)
+  }
   let num = 0
   let uuu = ""
   // @ts-ignore
@@ -246,10 +253,21 @@ function n21 (){
   }
   if (num == 1){
     // @ts-ignore
-    groceryList[uuu].bought = "куплен"
-    localStorage.objGroceryList = JSON.stringify(groceryList)
-    // @ts-ignore
-    answer4.innerText = "information : " + groceryList[+(uuu)].name + " куплен"
+    if (groceryList[uuu].bought != "куплен"){
+
+      // @ts-ignore
+      groceryList[uuu].bought = "куплен"
+      // @ts-ignore
+      answer4.innerText = "information : " + groceryList[+(uuu)].name + " куплен"
+      // @ts-ignore
+      let temporaryStorage = groceryList[uuu]
+      // @ts-ignore
+      groceryList[uuu] = groceryList[purchasedProducts]
+      groceryList[purchasedProducts] = temporaryStorage
+      localStorage.objGroceryList = JSON.stringify(groceryList)
+      purchasedProducts ++
+      localStorage.loPurchasedProducts = JSON.stringify(purchasedProducts)
+    }
   }
   else{
     // @ts-ignore
