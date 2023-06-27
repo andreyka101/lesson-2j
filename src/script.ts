@@ -4,13 +4,11 @@ let answer1 = document.querySelector('.block1 #s1')
 let answer2 = document.querySelector('.block2 #s1')
 let answer3 = document.querySelector('.block3 #s1')
 let answer4 = document.querySelector('.block4 #s1')
-// let answer5 = document.querySelector('.block5 #s1')
 
 let stringInput1 = document.querySelector('#input1')
 let stringInput2 = document.querySelector('#input2')
 
-const element1 = document.querySelector('.block5 #s1')
-// const inlineStyles1 = element1?.style
+const buttonALL = document.querySelectorAll('button')
 
 
 // FIXME  dz 1 --999999999999999999999999999999999999999999999999999999999999999999
@@ -288,35 +286,66 @@ else{
 // TODO  3
 
 
+let switch1 = 0
+
 let color = ["background-color:" , "color:"]
 let strColor = ""
 
-function n22(){
-  for (let i in color){
-    strColor += color[i]
-    if (i == "0"){
-      strColor += "#232323;"
-    }
-    else{
-      strColor += "azure;"
-    }
-  }
-  // @ts-ignore
-  document.querySelector('body').style = strColor
-}
 
-function n23(){
-  for (let i in color){
-    strColor += color[i]
-    if (i == "0"){
-      strColor += "#ffffff;"
+function n22(){
+  if (switch1 == 0){
+    switch1 = 1
+  }
+  if (localStorage.locSwitch1){
+    switch1 = JSON.parse(localStorage.locSwitch1)
+  }
+  else{
+    localStorage.locSwitch1 = JSON.stringify(switch1)
+  }
+  if (switch1 == 1){
+    switch1 = 2
+  }
+  else{
+    switch1 = 1
+  }
+  localStorage.locSwitch1 = JSON.stringify(switch1)
+
+  if(switch1 == 1){
+    for (let i in color){
+      strColor += color[i]
+      if (i == "0"){
+        strColor += "#232323;"
+      }
+      else{
+        strColor += "azure;"
+      }
     }
-    else{
-      strColor += "#232323;"
+    // @ts-ignore
+    document.querySelector('body').style = strColor
+
+    for (let r in buttonALL){
+      // @ts-ignore
+      buttonALL[r].style = "background-color: aquamarine;"
     }
   }
-  // @ts-ignore
-  document.querySelector('body').style = strColor
+  
+  if(switch1 == 2){
+    for (let i in color){
+      strColor += color[i]
+      if (i == "0"){
+        strColor += "#ffffff;"
+      }
+      else{
+        strColor += "#232323;"
+      }
+    }
+    // @ts-ignore
+    document.querySelector('body').style = strColor
+    for (let r in buttonALL){
+      // @ts-ignore
+      buttonALL[r].style = "background-color: #efefef;"
+    }
+  }
 }
 
 
