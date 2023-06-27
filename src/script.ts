@@ -4,9 +4,13 @@ let answer1 = document.querySelector('.block1 #s1')
 let answer2 = document.querySelector('.block2 #s1')
 let answer3 = document.querySelector('.block3 #s1')
 let answer4 = document.querySelector('.block4 #s1')
+// let answer5 = document.querySelector('.block5 #s1')
 
 let stringInput1 = document.querySelector('#input1')
 let stringInput2 = document.querySelector('#input2')
+
+const element1 = document.querySelector('.block5 #s1')
+// const inlineStyles1 = element1?.style
 
 
 // FIXME  dz 1 --999999999999999999999999999999999999999999999999999999999999999999
@@ -278,6 +282,41 @@ else{
   // @ts-ignore
   answer4.innerText = "information : название продукта пустое"
 }
+}
+
+
+// TODO  3
+
+
+let color = ["background-color:" , "color:"]
+let strColor = ""
+
+function n22(){
+  for (let i in color){
+    strColor += color[i]
+    if (i == "0"){
+      strColor += "#232323;"
+    }
+    else{
+      strColor += "azure;"
+    }
+  }
+  // @ts-ignore
+  document.querySelector('body').style = strColor
+}
+
+function n23(){
+  for (let i in color){
+    strColor += color[i]
+    if (i == "0"){
+      strColor += "#ffffff;"
+    }
+    else{
+      strColor += "#232323;"
+    }
+  }
+  // @ts-ignore
+  document.querySelector('body').style = strColor
 }
 
 
@@ -630,3 +669,16 @@ function n18 (){
   executor20?.addEventListener('click',n20)
   const executor21 = document.querySelector('.block4 #b3')
   executor21?.addEventListener('click',n21)
+  
+  function a6 (){
+    alert(`Создать массив css-стилей (цвет, размер шрифта, выравнивание, подчеркивание и т. д.). Каждый элемент массива – это объект, состоящий из двух свойств: название стиля и значение стиля. 
+    Написать функцию, которая принимает массив стилей и 
+    текст, и выводит этот текст с помощью document.write() в тегах 
+    <p></p>, добавив в открывающий тег атрибут style со всеми стилями, перечисленными в массиве.`)
+  }
+  const itemJ6 = document.querySelector('.block5 #item')
+  itemJ6?.addEventListener('click',a6)
+  const executor22 = document.querySelector('.block5 #b1')
+  executor22?.addEventListener('click',n22)
+  const executor23 = document.querySelector('.block5 #b2')
+  executor23?.addEventListener('click',n23)
