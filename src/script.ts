@@ -4,6 +4,7 @@ let answer1 = document.querySelector('.block1 #s1')
 let answer2 = document.querySelector('.block2 #s1')
 let answer3 = document.querySelector('.block3 #s1')
 let answer4 = document.querySelector('.block4 #s1')
+let answer5 = document.querySelector('.block5 #s1')
 
 let stringInput1 = document.querySelector('#input1')
 let stringInput2 = document.querySelector('#input2')
@@ -302,15 +303,28 @@ function n22(){
   else{
     localStorage.locSwitch1 = JSON.stringify(switch1)
   }
-  if (switch1 == 1){
-    switch1 = 2
+  
+  switch (switch1) {
+    case 1:
+      switch1 = 2
+      break;
+      case 2:
+      switch1 = 3
+      break;
+      case 3:
+      switch1 = 4
+      break;
+      case 4:
+      switch1 = 1
+      break;
   }
-  else{
-    switch1 = 1
-  }
-  localStorage.locSwitch1 = JSON.stringify(switch1)
 
+  localStorage.locSwitch1 = JSON.stringify(switch1)
+  
+  //* dark
   if(switch1 == 1){
+    // @ts-ignore
+    answer5.innerText = 'dark'
     for (let i in color){
       strColor += color[i]
       if (i == "0"){
@@ -322,14 +336,17 @@ function n22(){
     }
     // @ts-ignore
     document.querySelector('body').style = strColor
-
+    
     for (let r in buttonALL){
       // @ts-ignore
-      buttonALL[r].style = "background-color: aquamarine;"
+      buttonALL[r].style = "background-color: #efefef;"
     }
   }
   
+  //* classic
   if(switch1 == 2){
+    // @ts-ignore
+    answer5.innerText = 'classic'
     for (let i in color){
       strColor += color[i]
       if (i == "0"){
@@ -344,6 +361,50 @@ function n22(){
     for (let r in buttonALL){
       // @ts-ignore
       buttonALL[r].style = "background-color: #efefef;"
+    }
+  }
+
+  //* dark gold
+  if(switch1 == 3){
+    // @ts-ignore
+    answer5.innerText = 'dark gold'
+    for (let i in color){
+      strColor += color[i]
+      if (i == "0"){
+        strColor += "#232323;"
+      }
+      else{
+        strColor += "azure;"
+      }
+    }
+    // @ts-ignore
+    document.querySelector('body').style = strColor
+    
+    for (let r in buttonALL){
+      // @ts-ignore
+      buttonALL[r].style = "background-color: #6d7005;"
+    }
+  }
+
+  //* girly
+  if(switch1 == 4){
+    // @ts-ignore
+    answer5.innerText = 'girly'
+    for (let i in color){
+      strColor += color[i]
+      if (i == "0"){
+        strColor += "#630949;"
+      }
+      else{
+        strColor += "azure;"
+      }
+    }
+    // @ts-ignore
+    document.querySelector('body').style = strColor
+    
+    for (let r in buttonALL){
+      // @ts-ignore
+      buttonALL[r].style = "background-color: #ee0cae; color: white;"
     }
   }
 }
