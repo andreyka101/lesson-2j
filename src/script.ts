@@ -329,7 +329,7 @@ function n22(){
   }
   
   switch (switch1) {
-    case 1:
+      case 1:
       switch1 = 2
       break;
       case 2:
@@ -476,6 +476,22 @@ function n22(){
   function n24(){
     // @ts-ignore
     let savingNumber = stringInput4.value
+    if (){
+      switch (switch1) {
+        case 1:
+        switch1 = 2
+        break;
+        case 2:
+        switch1 = 3
+        break;
+        case 3:
+        switch1 = 4
+        break;
+        case 4:
+        switch1 = 1
+        break;
+    }
+    }
   }
 
 
