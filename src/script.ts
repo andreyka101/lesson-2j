@@ -6,10 +6,12 @@ let answer3 = document.querySelector('.block3 #s1')
 let answer4 = document.querySelector('.block4 #s1')
 let answer5 = document.querySelector('.block5 #s1')
 let answer7 = document.querySelector('.block7 #s1')
+let answer8 = document.querySelector('.block8 #s1')
 
 let stringInput1 = document.querySelector('#input1')
 let stringInput2 = document.querySelector('#input2')
 let stringInput3 = document.querySelector('#input3')
+let stringInput4 = document.querySelector('#input4')
 
 const buttonALL = document.querySelectorAll('button')
 
@@ -54,6 +56,28 @@ function n2 (){
   // @ts-ignore
   answer1.innerText = "ответ : " + wastedTime + " ч."
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // TODO  3
 
@@ -107,7 +131,6 @@ function n4 (){
       a--
       time.minute -=a*60
       time.hour+=a
-    }
   }
   while (time.hour>23){
     time.hour -= 24
@@ -445,6 +468,14 @@ function n22(){
       // @ts-ignore
       answer7.innerText = "ответ : строка пустая"
     }
+  }
+
+
+  // TODO  2
+
+  function n24(){
+    // @ts-ignore
+    let savingNumber = stringInput4.value
   }
 
 
@@ -833,3 +864,14 @@ function n18 (){
     itemJ8?.addEventListener('click',a8)
     const executor23 = document.querySelector('.block7 #b1')
     executor23?.addEventListener('click',n23)
+
+    function a9 (){
+      alert(`Написать функцию, которая принимает двузначное число 
+и возвращает его в текстовом виде. 
+Например: 35 – тридцать пять, 89 – восемьдесят девять, 
+12 – двенадцать.`)
+    }
+    const itemJ9 = document.querySelector('.block8 #item')
+    itemJ9?.addEventListener('click',a9)
+    const executor24 = document.querySelector('.block8 #b1')
+    executor24?.addEventListener('click',n24)
