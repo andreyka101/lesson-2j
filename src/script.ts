@@ -98,17 +98,16 @@ function n4 (){
   time.second=stringInput1.value
   if (time.second>60){
     let a=0
-    for(;time.second>a*60;a++){}
-    a--
-    time.second -=a*60
-    time.minute+=a
+      a--
+      time.second -=a*60
+      time.minute+=a
   }
   if (time.minute>60){
     let a=0
-    for(;time.minute>a*60;a++){}
-    a--
-    time.minute -=a*60
-    time.hour+=a
+      a--
+      time.minute -=a*60
+      time.hour+=a
+    }
   }
   while (time.hour>23){
     time.hour -= 24
