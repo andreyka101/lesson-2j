@@ -5,9 +5,11 @@ let answer2 = document.querySelector('.block2 #s1')
 let answer3 = document.querySelector('.block3 #s1')
 let answer4 = document.querySelector('.block4 #s1')
 let answer5 = document.querySelector('.block5 #s1')
+let answer7 = document.querySelector('.block7 #s1')
 
 let stringInput1 = document.querySelector('#input1')
 let stringInput2 = document.querySelector('#input2')
+let stringInput3 = document.querySelector('#input3')
 
 const buttonALL = document.querySelectorAll('button')
 
@@ -410,6 +412,43 @@ function n22(){
 }
 
 
+  // FIXME  dz 3 ---9999999999999999999999999999999999999999999999999999999999999999999
+
+
+  // TODO  1
+  
+  
+  function n23(){
+    // @ts-ignore
+    let line = stringInput3.value
+    let countingNumbers = 0
+    let countingString = 0
+    let countingСount = 0
+    
+    if (line.length != 0){
+      for (let i = 0 ; i != line.length;i++){
+        if (line[i] == "1" || line[i] == "2" || line[i] == "3" || line[i] == "4" || line[i] == "5" || line[i] == "6" || line[i] == "7" || line[i] == "8" || line[i] == "9" || line[i] == "0") {
+          countingNumbers++
+        }
+        else{
+          if (line[i] == "/" || line[i] == "*" || line[i] == "-" || line[i] == "+" || line[i] == "=" || line[i] == "_" || line[i] == "|" || line[i] == "(" || line[i] == ")" || line[i] == "}" || line[i] == "{" || line[i] == "[" || line[i] == "]"){
+            countingСount++
+          }
+          else{
+            countingString++
+          }
+        }
+      }
+      // @ts-ignore
+      answer7.innerText = `ответ : числа:${countingNumbers} ; строки:${countingString} ; знаки:${countingСount}`
+    }
+    else{
+      // @ts-ignore
+      answer7.innerText = "ответ : строка пустая"
+    }
+  }
+
+
   // FIXME  pz 1 ---9999999999999999999999999999999999999999999999999999999999999999999
   
   
@@ -770,5 +809,28 @@ function n18 (){
   itemJ6?.addEventListener('click',a6)
   const executor22 = document.querySelector('.block5 #b1')
   executor22?.addEventListener('click',n22)
-  const executor23 = document.querySelector('.block5 #b2')
-  executor23?.addEventListener('click',n23)
+  
+  function a7 (){
+    alert(`Создать массив аудиторий академии. Объект-аудитория состоит из названия, количества посадочных мест (от 10 до 20) и 
+названия факультета, для которого она предназначена. 
+Написать несколько функций для работы с ним.
+1. Вывод на экран всех аудиторий. 
+2. Вывод на экран аудиторий для указанного факультета.
+3. Вывод на экран только тех аудиторий, которые подходят для 
+переданной группы. Объект-группа состоит из названия, 
+количества студентов и названия факультета. 
+4. Функция сортировки аудиторий по количеству мест.
+5. Функция сортировки аудиторий по названию (по алфавиту).`)
+  }
+  const itemJ7 = document.querySelector('.block6 #item')
+  itemJ7?.addEventListener('click',a7)
+
+    function a8 (){
+      alert(`Написать функцию, которая принимает строку и выводит 
+статистику о ней: количество букв, количество цифр и 
+количество других знаков.`)
+    }
+    const itemJ8 = document.querySelector('.block7 #item')
+    itemJ8?.addEventListener('click',a8)
+    const executor23 = document.querySelector('.block7 #b1')
+    executor23?.addEventListener('click',n23)
