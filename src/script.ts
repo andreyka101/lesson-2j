@@ -476,20 +476,28 @@ function n22(){
   function n24(){
     // @ts-ignore
     let savingNumber = stringInput4.value
-    if (){
-      switch (switch1) {
+    let lowercaseNumber = ""
+    if (0<=savingNumber || savingNumber >= 20){
+      switch (savingNumber) {
+        case 0:
+        lowercaseNumber = "нуль"
+        break;
         case 1:
-        switch1 = 2
+        lowercaseNumber = "один"
         break;
         case 2:
-        switch1 = 3
+        lowercaseNumber = "два"
         break;
         case 3:
-        switch1 = 4
+        lowercaseNumber = "три"
         break;
         case 4:
-        switch1 = 1
+        lowercaseNumber = "четыре"
         break;
+        case 5:
+        lowercaseNumber = "пять"
+        break;
+        
     }
     }
   }
