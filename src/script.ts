@@ -497,7 +497,51 @@ function n22(){
         case 5:
         lowercaseNumber = "пять"
         break;
-        
+        case 6:
+        lowercaseNumber = "шесть"
+        break;
+        case 7:
+        lowercaseNumber = "семь"
+        break;
+        case 8:
+        lowercaseNumber = "восемь"
+        break;
+        case 9:
+        lowercaseNumber = "девять"
+        break;
+        case 10:
+        lowercaseNumber = "десять"
+        break;
+        case 11:
+        lowercaseNumber = "одиннадцать"
+        break;
+        case 12:
+        lowercaseNumber = "двенадцать"
+        break;
+        case 13:
+        lowercaseNumber = "тринадцать"
+        break;
+        case 14:
+        lowercaseNumber = "четырнадцать"
+        break;
+        case 15:
+        lowercaseNumber = "пятнадцать"
+        break;
+        case 16:
+        lowercaseNumber = "шестнадцать"
+        break;
+        case 17:
+        lowercaseNumber = "семнадцать"
+        break;
+        case 18:
+        lowercaseNumber = "восемнадцать"
+        break;
+        case 19:
+        lowercaseNumber = "девятнадцать"
+        break;
+        case 20:
+        lowercaseNumber = "двадцать"
+        break;
     }
     }
   }
