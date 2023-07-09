@@ -475,75 +475,135 @@ function n22(){
 
   function n24(){
     // @ts-ignore
-    let savingNumber = stringInput4.value
-    let lowercaseNumber = ""
-    if (0<=savingNumber || savingNumber >= 20){
+    let savingNumber = +(stringInput4.value as string)
+    let lowercaseNumber = "ответ : "
+    if (0<=savingNumber && savingNumber < 20){
       switch (savingNumber) {
         case 0:
-        lowercaseNumber = "нуль"
+        lowercaseNumber += "нуль"
         break;
         case 1:
-        lowercaseNumber = "один"
+        lowercaseNumber += "один"
         break;
         case 2:
-        lowercaseNumber = "два"
+        lowercaseNumber += "два"
         break;
         case 3:
-        lowercaseNumber = "три"
+        lowercaseNumber += "три"
         break;
         case 4:
-        lowercaseNumber = "четыре"
+        lowercaseNumber += "четыре"
         break;
         case 5:
-        lowercaseNumber = "пять"
+        lowercaseNumber += "пять"
         break;
         case 6:
-        lowercaseNumber = "шесть"
+        lowercaseNumber += "шесть"
         break;
         case 7:
-        lowercaseNumber = "семь"
+        lowercaseNumber += "семь"
         break;
         case 8:
-        lowercaseNumber = "восемь"
+        lowercaseNumber += "восемь"
         break;
         case 9:
-        lowercaseNumber = "девять"
+        lowercaseNumber += "девять"
         break;
         case 10:
-        lowercaseNumber = "десять"
+        lowercaseNumber += "десять"
         break;
         case 11:
-        lowercaseNumber = "одиннадцать"
+        lowercaseNumber += "одиннадцать"
         break;
         case 12:
-        lowercaseNumber = "двенадцать"
+        lowercaseNumber += "двенадцать"
         break;
         case 13:
-        lowercaseNumber = "тринадцать"
+        lowercaseNumber += "тринадцать"
         break;
         case 14:
-        lowercaseNumber = "четырнадцать"
+        lowercaseNumber += "четырнадцать"
         break;
         case 15:
-        lowercaseNumber = "пятнадцать"
+        lowercaseNumber += "пятнадцать"
         break;
         case 16:
-        lowercaseNumber = "шестнадцать"
+        lowercaseNumber += "шестнадцать"
         break;
         case 17:
-        lowercaseNumber = "семнадцать"
+        lowercaseNumber += "семнадцать"
         break;
         case 18:
-        lowercaseNumber = "восемнадцать"
+        lowercaseNumber += "восемнадцать"
         break;
         case 19:
-        lowercaseNumber = "девятнадцать"
+        lowercaseNumber += "девятнадцать"
         break;
+      }
+    }
+    else{
+      let ssn = savingNumber+""
+      switch (savingNumber){
         case 20:
-        lowercaseNumber = "двадцать"
+        lowercaseNumber += "двадцать"
         break;
+        case 30:
+        lowercaseNumber += "тридцать"
+        break;
+        case 40:
+        lowercaseNumber += "сорок"
+        break;
+        case 50:
+        lowercaseNumber += "пятьдесят"
+        break;
+        case 60:
+        lowercaseNumber += "шестьдесят"
+        break;
+        case 70:
+        lowercaseNumber += "семьдесят"
+        break;
+        case 80:
+        lowercaseNumber += "восемьдесят"
+        break;
+        case 90:
+        lowercaseNumber += "девяносто"
+        break;
+        
+      }
+      if (ssn[1] != "0"){
+        switch (ssn[1]){
+          case "1":
+        lowercaseNumber += "один"
+        break;
+        case "2":
+        lowercaseNumber += "два"
+        break;
+        case "3":
+        lowercaseNumber += "три"
+        break;
+        case "4":
+        lowercaseNumber += "четыре"
+        break;
+        case "5":
+        lowercaseNumber += "пять"
+        break;
+        case "6":
+        lowercaseNumber += "шесть"
+        break;
+        case "7":
+        lowercaseNumber += "семь"
+        break;
+        case "8":
+        lowercaseNumber += "восемь"
+        break;
+        case "9":
+        lowercaseNumber += "девять"
+        break;
+        }
+      }
     }
-    }
+    // @ts-ignore
+    answer8.innerText = lowercaseNumber
   }
 
 
