@@ -543,29 +543,29 @@ function n22(){
     }
     else{
       let ssn = savingNumber+""
-      switch (savingNumber){
-        case 20:
+      switch (ssn[0]){
+        case "2":
         lowercaseNumber += "двадцать"
         break;
-        case 30:
+        case "3":
         lowercaseNumber += "тридцать"
         break;
-        case 40:
+        case "4":
         lowercaseNumber += "сорок"
         break;
-        case 50:
+        case "5":
         lowercaseNumber += "пятьдесят"
         break;
-        case 60:
+        case "6":
         lowercaseNumber += "шестьдесят"
         break;
-        case 70:
+        case "7":
         lowercaseNumber += "семьдесят"
         break;
-        case 80:
+        case "8":
         lowercaseNumber += "восемьдесят"
         break;
-        case 90:
+        case "9":
         lowercaseNumber += "девяносто"
         break;
         
@@ -573,37 +573,41 @@ function n22(){
       if (ssn[1] != "0"){
         switch (ssn[1]){
           case "1":
-        lowercaseNumber += "один"
+        lowercaseNumber += " один"
         break;
         case "2":
-        lowercaseNumber += "два"
+        lowercaseNumber += " два"
         break;
         case "3":
-        lowercaseNumber += "три"
+        lowercaseNumber += " три"
         break;
         case "4":
-        lowercaseNumber += "четыре"
+        lowercaseNumber += " четыре"
         break;
         case "5":
-        lowercaseNumber += "пять"
+        lowercaseNumber += " пять"
         break;
         case "6":
-        lowercaseNumber += "шесть"
+        lowercaseNumber += " шесть"
         break;
         case "7":
-        lowercaseNumber += "семь"
+        lowercaseNumber += " семь"
         break;
         case "8":
-        lowercaseNumber += "восемь"
+        lowercaseNumber += " восемь"
         break;
         case "9":
-        lowercaseNumber += "девять"
+        lowercaseNumber += " девять"
         break;
         }
       }
     }
     // @ts-ignore
     answer8.innerText = lowercaseNumber
+    if (savingNumber > 99){
+      // @ts-ignore
+      answer8.innerText = "ответ : слишком большое число только двузначное"
+    }
   }
 
 
