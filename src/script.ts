@@ -619,11 +619,24 @@ function n22(){
   function n25(){
     // @ts-ignore
     let str = stringInput5.value
-    let array =[]
-    let maxStr ="АБВГДЕЁКЛМН"
+    let array ="ответ : "
+    console.log(str.codePointAt())
     for (let i in str){
-
+      if (1072 <= str[i].codePointAt() && str[i].codePointAt() <= 1103 || 97 <= str[i].codePointAt() && str[i].codePointAt() <= 122){
+        array+=str[i].toUpperCase()
+      }
+      else if (1040 <= str[i].codePointAt() && str[i].codePointAt() <= 1071 || 65 <= str[i].codePointAt() && str[i].codePointAt() <= 90){
+        array+=str[i].toLowerCase()
+      }
+      else if (48 <= str[i].codePointAt() && str[i].codePointAt() <= 57){
+        array+="_"
+      }
+      else{
+        array+=str[i]
+      }
     }
+    // @ts-ignore
+    answer9.innerText =array
   }
 
   // FIXME  pz 1 ---9999999999999999999999999999999999999999999999999999999999999999999
@@ -1032,3 +1045,4 @@ function n18 (){
     itemJ10?.addEventListener('click',a10)
     const executor25 = document.querySelector('.block9 #b1')
     executor25?.addEventListener('click',n25)
+    
