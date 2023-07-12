@@ -697,15 +697,41 @@ function n22(){
   
   function n28(){
     // @ts-ignore
-    let str = stringInput7.value
+    let str = stringInput8.value
+    let num
+    let variable
     let str2 = "ответ : "
 
-    for (let i of str){
-      
+    for (let i in str){
+      // if (i == '*'){
+      //   variable = i
+      // }
+      // if (i == '**'){
+      //   variable = i
+      // }
+      // if (i == '/'){
+      //   variable = i
+      // }
+      // if (i == '+'){
+      //   variable = i
+      // }
+      // if (i == '-'){
+      //   variable = i
+      // }
+      // if (i == '<'){
+      //   variable = i
+      // }
+      // if (i == '>'){
+      //   variable = i
+      // }
+      if (str[i] == ' '){
+        str[i] = ""
+      }
+
     }
 
     // @ts-ignore
-    answer12.innerText = abbreviation
+    answer12.innerText = str
   }
   
   // FIXME  pz 1 ---9999999999999999999999999999999999999999999999999999999999999999999
