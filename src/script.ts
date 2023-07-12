@@ -1,4 +1,5 @@
 import './style.css'
+// ANCHOR -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 let answer1 = document.querySelector('.block1 #s1')
 let answer2 = document.querySelector('.block2 #s1')
@@ -8,12 +9,18 @@ let answer5 = document.querySelector('.block5 #s1')
 let answer7 = document.querySelector('.block7 #s1')
 let answer8 = document.querySelector('.block8 #s1')
 let answer9 = document.querySelector('.block9 #s1')
+let answer10 = document.querySelector('.block10 #s1')
+let answer11 = document.querySelector('.block11 #s1')
+let answer12 = document.querySelector('.block12 #s1')
 
 let stringInput1 = document.querySelector('#input1')
 let stringInput2 = document.querySelector('#input2')
 let stringInput3 = document.querySelector('#input3')
 let stringInput4 = document.querySelector('#input4')
 let stringInput5 = document.querySelector('#input5')
+let stringInput6 = document.querySelector('#input6')
+let stringInput7 = document.querySelector('#input7')
+let stringInput8 = document.querySelector('#input8')
 
 const buttonALL = document.querySelectorAll('button')
 
@@ -638,7 +645,69 @@ function n22(){
     // @ts-ignore
     answer9.innerText =array
   }
+  
+  
+  // TODO  4
+  
+  
+  function n26(){
+    // @ts-ignore
+    let str = stringInput6.value
+    let str2 = "ответ : "
+    let memory = ""
+    for (let i in str){
+      if(str[i] == "-"){
+        memory = str[i+1]
+      }
+      else{
+        if (memory==""){
+          str2+=str[i]
+        }
+        else{
+          memory=""
+          str2+=str[i].toUpperCase()
+        }
+      }
+    }
+    // @ts-ignore
+    answer10.innerText =str2
+    
+  }
+  
+  
+  // TODO  5
+  
+  
+  function n27(){
+    // @ts-ignore
+    let arr = stringInput7.value.split(' ')
+    let abbreviation = "ответ : "
 
+    for (let i of arr){
+      abbreviation+=i[0].toUpperCase()
+    }
+
+    // @ts-ignore
+    answer11.innerText = abbreviation
+  }
+  
+  
+  // TODO  7
+  
+  
+  function n28(){
+    // @ts-ignore
+    let str = stringInput7.value
+    let str2 = "ответ : "
+
+    for (let i of str){
+      
+    }
+
+    // @ts-ignore
+    answer12.innerText = abbreviation
+  }
+  
   // FIXME  pz 1 ---9999999999999999999999999999999999999999999999999999999999999999999
   
   
@@ -1045,4 +1114,36 @@ function n18 (){
     itemJ10?.addEventListener('click',a10)
     const executor25 = document.querySelector('.block9 #b1')
     executor25?.addEventListener('click',n25)
+
+    function a11 (){
+      alert(`Написать функцию, которая преобразует названия cssстилей с дефисом в название в СamelСase стиле: font-size
+в fontSize, background-color в backgroundColor, textalign в textAlign.`)
+    }
+    const itemJ11 = document.querySelector('.block10 #item')
+    itemJ11?.addEventListener('click',a11)
+    const executor26 = document.querySelector('.block10 #b1')
+    executor26?.addEventListener('click',n26)
+
+    function a12 (){
+      alert(`Написать функцию, которая принимает словосочетание 
+и превращает его в аббревиатуру. 
+Например: cascading style sheets в CSS, объектноориентированное программирование в ООП`)
+    }
+    const itemJ12 = document.querySelector('.block11 #item')
+    itemJ12?.addEventListener('click',a12)
+    const executor27 = document.querySelector('.block11 #b1')
+    executor27?.addEventListener('click',n27)
+
+    function a13 (){
+      alert(`Написать функцию, которая принимает словосочетание 
+и превращает его в аббревиатуру. 
+Например: cascading style sheets в CSS, объектноориентированное программирование в ООП`)
+    }
+    const itemJ13 = document.querySelector('.block12 #item')
+    itemJ13?.addEventListener('click',a13)
+    const executor28 = document.querySelector('.block12 #b1')
+    executor28?.addEventListener('click',n28)
     
+
+
+    //ANCHOR a+++++a+++++a+++++a+++++a+++++a+++++a+++++a+++++a
