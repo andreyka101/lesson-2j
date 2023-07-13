@@ -1,4 +1,4 @@
-import './style.css'
+import './style.scss'
 // ANCHOR -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 let answer1 = document.querySelector('.block1 #s1')
@@ -1003,7 +1003,7 @@ function n30(){
       }
     }
     // @ts-ignore
-    answer13.innerText = 'ответ : ' + arr2
+    answer13.innerText = 'ответ : четные - ' + arr2
   }
 function n31(){
   if (localStorage.objRandomArray){
@@ -1018,7 +1018,7 @@ function n31(){
       summ+=i
     }
     // @ts-ignore
-    answer13.innerText = 'ответ : ' + summ
+    answer13.innerText = 'ответ : сумма - ' + summ
   }
 function n32(){
   if (localStorage.objRandomArray){
@@ -1029,13 +1029,42 @@ function n32(){
     }
 
     let max=randomArray[0]
-    for (let i of randomArray){
-      if (max<i){
-        max=i
+    randomArray.forEach((item:any) => {
+      if (max<item){
+        max=item
       }
-    }
+    });
     // @ts-ignore
-    answer13.innerText = 'ответ : ' + max
+    answer13.innerText = 'ответ : max - ' + max
+  }
+function n33(){
+  if (localStorage.objRandomArray){
+    randomArray = JSON.parse(localStorage.objRandomArray)
+  }
+  else{
+      localStorage.objRandomArray = JSON.stringify(randomArray)
+    }
+
+    let prom = +(prompt(`напишите индекс в который нужно вписать с 0 по ${randomArray.length}`)as string)
+    let save = randomArray[prom]
+    randomArray[prom] = +(prompt(`напишите само число`)as string)
+    randomArray.push(save)
+    localStorage.objRandomArray = JSON.stringify(randomArray)
+    // @ts-ignore
+    answer13.innerText = 'ответ : вы изменили массив'
+  }
+function n34(){
+  if (localStorage.objRandomArray){
+    randomArray = JSON.parse(localStorage.objRandomArray)
+  }
+  else{
+      localStorage.objRandomArray = JSON.stringify(randomArray)
+    }
+
+    randomArray.splice(+(prompt(`напишите индекс который нужно удалить с 0 по ${randomArray.length}`)as string), 1);
+    localStorage.objRandomArray = JSON.stringify(randomArray)
+    // @ts-ignore
+    answer13.innerText = 'ответ : вы изменили массив'
   }
 
 // ANCHOR  .0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0
