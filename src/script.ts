@@ -995,8 +995,47 @@ function n30(){
   else{
       localStorage.objRandomArray = JSON.stringify(randomArray)
     }
+
+    let arr2 = []
+    for (let i of randomArray){
+      if (i % 2 == 0){
+        arr2.push(i)
+      }
+    }
     // @ts-ignore
-    answer13.innerText = 'ответ : ' + randomArray
+    answer13.innerText = 'ответ : ' + arr2
+  }
+function n31(){
+  if (localStorage.objRandomArray){
+    randomArray = JSON.parse(localStorage.objRandomArray)
+  }
+  else{
+      localStorage.objRandomArray = JSON.stringify(randomArray)
+    }
+
+    let summ=0
+    for (let i of randomArray){
+      summ+=i
+    }
+    // @ts-ignore
+    answer13.innerText = 'ответ : ' + summ
+  }
+function n32(){
+  if (localStorage.objRandomArray){
+    randomArray = JSON.parse(localStorage.objRandomArray)
+  }
+  else{
+      localStorage.objRandomArray = JSON.stringify(randomArray)
+    }
+
+    let max=randomArray[0]
+    for (let i of randomArray){
+      if (max<i){
+        max=i
+      }
+    }
+    // @ts-ignore
+    answer13.innerText = 'ответ : ' + max
   }
 
 // ANCHOR  .0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0
