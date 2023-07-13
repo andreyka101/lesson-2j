@@ -12,6 +12,7 @@ let answer9 = document.querySelector('.block9 #s1')
 let answer10 = document.querySelector('.block10 #s1')
 let answer11 = document.querySelector('.block11 #s1')
 let answer12 = document.querySelector('.block12 #s1')
+let answer13 = document.querySelector('.block13 #s1')
 
 let stringInput1 = document.querySelector('#input1')
 let stringInput2 = document.querySelector('#input2')
@@ -698,41 +699,52 @@ function n22(){
   function n28(){
     // @ts-ignore
     let str = stringInput8.value
-    let num
+    let str2 = ""
     let variable
-    let str2 = "ответ : "
+    let reply = "ответ : "
 
-    for (let i in str){
-      // if (i == '*'){
-      //   variable = i
-      // }
-      // if (i == '**'){
-      //   variable = i
-      // }
-      // if (i == '/'){
-      //   variable = i
-      // }
-      // if (i == '+'){
-      //   variable = i
-      // }
-      // if (i == '-'){
-      //   variable = i
-      // }
-      // if (i == '<'){
-      //   variable = i
-      // }
-      // if (i == '>'){
-      //   variable = i
-      // }
-      if (str[i] == ' '){
-        str[i] = ""
+    for (let i of str){
+      if (i == '*'){
+        variable = i
       }
+      if (i == '^'){
+        variable = i
+      }
+      if (i == '/'){
+        variable = i
+      }
+      if (i == '+'){
+        variable = i
+      }
+      if (i == '-'){
+        variable = i
+      }
+      if (i != " "){
+        str2 += i
+      }
+    }
+    let num = str2.split(variable)
 
+    if (variable == '*'){
+      reply += +(num[0]) * +(num[1])
+    }
+    if (variable == '^'){
+      reply += Math.pow(+(num[0]) , +(num[1]))
+    }
+    if (variable == '/'){
+      reply += +(num[0]) / +(num[1])
+    }
+    if (variable == '+'){
+      reply += +(num[0]) + +(num[1])
+    }
+    if (variable == '-'){
+      reply += +(num[0]) - +(num[1])
     }
 
     // @ts-ignore
-    answer12.innerText = str
+    answer12.innerText = reply
   }
+  
   
   // FIXME  pz 1 ---9999999999999999999999999999999999999999999999999999999999999999999
   
@@ -761,7 +773,7 @@ function n22(){
     // @ts-ignore
     answer3.innerText = str
   }
-
+  
   function n8 (){
     if (localStorage.objRectangle){
       rectangle = JSON.parse(localStorage.objRectangle)
@@ -772,7 +784,7 @@ function n22(){
     // @ts-ignore
     answer3.innerText = 'ответ : ширина - ' + ((rectangle.bottomRightX - rectangle.topLeftX) + 1)
   }
-
+  
   function n9 (){
     if (localStorage.objRectangle){
       rectangle = JSON.parse(localStorage.objRectangle)
@@ -790,9 +802,9 @@ function n22(){
     else{
       localStorage.objRectangle = JSON.stringify(rectangle)
     }
-
-
-
+    
+    
+    
     // @ts-ignore
     answer3.innerText = 'ответ : площадь - ' + (((rectangle.bottomRightY - rectangle.topLeftY) + 1) * ((rectangle.bottomRightX - rectangle.topLeftX) + 1))
   }
@@ -848,8 +860,8 @@ function n22(){
       answer3.innerText = 'ответ : ошибка действия'
     }
   }
-
-
+  
+  
   function n14 (){
     if (localStorage.objRectangle){
       rectangle = JSON.parse(localStorage.objRectangle)
@@ -857,13 +869,13 @@ function n22(){
     else{
       localStorage.objRectangle = JSON.stringify(rectangle)
     }
-
+    
     let height = parseInt(prompt('введите высоту') as string)
     let width = parseInt(prompt('введите ширину') as string)
     if (height >= 0 && width >= 0){
       rectangle.bottomRightY = (rectangle.topLeftY + height) - 1
       localStorage.objRectangle = JSON.stringify(rectangle)
-
+      
       rectangle.bottomRightX = (rectangle.topLeftX + width) - 1
       localStorage.objRectangle = JSON.stringify(rectangle)
       // @ts-ignore
@@ -879,28 +891,29 @@ function n22(){
   
   function n15 (){
     if (localStorage.objRectangle){
-    rectangle = JSON.parse(localStorage.objRectangle)
-  }
-  else{
+      rectangle = JSON.parse(localStorage.objRectangle)
+    }
+    else{
+      localStorage.objRectangle = JSON.stringify(rectangle)
+    }
+    
+    let movementX = parseInt(prompt('на сколько передвинуть прямоугольник по оси X') as string)
+    rectangle.topLeftX += movementX
+    rectangle.bottomRightX += movementX
     localStorage.objRectangle = JSON.stringify(rectangle)
+    // @ts-ignore
+    answer3.innerText = 'ответ : ты передвинул прямоугольник'
   }
   
-  let movementX = parseInt(prompt('на сколько передвинуть прямоугольник по оси X') as string)
-  rectangle.topLeftX += movementX
-  rectangle.bottomRightX += movementX
-  localStorage.objRectangle = JSON.stringify(rectangle)
-  // @ts-ignore
-  answer3.innerText = 'ответ : ты передвинул прямоугольник'
-}
-
-
-function n16 (){
-  if (localStorage.objRectangle){
-    rectangle = JSON.parse(localStorage.objRectangle)
+  
+  function n16 (){
+    if (localStorage.objRectangle){
+      rectangle = JSON.parse(localStorage.objRectangle)
   }
 else{
   localStorage.objRectangle = JSON.stringify(rectangle)
 }
+
 
 let movementY = parseInt(prompt('на сколько передвинуть прямоугольник по оси Y') as string)
 rectangle.topLeftY += movementY
@@ -914,20 +927,20 @@ answer3.innerText = 'ответ : ты передвинул прямоуголь
 function n17 (){
   if (localStorage.objRectangle){
     rectangle = JSON.parse(localStorage.objRectangle)
-}
-else{
+  }
+  else{
+    localStorage.objRectangle = JSON.stringify(rectangle)
+  }
+  
+  let movementX = parseInt(prompt('на сколько передвинуть прямоугольник по оси X') as string)
+  let movementY = parseInt(prompt('на сколько передвинуть прямоугольник по оси Y') as string)
+  rectangle.topLeftX += movementX
+  rectangle.bottomRightX += movementX
+  rectangle.topLeftY += movementY
+  rectangle.bottomRightY += movementY
   localStorage.objRectangle = JSON.stringify(rectangle)
-}
-
-let movementX = parseInt(prompt('на сколько передвинуть прямоугольник по оси X') as string)
-let movementY = parseInt(prompt('на сколько передвинуть прямоугольник по оси Y') as string)
-rectangle.topLeftX += movementX
-rectangle.bottomRightX += movementX
-rectangle.topLeftY += movementY
-rectangle.bottomRightY += movementY
-localStorage.objRectangle = JSON.stringify(rectangle)
-// @ts-ignore
-answer3.innerText = 'ответ : ты передвинул прямоугольник'
+  // @ts-ignore
+  answer3.innerText = 'ответ : ты передвинул прямоугольник'
 }
 
 
@@ -953,20 +966,52 @@ function n18 (){
 }
 
 
+// FIXME  pz 2 ---9999999999999999999999999999999999999999999999999999999999999999999
+
+
+// TODO  1
+
+
+let randomArray =[] as any
+for (let root=0 ; root <= 8 ; root++){
+  randomArray[root]=Math.round(Math.random() * (1000 - -1000) + -1000)
+  console.log(root)
+}
+
+function n29(){
+  if (localStorage.objRandomArray){
+      randomArray = JSON.parse(localStorage.objRandomArray)
+    }
+    else{
+        localStorage.objRandomArray = JSON.stringify(randomArray)
+      }
+      // @ts-ignore
+      answer13.innerText = 'ответ : ' + randomArray
+    }
+function n30(){
+  if (localStorage.objRandomArray){
+    randomArray = JSON.parse(localStorage.objRandomArray)
+  }
+  else{
+      localStorage.objRandomArray = JSON.stringify(randomArray)
+    }
+    // @ts-ignore
+    answer13.innerText = 'ответ : ' + randomArray
+  }
 
 // ANCHOR  .0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0
 
 
 
 
-  function a1 (){
-    alert(`Задание 1
-Создать объект, описывающий автомобиль (производитель, 
-модель, год выпуска, средняя скорость), и следующие функции 
-для работы с этим объектом.
-1. Функция для вывода на экран информации об автомобиле.
-2. Функция для подсчета необходимого времени для преодоления переданного расстояния со средней скоростью. 
-Учтите, что через каждые 4 часа дороги водителю необходимо делать перерыв на 1 час`)
+function a1 (){
+  alert(`Задание 1
+  Создать объект, описывающий автомобиль (производитель, 
+    модель, год выпуска, средняя скорость), и следующие функции 
+    для работы с этим объектом.
+    1. Функция для вывода на экран информации об автомобиле.
+    2. Функция для подсчета необходимого времени для преодоления переданного расстояния со средней скоростью. 
+    Учтите, что через каждые 4 часа дороги водителю необходимо делать перерыв на 1 час`)
   }
   const itemJ1 = document.querySelector('.block1 #item')
   itemJ1?.addEventListener('click',a1)
@@ -1161,14 +1206,43 @@ function n18 (){
     executor27?.addEventListener('click',n27)
 
     function a13 (){
-      alert(`Написать функцию, которая принимает словосочетание 
-и превращает его в аббревиатуру. 
-Например: cascading style sheets в CSS, объектноориентированное программирование в ООП`)
+      alert(`Написать функцию – калькулятор. Функция принимает 
+строку с примером, определяет, какое действие необходимо 
+выполнить (+ - * / ^), переводит операнды в числа, решает 
+пример и возвращает результат.`)
     }
     const itemJ13 = document.querySelector('.block12 #item')
     itemJ13?.addEventListener('click',a13)
     const executor28 = document.querySelector('.block12 #b1')
     executor28?.addEventListener('click',n28)
+
+    function a14 (){
+      alert(`Создать массив из 10 случайных чисел и написать несколько 
+функций для работы с ним.
+1. Функция принимает массив и выводит его на экран.
+2. Функция принимает массив и выводит только четные 
+элементы.
+3. Функция принимает массив и возвращает сумму всех 
+элементов массива.
+4. Функция принимает массив и возвращает его максимальный элемент.
+5. Функция добавления нового элемента в массив по указанному индексу.
+6. Функция удаления элемента из массива по указанному 
+индексу`)
+    }
+    const itemJ14 = document.querySelector('.block13 #item')
+    itemJ14?.addEventListener('click',a14)
+    const executor29 = document.querySelector('.block13 #b1')
+    executor29?.addEventListener('click',n29)
+    const executor30 = document.querySelector('.block13 #b2')
+    executor30?.addEventListener('click',n30)
+    const executor31 = document.querySelector('.block13 #b3')
+    executor31?.addEventListener('click',n31)
+    const executor32 = document.querySelector('.block13 #b4')
+    executor32?.addEventListener('click',n32)
+    const executor33 = document.querySelector('.block13 #b5')
+    executor33?.addEventListener('click',n33)
+    const executor34 = document.querySelector('.block13 #b6')
+    executor34?.addEventListener('click',n34)
     
 
 
