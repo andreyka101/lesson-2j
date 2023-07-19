@@ -7,13 +7,8 @@
 npm create vite@latest
 ```
 
-вписать в vs code
+и вписать в vs code
 
 ``` bash
 npm i
 ```
-
-Отвечаем "y"
-Вводим имя проекта
-Выбираем vanilla
-Выбираем typescript
