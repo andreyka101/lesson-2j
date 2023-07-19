@@ -7,6 +7,8 @@
 npm create vite@latest
 ```
 
+вписать в vs code
+
 ``` bash
 npm i
 ```
