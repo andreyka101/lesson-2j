@@ -1313,5 +1313,8 @@ function a1 (){
     executor34?.addEventListener('click',n34)
     
 
+    let date = new Date();
+    console.log(date)
+
 
     //ANCHOR a+++++a+++++a+++++a+++++a+++++a+++++a+++++a+++++a
