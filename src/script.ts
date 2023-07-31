@@ -1313,8 +1313,45 @@ function a1 (){
     executor34?.addEventListener('click',n34)
     
 
-    let date = new Date();
-    console.log(date)
+    function a15 (){
+      alert(`Задание 1
+Реализовать класс, описывающий окружность. В классе должны быть следующие компоненты:
+1 ■ поле, хранящее радиус окружности;
+2 ■ get-свойство, возвращающее радиус окружности;
+3 ■ set-свойство, устанавливающее радиус окружности;
+4 ■ get-свойство, возвращающее диаметр окружности;
+5 ■ метод, вычисляющий площадь окружности;
+6 ■ метод, вычисляющий длину окружности.
+Продемонстрировать работу свойств и методов.`)
+    }
+
+    class Solo{
+      rof = 0
+      rof2 = 4
+      constructor (namet:any){
+        this.rof = namet
+      }
+    }
+    let ssolo = new Solo("ttt")
+    
+
+    const itemJ15 = document.querySelector('.block14 #item')
+    itemJ15?.addEventListener('click',a15)
+    const executor35 = document.querySelector('.block14 #b1')
+    executor35?.addEventListener('click',ssolo.rof)
+    const executor36 = document.querySelector('.block14 #b2')
+    executor36?.addEventListener('click',n36)
+    const executor37 = document.querySelector('.block14 #b3')
+    executor37?.addEventListener('click',n37)
+    const executor38 = document.querySelector('.block14 #b4')
+    executor38?.addEventListener('click',n38)
+    const executor39 = document.querySelector('.block14 #b5')
+    executor39?.addEventListener('click',n39)
+    const executor40 = document.querySelector('.block14 #b6')
+    executor40?.addEventListener('click',n40)
+    
+
+    
 
 
     //ANCHOR a+++++a+++++a+++++a+++++a+++++a+++++a+++++a+++++a
