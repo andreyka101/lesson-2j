@@ -1326,19 +1326,19 @@ function a1 (){
     }
 
     class Solo{
-      rof = 0
+      rof
       rof2 = 4
-      constructor (namet:any){
+      constructor (namet:any = 0){
         this.rof = namet
       }
     }
-    let ssolo = new Solo("ttt")
+    let ssolo = new Solo("fff")
     
 
     const itemJ15 = document.querySelector('.block14 #item')
     itemJ15?.addEventListener('click',a15)
     const executor35 = document.querySelector('.block14 #b1')
-    executor35?.addEventListener('click',ssolo.rof)
+    executor35?.addEventListener('click',()=>{console.log(ssolo.rof)})
     const executor36 = document.querySelector('.block14 #b2')
     executor36?.addEventListener('click',n36)
     const executor37 = document.querySelector('.block14 #b3')
