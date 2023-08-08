@@ -13,6 +13,7 @@ let answer10 = document.querySelector('.block10 #s1')
 let answer11 = document.querySelector('.block11 #s1')
 let answer12 = document.querySelector('.block12 #s1')
 let answer13 = document.querySelector('.block13 #s1')
+let answer14 = document.querySelector('.block14 #s1')
 
 let stringInput1 = document.querySelector('#input1')
 let stringInput2 = document.querySelector('#input2')
@@ -1325,37 +1326,48 @@ function a1 (){
 Продемонстрировать работу свойств и методов.`)
     }
 
-    class Solo{
-      radius = 1
+    class CircleRadius{
+      rad = 1
       constructor (r:number = 1){
-        this.radius = r
+        this.rad = r
       }
-      get ttt(){
-        return this.radius
+      get radius(){
+        return this.rad
       }
-      set ttt(r:number){
-        this.radius = r
+      set radius(r:number){
+        this.rad = r
+      }
+      get diameter(){
+        return this.rad*2
+      }
+      square(){
+        return Math.PI * this.rad ** 2
+      }
+      length(){
+        return 2 * Math.PI * this.rad
       }
       
       
     }
-    let ssolo = new Solo(3)
+    let circleRadius = new CircleRadius(3)
     
 
     const itemJ15 = document.querySelector('.block14 #item')
     itemJ15?.addEventListener('click',a15)
     const executor35 = document.querySelector('.block14 #b1')
+    
+    executor35?.addEventListener('click',()=>{if (answer14) answer14.innerHTML = "" + circleRadius.radius})
     const executor36 = document.querySelector('.block14 #b2')
-    executor35?.addEventListener('click',()=>{console.log(ssolo.ttt)})
-    executor36?.addEventListener('click',()=>{ssolo.ttt=+(prompt("введите новый радиус") as string)})
+    executor36?.addEventListener('click',()=>{circleRadius.radius=+(prompt("введите новый радиус") as string)})
     const executor37 = document.querySelector('.block14 #b3')
-    executor37?.addEventListener('click',n37)
+    
+    executor37?.addEventListener('click',()=>{if (answer14) answer14.innerHTML = ''+circleRadius.diameter})
     const executor38 = document.querySelector('.block14 #b4')
-    executor38?.addEventListener('click',n38)
+    
+    executor38?.addEventListener('click',()=>{if (answer14) answer14.innerHTML = ''+ circleRadius.square()})
     const executor39 = document.querySelector('.block14 #b5')
-    executor39?.addEventListener('click',n39)
-    const executor40 = document.querySelector('.block14 #b6')
-    executor40?.addEventListener('click',n40)
+    
+    executor39?.addEventListener('click',()=>{if (answer14) answer14.innerHTML = ''+ circleRadius.length()})
     
 
     
