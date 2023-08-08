@@ -1326,25 +1326,28 @@ function a1 (){
     }
 
     class Solo{
-      rof
-      rof2 = 4
-      constructor (namet:any = 0){
-        this.rof = namet
+      radius = 1
+      constructor (r:number = 1){
+        this.radius = r
       }
-      get hii(){
-        return "hi " + this.rof
+      get ttt(){
+        return this.radius
+      }
+      set ttt(r:number){
+        this.radius = r
       }
       
+      
     }
-    let ssolo = new Solo("fff")
+    let ssolo = new Solo(3)
     
 
     const itemJ15 = document.querySelector('.block14 #item')
     itemJ15?.addEventListener('click',a15)
     const executor35 = document.querySelector('.block14 #b1')
-    executor35?.addEventListener('click',()=>{console.log(ssolo.hii)})
     const executor36 = document.querySelector('.block14 #b2')
-    executor36?.addEventListener('click',n36)
+    executor35?.addEventListener('click',()=>{console.log(ssolo.ttt)})
+    executor36?.addEventListener('click',()=>{ssolo.ttt=+(prompt("введите новый радиус") as string)})
     const executor37 = document.querySelector('.block14 #b3')
     executor37?.addEventListener('click',n37)
     const executor38 = document.querySelector('.block14 #b4')
