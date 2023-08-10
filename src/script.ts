@@ -1356,19 +1356,67 @@ function a1 (){
     itemJ15?.addEventListener('click',a15)
     const executor35 = document.querySelector('.block14 #b1')
     
-    executor35?.addEventListener('click',()=>{if (answer14) answer14.innerHTML = "" + circleRadius.radius})
+    executor35?.addEventListener('click',()=>{if (answer14) answer14.innerHTML = "ответ: " + circleRadius.radius})
     const executor36 = document.querySelector('.block14 #b2')
     executor36?.addEventListener('click',()=>{circleRadius.radius=+(prompt("введите новый радиус") as string)})
     const executor37 = document.querySelector('.block14 #b3')
     
-    executor37?.addEventListener('click',()=>{if (answer14) answer14.innerHTML = ''+circleRadius.diameter})
+    executor37?.addEventListener('click',()=>{if (answer14) answer14.innerHTML = 'ответ: '+circleRadius.diameter})
     const executor38 = document.querySelector('.block14 #b4')
     
-    executor38?.addEventListener('click',()=>{if (answer14) answer14.innerHTML = ''+ circleRadius.square()})
+    executor38?.addEventListener('click',()=>{if (answer14) answer14.innerHTML = 'ответ: '+ circleRadius.square()})
     const executor39 = document.querySelector('.block14 #b5')
     
-    executor39?.addEventListener('click',()=>{if (answer14) answer14.innerHTML = ''+ circleRadius.length()})
+    executor39?.addEventListener('click',()=>{if (answer14) answer14.innerHTML = 'ответ: '+ circleRadius.length()})
     
+
+    function a16 (){
+      alert(`Задание 2
+Реализовать класс, описывающий html элемент. 
+Класс HtmlElement должен содержать внутри себя:
+1 ■ название тега;
+2 ■ самозакрывающийся тег или нет;
+3 ■ текстовое содержимое;
+4 ■ массив атрибутов;
+5 ■ массив стилей;
+6 ■ массив вложенных таких же тегов;
+7 ■ метод для установки атрибута;
+8 ■ метод для установки стиля;
+9 ■ метод для добавления вложенного элемента в конец текущего элемента;
+10 ■ метод для добавления вложенного элемента в начало текущего элемента;
+11 ■ метод getHtml(), который возвращает html код в виде 
+      строки, включая html код вложенных элементов.`)
+    }
+
+    class CircleRadius{
+      
+    }
+    
+
+    const itemJ16 = document.querySelector('.block15 #item')
+    itemJ16?.addEventListener('click',a16)
+    const executor40 = document.querySelector('.block15 #b1')
+    executor40?.addEventListener('click',n29)
+    const executor41 = document.querySelector('.block15 #b2')
+    executor41?.addEventListener('click',n30)
+    const executor42 = document.querySelector('.block15 #b3')
+    executor42?.addEventListener('click',n31)
+    const executor43 = document.querySelector('.block15 #b4')
+    executor43?.addEventListener('click',n32)
+    const executor44 = document.querySelector('.block15 #b5')
+    executor44?.addEventListener('click',n33)
+    const executor45 = document.querySelector('.block15 #b6')
+    executor45?.addEventListener('click',n34)
+    const executor46 = document.querySelector('.block15 #b7')
+    executor46?.addEventListener('click',n30)
+    const executor47 = document.querySelector('.block15 #b8')
+    executor47?.addEventListener('click',n31)
+    const executor48 = document.querySelector('.block15 #b9')
+    executor48?.addEventListener('click',n32)
+    const executor49 = document.querySelector('.block15 #b10')
+    executor49?.addEventListener('click',n33)
+    const executor50 = document.querySelector('.block15 #b11')
+    executor50?.addEventListener('click',n34)
 
     
 
