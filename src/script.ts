@@ -1391,8 +1391,9 @@ function a1 (){
     class Ci{
       
     }
-    
+  
 
+    // ()=>{if (answer15) answer15.innerHTML = "ответ: " + circleRadius.radius}
     const itemJ16 = document.querySelector('.block15 #item')
     itemJ16?.addEventListener('click',a16)
     const executor40 = document.querySelector('.block15 #b1')
