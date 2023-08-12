@@ -1398,7 +1398,7 @@ function a1 (){
     const itemJ16 = document.querySelector('.block15 #item')
     itemJ16?.addEventListener('click',a16)
     const executor40 = document.querySelector('.block15 #b1')
-    executor40?.addEventListener('click',()=>{if (answer15) answer15.innerHTML = "<div> yyyy </div>"})
+    executor40?.addEventListener('click',()=>{if (answer15) answer15.innerHTML = ""})
     const executor41 = document.querySelector('.block15 #b2')
     executor41?.addEventListener('click',n30)
     const executor42 = document.querySelector('.block15 #b3')
