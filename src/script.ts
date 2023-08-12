@@ -14,6 +14,7 @@ let answer11 = document.querySelector('.block11 #s1')
 let answer12 = document.querySelector('.block12 #s1')
 let answer13 = document.querySelector('.block13 #s1')
 let answer14 = document.querySelector('.block14 #s1')
+let answer15 = document.querySelector('.block14 #s1')
 
 let stringInput1 = document.querySelector('#input1')
 let stringInput2 = document.querySelector('#input2')
@@ -1388,7 +1389,7 @@ function a1 (){
 строки, включая html код вложенных элементов.`)
     }
 
-    class Ci{
+    class ClassHtmlElement{
       
     }
   
@@ -1397,7 +1398,7 @@ function a1 (){
     const itemJ16 = document.querySelector('.block15 #item')
     itemJ16?.addEventListener('click',a16)
     const executor40 = document.querySelector('.block15 #b1')
-    executor40?.addEventListener('click',n29)
+    executor40?.addEventListener('click',()=>{if (answer15) answer15.innerHTML = "ответ: ")
     const executor41 = document.querySelector('.block15 #b2')
     executor41?.addEventListener('click',n30)
     const executor42 = document.querySelector('.block15 #b3')
