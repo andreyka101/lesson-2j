@@ -1375,17 +1375,17 @@ function a1 (){
       alert(`Задание 2
 Реализовать класс, описывающий html элемент. 
 Класс HtmlElement должен содержать внутри себя:
-1 ■ название тега;
-2 ■ самозакрывающийся тег или нет;
-3 ■ текстовое содержимое;
-4 ■ массив атрибутов;
-5 ■ массив стилей;
-6 ■ массив вложенных таких же тегов;
-7 ■ метод для установки атрибута;
-8 ■ метод для установки стиля;
-9 ■ метод для добавления вложенного элемента в конец текущего элемента;
-10 ■ метод для добавления вложенного элемента в начало текущего элемента;
-11 ■ метод getHtml(), который возвращает html код в виде 
+  ■ название тега;
+  ■ самозакрывающийся тег или нет;
+  ■ текстовое содержимое;
+  ■ массив атрибутов;
+  ■ массив стилей;
+  ■ массив вложенных таких же тегов;
+1 ■ метод для установки атрибута;
+2 ■ метод для установки стиля;
+3 ■ метод для добавления вложенного элемента в конец текущего элемента;
+4 ■ метод для добавления вложенного элемента в начало текущего элемента;
+5  ■ метод getHtml(), который возвращает html код в виде 
 строки, включая html код вложенных элементов.`)
     }
 
@@ -1397,14 +1397,24 @@ function a1 (){
       #styles = []
       #nestedTags = []
 
+
       constructor (selfClosingZ:string ,tagNameZ:string = "span" , selfLosingZ:boolean = true , attributesZ:string = "" , stylesZ:string = "" , nestedTagsZ:string = ""){
       this.#tagName = tagNameZ
       this.#selfLosing = selfLosingZ
       this.#selfClosing = selfClosingZ
+      // @ts-ignore
       this.#attributes = [attributesZ]
-      this.#styles = []
-      this.#nestedTags = []
+      // @ts-ignore
+      this.#styles = [stylesZ]
+      // @ts-ignore     
+      this.#nestedTags = [nestedTagsZ]
+    }
+    attributeSetting(attributesZ:string){
+        // @ts-ignore     
+        this.#attributes.push(attributesZ)
       }
+
+
     }
 
     let classHtmlElement = new ClassHtmlElement()
@@ -1424,18 +1434,6 @@ function a1 (){
     executor43?.addEventListener('click',n32)
     const executor44 = document.querySelector('.block15 #b5')
     executor44?.addEventListener('click',n33)
-    const executor45 = document.querySelector('.block15 #b6')
-    executor45?.addEventListener('click',n34)
-    const executor46 = document.querySelector('.block15 #b7')
-    executor46?.addEventListener('click',n30)
-    const executor47 = document.querySelector('.block15 #b8')
-    executor47?.addEventListener('click',n31)
-    const executor48 = document.querySelector('.block15 #b9')
-    executor48?.addEventListener('click',n32)
-    const executor49 = document.querySelector('.block15 #b10')
-    executor49?.addEventListener('click',n33)
-    const executor50 = document.querySelector('.block15 #b11')
-    executor50?.addEventListener('click',n34)
 
     
 
