@@ -1397,12 +1397,17 @@ function a1 (){
       #styles = []
       #nestedTags = []
 
-      constructor (tagNameZ:string , selfLosingZ:boolean){
-        
+      constructor (selfClosingZ:string ,tagNameZ:string = "span" , selfLosingZ:boolean = true , attributesZ:string = "" , stylesZ:string = "" , nestedTagsZ:string = ""){
+      this.#tagName = tagNameZ
+      this.#selfLosing = selfLosingZ
+      this.#selfClosing = selfClosingZ
+      this.#attributes = [attributesZ]
+      this.#styles = []
+      this.#nestedTags = []
       }
     }
 
-    let classHtmlElement = new ClassHtmlElement("yyy",true)
+    let classHtmlElement = new ClassHtmlElement()
 
   
 
