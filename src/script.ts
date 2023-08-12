@@ -1397,10 +1397,13 @@ function a1 (){
       #styles = []
       #nestedTags = []
 
-      constructor (tagNameZ:string , selfLosing:boolean){
+      constructor (tagNameZ:string , selfLosingZ:boolean){
         
       }
     }
+
+    let classHtmlElement = new ClassHtmlElement("yyy",true)
+
   
 
     // ()=>{if (answer15) answer15.innerHTML = "ответ: " + circleRadius.radius}
