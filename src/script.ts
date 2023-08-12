@@ -1390,7 +1390,16 @@ function a1 (){
     }
 
     class ClassHtmlElement{
-      
+      #tagName = ""
+      #selfLosing = false
+      #selfClosing = ""
+      #attributes = []
+      #styles = []
+      #nestedTags = []
+
+      constructor (tagNameZ:string , selfLosing:boolean){
+        
+      }
     }
   
 
