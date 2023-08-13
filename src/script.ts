@@ -1385,29 +1385,29 @@ function a1 (){
 2 ■ метод для установки стиля;
 3 ■ метод для добавления вложенного элемента в конец текущего элемента;
 4 ■ метод для добавления вложенного элемента в начало текущего элемента;
-5  ■ метод getHtml(), который возвращает html код в виде 
+5 ■ метод getHtml(), который возвращает html код в виде 
 строки, включая html код вложенных элементов.`)
     }
 
     class ClassHtmlElement{
       #tagName = ""
-      #selfLosing = false
-      #selfClosing = ""
+      #selfClosing = false
+      #textContent = ""
       #attributes = []
       #styles = []
-      #nestedTags = []
+      // #nestedTags = []
 
 
-      constructor (selfClosingZ:string ,tagNameZ:string = "span" , selfLosingZ:boolean = true , attributesZ:string = "" , stylesZ:string = "" , nestedTagsZ:string = ""){
+      constructor (textContentZ:string ,tagNameZ:string = "span" , stylesZ:string = "" , attributesZ:string = "" , selfClosingZ:boolean = true/* , nestedTagsZ:string = ""*/){
       this.#tagName = tagNameZ
-      this.#selfLosing = selfLosingZ
+      this.#textContent = textContentZ
       this.#selfClosing = selfClosingZ
       // @ts-ignore
       this.#attributes = [attributesZ]
       // @ts-ignore
       this.#styles = [stylesZ]
       // @ts-ignore     
-      this.#nestedTags = [nestedTagsZ]
+      // this.#nestedTags = [nestedTagsZ]
     }
     attributeSetting(attributesZ:string){
         // @ts-ignore     
@@ -1419,15 +1419,17 @@ function a1 (){
         this.#attributes.push(stylesZ)
       }
 
-      styleSetting(stylesZ:string){
-        // @ts-ignore     
-        this.#attributes.push(stylesZ)
+      getHtml(){
+        let str = `<${this.#tagName}>`
+        for (let i=0; i != 10; i++){
+          console.log("y")
+        }
       }
 
 
     }
 
-    let classHtmlElement = new ClassHtmlElement()
+    let classHtmlElement = new ClassHtmlElement("uuu","span","color:red, background:blye")
 
   
 
