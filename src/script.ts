@@ -24,6 +24,7 @@ let stringInput5 = document.querySelector('#input5')
 let stringInput6 = document.querySelector('#input6')
 let stringInput7 = document.querySelector('#input7')
 let stringInput8 = document.querySelector('#input8')
+let stringInput9 = document.querySelector('#input9')
 
 const buttonALL = document.querySelectorAll('button')
 
