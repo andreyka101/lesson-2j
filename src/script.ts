@@ -1418,7 +1418,6 @@ function a1 (){
       styleSetting(stylesZ:string){
         // @ts-ignore     
         this.#styles.push(stylesZ)
-        console.log("tt")
       }
       
       getHtml(){
@@ -1428,7 +1427,6 @@ function a1 (){
           str += i +";"
         }
         str+=`" > ${this.#textContent} </${this.#tagName}>`
-        console.log(str)
         if (answer15) answer15.innerHTML = str
       }
       
