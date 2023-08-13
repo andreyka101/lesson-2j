@@ -1417,36 +1417,43 @@ function a1 (){
       
       styleSetting(stylesZ:string){
         // @ts-ignore     
-        this.#attributes.push(stylesZ)
+        this.#styles.push(stylesZ)
+        console.log("tt")
       }
-
+      
       getHtml(){
-        let str = `<${this.#tagName}>`
-        for (let i=0; i != 10; i++){
-          console.log("y")
+        let str = `<${this.#tagName} style="`
+        console.log(this.#styles)
+        for (let i of this.#styles){
+          str += i +";"
         }
+        str+=`" > ${this.#textContent} </${this.#tagName}>`
+        console.log(str)
+        if (answer15) answer15.innerHTML = str
       }
-
-
+      
+      
     }
-
-    let classHtmlElement = new ClassHtmlElement("uuu","span","color:red, background:blye")
-
-  
-
+    
+    let classHtmlElement = new ClassHtmlElement("uuu","span","color:red; background:blye")
+    
+    
+    
     // ()=>{if (answer15) answer15.innerHTML = "ответ: " + circleRadius.radius}
     const itemJ16 = document.querySelector('.block15 #item')
     itemJ16?.addEventListener('click',a16)
     const executor40 = document.querySelector('.block15 #b1')
-    executor40?.addEventListener('click',()=>{if (answer15) answer15.innerHTML = ""})
+    // @ts-ignore     
+    executor40?.addEventListener('click',()=>{classHtmlElement.attributeSetting(stringInput9.value)})
     const executor41 = document.querySelector('.block15 #b2')
-    executor41?.addEventListener('click',n30)
+    // @ts-ignore     
+    executor41?.addEventListener('click',()=>{classHtmlElement.styleSetting(stringInput9.value)})
     const executor42 = document.querySelector('.block15 #b3')
     executor42?.addEventListener('click',n31)
     const executor43 = document.querySelector('.block15 #b4')
     executor43?.addEventListener('click',n32)
     const executor44 = document.querySelector('.block15 #b5')
-    executor44?.addEventListener('click',n33)
+    executor44?.addEventListener('click',()=>{classHtmlElement.getHtml()})
 
     
 
