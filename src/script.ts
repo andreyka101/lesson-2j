@@ -1413,6 +1413,16 @@ function a1 (){
         // @ts-ignore     
         this.#attributes.push(attributesZ)
       }
+      
+      styleSetting(stylesZ:string){
+        // @ts-ignore     
+        this.#attributes.push(stylesZ)
+      }
+
+      styleSetting(stylesZ:string){
+        // @ts-ignore     
+        this.#attributes.push(stylesZ)
+      }
 
 
     }
