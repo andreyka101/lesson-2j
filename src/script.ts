@@ -1422,14 +1422,20 @@ class HtmlElement {
     append(el:HtmlElement) {
       this.#nestedTags.push(el)
     }
-
-  getHtml(x:number) {
-    console.log(this.#nestedTags)
+    
+    getHtml() {
+      // this.#nestedTags.push()
+      let circle = this.#nestedTags.length
+    if (circle == 0){
+      console.log("yyy")
+    }
+    console.log(this)
   }
 }
 
 let span = new HtmlElement("uuu", "span", "color:red; background:blye")
 let div = new HtmlElement("uuu", "div", "color:red; background:blye")
+let div2 = new HtmlElement("uuu", "div", "color:blye; background:blye")
 div.append(span)
 console.log(div)
 
@@ -1449,7 +1455,7 @@ executor42?.addEventListener('click', n31)
 const executor43 = document.querySelector('.block15 #b4')
 executor43?.addEventListener('click', n32)
 const executor44 = document.querySelector('.block15 #b5')
-executor44?.addEventListener('click', () => { div.getHtml(8) })
+executor44?.addEventListener('click', () => { div.getHtml() })
 
 
 
