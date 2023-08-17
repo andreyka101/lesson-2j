@@ -1,5 +1,32 @@
-input{
-  -webkit-appearance: none;
-  // background-color: #ffffff;
-  
+body{
+  background-color: #8fb5a2;
+  font-family: system-ui;
 }
+button {
+  padding: 7px;
+  border: 0;
+  border-radius:6px;
+  background-color: #637c6f;
+  color:rgb(240, 240, 240);
+  margin: 5px;
+}
+button:hover {
+  box-shadow: 0px 0px 15px 3px #ffffff;
+  background-color: #566b60;
+  color:rgb(255, 255, 255);
+}
+input{
+  margin: 5px;
+  padding: 7px;
+  border: 0;
+  border-radius:6px;
+  -webkit-appearance: none;
+  color:rgb(240, 240, 240);
+  background-color: #637c6f;
+}
+input::placeholder {
+   color:rgb(220, 217, 217);  
+  }
+  h1{
+    color:#272f2b
+  }

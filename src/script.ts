@@ -1424,12 +1424,19 @@ class HtmlElement {
     }
     
     getHtml() {
-      // this.#nestedTags.push()
+      this.#nestedTags.unshift({
+        '#tagName':this.#tagName,
+        '#selfClosing':this.#selfClosing,
+  '#textContent':this.#textContent,
+  '#attributes':this.#attributes,
+ '#styles':this.#styles,
+      }as any)
+      let str =""
       let circle = this.#nestedTags.length
-    if (circle == 0){
-      console.log("yyy")
-    }
-    console.log(this)
+      if (circle == 0){
+      
+     }
+      console.log(this.#nestedTags)
   }
 }
 
