@@ -1460,6 +1460,13 @@ class HtmlElement {
     this.#selfClosing = selfClosingZ
     this.#attributes = attributesZ.split(' ')
     this.#styles = stylesZ.split(';')
+    this.#nestedTags.unshift({
+      '#tagName':this.#tagName,
+      '#selfClosing':this.#selfClosing,
+      '#textContent':this.#textContent,
+      '#attributes':this.#attributes,
+      '#styles':this.#styles,
+    }as any)
   }
   attributeSetting(attributesZ: string) {
     // @ts-ignore     
@@ -1478,21 +1485,13 @@ class HtmlElement {
       this.#nestedTags.push(el)
     }
     
-    getHtml() {
-      this.#nestedTags.unshift({
-        '#tagName':this.#tagName,
-        '#selfClosing':this.#selfClosing,
-  '#textContent':this.#textContent,
-  '#attributes':this.#attributes,
- '#styles':this.#styles,
-      }as any)
+    getHtml(circle:number =4) {
       let str =""
-      let circle = this.#nestedTags.length
-      if (circle == 0){
-      
+      let circle = 0
+      if (circle+1 == this.#nestedTags.length){
+        return 
      }
-      console.log(this.#nestedTags[1].#tagName)
-      console.log(this.#nestedTags[2].#tagName)
+     console.log(this.#nestedTags.length)
   }
 }
 
