@@ -1491,7 +1491,8 @@ class HtmlElement {
       if (circle == 0){
       
      }
-      console.log(this.#nestedTags)
+      console.log(this.#nestedTags[1].#tagName)
+      console.log(this.#nestedTags[2].#tagName)
   }
 }
 
