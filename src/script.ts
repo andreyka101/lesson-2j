@@ -1485,10 +1485,9 @@ class HtmlElement {
       this.#nestedTags.push(el)
     }
     
-    getHtml(circle:number =4) {
+    getHtml(circle:number = this.#nestedTags.length-1) {
       let str =""
-      let circle = 0
-      if (circle+1 == this.#nestedTags.length){
+      if (circle == 0){
         return 
      }
      console.log(this.#nestedTags.length)
@@ -1501,7 +1500,16 @@ let div2 = new HtmlElement("uuu", "div", "color:blye; background:blye")
 div.append(span)
 console.log(div)
 
+function pow(x:any, n:number):any {
+  console.log(x,n)
+  if (n == 1) {
+    return x
+  } else {
+    return pow(x, n - 1)
+  }
+}
 
+console.log( pow("ttt", 8) )
 
 // ()=>{if (answer15) answer15.innerHTML = "ответ: " + circleRadius.radius}
 const itemJ16 = document.querySelector('.block15 #item')
