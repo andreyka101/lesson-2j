@@ -27,7 +27,7 @@ let stringInput8 = document.querySelector('#input8')
 let stringInput9 = document.querySelector('#input9')
 
 const buttonALL = document.querySelectorAll('button')
-const H1ALL = document.querySelectorAll('#h1')
+const H1ALL = document.body.querySelectorAll('h1')
 
 
 // FIXME  dz 1 --999999999999999999999999999999999999999999999999999999999999999999
@@ -353,6 +353,12 @@ function n22() {
       switch1 = 4
       break;
     case 4:
+      switch1 = 5
+      break;
+    case 5:
+      switch1 = 6
+      break;
+    case 6:
       switch1 = 1
       break;
   }
@@ -375,35 +381,35 @@ function n22() {
     // @ts-ignore
     document.querySelector('body').style = strColor
 
-    for (let r in buttonALL) {
-      // @ts-ignore
-      buttonALL[r].style = "background-color: #efefef; color: #232323;"
-    }
-    for (let w in H1ALL) {
-      // @ts-ignore
-      H1ALL[w].style = "color:azure;"
-    }
+    // for (let r in buttonALL) {
+    //   // @ts-ignore
+    //   buttonALL[r].style = "background-color: #efefef; color: #232323;"
+    // }
+    // for (let w in H1ALL) {
+    //   // @ts-ignore
+    //   H1ALL[w].style = "color:azure;"
+    // }
   }
 
-  //* classic
+  //* white
   if (switch1 == 2) {
     // @ts-ignore
-    answer5.innerText = 'classic'
+    answer5.innerText = 'white'
     for (let i in color) {
       strColor += color[i]
       if (i == "0") {
         strColor += "#ffffff;"
       }
       else {
-        strColor += "#232323;"
+        strColor += "#637c6f;"
       }
     }
     // @ts-ignore
     document.querySelector('body').style = strColor
-    for (let r in buttonALL) {
-      // @ts-ignore
-      buttonALL[r].style = "background-color: #efefef;"
-    }
+    // for (let r in buttonALL) {
+    //   // @ts-ignore
+    //   buttonALL[r].style = "background-color: #efefef;"
+    // }
   }
 
   //* dark gold
@@ -416,16 +422,16 @@ function n22() {
         strColor += "#232323;"
       }
       else {
-        strColor += "azure;"
+        strColor += "#edf49c;"
       }
     }
     // @ts-ignore
     document.querySelector('body').style = strColor
 
-    for (let r in buttonALL) {
-      // @ts-ignore
-      buttonALL[r].style = "background-color: #6d7005;"
-    }
+    // for (let r in buttonALL) {
+    //   // @ts-ignore
+    //   buttonALL[r].style = "background-color: #6d7005;"
+    // }
   }
 
   //* girly
@@ -438,16 +444,60 @@ function n22() {
         strColor += "#630949;"
       }
       else {
+        strColor += "#ff6ce9;"
+      }
+    }
+    // @ts-ignore
+    document.querySelector('body').style = strColor
+
+    // for (let r in buttonALL) {
+    //   // @ts-ignore
+    //   buttonALL[r].style = "background-color: #ee0cae; color: white;"
+    // }
+  }
+
+  //* classic
+  if (switch1 == 5) {
+    // @ts-ignore
+    answer5.innerText = 'classic'
+    for (let i in color) {
+      strColor += color[i]
+      if (i == "0") {
+        strColor += "#8fb5a2;"
+      }
+      else {
         strColor += "azure;"
       }
     }
     // @ts-ignore
     document.querySelector('body').style = strColor
 
-    for (let r in buttonALL) {
-      // @ts-ignore
-      buttonALL[r].style = "background-color: #ee0cae; color: white;"
+    // for (let r in buttonALL) {
+    //   // @ts-ignore
+    //   buttonALL[r].style = "background-color: #ee0cae; color: white;"
+    // }
+  }
+
+  //* gold
+  if (switch1 == 6) {
+    // @ts-ignore
+    answer5.innerText = 'gold'
+    for (let i in color) {
+      strColor += color[i]
+      if (i == "0") {
+        strColor += "#c2c04f;"
+      }
+      else {
+        strColor += "#807b00;"
+      }
     }
+    // @ts-ignore
+    document.querySelector('body').style = strColor
+
+    // for (let r in buttonALL) {
+    //   // @ts-ignore
+    //   buttonALL[r].style = "background-color: #ee0cae; color: white;"
+    // }
   }
 }
 
