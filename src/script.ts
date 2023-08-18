@@ -27,6 +27,7 @@ let stringInput8 = document.querySelector('#input8')
 let stringInput9 = document.querySelector('#input9')
 
 const buttonALL = document.querySelectorAll('button')
+const H1ALL = document.querySelectorAll('#h1')
 
 
 // FIXME  dz 1 --999999999999999999999999999999999999999999999999999999999999999999
@@ -376,7 +377,11 @@ function n22() {
 
     for (let r in buttonALL) {
       // @ts-ignore
-      buttonALL[r].style = "background-color: #efefef;"
+      buttonALL[r].style = "background-color: #efefef; color: #232323;"
+    }
+    for (let w in H1ALL) {
+      // @ts-ignore
+      H1ALL[w].style = "color:azure;"
     }
   }
 
@@ -1463,6 +1468,7 @@ const executor43 = document.querySelector('.block15 #b4')
 executor43?.addEventListener('click', n32)
 const executor44 = document.querySelector('.block15 #b5')
 executor44?.addEventListener('click', () => { div.getHtml() })
+
 
 
 
