@@ -1369,7 +1369,8 @@ executor33?.addEventListener('click', n33)
 const executor34 = document.querySelector('.block13 #b6')
 executor34?.addEventListener('click', n34)
 
-
+// FIXME  dz 4 ---9999999999999999999999999999999999999999999999999999999999999999999
+// TODO 1
 function a15() {
   alert(`Задание 1
 Реализовать класс, описывающий окружность. В классе должны быть следующие компоненты:
@@ -1425,6 +1426,7 @@ const executor39 = document.querySelector('.block14 #b5')
 
 executor39?.addEventListener('click', () => { if (answer14) answer14.innerHTML = 'ответ: ' + circleRadius.length() })
 
+// TODO 2
 
 function a16() {
   alert(`Задание 2
@@ -1544,7 +1546,34 @@ executor44?.addEventListener('click', () => {
   if (answer15) answer15.innerHTML = ""
  div.getHtml() })
 
-
+ // TODO 3
+ 
+ function a17() {
+   alert(`Задание 3
+Реализовать класс, который описывает css класс. 
+Класс CssClass должен содержать внутри себя:
+■ название css класса;
+■ массив стилей;
+■ метод для установки стиля;
+■ метод для удаления стиля;
+■ метод getCss(), который возвращает css код в виде строки`)
+}
+class CssClass {
+  styles = [] as string[]
+  styleSetting(x:string){
+    console.log(x.split(';'))
+  }
+  removeStyle()
+}
+div3
+const itemJ17 = document.querySelector('.block16 #item')
+itemJ17?.addEventListener('click', a17)
+ const executor45 = document.querySelector('.block16 #b1')
+ executor45?.addEventListener('click', n29)
+ const executor46 = document.querySelector('.block16 #b2')
+ executor46?.addEventListener('click', n30)
+ const executor47 = document.querySelector('.block16 #b3')
+ executor47?.addEventListener('click', n31)
 
 
 
