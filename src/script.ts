@@ -1446,36 +1446,36 @@ function a16() {
 }
 
 class HtmlElement {
-  #tagName = ""
-  #selfClosing = false
-  #textContent = ""
-  #attributes = [] as string[]
-  #styles = [] as string[]
+  tagName = ""
+  selfClosing = false
+  textContent = ""
+  attributes = [] as string[]
+  styles = [] as string[]
   #nestedTags = [] as HtmlElement[]
 
 
   constructor(textContentZ: string, tagNameZ: string = "span", stylesZ: string = "", attributesZ: string = "", selfClosingZ: boolean = true) {
-    this.#tagName = tagNameZ
-    this.#textContent = textContentZ
-    this.#selfClosing = selfClosingZ
-    this.#attributes = attributesZ.split(' ')
-    this.#styles = stylesZ.split(';')
+    this.tagName = tagNameZ
+    this.textContent = textContentZ
+    this.selfClosing = selfClosingZ
+    this.attributes = attributesZ.split(' ')
+    this.styles = stylesZ.split(';')
     this.#nestedTags.unshift({
-      '#tagName':this.#tagName,
-      '#selfClosing':this.#selfClosing,
-      '#textContent':this.#textContent,
-      '#attributes':this.#attributes,
-      '#styles':this.#styles,
+      tagName:this.tagName,
+      selfClosing:this.selfClosing,
+      textContent:this.textContent,
+      attributes:this.attributes,
+      styles:this.styles,
     }as any)
   }
   attributeSetting(attributesZ: string) {
     // @ts-ignore     
-    this.#attributes.push(attributesZ)
+    this.attributes.push(attributesZ)
   }
 
   styleSetting(stylesZ: string) {
     // @ts-ignore     
-    this.#styles.push(stylesZ)
+    this.styles.push(stylesZ)
   }
   
     prepend(el:HtmlElement) {
@@ -1485,12 +1485,18 @@ class HtmlElement {
       this.#nestedTags.push(el)
     }
     
-    getHtml(circle:number = this.#nestedTags.length-1) {
-      let str =""
-      if (circle == 0){
-        return 
-     }
-     console.log(this.#nestedTags.length)
+    getHtml(x:any=this.#nestedTags, n:number=0):any {
+      if (answer15) answer15.innerHTML += "<" + x[n].tagName + " st"
+      x[n].style.find(function(item:any) {
+        
+      })
+      
+      
+  if (n == x.length - 1) {
+    return x
+  } else {
+    return this.getHtml(x, n + 1)
+  }
   }
 }
 
@@ -1498,18 +1504,11 @@ let span = new HtmlElement("uuu", "span", "color:red; background:blye")
 let div = new HtmlElement("uuu", "div", "color:red; background:blye")
 let div2 = new HtmlElement("uuu", "div", "color:blye; background:blye")
 div.append(span)
-console.log(div)
+// console.log(div)
 
-function pow(x:any, n:number):any {
-  console.log(x,n)
-  if (n == 1) {
-    return x
-  } else {
-    return pow(x, n - 1)
-  }
-}
 
-console.log( pow("ttt", 8) )
+
+div.getHtml()
 
 // ()=>{if (answer15) answer15.innerHTML = "ответ: " + circleRadius.radius}
 const itemJ16 = document.querySelector('.block15 #item')
@@ -1525,7 +1524,10 @@ executor42?.addEventListener('click', n31)
 const executor43 = document.querySelector('.block15 #b4')
 executor43?.addEventListener('click', n32)
 const executor44 = document.querySelector('.block15 #b5')
-executor44?.addEventListener('click', () => { div.getHtml() })
+executor44?.addEventListener('click', () => { 
+  if (answer15) answer15.innerHTML = ""
+  div.getHtml() 
+})
 
 
 
