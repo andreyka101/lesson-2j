@@ -24,7 +24,6 @@ let stringInput5 = document.querySelector('#input5')
 let stringInput6 = document.querySelector('#input6')
 let stringInput7 = document.querySelector('#input7')
 let stringInput8 = document.querySelector('#input8')
-let stringInput9 = document.querySelector('#input9')
 
 const buttonALL = document.querySelectorAll('button')
 const H1ALL = document.body.querySelectorAll('h1')
@@ -1454,7 +1453,13 @@ class HtmlElement {
   #nestedTags = [] as HtmlElement[]
 
 
-  constructor(textContentZ: string, tagNameZ: string = "span", stylesZ: string = "", attributesZ: string = "", selfClosingZ: boolean = true) {
+  constructor(textContentZ: string, tagNameZ: string = "span", stylesZ: string = "", attributesZ: string = "", selfClosingZ: any = true) {
+    if (tagNameZ==""){
+      tagNameZ ="span"
+    }
+    if (selfClosingZ==""){
+      selfClosingZ = true
+    }
     this.tagName = tagNameZ
     this.textContent = textContentZ
     this.selfClosing = selfClosingZ
@@ -1469,12 +1474,10 @@ class HtmlElement {
     }as any)
   }
   attributeSetting(attributesZ: string) {
-    // @ts-ignore     
     this.attributes.push(attributesZ)
   }
 
   styleSetting(stylesZ: string) {
-    // @ts-ignore     
     this.styles.push(stylesZ)
   }
   
@@ -1482,22 +1485,33 @@ class HtmlElement {
       this.#nestedTags.unshift(el)
     }
     append(el:HtmlElement) {
+      console.log(el)
       this.#nestedTags.push(el)
     }
     
-    getHtml(x:any=this.#nestedTags, n:number=0):any {
-      if (answer15) answer15.innerHTML += "<" + x[n].tagName + " st"
-      x[n].style.find(function(item:any) {
-        
+    getHtml(x:any=this.#nestedTags, n:number=0, str:string=""):any {
+      // if (answer15) answer15.innerHTML =
+      str += "<" + x[n].tagName + ' style="'
+      x[n].styles.find(function(item:any) {
+        str += item + ";"
       })
-      
-      
-  if (n == x.length - 1) {
-    return x
-  } else {
-    return this.getHtml(x, n + 1)
-  }
-  }
+      str+='" '
+      x[n].attributes.find(function(item:any) {
+        str += item
+      })
+      if (x[n].selfClosing){
+        str +='>'+x[n].textContent+"</" + x[n].tagName + ">"
+      }
+      else{
+        str += ">"
+      }
+      console.log(str)
+      if (n == x.length - 1) {
+        if (answer15) answer15.innerHTML = str
+      } else {
+        return this.getHtml(x, n + 1, str)
+      }
+    }
 }
 
 let span = new HtmlElement("uuu", "span", "color:red; background:blye")
@@ -1508,26 +1522,27 @@ div.append(span)
 
 
 
-div.getHtml()
+// div.getHtml()
 
 // ()=>{if (answer15) answer15.innerHTML = "ответ: " + circleRadius.radius}
 const itemJ16 = document.querySelector('.block15 #item')
 itemJ16?.addEventListener('click', a16)
 const executor40 = document.querySelector('.block15 #b1')
 // @ts-ignore     
-executor40?.addEventListener('click', () => { classHtmlElement.attributeSetting(stringInput9.value) })
+executor40?.addEventListener('click', () => {if (answer15) answer15.innerHTML ="&#10004;" ; div.attributeSetting(prompt('введите атрибут\nпример:\nhref="/link-element-example.ru"')) })
 const executor41 = document.querySelector('.block15 #b2')
 // @ts-ignore     
-executor41?.addEventListener('click', () => { classHtmlElement.styleSetting(stringInput9.value) })
+executor41?.addEventListener('click', () => { if (answer15) answer15.innerHTML ="&#10004;" ;  div.styleSetting(prompt('введите style можно несколько через точку с запятой ( ; ) \nпример:\ncolor:blye ; background:blye')) })
 const executor42 = document.querySelector('.block15 #b3')
-executor42?.addEventListener('click', n31)
+// @ts-ignore     
+executor42?.addEventListener('click', () => { if (answer15) answer15.innerHTML ="&#10004;" ;div.append(new HtmlElement(prompt('добавления элемента в конец\nвведите текстовое содержимое   !! обязательно !!'),prompt('введите название тега по умолчанию = span'),prompt('введите стили не обязательно'),prompt('введите название атрибута не обязательно'),prompt('введите самозакрывающийся тег или false по умолчанию = true'))) })
 const executor43 = document.querySelector('.block15 #b4')
-executor43?.addEventListener('click', n32)
+// @ts-ignore     
+executor43?.addEventListener('click', () => { if (answer15) answer15.innerHTML ="&#10004;" ;div.prepend(new HtmlElement(prompt('добавления элемента в конец\nвведите текстовое содержимое   !! обязательно !!'),prompt('введите название тега по умолчанию = span'),prompt('введите стили не обязательно'),prompt('введите название атрибута не обязательно'),prompt('введите самозакрывающийся тег или false по умолчанию = true'))) })
 const executor44 = document.querySelector('.block15 #b5')
 executor44?.addEventListener('click', () => { 
   if (answer15) answer15.innerHTML = ""
-  div.getHtml() 
-})
+ div.getHtml() })
 
 
 
