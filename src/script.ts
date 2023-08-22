@@ -1540,7 +1540,7 @@ const executor42 = document.querySelector('.block15 #b3')
 executor42?.addEventListener('click', () => { if (answer15) answer15.innerHTML ="&#10004;" ;div.append(new HtmlElement(prompt('добавления элемента в конец\nвведите текстовое содержимое   !! обязательно !!'),prompt('введите название тега по умолчанию = span'),prompt('введите стили не обязательно'),prompt('введите название атрибута не обязательно'),prompt('введите самозакрывающийся тег или false по умолчанию = true'))) })
 const executor43 = document.querySelector('.block15 #b4')
 // @ts-ignore     
-executor43?.addEventListener('click', () => { if (answer15) answer15.innerHTML ="&#10004;" ;div.prepend(new HtmlElement(prompt('добавления элемента в конец\nвведите текстовое содержимое   !! обязательно !!'),prompt('введите название тега по умолчанию = span'),prompt('введите стили не обязательно'),prompt('введите название атрибута не обязательно'),prompt('введите самозакрывающийся тег или false по умолчанию = true'))) })
+executor43?.addEventListener('click', () => { if (answer15) answer15.innerHTML ="&#10004;"; div.prepend(new HtmlElement(prompt('добавления элемента в конец\nвведите текстовое содержимое   !! обязательно !!'),prompt('введите название тега по умолчанию = span'),prompt('введите стили не обязательно'),prompt('введите название атрибута не обязательно'),prompt('введите самозакрывающийся тег или false по умолчанию = true'))) })
 const executor44 = document.querySelector('.block15 #b5')
 executor44?.addEventListener('click', () => { 
   if (answer15) answer15.innerHTML = ""
@@ -1561,15 +1561,21 @@ executor44?.addEventListener('click', () => {
 class CssClass {
   styles = [] as string[]
   styleSetting(x:string){
-    console.log(x.split(';'))
+    let y = x.split(';')
+    for (let i of y){
+      if (i!=""){
+        this.styles.push(i)
+      }
+    }
+    console.log(this.styles)
   }
-  removeStyle()
+  // removeStyle()
 }
-div3
+let div3 = new CssClass()
 const itemJ17 = document.querySelector('.block16 #item')
 itemJ17?.addEventListener('click', a17)
  const executor45 = document.querySelector('.block16 #b1')
- executor45?.addEventListener('click', n29)
+ executor45?.addEventListener('click', () => {div3.styleSetting("eeee;rrrrr;yyyyy;")})
  const executor46 = document.querySelector('.block16 #b2')
  executor46?.addEventListener('click', n30)
  const executor47 = document.querySelector('.block16 #b3')
