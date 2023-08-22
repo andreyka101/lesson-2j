@@ -1569,17 +1569,32 @@ class CssClass {
     }
     console.log(this.styles)
   }
-  // removeStyle()
+  removeStyle(x:string){
+    if (this.styles.indexOf(x)!=-1){
+      this.styles.splice(this.styles.indexOf(x), 1)
+    }
+    console.log(this.styles)
+  }
+  get getCss(){
+    let str=""
+    if(this.styles.length == 0){
+      return "массив пуст"
+    }
+    for (let i of this.styles){
+      str+=i +"; "
+    }
+    return str
+  }
 }
 let div3 = new CssClass()
 const itemJ17 = document.querySelector('.block16 #item')
 itemJ17?.addEventListener('click', a17)
  const executor45 = document.querySelector('.block16 #b1')
- executor45?.addEventListener('click', () => {div3.styleSetting("eeee;rrrrr;yyyyy;")})
+ executor45?.addEventListener('click', () => {div3.styleSetting(prompt('введите стили которые нужно добавить, можно несколько разделяя их через точку с запятой ( ; )')as string)})
  const executor46 = document.querySelector('.block16 #b2')
- executor46?.addEventListener('click', n30)
+ executor46?.addEventListener('click', () => {div3.removeStyle(prompt('введите стили которые нужно удалить')as string)})
  const executor47 = document.querySelector('.block16 #b3')
- executor47?.addEventListener('click', n31)
+ executor47?.addEventListener('click', () => {alert(div3.getCss)})
 
 
 
