@@ -1,3 +1,7 @@
+:root {
+  --plshldColor: rgb(220, 217, 217);
+}
+
 body{
   background-color: #8fb5a2;
   font-family: system-ui;
@@ -36,8 +40,8 @@ input{
   background-color: #637c6f;
 }
 input::placeholder {
-   color:rgb(220, 217, 217);  
-  }
+  color: var(--plshldColor);
+}
   h1{
     color:#272f2b
   }

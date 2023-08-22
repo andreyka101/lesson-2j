@@ -26,6 +26,7 @@ let stringInput7 = document.querySelector('#input7')
 let stringInput8 = document.querySelector('#input8')
 
 const buttonALL = document.querySelectorAll('button')
+const inputALL = document.querySelectorAll('input')
 const H1ALL = document.body.querySelectorAll('h1')
 
 
@@ -380,14 +381,20 @@ function n22() {
     // @ts-ignore
     document.querySelector('body').style = strColor
 
-    // for (let r in buttonALL) {
-    //   // @ts-ignore
-    //   buttonALL[r].style = "background-color: #efefef; color: #232323;"
-    // }
-    // for (let w in H1ALL) {
-    //   // @ts-ignore
-    //   H1ALL[w].style = "color:azure;"
-    // }
+    for (let r of buttonALL) {
+      // @ts-ignore
+      r.style = "background-color: #efefef; color: #232323;"
+    }
+    for (let r of inputALL) {
+      // @ts-ignore
+      r.style = "background-color: #efefef; color: #232323;"
+    }
+    // @ts-ignore
+    document.querySelector('html').style.setProperty('--plshldColor','red')
+    for (let w in H1ALL) {
+      // @ts-ignore
+      H1ALL[w].style = "color:azure;"
+    }
   }
 
   //* white
@@ -405,10 +412,10 @@ function n22() {
     }
     // @ts-ignore
     document.querySelector('body').style = strColor
-    // for (let r in buttonALL) {
-    //   // @ts-ignore
-    //   buttonALL[r].style = "background-color: #efefef;"
-    // }
+    for (let r in buttonALL) {
+      // @ts-ignore
+      r.style = "background-color: #efefef;"
+    }
   }
 
   //* dark gold
@@ -427,10 +434,10 @@ function n22() {
     // @ts-ignore
     document.querySelector('body').style = strColor
 
-    // for (let r in buttonALL) {
-    //   // @ts-ignore
-    //   buttonALL[r].style = "background-color: #6d7005;"
-    // }
+    for (let r in buttonALL) {
+      // @ts-ignore
+      r.style = "background-color: #6d7005;"
+    }
   }
 
   //* girly
@@ -449,10 +456,10 @@ function n22() {
     // @ts-ignore
     document.querySelector('body').style = strColor
 
-    // for (let r in buttonALL) {
-    //   // @ts-ignore
-    //   buttonALL[r].style = "background-color: #ee0cae; color: white;"
-    // }
+    for (let r in buttonALL) {
+      // @ts-ignore
+      r.style = "background-color: #ee0cae; color: white;"
+    }
   }
 
   //* classic
@@ -471,10 +478,10 @@ function n22() {
     // @ts-ignore
     document.querySelector('body').style = strColor
 
-    // for (let r in buttonALL) {
-    //   // @ts-ignore
-    //   buttonALL[r].style = "background-color: #ee0cae; color: white;"
-    // }
+    for (let r in buttonALL) {
+      // @ts-ignore
+      r.style = "background-color: #ee0cae; color: white;"
+    }
   }
 
   //* gold
@@ -493,10 +500,10 @@ function n22() {
     // @ts-ignore
     document.querySelector('body').style = strColor
 
-    // for (let r in buttonALL) {
-    //   // @ts-ignore
-    //   buttonALL[r].style = "background-color: #ee0cae; color: white;"
-    // }
+    for (let r in buttonALL) {
+      // @ts-ignore
+      r.style = "background-color: #ee0cae; color: white;"
+    }
   }
 }
 
@@ -1519,6 +1526,7 @@ class HtmlElement {
 let span = new HtmlElement("uuu", "span", "color:red; background:blye")
 let div = new HtmlElement("uuu", "div", "color:red; background:blye")
 let div2 = new HtmlElement("uuu", "div", "color:blye; background:blye")
+div.attributeSetting('class="sf sdf sdf"')
 div.append(span)
 // console.log(div)
 
@@ -1559,7 +1567,19 @@ executor44?.addEventListener('click', () => {
 ■ метод getCss(), который возвращает css код в виде строки`)
 }
 class CssClass {
+  name:string
+  cls:boolean
   styles = [] as string[]
+  constructor(name:string , ic:string = "class") {
+    this.name = name
+    ic = ic.toLowerCase()
+    if (ic=="class"){
+      this.cls = true
+    }
+    else{
+      this.cls = false
+    }
+  }
   styleSetting(x:string){
     let y = x.split(';')
     for (let i of y){
@@ -1577,16 +1597,25 @@ class CssClass {
   }
   get getCss(){
     let str=""
+    if (this.cls){
+      str+="."
+    }
+    else{
+      str+="# "
+    }
+    str+=this.name+" {\n"
     if(this.styles.length == 0){
       return "массив пуст"
     }
     for (let i of this.styles){
       str+=i +"; "
     }
+    str+="\n}"
     return str
   }
 }
-let div3 = new CssClass()
+let div3 = new CssClass('sdf')
+
 const itemJ17 = document.querySelector('.block16 #item')
 itemJ17?.addEventListener('click', a17)
  const executor45 = document.querySelector('.block16 #b1')
@@ -1594,7 +1623,7 @@ itemJ17?.addEventListener('click', a17)
  const executor46 = document.querySelector('.block16 #b2')
  executor46?.addEventListener('click', () => {div3.removeStyle(prompt('введите стили которые нужно удалить')as string)})
  const executor47 = document.querySelector('.block16 #b3')
- executor47?.addEventListener('click', () => {alert(div3.getCss)})
+ executor47?.addEventListener('click', () => {alert(div3.getCss); console.log()})
 
 
 
