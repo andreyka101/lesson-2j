@@ -390,10 +390,10 @@ function n22() {
       r.style = "background-color: #efefef; color: #232323;"
     }
     // @ts-ignore
-    document.querySelector('html').style.setProperty('--plshldColor','red')
-    for (let w in H1ALL) {
+    document.querySelector('html').style.setProperty('--plshldColor','#232323')
+    for (let w of H1ALL) {
       // @ts-ignore
-      H1ALL[w].style = "color:azure;"
+      w.style = "color:azure;"
     }
   }
 
@@ -407,14 +407,24 @@ function n22() {
         strColor += "#ffffff;"
       }
       else {
-        strColor += "#637c6f;"
+        strColor += "#000000;"
       }
     }
     // @ts-ignore
     document.querySelector('body').style = strColor
-    for (let r in buttonALL) {
+    for (let r of buttonALL) {
       // @ts-ignore
-      r.style = "background-color: #efefef;"
+      r.style = "background-color: #575757;"
+    }
+    for (let r of inputALL) {
+      // @ts-ignore
+      r.style = "background-color: #575757; color: #efefef;"
+    }
+    // @ts-ignore
+    document.querySelector('html').style.setProperty('--plshldColor','#efefef')
+    for (let w of H1ALL) {
+      // @ts-ignore
+      w.style = "color:#202020;"
     }
   }
 
@@ -434,9 +444,19 @@ function n22() {
     // @ts-ignore
     document.querySelector('body').style = strColor
 
-    for (let r in buttonALL) {
+    for (let r of buttonALL) {
       // @ts-ignore
       r.style = "background-color: #6d7005;"
+    }
+    for (let r of inputALL) {
+      // @ts-ignore
+      r.style = "background-color: #6d7005; color: white;"
+    }
+    // @ts-ignore
+    document.querySelector('html').style.setProperty('--plshldColor','#fcfdd4')
+    for (let w of H1ALL) {
+      // @ts-ignore
+      w.style = "color:#f1da23;"
     }
   }
 
@@ -456,9 +476,19 @@ function n22() {
     // @ts-ignore
     document.querySelector('body').style = strColor
 
-    for (let r in buttonALL) {
+    for (let r of buttonALL) {
       // @ts-ignore
       r.style = "background-color: #ee0cae; color: white;"
+    }
+    for (let r of inputALL) {
+      // @ts-ignore
+      r.style = "background-color: #efefef; color: #d34c89;"
+    }
+    // @ts-ignore
+    document.querySelector('html').style.setProperty('--plshldColor','#d34c89')
+    for (let w of H1ALL) {
+      // @ts-ignore
+      w.style = "color:azure;"
     }
   }
 
@@ -478,9 +508,19 @@ function n22() {
     // @ts-ignore
     document.querySelector('body').style = strColor
 
-    for (let r in buttonALL) {
+    for (let r of buttonALL) {
       // @ts-ignore
-      r.style = "background-color: #ee0cae; color: white;"
+      r.style = "background-color: #637c6f; color: #f0f0f0;"
+    }
+    for (let r of inputALL) {
+      // @ts-ignore
+      r.style = "background-color: #637c6f; color: #f0f0f0;"
+    }
+    // @ts-ignore
+    document.querySelector('html').style.setProperty('--plshldColor','#dcd9d9')
+    for (let w of H1ALL) {
+      // @ts-ignore
+      w.style = "color:#272f2b;"
     }
   }
 
@@ -500,9 +540,19 @@ function n22() {
     // @ts-ignore
     document.querySelector('body').style = strColor
 
-    for (let r in buttonALL) {
+    for (let r of buttonALL) {
       // @ts-ignore
       r.style = "background-color: #ee0cae; color: white;"
+    }
+    for (let r of inputALL) {
+      // @ts-ignore
+      r.style = "background-color: #efefef; color: #232323;"
+    }
+    // @ts-ignore
+    document.querySelector('html').style.setProperty('--plshldColor','red')
+    for (let w of H1ALL) {
+      // @ts-ignore
+      w.style = "color:azure;"
     }
   }
 }
