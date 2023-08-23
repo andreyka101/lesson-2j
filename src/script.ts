@@ -391,6 +391,18 @@ function n22() {
     }
     // @ts-ignore
     document.querySelector('html').style.setProperty('--plshldColor','#232323')
+    // @ts-ignore
+    document.querySelector('html').style.setProperty('--aColor','#cbcbcb')
+    // @ts-ignore
+    document.querySelector('html').style.setProperty('--aBackground','#717171')
+    // @ts-ignore
+    document.querySelector('html').style.setProperty('--aBackgroundHOVER','#717171')
+    // @ts-ignore
+    document.querySelector('html').style.setProperty('--aShadowHOVER','#ffffff')
+    // @ts-ignore
+    document.querySelector('html').style.setProperty('--bottonShadow','#ffffff')
+    // @ts-ignore
+    document.querySelector('html').style.setProperty('--bottonColor','#232323')
     for (let w of H1ALL) {
       // @ts-ignore
       w.style = "color:azure;"
@@ -422,6 +434,18 @@ function n22() {
     }
     // @ts-ignore
     document.querySelector('html').style.setProperty('--plshldColor','#efefef')
+    // @ts-ignore
+    document.querySelector('html').style.setProperty('--aColor','#ffffff')
+    // @ts-ignore
+    document.querySelector('html').style.setProperty('--aBackground','#9b9b9b')
+    // @ts-ignore
+    document.querySelector('html').style.setProperty('--aBackgroundHOVER','#9b9b9b')
+    // @ts-ignore
+    document.querySelector('html').style.setProperty('--aShadowHOVER','#f71414')
+    // @ts-ignore
+    document.querySelector('html').style.setProperty('--bottonShadow','#000000')
+    // @ts-ignore
+    document.querySelector('html').style.setProperty('--bottonColor','#ffffff')
     for (let w of H1ALL) {
       // @ts-ignore
       w.style = "color:#202020;"
@@ -446,14 +470,26 @@ function n22() {
 
     for (let r of buttonALL) {
       // @ts-ignore
-      r.style = "background-color: #6d7005;"
+      r.style = "background-color: #c9a805;"
     }
     for (let r of inputALL) {
       // @ts-ignore
-      r.style = "background-color: #6d7005; color: white;"
+      r.style = "background-color: #8b7404; color: white;"
     }
     // @ts-ignore
     document.querySelector('html').style.setProperty('--plshldColor','#fcfdd4')
+    // @ts-ignore
+    document.querySelector('html').style.setProperty('--aColor','#ffffff')
+    // @ts-ignore
+    document.querySelector('html').style.setProperty('--aBackground','#b29115')
+    // @ts-ignore
+    document.querySelector('html').style.setProperty('--aBackgroundHOVER','#ffffff')
+    // @ts-ignore
+    document.querySelector('html').style.setProperty('--aShadowHOVER','#ffffff')
+    // @ts-ignore
+    document.querySelector('html').style.setProperty('--bottonShadow','#ffe52d')
+    // @ts-ignore
+    document.querySelector('html').style.setProperty('--bottonColor','#ffffff')
     for (let w of H1ALL) {
       // @ts-ignore
       w.style = "color:#f1da23;"
@@ -486,6 +522,18 @@ function n22() {
     }
     // @ts-ignore
     document.querySelector('html').style.setProperty('--plshldColor','#d34c89')
+    // @ts-ignore
+    document.querySelector('html').style.setProperty('--aColor','#ffffff')
+    // @ts-ignore
+    document.querySelector('html').style.setProperty('--aBackground','#ba0e89')
+    // @ts-ignore
+    document.querySelector('html').style.setProperty('--aBackgroundHOVER','#7d095c')
+    // @ts-ignore
+    document.querySelector('html').style.setProperty('--aShadowHOVER','#ff93e0')
+    // @ts-ignore
+    document.querySelector('html').style.setProperty('--bottonShadow','#f15dc7')
+    // @ts-ignore
+    document.querySelector('html').style.setProperty('--bottonColor','#ffffff')
     for (let w of H1ALL) {
       // @ts-ignore
       w.style = "color:azure;"
@@ -518,6 +566,18 @@ function n22() {
     }
     // @ts-ignore
     document.querySelector('html').style.setProperty('--plshldColor','#dcd9d9')
+    // @ts-ignore
+    document.querySelector('html').style.setProperty('--aColor','#f0f0f0')
+    // @ts-ignore
+    document.querySelector('html').style.setProperty('--aBackground','#56836d')
+    // @ts-ignore
+    document.querySelector('html').style.setProperty('--aBackgroundHOVER','#566b60')
+    // @ts-ignore
+    document.querySelector('html').style.setProperty('--aShadowHOVER','#60ffcd')
+    // @ts-ignore
+    document.querySelector('html').style.setProperty('--bottonShadow','#ffffff')
+    // @ts-ignore
+    document.querySelector('html').style.setProperty('--bottonColor','#ffffff')
     for (let w of H1ALL) {
       // @ts-ignore
       w.style = "color:#272f2b;"
@@ -550,6 +610,18 @@ function n22() {
     }
     // @ts-ignore
     document.querySelector('html').style.setProperty('--plshldColor','#000000')
+    // @ts-ignore
+    document.querySelector('html').style.setProperty('--aColor','#ffffff')
+    // @ts-ignore
+    document.querySelector('html').style.setProperty('--aBackground','#b29115')
+    // @ts-ignore
+    document.querySelector('html').style.setProperty('--aBackgroundHOVER','#ffe52d')
+    // @ts-ignore
+    document.querySelector('html').style.setProperty('--aShadowHOVER','#ffe52d')
+    // @ts-ignore
+    document.querySelector('html').style.setProperty('--bottonShadow','#6c6407')
+    // @ts-ignore
+    document.querySelector('html').style.setProperty('--bottonColor','#ffffff')
     for (let w of H1ALL) {
       // @ts-ignore
       w.style = "color:#000000;"
@@ -1509,7 +1581,7 @@ class HtmlElement {
   textContent = ""
   attributes = [] as string[]
   styles = [] as string[]
-  #nestedTags = [] as HtmlElement[]
+  nestedTags = [] as HtmlElement[]
 
 
   constructor(textContentZ: string, tagNameZ: string = "span", stylesZ: string = "", attributesZ: string = "", selfClosingZ: any = true) {
@@ -1524,7 +1596,7 @@ class HtmlElement {
     this.selfClosing = selfClosingZ
     this.attributes = attributesZ.split(' ')
     this.styles = stylesZ.split(';')
-    this.#nestedTags.unshift({
+    this.nestedTags.unshift({
       tagName:this.tagName,
       selfClosing:this.selfClosing,
       textContent:this.textContent,
@@ -1541,14 +1613,14 @@ class HtmlElement {
   }
   
     prepend(el:HtmlElement) {
-      this.#nestedTags.unshift(el)
+      this.nestedTags.unshift(el)
     }
     append(el:HtmlElement) {
       console.log(el)
-      this.#nestedTags.push(el)
+      this.nestedTags.push(el)
     }
     
-    getHtml(x:any=this.#nestedTags, n:number=0, str:string=""):any {
+    getHtml(x:any=this.nestedTags, n:number=0, str:string=""):any {
       // if (answer15) answer15.innerHTML =
       str += "<" + x[n].tagName + ' style="'
       x[n].styles.find(function(item:any) {
@@ -1575,7 +1647,7 @@ class HtmlElement {
 
 let span = new HtmlElement("uuu", "span", "color:red; background:blye")
 let div = new HtmlElement("uuu", "div", "color:red; background:blye")
-let div2 = new HtmlElement("uuu", "div", "color:blye; background:blye")
+// let div2 = new HtmlElement("uuu", "div", "color:blye; background:blye")
 div.attributeSetting('class="sf sdf sdf"')
 div.append(span)
 // console.log(div)
@@ -1658,9 +1730,9 @@ class CssClass {
       return "массив пуст"
     }
     for (let i of this.styles){
-      str+=i +"; "
+      str+=i +";\n"
     }
-    str+="\n}"
+    str+="}"
     return str
   }
 }
@@ -1668,12 +1740,47 @@ let div3 = new CssClass('sdf')
 
 const itemJ17 = document.querySelector('.block16 #item')
 itemJ17?.addEventListener('click', a17)
- const executor45 = document.querySelector('.block16 #b1')
- executor45?.addEventListener('click', () => {div3.styleSetting(prompt('введите стили которые нужно добавить, можно несколько разделяя их через точку с запятой ( ; )')as string)})
- const executor46 = document.querySelector('.block16 #b2')
- executor46?.addEventListener('click', () => {div3.removeStyle(prompt('введите стили которые нужно удалить')as string)})
- const executor47 = document.querySelector('.block16 #b3')
- executor47?.addEventListener('click', () => {alert(div3.getCss); console.log()})
+const executor48 = document.querySelector('.block16 #b1')
+executor48?.addEventListener('click', () => {div3.styleSetting(prompt('введите стили которые нужно добавить, можно несколько разделяя их через точку с запятой ( ; )')as string)})
+ const executor49 = document.querySelector('.block16 #b2')
+ executor49?.addEventListener('click', () => {div3.removeStyle(prompt('введите стили которые нужно удалить')as string)})
+ const executor50 = document.querySelector('.block16 #b3')
+ executor50?.addEventListener('click', () => {alert(div3.getCss); console.log()})
+
+ // TODO 4
+ 
+ function a18() {
+   alert(`Реализовать класс, описывающий блок html документ. 
+Класс HtmlBlock должен содержать внутри себя:
+■ коллекцию стилей, описанных с помощью класса CssClass;
+■ корневой элемент, описанный с помощью класса 
+HtmlElement;
+■ метод getCode(), который возвращает строку с html кодом (сначала теги style с описанием всех классов, а потом 
+все html содержимое из корневого тега и его вложенных 
+элементов).`)
+}
+
+class HtmlBlock{
+  сssClass:any
+  htmlElement :any
+  constructor (a:any,b:any){
+    this.сssClass = b
+    this.htmlElement = a
+  }
+  get getCode(){
+    console.log(this.htmlElement)
+    console.log("dgdrgdrdgrdgrdgrdgrdgrs")
+    // @ts-ignore
+    // document.head.querySelector +="<style>" + this.сssClass + "</style>"
+    return document.body.querySelector +=this.htmlElement
+  }
+}
+let ff = new HtmlBlock(div.getHtml(),div3.getCss)
+
+const itemJ18 = document.querySelector('.block17 #item')
+itemJ18?.addEventListener('click', a18)
+ const executor45 = document.querySelector('.block17 #b1')
+ executor45?.addEventListener('click', () => {})
 
 
 
