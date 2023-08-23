@@ -493,7 +493,7 @@ function n22() {
   }
 
   //* classic
-  if (switch1 == 5) {
+  if (switch1 == 6) {
     // @ts-ignore
     answer5.innerText = 'classic'
     for (let i in color) {
@@ -525,7 +525,7 @@ function n22() {
   }
 
   //* gold
-  if (switch1 == 6) {
+  if (switch1 == 5) {
     // @ts-ignore
     answer5.innerText = 'gold'
     for (let i in color) {
@@ -542,17 +542,17 @@ function n22() {
 
     for (let r of buttonALL) {
       // @ts-ignore
-      r.style = "background-color: #ee0cae; color: white;"
+      r.style = "background-color: #fbff4f; color: #000000;"
     }
     for (let r of inputALL) {
       // @ts-ignore
-      r.style = "background-color: #efefef; color: #232323;"
+      r.style = "background-color: #fbff5b; color: #000000;"
     }
     // @ts-ignore
-    document.querySelector('html').style.setProperty('--plshldColor','red')
+    document.querySelector('html').style.setProperty('--plshldColor','#000000')
     for (let w of H1ALL) {
       // @ts-ignore
-      w.style = "color:azure;"
+      w.style = "color:#000000;"
     }
   }
 }
