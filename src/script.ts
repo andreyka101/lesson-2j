@@ -1,33 +1,33 @@
 import './style.scss'
 // ANCHOR -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-let answer1 = document.querySelector('.block1 #s1')
-let answer2 = document.querySelector('.block2 #s1')
-let answer3 = document.querySelector('.block3 #s1')
-let answer4 = document.querySelector('.block4 #s1')
-let answer5 = document.querySelector('.block5 #s1')
-let answer7 = document.querySelector('.block7 #s1')
-let answer8 = document.querySelector('.block8 #s1')
-let answer9 = document.querySelector('.block9 #s1')
-let answer10 = document.querySelector('.block10 #s1')
-let answer11 = document.querySelector('.block11 #s1')
-let answer12 = document.querySelector('.block12 #s1')
-let answer13 = document.querySelector('.block13 #s1')
-let answer14 = document.querySelector('.block14 #s1')
-let answer15 = document.querySelector('.block15 #s1')
+let answer1 = document.querySelector('.block1 #s1')// as HTMLInputElement
+let answer2 = document.querySelector('.block2 #s1')// as HTMLInputElement
+let answer3 = document.querySelector('.block3 #s1')// as HTMLInputElement
+let answer4 = document.querySelector('.block4 #s1')// as HTMLInputElement
+let answer5 = document.querySelector('.block5 #s1')// as HTMLInputElement
+let answer7 = document.querySelector('.block7 #s1')// as HTMLInputElement
+let answer8 = document.querySelector('.block8 #s1')// as HTMLInputElement
+let answer9 = document.querySelector('.block9 #s1')// as HTMLInputElement
+let answer10 = document.querySelector('.block10 #s1')// as HTMLInputElement
+let answer11 = document.querySelector('.block11 #s1')// as HTMLInputElement
+let answer12 = document.querySelector('.block12 #s1')// as HTMLInputElement
+let answer13 = document.querySelector('.block13 #s1')// as HTMLInputElement
+let answer14 = document.querySelector('.block14 #s1')// as HTMLInputElement
+let answer15 = document.querySelector('.block15 #s1')// as HTMLInputElement
 
-let stringInput1 = document.querySelector('#input1')
-let stringInput2 = document.querySelector('#input2')
-let stringInput3 = document.querySelector('#input3')
-let stringInput4 = document.querySelector('#input4')
-let stringInput5 = document.querySelector('#input5')
-let stringInput6 = document.querySelector('#input6')
-let stringInput7 = document.querySelector('#input7')
-let stringInput8 = document.querySelector('#input8')
+let stringInput1 = document.querySelector('#input1')// as HTMLInputElement
+let stringInput2 = document.querySelector('#input2')// as HTMLInputElement
+let stringInput3 = document.querySelector('#input3')// as HTMLInputElement
+let stringInput4 = document.querySelector('#input4')// as HTMLInputElement
+let stringInput5 = document.querySelector('#input5')// as HTMLInputElement
+let stringInput6 = document.querySelector('#input6')// as HTMLInputElement
+let stringInput7 = document.querySelector('#input7')// as HTMLInputElement
+let stringInput8 = document.querySelector('#input8')// as HTMLInputElement
 
-const buttonALL = document.querySelectorAll('button')
-const inputALL = document.querySelectorAll('input')
-const H1ALL = document.body.querySelectorAll('h1')
+const buttonALL = document.querySelectorAll('button') //as Record<number,HTMLInputElement>
+const inputALL = document.querySelectorAll('input')// as Record<number,HTMLInputElement>
+const H1ALL = document.body.querySelectorAll('h1')// as Record<number,HTML>
 
 
 // FIXME  dz 1 --999999999999999999999999999999999999999999999999999999999999999999
@@ -70,28 +70,6 @@ function n2() {
   // @ts-ignore
   answer1.innerText = "ответ : " + wastedTime + " ч."
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // TODO  3
 
@@ -1638,7 +1616,7 @@ class HtmlElement {
       }
       console.log(str)
       if (n == x.length - 1) {
-        if (answer15) answer15.innerHTML = str
+        return str
       } else {
         return this.getHtml(x, n + 1, str)
       }
@@ -1736,16 +1714,16 @@ class CssClass {
     return str
   }
 }
-let div3 = new CssClass('sdf')
+let styleDiv = new CssClass('sdf')
 
 const itemJ17 = document.querySelector('.block16 #item')
 itemJ17?.addEventListener('click', a17)
 const executor48 = document.querySelector('.block16 #b1')
-executor48?.addEventListener('click', () => {div3.styleSetting(prompt('введите стили которые нужно добавить, можно несколько разделяя их через точку с запятой ( ; )')as string)})
+executor48?.addEventListener('click', () => {styleDiv.styleSetting(prompt('введите стили которые нужно добавить, можно несколько разделяя их через точку с запятой ( ; )')as string)})
  const executor49 = document.querySelector('.block16 #b2')
- executor49?.addEventListener('click', () => {div3.removeStyle(prompt('введите стили которые нужно удалить')as string)})
+ executor49?.addEventListener('click', () => {styleDiv.removeStyle(prompt('введите стили которые нужно удалить')as string)})
  const executor50 = document.querySelector('.block16 #b3')
- executor50?.addEventListener('click', () => {alert(div3.getCss); console.log()})
+ executor50?.addEventListener('click', () => {alert(styleDiv.getCss); console.log()})
 
  // TODO 4
  
@@ -1761,26 +1739,24 @@ HtmlElement;
 }
 
 class HtmlBlock{
-  сssClass:any
-  htmlElement :any
-  constructor (a:any,b:any){
-    this.сssClass = b
+  сssClass:CssClass[]
+  htmlElement :HtmlElement
+  constructor (a:any,b:CssClass[]){
     this.htmlElement = a
+    this.сssClass = b
   }
-  get getCode(){
-    console.log(this.htmlElement)
-    console.log("dgdrgdrdgrdgrdgrdgrdgrs")
-    // @ts-ignore
-    // document.head.querySelector +="<style>" + this.сssClass + "</style>"
-    return document.body.querySelector +=this.htmlElement
+  getCode(){
+    document.head.innerHTML+=`<style>${this.сssClass.map(el=>el.getCss).join('')}</style>`    
+    const bl17 = document.querySelector('.block17')
+    if(bl17) bl17.innerHTML += this.htmlElement.getHtml()
   }
 }
-let ff = new HtmlBlock(div.getHtml(),div3.getCss)
+
 
 const itemJ18 = document.querySelector('.block17 #item')
 itemJ18?.addEventListener('click', a18)
  const executor45 = document.querySelector('.block17 #b1')
- executor45?.addEventListener('click', () => {})
+ executor45?.addEventListener('click', () => {new HtmlBlock(div,[styleDiv]).getCode()})
 
 
 
