@@ -1,6 +1,6 @@
 import './style.scss'
 // ANCHOR -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-ё
+
 let answer1 = document.querySelector('.block1 #s1')// as HTMLInputElement
 let answer2 = document.querySelector('.block2 #s1')// as HTMLInputElement
 let answer3 = document.querySelector('.block3 #s1')// as HTMLInputElement
