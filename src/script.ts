@@ -1760,4 +1760,4 @@ itemJ18?.addEventListener('click', a18)
 
 
 
-    //ANCHOR a+++++a+++++a+++++a+++++a+++++a+++++a+++++a+++++a
+//ANCHOR a+++++a+++++a+++++a+++++a+++++a+++++a+++++a+++++a
