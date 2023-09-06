@@ -88,7 +88,7 @@ function n3() {
   else {
     localStorage.objTime = JSON.stringify(time)
   }
-
+  
   if (time.second < 10) {
     if (time.minute < 10) {
       // @ts-ignore
@@ -127,8 +127,8 @@ function n4() {
   while (time.hour > 23) {
     time.hour -= 24
   }
-
-
+  
+  
   localStorage.objTime = JSON.stringify(time)
   // @ts-ignore
   answer2.innerText = "ответ : время задано"
@@ -148,8 +148,8 @@ function n5() {
   while (time.hour > 23) {
     time.hour -= 24
   }
-
-
+  
+  
   localStorage.objTime = JSON.stringify(time)
   // @ts-ignore
   answer2.innerText = "ответ : время задано"
@@ -162,8 +162,8 @@ function n6() {
   while (time.hour > 23) {
     time.hour -= 24
   }
-
-
+  
+  
   localStorage.objTime = JSON.stringify(time)
   // @ts-ignore
   answer2.innerText = "ответ : время задано"
@@ -190,7 +190,7 @@ function n19() {
   else {
     localStorage.objGroceryList = JSON.stringify(groceryList)
   }
-
+  
   let str = ``
   for (let i in groceryList) {
     for (let e in groceryList[i]) {
@@ -198,7 +198,7 @@ function n19() {
       str += `${groceryList[i][e]} `
     }
     str += `
-`
+    `
   }
   alert(str)
 }
@@ -249,9 +249,9 @@ function n21() {
   else {
     localStorage.objGroceryList = JSON.stringify(groceryList)
   }
-
+  
   let purchasedProducts = 0
-
+  
   if (localStorage.loPurchasedProducts) {
     purchasedProducts = JSON.parse(localStorage.loPurchasedProducts)
   }
@@ -273,7 +273,7 @@ function n21() {
     if (num == 1) {
       // @ts-ignore
       if (groceryList[uuu].bought != "куплен") {
-
+        
         // @ts-ignore
         groceryList[uuu].bought = "куплен"
         // @ts-ignore
@@ -319,46 +319,46 @@ function n22() {
   else {
     localStorage.locSwitch1 = JSON.stringify(switch1)
   }
-
+  
   switch (switch1) {
     case 1:
       switch1 = 2
       break;
-    case 2:
-      switch1 = 3
-      break;
-    case 3:
-      switch1 = 4
-      break;
-    case 4:
-      switch1 = 5
-      break;
-    case 5:
-      switch1 = 6
-      break;
-    case 6:
-      switch1 = 1
-      break;
-  }
-
-  localStorage.locSwitch1 = JSON.stringify(switch1)
-
-  //* dark
-  if (switch1 == 1) {
-    // @ts-ignore
-    answer5.innerText = 'dark'
-    for (let i in color) {
-      strColor += color[i]
-      if (i == "0") {
-        strColor += "#232323;"
-      }
-      else {
+      case 2:
+        switch1 = 3
+        break;
+        case 3:
+          switch1 = 4
+          break;
+          case 4:
+            switch1 = 5
+            break;
+            case 5:
+              switch1 = 6
+              break;
+              case 6:
+                switch1 = 1
+                break;
+              }
+              
+              localStorage.locSwitch1 = JSON.stringify(switch1)
+              
+              //* dark
+              if (switch1 == 1) {
+                // @ts-ignore
+                answer5.innerText = 'dark'
+                for (let i in color) {
+                  strColor += color[i]
+                  if (i == "0") {
+                    strColor += "#232323;"
+                  }
+                  else {
         strColor += "azure;"
       }
     }
     // @ts-ignore
     document.querySelector('body').style = strColor
-
+    
     for (let r of buttonALL) {
       // @ts-ignore
       r.style = "background-color: #efefef; color: #232323;"
@@ -386,7 +386,7 @@ function n22() {
       w.style = "color:azure;"
     }
   }
-
+  
   //* white
   if (switch1 == 2) {
     // @ts-ignore
@@ -429,7 +429,7 @@ function n22() {
       w.style = "color:#202020;"
     }
   }
-
+  
   //* dark gold
   if (switch1 == 3) {
     // @ts-ignore
@@ -445,7 +445,7 @@ function n22() {
     }
     // @ts-ignore
     document.querySelector('body').style = strColor
-
+    
     for (let r of buttonALL) {
       // @ts-ignore
       r.style = "background-color: #c9a805;"
@@ -473,7 +473,7 @@ function n22() {
       w.style = "color:#f1da23;"
     }
   }
-
+  
   //* girly
   if (switch1 == 4) {
     // @ts-ignore
@@ -489,7 +489,7 @@ function n22() {
     }
     // @ts-ignore
     document.querySelector('body').style = strColor
-
+    
     for (let r of buttonALL) {
       // @ts-ignore
       r.style = "background-color: #ee0cae; color: white;"
@@ -533,7 +533,7 @@ function n22() {
     }
     // @ts-ignore
     document.querySelector('body').style = strColor
-
+    
     for (let r of buttonALL) {
       // @ts-ignore
       r.style = "background-color: #637c6f; color: #f0f0f0;"
@@ -561,7 +561,7 @@ function n22() {
       w.style = "color:#272f2b;"
     }
   }
-
+  
   //* gold
   if (switch1 == 5) {
     // @ts-ignore
@@ -577,7 +577,7 @@ function n22() {
     }
     // @ts-ignore
     document.querySelector('body').style = strColor
-
+    
     for (let r of buttonALL) {
       // @ts-ignore
       r.style = "background-color: #fbff4f; color: #000000;"
@@ -620,7 +620,7 @@ function n23() {
   let countingNumbers = 0
   let countingString = 0
   let countingСount = 0
-
+  
   if (line.length != 0) {
     for (let i = 0; i != line.length; i++) {
       if (line[i] == "1" || line[i] == "2" || line[i] == "3" || line[i] == "4" || line[i] == "5" || line[i] == "6" || line[i] == "7" || line[i] == "8" || line[i] == "9" || line[i] == "0") {
@@ -656,202 +656,202 @@ function n24() {
       case 0:
         lowercaseNumber += "нуль"
         break;
-      case 1:
-        lowercaseNumber += "один"
-        break;
-      case 2:
-        lowercaseNumber += "два"
-        break;
-      case 3:
-        lowercaseNumber += "три"
-        break;
-      case 4:
-        lowercaseNumber += "четыре"
-        break;
-      case 5:
-        lowercaseNumber += "пять"
-        break;
-      case 6:
-        lowercaseNumber += "шесть"
-        break;
-      case 7:
-        lowercaseNumber += "семь"
-        break;
-      case 8:
-        lowercaseNumber += "восемь"
-        break;
-      case 9:
+        case 1:
+          lowercaseNumber += "один"
+          break;
+          case 2:
+            lowercaseNumber += "два"
+            break;
+            case 3:
+              lowercaseNumber += "три"
+              break;
+              case 4:
+                lowercaseNumber += "четыре"
+                break;
+                case 5:
+                  lowercaseNumber += "пять"
+                  break;
+                  case 6:
+                    lowercaseNumber += "шесть"
+                    break;
+                    case 7:
+                      lowercaseNumber += "семь"
+                      break;
+                      case 8:
+                        lowercaseNumber += "восемь"
+                        break;
+                        case 9:
         lowercaseNumber += "девять"
         break;
-      case 10:
-        lowercaseNumber += "десять"
-        break;
-      case 11:
-        lowercaseNumber += "одиннадцать"
-        break;
-      case 12:
-        lowercaseNumber += "двенадцать"
-        break;
-      case 13:
-        lowercaseNumber += "тринадцать"
-        break;
-      case 14:
-        lowercaseNumber += "четырнадцать"
-        break;
-      case 15:
-        lowercaseNumber += "пятнадцать"
-        break;
-      case 16:
-        lowercaseNumber += "шестнадцать"
-        break;
-      case 17:
-        lowercaseNumber += "семнадцать"
-        break;
-      case 18:
-        lowercaseNumber += "восемнадцать"
-        break;
-      case 19:
-        lowercaseNumber += "девятнадцать"
-        break;
-    }
-  }
-  else {
-    let ssn = savingNumber + ""
-    switch (ssn[0]) {
-      case "2":
-        lowercaseNumber += "двадцать"
-        break;
-      case "3":
+        case 10:
+          lowercaseNumber += "десять"
+          break;
+          case 11:
+            lowercaseNumber += "одиннадцать"
+            break;
+            case 12:
+              lowercaseNumber += "двенадцать"
+              break;
+              case 13:
+                lowercaseNumber += "тринадцать"
+                break;
+                case 14:
+                  lowercaseNumber += "четырнадцать"
+                  break;
+                  case 15:
+                    lowercaseNumber += "пятнадцать"
+                    break;
+                    case 16:
+                      lowercaseNumber += "шестнадцать"
+                      break;
+                      case 17:
+                        lowercaseNumber += "семнадцать"
+                        break;
+                        case 18:
+                          lowercaseNumber += "восемнадцать"
+                          break;
+                          case 19:
+                            lowercaseNumber += "девятнадцать"
+                            break;
+                          }
+                        }
+                        else {
+                          let ssn = savingNumber + ""
+                          switch (ssn[0]) {
+                            case "2":
+                              lowercaseNumber += "двадцать"
+                              break;
+                              case "3":
         lowercaseNumber += "тридцать"
         break;
       case "4":
         lowercaseNumber += "сорок"
         break;
-      case "5":
-        lowercaseNumber += "пятьдесят"
-        break;
-      case "6":
-        lowercaseNumber += "шестьдесят"
-        break;
-      case "7":
-        lowercaseNumber += "семьдесят"
-        break;
-      case "8":
-        lowercaseNumber += "восемьдесят"
-        break;
-      case "9":
-        lowercaseNumber += "девяносто"
-        break;
-
-    }
-    if (ssn[1] != "0") {
+        case "5":
+          lowercaseNumber += "пятьдесят"
+          break;
+          case "6":
+            lowercaseNumber += "шестьдесят"
+            break;
+            case "7":
+              lowercaseNumber += "семьдесят"
+              break;
+              case "8":
+                lowercaseNumber += "восемьдесят"
+                break;
+                case "9":
+                  lowercaseNumber += "девяносто"
+                  break;
+                  
+                }
+                if (ssn[1] != "0") {
       switch (ssn[1]) {
         case "1":
           lowercaseNumber += " один"
           break;
-        case "2":
-          lowercaseNumber += " два"
-          break;
-        case "3":
-          lowercaseNumber += " три"
-          break;
-        case "4":
-          lowercaseNumber += " четыре"
-          break;
-        case "5":
-          lowercaseNumber += " пять"
-          break;
-        case "6":
-          lowercaseNumber += " шесть"
-          break;
-        case "7":
+          case "2":
+            lowercaseNumber += " два"
+            break;
+            case "3":
+              lowercaseNumber += " три"
+              break;
+              case "4":
+                lowercaseNumber += " четыре"
+                break;
+                case "5":
+                  lowercaseNumber += " пять"
+                  break;
+                  case "6":
+                    lowercaseNumber += " шесть"
+                    break;
+                    case "7":
           lowercaseNumber += " семь"
           break;
-        case "8":
-          lowercaseNumber += " восемь"
-          break;
-        case "9":
-          lowercaseNumber += " девять"
-          break;
+          case "8":
+            lowercaseNumber += " восемь"
+            break;
+            case "9":
+              lowercaseNumber += " девять"
+              break;
+            }
+          }
+        }
+        // @ts-ignore
+        answer8.innerText = lowercaseNumber
+        if (savingNumber > 99) {
+          // @ts-ignore
+          answer8.innerText = "ответ : слишком большое число только двузначное"
+        }
       }
-    }
-  }
-  // @ts-ignore
-  answer8.innerText = lowercaseNumber
-  if (savingNumber > 99) {
-    // @ts-ignore
-    answer8.innerText = "ответ : слишком большое число только двузначное"
-  }
-}
 
-
-// TODO  3
-
-
-function n25() {
-  // @ts-ignore
-  let str = stringInput5.value
-  let array = "ответ : "
-  console.log(str.codePointAt())
-  for (let i in str) {
-    if (1072 <= str[i].codePointAt() && str[i].codePointAt() <= 1103 || 97 <= str[i].codePointAt() && str[i].codePointAt() <= 122) {
-      array += str[i].toUpperCase()
-    }
-    else if (1040 <= str[i].codePointAt() && str[i].codePointAt() <= 1071 || 65 <= str[i].codePointAt() && str[i].codePointAt() <= 90) {
-      array += str[i].toLowerCase()
-    }
-    else if (48 <= str[i].codePointAt() && str[i].codePointAt() <= 57) {
-      array += "_"
-    }
-    else {
-      array += str[i]
-    }
-  }
-  // @ts-ignore
-  answer9.innerText = array
-}
-
-
-// TODO  4
-
-
-function n26() {
-  // @ts-ignore
-  let str = stringInput6.value
-  let str2 = "ответ : "
-  let memory = ""
-  for (let i in str) {
-    if (str[i] == "-") {
-      memory = str[i + 1]
-    }
-    else {
-      if (memory == "") {
-        str2 += str[i]
+      
+      // TODO  3
+      
+      
+      function n25() {
+        // @ts-ignore
+        let str = stringInput5.value
+        let array = "ответ : "
+        console.log(str.codePointAt())
+        for (let i in str) {
+          if (1072 <= str[i].codePointAt() && str[i].codePointAt() <= 1103 || 97 <= str[i].codePointAt() && str[i].codePointAt() <= 122) {
+            array += str[i].toUpperCase()
+          }
+          else if (1040 <= str[i].codePointAt() && str[i].codePointAt() <= 1071 || 65 <= str[i].codePointAt() && str[i].codePointAt() <= 90) {
+            array += str[i].toLowerCase()
+          }
+          else if (48 <= str[i].codePointAt() && str[i].codePointAt() <= 57) {
+            array += "_"
+          }
+          else {
+            array += str[i]
+          }
+        }
+        // @ts-ignore
+        answer9.innerText = array
       }
-      else {
-        memory = ""
-        str2 += str[i].toUpperCase()
+      
+      
+      // TODO  4
+      
+      
+      function n26() {
+        // @ts-ignore
+        let str = stringInput6.value
+        let str2 = "ответ : "
+        let memory = ""
+        for (let i in str) {
+          if (str[i] == "-") {
+            memory = str[i + 1]
+          }
+          else {
+            if (memory == "") {
+              str2 += str[i]
+            }
+            else {
+              memory = ""
+              str2 += str[i].toUpperCase()
+            }
+          }
+        }
+        // @ts-ignore
+        answer10.innerText = str2
+        
       }
-    }
-  }
-  // @ts-ignore
-  answer10.innerText = str2
-
-}
-
-
-// TODO  5
-
-
-function n27() {
-  // @ts-ignore
+      
+      
+      // TODO  5
+      
+      
+      function n27() {
+        // @ts-ignore
   let arr = stringInput7.value.split(' ')
   let abbreviation = "ответ : "
-
+  
   for (let i of arr) {
     abbreviation += i[0].toUpperCase()
   }
-
+  
   // @ts-ignore
   answer11.innerText = abbreviation
 }
@@ -866,7 +866,7 @@ function n28() {
   let str2 = ""
   let variable
   let reply = "ответ : "
-
+  
   for (let i of str) {
     if (i == '*') {
       variable = i
@@ -888,7 +888,7 @@ function n28() {
     }
   }
   let num = str2.split(variable)
-
+  
   if (variable == '*') {
     reply += +(num[0]) * +(num[1])
   }
@@ -904,7 +904,7 @@ function n28() {
   if (variable == '-') {
     reply += +(num[0]) - +(num[1])
   }
-
+  
   // @ts-ignore
   answer12.innerText = reply
 }
@@ -1759,5 +1759,8 @@ itemJ18?.addEventListener('click', a18)
  executor45?.addEventListener('click', () => {new HtmlBlock(div,[styleDiv]).getCode()})
 
 
+
+ let answer18 = document.querySelector('.block18 #s1 table') as HTMLTableElement
+ answer18.innerHTML = "==="
 
 //ANCHOR a+++++a+++++a+++++a+++++a+++++a+++++a+++++a+++++a

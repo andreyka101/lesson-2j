@@ -5,7 +5,7 @@
   --aBackground: #56836d;
   --aBackgroundHOVER: #566b60;
   --aShadowHOVER: #60ffcd;
-
+  
   --bottonShadow: #ffffff;
   --bottonColor: #ffffff;
 }
@@ -14,6 +14,7 @@ body{
   background-color: #8fb5a2;
   font-family: system-ui;
   color:azure;
+  margin: 0;
 }
 button {
   padding: 7px;
@@ -30,14 +31,14 @@ button:hover {
 }
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none; // Yeah, yeah everybody write about it
+  -webkit-appearance: none; // Yeah, yeah everybody write about it
 }
 
 input[type='number'],
 input[type="number"]:hover,
 input[type="number"]:focus {
-    appearance: none;
-    -moz-appearance: textfield;
+  appearance: none;
+  -moz-appearance: textfield;
 }
 input{
   margin: 5px;
@@ -50,9 +51,16 @@ input{
 input::placeholder {
   color: var(--plshldColor);
 }
-  h1{
-    color:#272f2b
-  }
+h1{
+  color:#272f2b;
+  margin-left: 15px;
+}
+#item{
+  margin-left: 15px;
+}
+#item1{
+  margin-left: 15px;
+}
 .a{
   margin-top: 23px;
 }
@@ -64,9 +72,20 @@ a{
   color:var(--aColor);
   margin: 5px;
   text-decoration : none;
+  margin-left: 15px;
 }
 a:hover {
   box-shadow: 0px 0px 10px 2px var(--aShadowHOVER);
   background-color: var(--aBackgroundHOVER);
   color:var(--aShadowHOVER);
+}
+.itemSS{
+  margin-left: 15px;
+  font-size: 25px;
+}
+.siteCutout{
+  background-color: #637c6f;
+  border: #272f2b solid 5px;
+  border-left: 0;
+  border-right: 0;
 }
