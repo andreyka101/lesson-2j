@@ -1761,6 +1761,8 @@ itemJ18?.addEventListener('click', a18)
 
 
  let answer18 = document.querySelector('.block18 #s1 table') as HTMLTableElement
- answer18.innerHTML = "==="
-
+ answer18.innerHTML = ``
+ for (let i=0;i==9;i++){
+  answer18
+ }
 //ANCHOR a+++++a+++++a+++++a+++++a+++++a+++++a+++++a+++++a

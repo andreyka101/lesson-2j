@@ -89,3 +89,15 @@ a:hover {
   border-left: 0;
   border-right: 0;
 }
+table, td, th {
+  /* задаем границу для всех элементов */
+  border: 3px solid #245488;
+}
+
+td, th {
+  /* делаем отступ в ячейках, выставляем выравнивание текста */
+  padding: 10px 20px;
+  text-align: center;
+}
+
+
