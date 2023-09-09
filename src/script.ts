@@ -1759,16 +1759,63 @@ itemJ18?.addEventListener('click', a18)
  executor45?.addEventListener('click', () => {new HtmlBlock(div,[styleDiv]).getCode()})
 
 
+// TODO календарь
 
  let answer18 = document.querySelector('.block18 #s1 table') as HTMLTableElement
  let table = ``
- let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ"]
+ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
  table += `<tr>`
- for (let i=0;i!=5;i++){
+ for (let i=0;i!=7;i++){
   table += `<th>${arrayThTable[i]}</th>`
   }
   table += `</tr>`
-  answer18.insertAdjacentHTML('beforeend', table)
-  console.log(answer18)
-  console.log(table)
+  
+  
+  let tableDateNow=new Date()
+  let tableDateStart = 99
+  let tableDateDay = [1,2,3,4,5,6,0] as any
+  for (let i in tableDateDay){
+    if (tableDateDay[i]==tableDateNow.getDay()){
+      tableDateStart = +(i)+1
+    }
+   }
+   let rangeTable = 0
+   let dayTable = 1
+   let exitInfinityTable = 0
+   let tableDateNowNow = new Date()
+   let trimTableHTML = 0
+
+   table+="<tr>"
+   while(exitInfinityTable == 0){
+    rangeTable += 1
+    trimTableHTML += 1
+    if (rangeTable<tableDateStart-1){
+      table+="<td></td>"
+    }
+    else{
+      if (dayTable==tableDateNowNow.getDate()){
+          table+=`<td style="background-color: red;">${dayTable}</td>`
+        }
+        else{
+          table+=`<td>${dayTable}</td>`
+        }
+        dayTable+=1
+      if(new Date(tableDateNow.setDate(dayTable)).getDate()==1){
+        exitInfinityTable = 1
+        while (trimTableHTML < 7){
+          table+="<td></td>"
+          trimTableHTML += 1
+        }
+      }
+    }
+    if(rangeTable%7==0 && exitInfinityTable != 1){
+      table+="</tr><tr>"
+      trimTableHTML = 0
+    }
+  }
+    table+="</tr>"
+    console.log(table)
+
+
+   answer18.insertAdjacentHTML('beforeend', table)
 //ANCHOR a+++++a+++++a+++++a+++++a+++++a+++++a+++++a+++++a
