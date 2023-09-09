@@ -1761,8 +1761,14 @@ itemJ18?.addEventListener('click', a18)
 
 
  let answer18 = document.querySelector('.block18 #s1 table') as HTMLTableElement
- answer18.innerHTML = ``
- for (let i=0;i==9;i++){
-  answer18
- }
+ let table = ``
+ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ"]
+ table += `<tr>`
+ for (let i=0;i!=5;i++){
+  table += `<th>${arrayThTable[i]}</th>`
+  }
+  table += `</tr>`
+  answer18.insertAdjacentHTML('beforeend', table)
+  console.log(answer18)
+  console.log(table)
 //ANCHOR a+++++a+++++a+++++a+++++a+++++a+++++a+++++a+++++a
