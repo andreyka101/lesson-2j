@@ -1818,23 +1818,16 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
    
    // TODO футбольное поле
    
-   let buttonAppearance = false
-   let foregroundTranslucent = document.querySelector('.block18 .foregroundTranslucent') as HTMLDivElement
+   const foregroundTranslucent = document.querySelector('.foregroundTranslucent') as HTMLDivElement
    const executor51 = document.querySelector('.block18 #b1') as HTMLButtonElement
    executor51?.addEventListener('click', ()=>{
-    if(buttonAppearance){
-      buttonAppearance = false
-    }
-    else{
-      buttonAppearance = true
-    }
-    console.log(buttonAppearance)
-    if(buttonAppearance){
-       console.log(foregroundTranslucent.className)
-
-    //  foregroundTranslucent.classList.remove('off')
-    //  foregroundTranslucent.classList.add('on')
-    }
+      foregroundTranslucent.classList.remove('off')
+      foregroundTranslucent.classList.add('on')
+   })
+   const executor52 = document.querySelector('.SVG-close') as HTMLDivElement
+   executor52?.addEventListener('click', ()=>{
+      foregroundTranslucent.classList.remove('on')
+      foregroundTranslucent.classList.add('off')
    })
 
 

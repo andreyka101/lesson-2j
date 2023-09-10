@@ -114,10 +114,22 @@ td, th {
   height: 100%;
   background-color: #ffffff72;
   backdrop-filter: blur(4px);
+  .div{
+    display: flex;
+    justify-content: flex-end;
+    margin: 38px;
+  }
 }
-.appearance{
-  position: relative;
-  z-index: 200;
+.SVG-close{
+  width: 75px;
+  height: 75px;
+  background:url(svg/close_7vixc7bctmok.svg)center/cover;
+  transition: 300ms;
+  border-radius: 50px;
+}
+.SVG-close:hover{
+  transform: rotate(-90deg);
+  transition: 300ms;
 }
 
 
