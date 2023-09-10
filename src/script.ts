@@ -1761,12 +1761,12 @@ itemJ18?.addEventListener('click', a18)
 
 // TODO календарь
 
- let answer18 = document.querySelector('.block18 #s1 table') as HTMLTableElement
- let table = ``
- let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
+let answer18 = document.querySelector('.block18 #s1 table') as HTMLTableElement
+let table = ``
+let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
  table += `<tr>`
  for (let i=0;i!=7;i++){
-  table += `<th>${arrayThTable[i]}</th>`
+   table += `<th>${arrayThTable[i]}</th>`
   }
   table += `</tr>`
   
@@ -1776,17 +1776,17 @@ itemJ18?.addEventListener('click', a18)
   let tableDateDay = [1,2,3,4,5,6,0] as any
   for (let i in tableDateDay){
     if (tableDateDay[i]==tableDateNow.getDay()){
-      tableDateStart = +(i)+1
+      tableDateStart = +(i)
     }
    }
    let rangeTable = 0
    let dayTable = 1
-   let exitInfinityTable = 0
+   let exitInfinityTable = true
    let tableDateNowNow = new Date()
    let trimTableHTML = 0
 
    table+="<tr>"
-   while(exitInfinityTable == 0){
+   while(exitInfinityTable == true){
     rangeTable += 1
     trimTableHTML += 1
     if (rangeTable<tableDateStart-1){
@@ -1801,21 +1801,41 @@ itemJ18?.addEventListener('click', a18)
         }
         dayTable+=1
       if(new Date(tableDateNow.setDate(dayTable)).getDate()==1){
-        exitInfinityTable = 1
+        exitInfinityTable = false
         while (trimTableHTML < 7){
           table+="<td></td>"
           trimTableHTML += 1
         }
       }
     }
-    if(rangeTable%7==0 && exitInfinityTable != 1){
+    if(rangeTable%7==0 && exitInfinityTable == true){
       table+="</tr><tr>"
       trimTableHTML = 0
     }
   }
     table+="</tr>"
-    console.log(table)
+   answer18.insertAdjacentHTML('beforeend', table) 
+   
+   // TODO футбольное поле
+   
+   let buttonAppearance = false
+   let foregroundTranslucent = document.querySelector('.block18 .foregroundTranslucent') as HTMLDivElement
+   const executor51 = document.querySelector('.block18 #b1') as HTMLButtonElement
+   executor51?.addEventListener('click', ()=>{
+    if(buttonAppearance){
+      buttonAppearance = false
+    }
+    else{
+      buttonAppearance = true
+    }
+    console.log(buttonAppearance)
+    if(buttonAppearance){
+       console.log(foregroundTranslucent.className)
+
+    //  foregroundTranslucent.classList.remove('off')
+    //  foregroundTranslucent.classList.add('on')
+    }
+   })
 
 
-   answer18.insertAdjacentHTML('beforeend', table)
 //ANCHOR a+++++a+++++a+++++a+++++a+++++a+++++a+++++a+++++a
