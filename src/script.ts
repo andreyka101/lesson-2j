@@ -1823,11 +1823,13 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
    executor51?.addEventListener('click', ()=>{
       foregroundTranslucent.classList.remove('off')
       foregroundTranslucent.classList.add('on')
+      document.body.style.overflow = "hidden"
    })
    const executor52 = document.querySelector('.SVG-close') as HTMLDivElement
    executor52?.addEventListener('click', ()=>{
       foregroundTranslucent.classList.remove('on')
       foregroundTranslucent.classList.add('off')
+      document.body.style.overflow = ""
    })
 
 
