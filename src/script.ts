@@ -1772,11 +1772,14 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
   
   
   let tableDateNow=new Date()
+  let tableDateOne=new Date((new Date).setDate(1))
   let tableDateStart = 99
   let tableDateDay = [1,2,3,4,5,6,0] as any
   for (let i in tableDateDay){
-    if (tableDateDay[i]==tableDateNow.getDay()){
-      tableDateStart = +(i)
+    // console.log(tableDateNow.getDay())
+    if (tableDateDay[i]==tableDateOne.getDay()){
+      tableDateStart = +(i)+1
+      console.log(tableDateStart)
     }
    }
    let rangeTable = 0
@@ -1786,10 +1789,10 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
    let trimTableHTML = 0
 
    table+="<tr>"
-   while(exitInfinityTable == true){
+   while(exitInfinityTable){
     rangeTable += 1
     trimTableHTML += 1
-    if (rangeTable<tableDateStart-1){
+    if (rangeTable<tableDateStart){
       table+="<td></td>"
     }
     else{
@@ -1800,7 +1803,7 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
           table+=`<td>${dayTable}</td>`
         }
         dayTable+=1
-      if(new Date(tableDateNow.setDate(dayTable)).getDate()==1){
+      if(new Date((new Date).setDate(dayTable)).getDate()==1){
         exitInfinityTable = false
         while (trimTableHTML < 7){
           table+="<td></td>"
@@ -1808,7 +1811,7 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
         }
       }
     }
-    if(rangeTable%7==0 && exitInfinityTable == true){
+    if(rangeTable%7==0 && exitInfinityTable){
       table+="</tr><tr>"
       trimTableHTML = 0
     }
@@ -1824,13 +1827,17 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
       foregroundTranslucent.classList.remove('off')
       foregroundTranslucent.classList.add('on')
       document.body.style.overflow = "hidden"
-   })
-   const executor52 = document.querySelector('.SVG-close') as HTMLDivElement
-   executor52?.addEventListener('click', ()=>{
+    })
+    const executor52 = document.querySelector('.SVG-close') as HTMLDivElement
+    executor52?.addEventListener('click', ()=>{
       foregroundTranslucent.classList.remove('on')
       foregroundTranslucent.classList.add('off')
       document.body.style.overflow = ""
-   })
+    })
+    
+    const footballFieldGame = document.querySelector(".div + div") as HTMLDivElement
+    footballFieldGame.style.width = "75%"
+    footballFieldGame.style.height = "30%"
 
 
 //ANCHOR a+++++a+++++a+++++a+++++a+++++a+++++a+++++a+++++a

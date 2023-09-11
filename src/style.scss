@@ -119,6 +119,11 @@ td, th {
     justify-content: flex-end;
     margin: 38px;
   }
+  .div + div{
+    width: 75px;
+    height: 75px;
+    background-color: #697bcd;
+  }
 }
 .SVG-close{
   width: 75px;
