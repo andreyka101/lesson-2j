@@ -353,9 +353,9 @@ function n22() {
                     strColor += "#232323;"
                   }
                   else {
-        strColor += "azure;"
-      }
-    }
+                    strColor += "azure;"
+                  }
+                }
     // @ts-ignore
     document.querySelector('body').style = strColor
     
@@ -681,7 +681,7 @@ function n24() {
                         lowercaseNumber += "восемь"
                         break;
                         case 9:
-        lowercaseNumber += "девять"
+                          lowercaseNumber += "девять"
         break;
         case 10:
           lowercaseNumber += "десять"
@@ -765,10 +765,10 @@ function n24() {
                     lowercaseNumber += " шесть"
                     break;
                     case "7":
-          lowercaseNumber += " семь"
-          break;
-          case "8":
-            lowercaseNumber += " восемь"
+                      lowercaseNumber += " семь"
+                      break;
+                      case "8":
+                        lowercaseNumber += " восемь"
             break;
             case "9":
               lowercaseNumber += " девять"
@@ -845,10 +845,10 @@ function n24() {
       
       function n27() {
         // @ts-ignore
-  let arr = stringInput7.value.split(' ')
-  let abbreviation = "ответ : "
-  
-  for (let i of arr) {
+        let arr = stringInput7.value.split(' ')
+        let abbreviation = "ответ : "
+        
+        for (let i of arr) {
     abbreviation += i[0].toUpperCase()
   }
   
@@ -966,9 +966,9 @@ function n10() {
   else {
     localStorage.objRectangle = JSON.stringify(rectangle)
   }
-
-
-
+  
+  
+  
   // @ts-ignore
   answer3.innerText = 'ответ : площадь - ' + (((rectangle.bottomRightY - rectangle.topLeftY) + 1) * ((rectangle.bottomRightX - rectangle.topLeftX) + 1))
 }
@@ -1033,13 +1033,13 @@ function n14() {
   else {
     localStorage.objRectangle = JSON.stringify(rectangle)
   }
-
+  
   let height = parseInt(prompt('введите высоту') as string)
   let width = parseInt(prompt('введите ширину') as string)
   if (height >= 0 && width >= 0) {
     rectangle.bottomRightY = (rectangle.topLeftY + height) - 1
     localStorage.objRectangle = JSON.stringify(rectangle)
-
+    
     rectangle.bottomRightX = (rectangle.topLeftX + width) - 1
     localStorage.objRectangle = JSON.stringify(rectangle)
     // @ts-ignore
@@ -1060,7 +1060,7 @@ function n15() {
   else {
     localStorage.objRectangle = JSON.stringify(rectangle)
   }
-
+  
   let movementX = parseInt(prompt('на сколько передвинуть прямоугольник по оси X') as string)
   rectangle.topLeftX += movementX
   rectangle.bottomRightX += movementX
@@ -1077,8 +1077,8 @@ function n16() {
   else {
     localStorage.objRectangle = JSON.stringify(rectangle)
   }
-
-
+  
+  
   let movementY = parseInt(prompt('на сколько передвинуть прямоугольник по оси Y') as string)
   rectangle.topLeftY += movementY
   rectangle.bottomRightY += movementY
@@ -1115,8 +1115,8 @@ function n18() {
   else {
     localStorage.objRectangle = JSON.stringify(rectangle)
   }
-
-
+  
+  
   let dotX = parseInt(prompt('введите точку X') as string)
   let dotY = parseInt(prompt('введите точку Y') as string)
   if ((dotX >= rectangle.topLeftX && dotX <= rectangle.bottomRightX) && (dotY >= rectangle.topLeftY && dotY <= rectangle.bottomRightY)) {
@@ -1159,7 +1159,7 @@ function n30() {
   else {
     localStorage.objRandomArray = JSON.stringify(randomArray)
   }
-
+  
   let arr2 = []
   for (let i of randomArray) {
     if (i % 2 == 0) {
@@ -1176,7 +1176,7 @@ function n31() {
   else {
     localStorage.objRandomArray = JSON.stringify(randomArray)
   }
-
+  
   let summ = 0
   for (let i of randomArray) {
     summ += i
@@ -1191,7 +1191,7 @@ function n32() {
   else {
     localStorage.objRandomArray = JSON.stringify(randomArray)
   }
-
+  
   let max = randomArray[0]
   randomArray.forEach((item: any) => {
     if (max < item) {
@@ -1224,7 +1224,7 @@ function n34() {
   else {
     localStorage.objRandomArray = JSON.stringify(randomArray)
   }
-
+  
   randomArray.splice(+(prompt(`напишите индекс который нужно удалить с 0 по ${randomArray.length}`) as string), 1);
   localStorage.objRandomArray = JSON.stringify(randomArray)
   // @ts-ignore
@@ -1867,9 +1867,6 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
       foregroundTranslucent.classList.remove('off')
       foregroundTranslucent.classList.add('on')
       document.body.style.overflow = "hidden"
-      // .........
-      // console.log(footballFieldGame.clientX)
-      // console.log('top:' + c.top + ' left: ' + c.left +'');
     })
     const executor52 = document.querySelector('.SVG-close') as HTMLDivElement
     executor52?.addEventListener('click', ()=>{
@@ -1878,14 +1875,17 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
       document.body.style.overflow = ""
     })
     
-    const footballFieldGame = document.querySelector(".div + div") as HTMLDivElement
-    footballFieldGame.style.width = "800px"
-    footballFieldGame.style.height = "531px"
-    footballFieldGame.style.background = "url(foto/Fussballfeld.gif)center/cover"
-    footballFieldGame.style.position = "fixed"
-    // const c = footballFieldGame.getBoundingClientRect()
-    // console.log('top:' + c.top + ' left: ' + c.left +'');
-
+    let playBallMX = 0
+    let playBallMY = 0
+    const footballFieldGame = document.querySelector(".div + div div") as HTMLDivElement
+    const playBall = document.querySelector(".div + div div div") as HTMLDivElement
+    const rect = footballFieldGame.getBoundingClientRect()
+    footballFieldGame?.addEventListener('click', (event)=>{
+      playBallMX = event.clientX
+      playBallMY = event.clientY
+      playBall.style.top = `${event.clientY - rect.y}px`
+      playBall.style.left = `${event.clientX - rect.x}px`
+    })
 
 
 
