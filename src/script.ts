@@ -1827,6 +1827,7 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
       foregroundTranslucent.classList.remove('off')
       foregroundTranslucent.classList.add('on')
       document.body.style.overflow = "hidden"
+      console.log(footballFieldGame.clientYOffset)
     })
     const executor52 = document.querySelector('.SVG-close') as HTMLDivElement
     executor52?.addEventListener('click', ()=>{
@@ -1836,8 +1837,19 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
     })
     
     const footballFieldGame = document.querySelector(".div + div") as HTMLDivElement
-    footballFieldGame.style.width = "75%"
-    footballFieldGame.style.height = "30%"
+    footballFieldGame.style.width = "800px"
+    footballFieldGame.style.height = "531px"
+    footballFieldGame.style.background = "url(foto/Fussballfeld.gif)center/cover"
+    footballFieldGame.style.position = "relative"
+
+
+
+
+
+
+
+
+
 
 
 //ANCHOR a+++++a+++++a+++++a+++++a+++++a+++++a+++++a+++++a
