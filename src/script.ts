@@ -1762,16 +1762,56 @@ itemJ18?.addEventListener('click', a18)
 // TODO календарь
 
 let answer18 = document.querySelector('.block18 #s1 table') as HTMLTableElement
-let table = ``
+let tableDateNow=new Date()
+let table = `<tr><th colspan="7">`
+switch (tableDateNow.getMonth()) {
+  case 0:
+    table += `январь`
+    break;
+  case 1:
+    table += `февраль`
+    break;
+  case 2:
+    table += `март`
+    break;
+  case 3:
+    table += `апрель`
+    break;
+  case 4:
+    table += `май`
+    break;
+  case 5:
+    table += `июнь`
+    break;
+  case 6:
+    table += `июль`
+    break;
+  case 7:
+    table += `август`
+    break;
+  case 8:
+    table += `сентябрь`
+    break;
+  case 9:
+    table += `октябрь`
+    break;
+  case 10:
+    table += `ноябрь`
+    break;
+  case 11:
+    table += `декабрь`
+    break;
+
+}
+table += `</th></tr>`
 let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
  table += `<tr>`
  for (let i=0;i!=7;i++){
-   table += `<th>${arrayThTable[i]}</th>`
+   table += `<td>${arrayThTable[i]}</td>`
   }
   table += `</tr>`
   
   
-  let tableDateNow=new Date()
   let tableDateOne=new Date((new Date).setDate(1))
   let tableDateStart = 99
   let tableDateDay = [1,2,3,4,5,6,0] as any
@@ -1797,7 +1837,7 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
     }
     else{
       if (dayTable==tableDateNowNow.getDate()){
-          table+=`<td style="background-color: red;">${dayTable}</td>`
+          table+=`<td style="background-color: #dd5959;">${dayTable}</td>`
         }
         else{
           table+=`<td>${dayTable}</td>`
@@ -1828,7 +1868,8 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
       foregroundTranslucent.classList.add('on')
       document.body.style.overflow = "hidden"
       // .........
-      console.log(footballFieldGame.clientYOffset)
+      // console.log(footballFieldGame.clientX)
+      // console.log('top:' + c.top + ' left: ' + c.left +'');
     })
     const executor52 = document.querySelector('.SVG-close') as HTMLDivElement
     executor52?.addEventListener('click', ()=>{
@@ -1841,7 +1882,10 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
     footballFieldGame.style.width = "800px"
     footballFieldGame.style.height = "531px"
     footballFieldGame.style.background = "url(foto/Fussballfeld.gif)center/cover"
-    footballFieldGame.style.position = "absolute"
+    footballFieldGame.style.position = "fixed"
+    // const c = footballFieldGame.getBoundingClientRect()
+    // console.log('top:' + c.top + ' left: ' + c.left +'');
+
 
 
 

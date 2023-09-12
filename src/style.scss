@@ -84,20 +84,23 @@ a:hover {
   font-size: 25px;
 }
 .siteCutout{
-  background-color: #637c6f;
-  border: #272f2b solid 5px;
+  background-color: antiquewhite;
+  border: #2d2d2d solid 5px;
   border-left: 0;
   border-right: 0;
+  padding: 20px;
 }
 table, td, th {
   /* задаем границу для всех элементов */
   border: 3px solid #000000;
+  border-radius: 4px;
 }
 
 td, th {
   /* делаем отступ в ячейках, выставляем выравнивание текста */
   padding: 10px 20px;
   text-align: center;
+  background-color: #8d8cb9;
 }
 .on{
   display: inline-block;
