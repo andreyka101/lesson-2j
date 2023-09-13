@@ -1875,16 +1875,19 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
       document.body.style.overflow = ""
     })
     
-    let playBallMX = 0
-    let playBallMY = 0
     const footballFieldGame = document.querySelector(".div + div div") as HTMLDivElement
     const playBall = document.querySelector(".div + div div div") as HTMLDivElement
     const rect = footballFieldGame.getBoundingClientRect()
     footballFieldGame?.addEventListener('click', (event)=>{
-      playBallMX = event.clientX
-      playBallMY = event.clientY
-      playBall.style.top = `${event.clientY - rect.y}px`
-      playBall.style.left = `${event.clientX - rect.x}px`
+      console.log(playBall.style.left)
+      if (rect.right < +(playBall.style.left) + 51){
+        console.log(playBall.style.left)
+        playBall.style.left = `${rect.right}px`
+      }
+      else{
+        playBall.style.top = `${event.clientY - (rect.y + 25)}px`
+        playBall.style.left = `${event.clientX - (rect.x + 25)}px`
+      }
     })
 
 
