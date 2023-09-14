@@ -1880,14 +1880,16 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
     const rect = footballFieldGame.getBoundingClientRect()
     footballFieldGame?.addEventListener('click', (event)=>{
       console.log(playBall.style.left)
-      if (rect.right < +(playBall.style.left) + 51){
-        console.log(playBall.style.left)
-        playBall.style.left = `${rect.right}px`
-      }
-      else{
+      console.log(rect.x)
+      console.log("yyyyyyyyyy")
+      // if (rect.right < +(playBall.style.left) + 51){
+      //   console.log(playBall.style.left)
+      //   // playBall.style.left = `${rect.right}px`
+      // }
+      // else{
+      // }
         playBall.style.top = `${event.clientY - (rect.y + 25)}px`
         playBall.style.left = `${event.clientX - (rect.x + 25)}px`
-      }
     })
 
 

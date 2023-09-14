@@ -147,6 +147,9 @@ td, th {
   cursor: pointer;
   border-radius: 10px;
   box-shadow: 44px -15px 10px #000000b8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .div + div div div{
   width: 51px;
