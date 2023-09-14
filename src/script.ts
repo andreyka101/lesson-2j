@@ -1879,15 +1879,15 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
     const playBall = document.querySelector(".div + div div div") as HTMLDivElement
     footballFieldGame?.addEventListener('click', (event)=>{
       const rect = footballFieldGame.getBoundingClientRect()
-      console.log('left',playBall.style.left)
-      console.log('x',rect.x)
+      console.log('left',+(playBall.style.left))
+      console.log('x',rect.right)
       console.log("yyyyyyyyyy")
-      // if (rect.right < +(playBall.style.left) + 51){
-      //   console.log(playBall.style.left)
-      //   // playBall.style.left = `${rect.right}px`
-      // }
-      // else{
-      // }
+      if (rect.right < +(playBall.style.left) + 51){
+        console.log("aaaaaaaaaaaaaaaaaaaaaaaaaa")
+        // playBall.style.left = `${rect.right}px`
+      }
+      else{
+      }
         playBall.style.top = `${event.clientY - 25}px`
         playBall.style.left = `${event.clientX - 25}px`
     })
