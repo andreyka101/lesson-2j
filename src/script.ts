@@ -1880,8 +1880,13 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
     footballFieldGame?.addEventListener('click', (event)=>{
       
       let definitionBallRotation = Math.floor(Math.random() * (3 - 1)) + 1
-      
-      console.log(gameBallRotation);
+      switch (Math.floor(Math.random() * (3 - 1)) + 1) {
+        case 1:
+          gameBallRotation -= 50
+          break;
+        case 2:
+          gameBallRotation += 50
+          break;}
       playBall.style.transform = `rotate(${gameBallRotation}deg)`
       // playBall.style.transition = `3s`
 
