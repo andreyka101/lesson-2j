@@ -1860,7 +1860,8 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
    answer18.insertAdjacentHTML('beforeend', table) 
    
    // TODO футбольное поле
-   
+
+   let gameBallRotation = 0
    const foregroundTranslucent = document.querySelector('.foregroundTranslucent') as HTMLDivElement
    const executor51 = document.querySelector('.block18 #b1') as HTMLButtonElement
    executor51?.addEventListener('click', ()=>{
@@ -1874,22 +1875,53 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
       foregroundTranslucent.classList.add('off')
       document.body.style.overflow = ""
     })
-    
     const footballFieldGame = document.querySelector(".div + div div") as HTMLDivElement
     const playBall = document.querySelector(".div + div div div") as HTMLDivElement
     footballFieldGame?.addEventListener('click', (event)=>{
+      
+      let definitionBallRotation = Math.floor(Math.random() * (3 - 1)) + 1
+      
+      console.log(gameBallRotation);
+      playBall.style.transform = `rotate(${gameBallRotation}deg)`
+      // playBall.style.transition = `3s`
+
       const rect = footballFieldGame.getBoundingClientRect()
-      console.log('left',+(playBall.style.left))
-      console.log('x',rect.right)
-      console.log("yyyyyyyyyy")
-      if (rect.right < +(playBall.style.left) + 51){
-        console.log("aaaaaaaaaaaaaaaaaaaaaaaaaa")
-        // playBall.style.left = `${rect.right}px`
+      if (rect.right <= event.clientX+25){
+        playBall.style.left = `${rect.right-51}px`
+        if (rect.bottom <= event.clientY+25){
+          playBall.style.top = `${rect.bottom-51}px`
+        }
+        else if (rect.y >= event.clientY-25){
+          playBall.style.top = `${rect.y}px`
+        }
+        else{
+          playBall.style.top = `${event.clientY - 25}px`
+        }
+      }
+      else if (rect.x >= event.clientX-25){
+        playBall.style.left = `${rect.x}px`
+        if (rect.bottom <= event.clientY+25){
+          playBall.style.top = `${rect.bottom-51}px`
+        }
+        else if (rect.y >= event.clientY-25){
+          playBall.style.top = `${rect.y}px`
+        }
+        else{
+          playBall.style.top = `${event.clientY - 25}px`
+        }
+      }
+      else if (rect.bottom <= event.clientY+25){
+        playBall.style.left = `${event.clientX - 25}px`
+        playBall.style.top = `${rect.bottom-51}px`
+      }
+      else if (rect.y >= event.clientY-25){
+        playBall.style.left = `${event.clientX - 25}px`
+        playBall.style.top = `${rect.y}px`
       }
       else{
-      }
         playBall.style.top = `${event.clientY - 25}px`
         playBall.style.left = `${event.clientX - 25}px`
+      }
     })
 
 
