@@ -1933,13 +1933,13 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
       //   playBall.style.left = `${event.clientX - 25}px`
       // }
 
-      
+
         let x = event.clientX-25
         let y = event.clientY-25
-        if (rect.left>x) x = rect.left
-        if (rect.right<x+50) x = rect.right-51
-        if (rect.top>y) y = rect.top
-        if (rect.bottom<y+50) y = rect.bottom-51
+        if (rect.left>x) x = rect.left + 20 
+        if (rect.right<x+50) x = rect.right-71
+        if (rect.top>y) y = rect.top +20
+        if (rect.bottom<y+50) y = rect.bottom-71
         
         playBall.style.top = `${y}px`
         playBall.style.left = `${x}px`
