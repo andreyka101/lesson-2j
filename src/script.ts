@@ -1863,20 +1863,25 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
 
    let gameBallRotation = 0
    const foregroundTranslucent = document.querySelector('.foregroundTranslucent') as HTMLDivElement
-   const executor51 = document.querySelector('.block18 #b1') as HTMLButtonElement
-   executor51?.addEventListener('click', ()=>{
-      foregroundTranslucent.classList.remove('off')
-      foregroundTranslucent.classList.add('on')
-      document.body.style.overflow = "hidden"
-    })
-    const executor52 = document.querySelector('.SVG-close') as HTMLDivElement
-    executor52?.addEventListener('click', ()=>{
-      foregroundTranslucent.classList.remove('on')
-      foregroundTranslucent.classList.add('off')
-      document.body.style.overflow = ""
+   const executor52 = document.querySelector('.SVG-close') as HTMLDivElement
+   executor52?.addEventListener('click', ()=>{
+     foregroundTranslucent.classList.remove('on')
+     foregroundTranslucent.classList.add('off')
+     document.body.style.overflow = ""
     })
     const footballFieldGame = document.querySelector(".div + div div") as HTMLDivElement
     const playBall = document.querySelector(".div + div div div") as HTMLDivElement
+    const executor51 = document.querySelector('.block18 #b1') as HTMLButtonElement
+    executor51?.addEventListener('click', ()=>{
+      foregroundTranslucent.classList.remove('off')
+      foregroundTranslucent.classList.add('on')
+      document.body.style.overflow = "hidden"
+      const rect = footballFieldGame.getBoundingClientRect()
+      if (playBall) {
+        playBall.style.top = (rect.bottom - rect.top ) /2 + rect.y - 25 + 'px'
+        playBall.style.left = (rect.right - rect.left ) /2 + rect.x - 25 + 'px'
+      }
+     })
     footballFieldGame?.addEventListener('click', (event)=>{
       
       let definitionBallRotation = Math.floor(Math.random() * (3 - 1)) + 1
@@ -1891,42 +1896,53 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
       // playBall.style.transition = `3s`
 
       const rect = footballFieldGame.getBoundingClientRect()
-      if (rect.right <= event.clientX+25){
-        playBall.style.left = `${rect.right-51}px`
-        if (rect.bottom <= event.clientY+25){
-          playBall.style.top = `${rect.bottom-51}px`
-        }
-        else if (rect.y >= event.clientY-25){
-          playBall.style.top = `${rect.y}px`
-        }
-        else{
-          playBall.style.top = `${event.clientY - 25}px`
-        }
-      }
-      else if (rect.x >= event.clientX-25){
-        playBall.style.left = `${rect.x}px`
-        if (rect.bottom <= event.clientY+25){
-          playBall.style.top = `${rect.bottom-51}px`
-        }
-        else if (rect.y >= event.clientY-25){
-          playBall.style.top = `${rect.y}px`
-        }
-        else{
-          playBall.style.top = `${event.clientY - 25}px`
-        }
-      }
-      else if (rect.bottom <= event.clientY+25){
-        playBall.style.left = `${event.clientX - 25}px`
-        playBall.style.top = `${rect.bottom-51}px`
-      }
-      else if (rect.y >= event.clientY-25){
-        playBall.style.left = `${event.clientX - 25}px`
-        playBall.style.top = `${rect.y}px`
-      }
-      else{
-        playBall.style.top = `${event.clientY - 25}px`
-        playBall.style.left = `${event.clientX - 25}px`
-      }
+      // if (rect.right <= event.clientX+25){
+      //   playBall.style.left = `${rect.right-51}px`
+      //   if (rect.bottom <= event.clientY+25){
+      //     playBall.style.top = `${rect.bottom-51}px`
+      //   }
+      //   else if (rect.y >= event.clientY-25){
+      //     playBall.style.top = `${rect.y}px`
+      //   }
+      //   else{
+      //     playBall.style.top = `${event.clientY - 25}px`
+      //   }
+      // }
+      // else if (rect.x >= event.clientX-25){
+      //   playBall.style.left = `${rect.x}px`
+      //   if (rect.bottom <= event.clientY+25){
+      //     playBall.style.top = `${rect.bottom-51}px`
+      //   }
+      //   else if (rect.y >= event.clientY-25){
+      //     playBall.style.top = `${rect.y}px`
+      //   }
+      //   else{
+      //     playBall.style.top = `${event.clientY - 25}px`
+      //   }
+      // }
+      // else if (rect.bottom <= event.clientY+25){
+      //   playBall.style.left = `${event.clientX - 25}px`
+      //   playBall.style.top = `${rect.bottom-51}px`
+      // }
+      // else if (rect.y >= event.clientY-25){
+      //   playBall.style.left = `${event.clientX - 25}px`
+      //   playBall.style.top = `${rect.y}px`
+      // }
+      // else{
+      //   playBall.style.top = `${event.clientY - 25}px`
+      //   playBall.style.left = `${event.clientX - 25}px`
+      // }
+
+      
+        let x = event.clientX-25
+        let y = event.clientY-25
+        if (rect.left>x) x = rect.left
+        if (rect.right<x+50) x = rect.right-51
+        if (rect.top>y) y = rect.top
+        if (rect.bottom<y+50) y = rect.bottom-51
+        
+        playBall.style.top = `${y}px`
+        playBall.style.left = `${x}px`
     })
 
 
