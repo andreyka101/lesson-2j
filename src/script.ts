@@ -1896,6 +1896,9 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
       // playBall.style.transition = `3s`
 
       const rect = footballFieldGame.getBoundingClientRect()
+
+
+      // старый код  логика управлением мячом
       // if (rect.right <= event.clientX+25){
       //   playBall.style.left = `${rect.right-51}px`
       //   if (rect.bottom <= event.clientY+25){
@@ -1934,6 +1937,7 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
       // }
 
 
+      // новый код  логика управлением мячом
         let x = event.clientX-25
         let y = event.clientY-25
         if (rect.left>x) x = rect.left + 20 
