@@ -1950,6 +1950,16 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
     })
 
 
+    const body = document.querySelector('body') as HTMLBodyElement
+    body.onclick = function(event:any) {
+      // let target = event.target; // где был клик?
+    console.log(event.target);
+    
+      // if (target.tagName != 'TD') return; // не на TD? тогда не интересует
+    
+      // highlight(target); // подсветить TD
+    };
+
 
 
 
