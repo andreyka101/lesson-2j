@@ -1871,7 +1871,7 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
     })
     const footballFieldGame = document.querySelector(".div + div div") as HTMLDivElement
     const playBall = document.querySelector(".div + div div div") as HTMLDivElement
-    const executor51 = document.querySelector('.block18 #b1') as HTMLButtonElement
+    const executor51 = document.querySelector('.block19 #b1') as HTMLButtonElement
     executor51?.addEventListener('click', ()=>{
       foregroundTranslucent.classList.remove('off')
       foregroundTranslucent.classList.add('on')
