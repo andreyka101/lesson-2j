@@ -1803,6 +1803,7 @@ switch (tableDateNow.getMonth()) {
     break;
 
 }
+
 table += `</th></tr>`
 let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
  table += `<tr>`
