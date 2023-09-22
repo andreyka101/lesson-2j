@@ -1956,9 +1956,6 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
       // let target = event.target; // где был клик?
     console.log(event.target);
     
-      // if (target.tagName != 'TD') return; // не на TD? тогда не интересует
-    
-      // highlight(target); // подсветить TD
     })
 
 
