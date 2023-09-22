@@ -1701,7 +1701,7 @@ class CssClass {
       str+="."
     }
     else{
-      str+="# "
+      str+="#"
     }
     str+=this.name+" {\n"
     if(this.styles.length == 0){
@@ -1870,8 +1870,8 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
      foregroundTranslucent.classList.add('off')
      document.body.style.overflow = ""
     })
-    const footballFieldGame = document.querySelector(".div + div div") as HTMLDivElement //  field
-    const playBall = document.querySelector(".div + div div div") as HTMLDivElement
+    const footballFieldGame = document.querySelector("#field div") as HTMLDivElement //  field
+    const playBall = document.querySelector("#field div div") as HTMLDivElement
     const executor51 = document.querySelector('.block19 #b1') as HTMLButtonElement
     executor51?.addEventListener('click', ()=>{
       foregroundTranslucent.classList.remove('off')
@@ -1951,26 +1951,47 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
     })
 
 
+    // TODO список
+
+
     const body = document.querySelector('body') as HTMLBodyElement
     body.addEventListener('click', (event:any)=>{
       let target = event.target // где был клик?
     // console.log(target.tagName.style.color);
     })
 
+    const lists = document.querySelector('#lists') as HTMLDivElement
+    
     const foregroundSemi_transparentLists = document.querySelector('.foregroundSemi-transparentLists') as HTMLDivElement
-   const exitFromLists = document.querySelector('.SVG-close2') as HTMLDivElement
-   exitFromLists?.addEventListener('click', ()=>{
-    foregroundSemi_transparentLists.classList.remove('on')
-     foregroundSemi_transparentLists.classList.add('off')
-     document.body.style.overflow = ""
+    const exitFromLists = document.querySelector('.SVG-close2') as HTMLDivElement
+    exitFromLists?.addEventListener('click', ()=>{
+      foregroundSemi_transparentLists.classList.remove('on')
+      foregroundSemi_transparentLists.classList.add('off')
+      document.body.style.overflow = ""
     })
     const executor53 = document.querySelector('.block20 #b1') as HTMLButtonElement
     executor53?.addEventListener('click', ()=>{
+      if (localStorage.objGroceryList) {
+        groceryList = JSON.parse(localStorage.objGroceryList)
+      }
+      else {
+        localStorage.objGroceryList = JSON.stringify(groceryList)
+      }
+      lists.innerHTML = ``
+      for (let i in groceryList) {
+        if (groceryList[i].bought!="куплен") lists.innerHTML += `<div><span>${groceryList[i].name +"  "+ groceryList[i].quantity}<br>${groceryList[i].bought}</span><div class="closeList"></div></div>`
+      }
       foregroundSemi_transparentLists.classList.remove('off')
       foregroundSemi_transparentLists.classList.add('on')
       document.body.style.overflow = "hidden"
-     })
 
+      const listsAll = document.querySelectorAll('#lists span') as Record<number,HTMLDivElement>
+      const closeList = document.querySelector('.closeList') as HTMLDivElement
+      closeList?.addEventListener('click', (event)=>{
+        console.log(listsAll[0]);
+      })
+    })
+    
 
 
 

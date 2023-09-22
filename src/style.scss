@@ -140,7 +140,7 @@ td, th {
   justify-content: center;
   margin-top: 50px;
 }
-.div + div div{
+#field div{
   width: 800px;
   height: 531px;
   background: url("/foto/Fussballfeld.gif")center/cover;
@@ -148,7 +148,7 @@ td, th {
   border-radius: 10px;
   box-shadow: 44px -15px 10px #000000b8;
 }
-.div + div div div{
+#field div div{
   animation-timing-function: ease;
   transition: 1.3s;
   width: 51px;
@@ -173,7 +173,32 @@ td, th {
     margin: 38px;
   }
   #lists{
-     display: flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    div{
+      color: white;
+      background-color: #672cd242;
+      backdrop-filter: blur(4px);
+      margin-top: 16px;
+      border-radius: 10px;
+      box-shadow: 44px -15px 10px #000000b8;
+      width: 450px;
+      height: 68px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      span{
+        margin: 25px;
+      }
+      .closeList{
+        margin: 25px;
+        background: url("/svg/close_gi7ho1rwdwtc.svg")center/cover;
+        width: 30px;
+        height: 30px;
+        border-radius: 50px;
+      }
+    }
   }
 }
 
