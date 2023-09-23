@@ -1979,17 +1979,35 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
       }
       lists.innerHTML = ``
       for (let i in groceryList) {
-        if (groceryList[i].bought!="куплен") lists.innerHTML += `<div><span>${groceryList[i].name +"  "+ groceryList[i].quantity}<br>${groceryList[i].bought}</span><div class="closeList"></div></div>`
+        if (groceryList[i].bought!="куплен") lists.innerHTML += `<div class="myclass"><span>${groceryList[i].name +"  "+ groceryList[i].quantity}<br>${groceryList[i].bought}</span><div class="closeList"></div></div>`
       }
       foregroundSemi_transparentLists.classList.remove('off')
       foregroundSemi_transparentLists.classList.add('on')
       document.body.style.overflow = "hidden"
 
-      const listsAll = document.querySelectorAll('#lists span') as Record<number,HTMLDivElement>
-      const closeList = document.querySelector('.closeList') as HTMLDivElement
-      closeList?.addEventListener('click', (event)=>{
-        console.log(listsAll[0]);
-      })
+      // const listsAll = document.querySelector('#lists') as HTMLDivElement
+      // const closeList = document.querySelector('.closeList') as HTMLDivElement
+      // lists.onclick = function(event){
+      // }
+    })
+    document.querySelector('#lists')?.addEventListener('click',function(e){
+      let target = e.target
+      //@ts-ignore
+      for (let i = 0; i < target.childNodes.length; i++){
+        //@ts-ignore
+        if (target.childNodes[i].className == "closeList") {
+          //@ts-ignore
+          console.log(target.childNodes[i]);
+          break;
+        } 
+        
+      }
+      //@ts-ignore
+      if (target?.classList.contains('myclass')) {
+        //@ts-ignore
+        console.log("Я " + target.innerText)
+        
+      }
     })
     
 
