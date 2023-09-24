@@ -1979,7 +1979,8 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
       }
       lists.innerHTML = ``
       for (let i in groceryList) {
-        if (groceryList[i].bought!="куплен") lists.innerHTML += `<div class="myclass"><span>${groceryList[i].name +"  "+ groceryList[i].quantity}<br>${groceryList[i].bought}</span><div class="closeList"></div></div>`
+        if (groceryList[i].bought!="куплен") lists.innerHTML += `<div class="myclass"><span>${groceryList[i].name +"  "+ groceryList[i].quantity}<br>${groceryList[i].bought}</span></div>`
+        // <div class="closeList"></div>
       }
       foregroundSemi_transparentLists.classList.remove('off')
       foregroundSemi_transparentLists.classList.add('on')
@@ -1993,15 +1994,15 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
     document.querySelector('#lists')?.addEventListener('click',function(e){
       let target = e.target
       //@ts-ignore
-      for (let i = 0; i < target.childNodes.length; i++){
-        //@ts-ignore
-        if (target.childNodes[i].className == "closeList") {
-          //@ts-ignore
-          console.log(target.childNodes[i]);
-          break;
-        } 
+      // for (let i = 0; i < target.childNodes.length; i++){
+      //   //@ts-ignore
+      //   if (target.childNodes[i].className == "closeList") {
+      //     //@ts-ignore
+      //     console.log(target.childNodes[i]);
+      //     break;
+      //   } 
         
-      }
+      // }
       //@ts-ignore
       if (target?.classList.contains('myclass')) {
         //@ts-ignore
