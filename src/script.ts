@@ -178,9 +178,9 @@ function n6() {
 
 
 let groceryList = [
-  { name: "йогурт", quantity: 2, bought: "надо купить!!" },
-  { name: "молоко", quantity: 1, bought: "надо купить!!" },
-  { name: "хлеб", quantity: 1, bought: "надо купить!!" },
+  { id:1, name: "йогурт", quantity: 2, bought: "надо купить!!" },
+  { id:2, name: "молоко", quantity: 1, bought: "надо купить!!" },
+  { id:3, name: "хлеб", quantity: 1, bought: "надо купить!!" },
 ]
 
 function n19() {
@@ -1979,7 +1979,7 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
       }
       lists.innerHTML = ``
       for (let i in groceryList) {
-        if (groceryList[i].bought!="куплен") lists.innerHTML += `<div class="myclass"><span>${groceryList[i].name +"  "+ groceryList[i].quantity}<br>${groceryList[i].bought}</span></div>`
+        if (groceryList[i].bought!="куплен") lists.innerHTML += `<div data-id=${groceryList[i].id} class="myclass"><span>${groceryList[i].name +"  "+ groceryList[i].quantity}<br>${groceryList[i].bought}</span><div class="closeList"></div></div>`
         // <div class="closeList"></div>
       }
       foregroundSemi_transparentLists.classList.remove('off')
@@ -1992,7 +1992,7 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
       // }
     })
     document.querySelector('#lists')?.addEventListener('click',function(e){
-      let target = e.target
+      let target = e.target as HTMLElement
       //@ts-ignore
       // for (let i = 0; i < target.childNodes.length; i++){
       //   //@ts-ignore
@@ -2004,10 +2004,10 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
         
       // }
       //@ts-ignore
-      if (target?.classList.contains('myclass')) {
-        //@ts-ignore
-        console.log("Я " + target.innerText)
-        
+      if (target.className!='closeList') return
+      const el = target?.closest('.myclass') as HTMLElement
+      if (el) {
+        el.remove()
       }
     })
     
