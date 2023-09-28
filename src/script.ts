@@ -229,7 +229,9 @@ function n20() {
       answer4.innerText = "information : " + groceryList[+(uuu)].name + " , " + groceryList[+(uuu)].quantity
     }
     else {
-      groceryList.push({ name: tyt, quantity: 1, bought: "надо купить!!" })
+      groceryList.push({ id:groceryList.length, name: tyt, quantity: 1, bought: "надо купить!!" }as any)
+      console.log(groceryList);
+      
       // @ts-ignore
       answer4.innerText = "information : " + tyt + " , " + 1
     }
@@ -1993,6 +1995,7 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
     })
     document.querySelector('#lists')?.addEventListener('click',function(e){
       let target = e.target as HTMLElement
+      
       //@ts-ignore
       // for (let i = 0; i < target.childNodes.length; i++){
       //   //@ts-ignore
