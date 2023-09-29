@@ -176,20 +176,26 @@ td, th {
     display: flex;
     flex-direction: column;
     align-items: center;
-    div{
-      color: white;
-      background-color: #672cd242;
-      backdrop-filter: blur(4px);
-      margin-top: 16px;
-      border-radius: 10px;
-      box-shadow: 44px -15px 10px #000000b8;
-      width: 450px;
-      height: 68px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      span{
-        margin: 25px;
+    #torsion{
+      height:392px;
+      width:560px;
+      overflow-y:auto;
+      div{
+        color: white;
+        background-color: #672cd242;
+        backdrop-filter: blur(4px);
+        margin-top: 30px;
+        border-radius: 10px;
+        box-shadow: 44px -15px 10px #000000b8;
+        width: 450px;
+        height: 68px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        span{
+          margin: 25px;
+        }
+        
       }
       .closeList{
         margin: 25px;

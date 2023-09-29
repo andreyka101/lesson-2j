@@ -1961,7 +1961,7 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
     // console.log(target.tagName.style.color);
     })
 
-    const lists = document.querySelector('#lists') as HTMLDivElement
+    const lists = document.querySelector('#torsion') as HTMLDivElement
     
     const foregroundSemi_transparentLists = document.querySelector('.foregroundSemi-transparentLists') as HTMLDivElement
     const exitFromLists = document.querySelector('.SVG-close2') as HTMLDivElement
@@ -1981,30 +1981,14 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
       lists.innerHTML = ``
       for (let i in groceryList) {
         if (groceryList[i].bought!="куплен") lists.innerHTML += `<div data-id=${groceryList[i].id} class="myclass"><span>${groceryList[i].name +"  "+ groceryList[i].quantity}<br>${groceryList[i].bought}</span><div class="closeList"></div></div>`
-        // <div class="closeList"></div>
       }
       foregroundSemi_transparentLists.classList.remove('off')
       foregroundSemi_transparentLists.classList.add('on')
       document.body.style.overflow = "hidden"
-
-      // const listsAll = document.querySelector('#lists') as HTMLDivElement
-      // const closeList = document.querySelector('.closeList') as HTMLDivElement
-      // lists.onclick = function(event){
-      // }
     })
-    document.querySelector('#lists')?.addEventListener('click',function(e){
+    document.querySelector('#torsion')?.addEventListener('click',function(e){
       let target = e.target as HTMLElement
-      
-      //@ts-ignore
-      // for (let i = 0; i < target.childNodes.length; i++){
-      //   //@ts-ignore
-      //   if (target.childNodes[i].className == "closeList") {
-      //     //@ts-ignore
-      //     console.log(target.childNodes[i]);
-      //     break;
-      //   } 
-        
-      // }
+     
       //@ts-ignore
       if (target.className!='closeList') return
       const el = target?.closest('.myclass') as HTMLElement
@@ -2012,7 +1996,15 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
         el.remove()
       }
       let id = el.dataset
-      console.log(id.id)
+      // console.log(id.id)
+      for(let i in groceryList){
+        // console.log(groceryList[i].id)
+        //@ts-ignore
+        if (groceryList[i].id==id.id){
+          groceryList.splice(+(i), 1);
+          localStorage.objGroceryList = JSON.stringify(groceryList)
+        }
+      }
     })
     
 
