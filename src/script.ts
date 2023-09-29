@@ -229,8 +229,7 @@ function n20() {
       answer4.innerText = "information : " + groceryList[+(uuu)].name + " , " + groceryList[+(uuu)].quantity
     }
     else {
-      groceryList.push({ id:groceryList.length, name: tyt, quantity: 1, bought: "надо купить!!" }as any)
-      console.log(groceryList);
+      groceryList.push({ id:groceryList.length+1, name: tyt, quantity: 1, bought: "надо купить!!" }as any)
       
       // @ts-ignore
       answer4.innerText = "information : " + tyt + " , " + 1
@@ -2012,9 +2011,10 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
       if (el) {
         el.remove()
       }
+      let id = el.dataset
+      console.log(id.id)
     })
     
-
 
 
 
