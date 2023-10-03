@@ -1988,17 +1988,22 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
     })
     document.querySelector('#torsion')?.addEventListener('click',function(e){
       let target = e.target as HTMLElement
-     
+      
       //@ts-ignore
       if (target.className!='closeList') return
       const el = target?.closest('.myclass') as HTMLElement
       if (el) {
-        el.remove()
+        el.style.marginLeft = '600px'
+        setTimeout(()=>{
+          el.style.height = '0'
+          el.style.marginTop = '0'
+          setTimeout(()=>{
+            el.remove()
+          },500)
+        },500)
       }
       let id = el.dataset
-      // console.log(id.id)
       for(let i in groceryList){
-        // console.log(groceryList[i].id)
         //@ts-ignore
         if (groceryList[i].id==id.id){
           groceryList.splice(+(i), 1);

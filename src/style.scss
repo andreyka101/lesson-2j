@@ -158,6 +158,9 @@ td, th {
   box-shadow: 0px -15px 0px #00000000;
   position: absolute;
 }
+.myclass {
+  transition: 0.5s;
+}
 .foregroundSemi-transparentLists{
   position: fixed;
   top:0%;
@@ -180,6 +183,7 @@ td, th {
       height:392px;
       width:560px;
       overflow-y:auto;
+      overflow-x:hidden;
       div{
         color: white;
         background-color: #672cd242;
