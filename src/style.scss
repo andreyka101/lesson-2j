@@ -215,6 +215,29 @@ td, th {
     }
   }
 }
+#torsion::-webkit-scrollbar {
+  width: 10px;
+  background-color: #6767ff00;
+  border: solid #662cd294 3px;
+  border-left: 0;
+  border-right: 0;
+  border-radius: 25px;
+}
+#torsion::-webkit-scrollbar-track {
+  background-color: #75757500;
+}
+#torsion::-webkit-scrollbar-button {
+  background-color: #6f0101;
+  display: none;
+}
+#torsion::-webkit-scrollbar-thumb {
+  background-color: #672cd269;
+  border-radius: 25px;
+  // -webkit-box-shadow: 44px -15px 10px #000000b8;
+}
+#torsion::-webkit-scrollbar-thumb:hover {
+  background-color: #662cd295;
+}
 
 
 
