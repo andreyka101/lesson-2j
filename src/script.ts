@@ -2016,10 +2016,17 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
     // TODO подсказки для кнопки номер n
 
 
-    const aaa = document.querySelector("a") as HTMLElement
-    aaa.addEventListener("mouseover",()=>{
-      console.log(aaa)
-    })
+    const aaa = document.querySelectorAll("#item") as any
+    const comment = document.querySelector("#comment") as HTMLSpanElement
+    for (let i of aaa){
+      i.addEventListener("mouseover",()=>{
+        console.log(i.getBoundingClientRect().y)
+        if (i.getBoundingClientRect().y>85){
+          comment.style.top = `${i.getBoundingClientRect().y-53}px`
+        }
+      })
+
+    }
 
 
 

@@ -240,5 +240,13 @@ td, th {
 #torsion::-webkit-scrollbar-thumb:active {
   background-color: #874bf6;
 }
-
+#comment{
+  background-color: crimson;
+  position: absolute;
+  left: 7px;
+  padding: 7px;
+  border-radius: 6px;
+  border: solid #000000 3px;
+  color: #ffffff;
+}
 
