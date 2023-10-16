@@ -2013,6 +2013,13 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
     })
     
 
+    // TODO подсказки для кнопки номер n
+
+
+    const aaa = document.querySelector("a") as HTMLElement
+    aaa.addEventListener("mouseover",()=>{
+      console.log(aaa)
+    })
 
 
 
