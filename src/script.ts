@@ -88,7 +88,7 @@ function n3() {
   else {
     localStorage.objTime = JSON.stringify(time)
   }
-  
+
   if (time.second < 10) {
     if (time.minute < 10) {
       // @ts-ignore
@@ -127,8 +127,8 @@ function n4() {
   while (time.hour > 23) {
     time.hour -= 24
   }
-  
-  
+
+
   localStorage.objTime = JSON.stringify(time)
   // @ts-ignore
   answer2.innerText = "ответ : время задано"
@@ -148,8 +148,8 @@ function n5() {
   while (time.hour > 23) {
     time.hour -= 24
   }
-  
-  
+
+
   localStorage.objTime = JSON.stringify(time)
   // @ts-ignore
   answer2.innerText = "ответ : время задано"
@@ -162,8 +162,8 @@ function n6() {
   while (time.hour > 23) {
     time.hour -= 24
   }
-  
-  
+
+
   localStorage.objTime = JSON.stringify(time)
   // @ts-ignore
   answer2.innerText = "ответ : время задано"
@@ -178,9 +178,9 @@ function n6() {
 
 
 let groceryList = [
-  { id:1, name: "йогурт", quantity: 2, bought: "надо купить!!" },
-  { id:2, name: "молоко", quantity: 1, bought: "надо купить!!" },
-  { id:3, name: "хлеб", quantity: 1, bought: "надо купить!!" },
+  { id: 1, name: "йогурт", quantity: 2, bought: "надо купить!!" },
+  { id: 2, name: "молоко", quantity: 1, bought: "надо купить!!" },
+  { id: 3, name: "хлеб", quantity: 1, bought: "надо купить!!" },
 ]
 
 function n19() {
@@ -190,7 +190,7 @@ function n19() {
   else {
     localStorage.objGroceryList = JSON.stringify(groceryList)
   }
-  
+
   let str = ``
   for (let i in groceryList) {
     for (let e in groceryList[i]) {
@@ -229,8 +229,8 @@ function n20() {
       answer4.innerText = "information : " + groceryList[+(uuu)].name + " , " + groceryList[+(uuu)].quantity
     }
     else {
-      groceryList.push({ id:groceryList.length+1, name: tyt, quantity: 1, bought: "надо купить!!" }as any)
-      
+      groceryList.push({ id: groceryList.length + 1, name: tyt, quantity: 1, bought: "надо купить!!" } as any)
+
       // @ts-ignore
       answer4.innerText = "information : " + tyt + " , " + 1
     }
@@ -250,9 +250,9 @@ function n21() {
   else {
     localStorage.objGroceryList = JSON.stringify(groceryList)
   }
-  
+
   let purchasedProducts = 0
-  
+
   if (localStorage.loPurchasedProducts) {
     purchasedProducts = JSON.parse(localStorage.loPurchasedProducts)
   }
@@ -274,7 +274,7 @@ function n21() {
     if (num == 1) {
       // @ts-ignore
       if (groceryList[uuu].bought != "куплен") {
-        
+
         // @ts-ignore
         groceryList[uuu].bought = "куплен"
         // @ts-ignore
@@ -320,46 +320,46 @@ function n22() {
   else {
     localStorage.locSwitch1 = JSON.stringify(switch1)
   }
-  
+
   switch (switch1) {
     case 1:
       switch1 = 2
       break;
-      case 2:
-        switch1 = 3
-        break;
-        case 3:
-          switch1 = 4
-          break;
-          case 4:
-            switch1 = 5
-            break;
-            case 5:
-              switch1 = 6
-              break;
-              case 6:
-                switch1 = 1
-                break;
-              }
-              
-              localStorage.locSwitch1 = JSON.stringify(switch1)
-              
-              //* dark
-              if (switch1 == 1) {
-                // @ts-ignore
-                answer5.innerText = 'dark'
-                for (let i in color) {
-                  strColor += color[i]
-                  if (i == "0") {
-                    strColor += "#232323;"
-                  }
-                  else {
-                    strColor += "azure;"
-                  }
-                }
+    case 2:
+      switch1 = 3
+      break;
+    case 3:
+      switch1 = 4
+      break;
+    case 4:
+      switch1 = 5
+      break;
+    case 5:
+      switch1 = 6
+      break;
+    case 6:
+      switch1 = 1
+      break;
+  }
+
+  localStorage.locSwitch1 = JSON.stringify(switch1)
+
+  //* dark
+  if (switch1 == 1) {
+    // @ts-ignore
+    answer5.innerText = 'dark'
+    for (let i in color) {
+      strColor += color[i]
+      if (i == "0") {
+        strColor += "#232323;"
+      }
+      else {
+        strColor += "azure;"
+      }
+    }
     // @ts-ignore
     document.querySelector('body').style = strColor
-    
+
     for (let r of buttonALL) {
       // @ts-ignore
       r.style = "background-color: #efefef; color: #232323;"
@@ -369,25 +369,25 @@ function n22() {
       r.style = "background-color: #efefef; color: #232323;"
     }
     // @ts-ignore
-    document.querySelector('html').style.setProperty('--plshldColor','#232323')
+    document.querySelector('html').style.setProperty('--plshldColor', '#232323')
     // @ts-ignore
-    document.querySelector('html').style.setProperty('--aColor','#cbcbcb')
+    document.querySelector('html').style.setProperty('--aColor', '#cbcbcb')
     // @ts-ignore
-    document.querySelector('html').style.setProperty('--aBackground','#717171')
+    document.querySelector('html').style.setProperty('--aBackground', '#717171')
     // @ts-ignore
-    document.querySelector('html').style.setProperty('--aBackgroundHOVER','#717171')
+    document.querySelector('html').style.setProperty('--aBackgroundHOVER', '#717171')
     // @ts-ignore
-    document.querySelector('html').style.setProperty('--aShadowHOVER','#ffffff')
+    document.querySelector('html').style.setProperty('--aShadowHOVER', '#ffffff')
     // @ts-ignore
-    document.querySelector('html').style.setProperty('--bottonShadow','#ffffff')
+    document.querySelector('html').style.setProperty('--bottonShadow', '#ffffff')
     // @ts-ignore
-    document.querySelector('html').style.setProperty('--bottonColor','#232323')
+    document.querySelector('html').style.setProperty('--bottonColor', '#232323')
     for (let w of H1ALL) {
       // @ts-ignore
       w.style = "color:azure;"
     }
   }
-  
+
   //* white
   if (switch1 == 2) {
     // @ts-ignore
@@ -412,25 +412,25 @@ function n22() {
       r.style = "background-color: #575757; color: #efefef;"
     }
     // @ts-ignore
-    document.querySelector('html').style.setProperty('--plshldColor','#efefef')
+    document.querySelector('html').style.setProperty('--plshldColor', '#efefef')
     // @ts-ignore
-    document.querySelector('html').style.setProperty('--aColor','#ffffff')
+    document.querySelector('html').style.setProperty('--aColor', '#ffffff')
     // @ts-ignore
-    document.querySelector('html').style.setProperty('--aBackground','#9b9b9b')
+    document.querySelector('html').style.setProperty('--aBackground', '#9b9b9b')
     // @ts-ignore
-    document.querySelector('html').style.setProperty('--aBackgroundHOVER','#9b9b9b')
+    document.querySelector('html').style.setProperty('--aBackgroundHOVER', '#9b9b9b')
     // @ts-ignore
-    document.querySelector('html').style.setProperty('--aShadowHOVER','#f71414')
+    document.querySelector('html').style.setProperty('--aShadowHOVER', '#f71414')
     // @ts-ignore
-    document.querySelector('html').style.setProperty('--bottonShadow','#000000')
+    document.querySelector('html').style.setProperty('--bottonShadow', '#000000')
     // @ts-ignore
-    document.querySelector('html').style.setProperty('--bottonColor','#ffffff')
+    document.querySelector('html').style.setProperty('--bottonColor', '#ffffff')
     for (let w of H1ALL) {
       // @ts-ignore
       w.style = "color:#202020;"
     }
   }
-  
+
   //* dark gold
   if (switch1 == 3) {
     // @ts-ignore
@@ -446,7 +446,7 @@ function n22() {
     }
     // @ts-ignore
     document.querySelector('body').style = strColor
-    
+
     for (let r of buttonALL) {
       // @ts-ignore
       r.style = "background-color: #c9a805;"
@@ -456,25 +456,25 @@ function n22() {
       r.style = "background-color: #8b7404; color: white;"
     }
     // @ts-ignore
-    document.querySelector('html').style.setProperty('--plshldColor','#fcfdd4')
+    document.querySelector('html').style.setProperty('--plshldColor', '#fcfdd4')
     // @ts-ignore
-    document.querySelector('html').style.setProperty('--aColor','#ffffff')
+    document.querySelector('html').style.setProperty('--aColor', '#ffffff')
     // @ts-ignore
-    document.querySelector('html').style.setProperty('--aBackground','#b29115')
+    document.querySelector('html').style.setProperty('--aBackground', '#b29115')
     // @ts-ignore
-    document.querySelector('html').style.setProperty('--aBackgroundHOVER','#ffffff')
+    document.querySelector('html').style.setProperty('--aBackgroundHOVER', '#ffffff')
     // @ts-ignore
-    document.querySelector('html').style.setProperty('--aShadowHOVER','#ffffff')
+    document.querySelector('html').style.setProperty('--aShadowHOVER', '#ffffff')
     // @ts-ignore
-    document.querySelector('html').style.setProperty('--bottonShadow','#ffe52d')
+    document.querySelector('html').style.setProperty('--bottonShadow', '#ffe52d')
     // @ts-ignore
-    document.querySelector('html').style.setProperty('--bottonColor','#ffffff')
+    document.querySelector('html').style.setProperty('--bottonColor', '#ffffff')
     for (let w of H1ALL) {
       // @ts-ignore
       w.style = "color:#f1da23;"
     }
   }
-  
+
   //* girly
   if (switch1 == 4) {
     // @ts-ignore
@@ -490,7 +490,7 @@ function n22() {
     }
     // @ts-ignore
     document.querySelector('body').style = strColor
-    
+
     for (let r of buttonALL) {
       // @ts-ignore
       r.style = "background-color: #ee0cae; color: white;"
@@ -500,19 +500,19 @@ function n22() {
       r.style = "background-color: #efefef; color: #d34c89;"
     }
     // @ts-ignore
-    document.querySelector('html').style.setProperty('--plshldColor','#d34c89')
+    document.querySelector('html').style.setProperty('--plshldColor', '#d34c89')
     // @ts-ignore
-    document.querySelector('html').style.setProperty('--aColor','#ffffff')
+    document.querySelector('html').style.setProperty('--aColor', '#ffffff')
     // @ts-ignore
-    document.querySelector('html').style.setProperty('--aBackground','#ba0e89')
+    document.querySelector('html').style.setProperty('--aBackground', '#ba0e89')
     // @ts-ignore
-    document.querySelector('html').style.setProperty('--aBackgroundHOVER','#7d095c')
+    document.querySelector('html').style.setProperty('--aBackgroundHOVER', '#7d095c')
     // @ts-ignore
-    document.querySelector('html').style.setProperty('--aShadowHOVER','#ff93e0')
+    document.querySelector('html').style.setProperty('--aShadowHOVER', '#ff93e0')
     // @ts-ignore
-    document.querySelector('html').style.setProperty('--bottonShadow','#f15dc7')
+    document.querySelector('html').style.setProperty('--bottonShadow', '#f15dc7')
     // @ts-ignore
-    document.querySelector('html').style.setProperty('--bottonColor','#ffffff')
+    document.querySelector('html').style.setProperty('--bottonColor', '#ffffff')
     for (let w of H1ALL) {
       // @ts-ignore
       w.style = "color:azure;"
@@ -534,7 +534,7 @@ function n22() {
     }
     // @ts-ignore
     document.querySelector('body').style = strColor
-    
+
     for (let r of buttonALL) {
       // @ts-ignore
       r.style = "background-color: #637c6f; color: #f0f0f0;"
@@ -544,25 +544,25 @@ function n22() {
       r.style = "background-color: #637c6f; color: #f0f0f0;"
     }
     // @ts-ignore
-    document.querySelector('html').style.setProperty('--plshldColor','#dcd9d9')
+    document.querySelector('html').style.setProperty('--plshldColor', '#dcd9d9')
     // @ts-ignore
-    document.querySelector('html').style.setProperty('--aColor','#f0f0f0')
+    document.querySelector('html').style.setProperty('--aColor', '#f0f0f0')
     // @ts-ignore
-    document.querySelector('html').style.setProperty('--aBackground','#56836d')
+    document.querySelector('html').style.setProperty('--aBackground', '#56836d')
     // @ts-ignore
-    document.querySelector('html').style.setProperty('--aBackgroundHOVER','#566b60')
+    document.querySelector('html').style.setProperty('--aBackgroundHOVER', '#566b60')
     // @ts-ignore
-    document.querySelector('html').style.setProperty('--aShadowHOVER','#60ffcd')
+    document.querySelector('html').style.setProperty('--aShadowHOVER', '#60ffcd')
     // @ts-ignore
-    document.querySelector('html').style.setProperty('--bottonShadow','#ffffff')
+    document.querySelector('html').style.setProperty('--bottonShadow', '#ffffff')
     // @ts-ignore
-    document.querySelector('html').style.setProperty('--bottonColor','#ffffff')
+    document.querySelector('html').style.setProperty('--bottonColor', '#ffffff')
     for (let w of H1ALL) {
       // @ts-ignore
       w.style = "color:#272f2b;"
     }
   }
-  
+
   //* gold
   if (switch1 == 5) {
     // @ts-ignore
@@ -578,7 +578,7 @@ function n22() {
     }
     // @ts-ignore
     document.querySelector('body').style = strColor
-    
+
     for (let r of buttonALL) {
       // @ts-ignore
       r.style = "background-color: #fbff4f; color: #000000;"
@@ -588,19 +588,19 @@ function n22() {
       r.style = "background-color: #fbff5b; color: #000000;"
     }
     // @ts-ignore
-    document.querySelector('html').style.setProperty('--plshldColor','#000000')
+    document.querySelector('html').style.setProperty('--plshldColor', '#000000')
     // @ts-ignore
-    document.querySelector('html').style.setProperty('--aColor','#ffffff')
+    document.querySelector('html').style.setProperty('--aColor', '#ffffff')
     // @ts-ignore
-    document.querySelector('html').style.setProperty('--aBackground','#b29115')
+    document.querySelector('html').style.setProperty('--aBackground', '#b29115')
     // @ts-ignore
-    document.querySelector('html').style.setProperty('--aBackgroundHOVER','#ffe52d')
+    document.querySelector('html').style.setProperty('--aBackgroundHOVER', '#ffe52d')
     // @ts-ignore
-    document.querySelector('html').style.setProperty('--aShadowHOVER','#ffe52d')
+    document.querySelector('html').style.setProperty('--aShadowHOVER', '#ffe52d')
     // @ts-ignore
-    document.querySelector('html').style.setProperty('--bottonShadow','#6c6407')
+    document.querySelector('html').style.setProperty('--bottonShadow', '#6c6407')
     // @ts-ignore
-    document.querySelector('html').style.setProperty('--bottonColor','#ffffff')
+    document.querySelector('html').style.setProperty('--bottonColor', '#ffffff')
     for (let w of H1ALL) {
       // @ts-ignore
       w.style = "color:#000000;"
@@ -621,7 +621,7 @@ function n23() {
   let countingNumbers = 0
   let countingString = 0
   let countingСount = 0
-  
+
   if (line.length != 0) {
     for (let i = 0; i != line.length; i++) {
       if (line[i] == "1" || line[i] == "2" || line[i] == "3" || line[i] == "4" || line[i] == "5" || line[i] == "6" || line[i] == "7" || line[i] == "8" || line[i] == "9" || line[i] == "0") {
@@ -657,202 +657,202 @@ function n24() {
       case 0:
         lowercaseNumber += "нуль"
         break;
-        case 1:
-          lowercaseNumber += "один"
-          break;
-          case 2:
-            lowercaseNumber += "два"
-            break;
-            case 3:
-              lowercaseNumber += "три"
-              break;
-              case 4:
-                lowercaseNumber += "четыре"
-                break;
-                case 5:
-                  lowercaseNumber += "пять"
-                  break;
-                  case 6:
-                    lowercaseNumber += "шесть"
-                    break;
-                    case 7:
-                      lowercaseNumber += "семь"
-                      break;
-                      case 8:
-                        lowercaseNumber += "восемь"
-                        break;
-                        case 9:
-                          lowercaseNumber += "девять"
+      case 1:
+        lowercaseNumber += "один"
         break;
-        case 10:
-          lowercaseNumber += "десять"
-          break;
-          case 11:
-            lowercaseNumber += "одиннадцать"
-            break;
-            case 12:
-              lowercaseNumber += "двенадцать"
-              break;
-              case 13:
-                lowercaseNumber += "тринадцать"
-                break;
-                case 14:
-                  lowercaseNumber += "четырнадцать"
-                  break;
-                  case 15:
-                    lowercaseNumber += "пятнадцать"
-                    break;
-                    case 16:
-                      lowercaseNumber += "шестнадцать"
-                      break;
-                      case 17:
-                        lowercaseNumber += "семнадцать"
-                        break;
-                        case 18:
-                          lowercaseNumber += "восемнадцать"
-                          break;
-                          case 19:
-                            lowercaseNumber += "девятнадцать"
-                            break;
-                          }
-                        }
-                        else {
-                          let ssn = savingNumber + ""
-                          switch (ssn[0]) {
-                            case "2":
-                              lowercaseNumber += "двадцать"
-                              break;
-                              case "3":
+      case 2:
+        lowercaseNumber += "два"
+        break;
+      case 3:
+        lowercaseNumber += "три"
+        break;
+      case 4:
+        lowercaseNumber += "четыре"
+        break;
+      case 5:
+        lowercaseNumber += "пять"
+        break;
+      case 6:
+        lowercaseNumber += "шесть"
+        break;
+      case 7:
+        lowercaseNumber += "семь"
+        break;
+      case 8:
+        lowercaseNumber += "восемь"
+        break;
+      case 9:
+        lowercaseNumber += "девять"
+        break;
+      case 10:
+        lowercaseNumber += "десять"
+        break;
+      case 11:
+        lowercaseNumber += "одиннадцать"
+        break;
+      case 12:
+        lowercaseNumber += "двенадцать"
+        break;
+      case 13:
+        lowercaseNumber += "тринадцать"
+        break;
+      case 14:
+        lowercaseNumber += "четырнадцать"
+        break;
+      case 15:
+        lowercaseNumber += "пятнадцать"
+        break;
+      case 16:
+        lowercaseNumber += "шестнадцать"
+        break;
+      case 17:
+        lowercaseNumber += "семнадцать"
+        break;
+      case 18:
+        lowercaseNumber += "восемнадцать"
+        break;
+      case 19:
+        lowercaseNumber += "девятнадцать"
+        break;
+    }
+  }
+  else {
+    let ssn = savingNumber + ""
+    switch (ssn[0]) {
+      case "2":
+        lowercaseNumber += "двадцать"
+        break;
+      case "3":
         lowercaseNumber += "тридцать"
         break;
       case "4":
         lowercaseNumber += "сорок"
         break;
-        case "5":
-          lowercaseNumber += "пятьдесят"
-          break;
-          case "6":
-            lowercaseNumber += "шестьдесят"
-            break;
-            case "7":
-              lowercaseNumber += "семьдесят"
-              break;
-              case "8":
-                lowercaseNumber += "восемьдесят"
-                break;
-                case "9":
-                  lowercaseNumber += "девяносто"
-                  break;
-                  
-                }
-                if (ssn[1] != "0") {
+      case "5":
+        lowercaseNumber += "пятьдесят"
+        break;
+      case "6":
+        lowercaseNumber += "шестьдесят"
+        break;
+      case "7":
+        lowercaseNumber += "семьдесят"
+        break;
+      case "8":
+        lowercaseNumber += "восемьдесят"
+        break;
+      case "9":
+        lowercaseNumber += "девяносто"
+        break;
+
+    }
+    if (ssn[1] != "0") {
       switch (ssn[1]) {
         case "1":
           lowercaseNumber += " один"
           break;
-          case "2":
-            lowercaseNumber += " два"
-            break;
-            case "3":
-              lowercaseNumber += " три"
-              break;
-              case "4":
-                lowercaseNumber += " четыре"
-                break;
-                case "5":
-                  lowercaseNumber += " пять"
-                  break;
-                  case "6":
-                    lowercaseNumber += " шесть"
-                    break;
-                    case "7":
-                      lowercaseNumber += " семь"
-                      break;
-                      case "8":
-                        lowercaseNumber += " восемь"
-            break;
-            case "9":
-              lowercaseNumber += " девять"
-              break;
-            }
-          }
-        }
-        // @ts-ignore
-        answer8.innerText = lowercaseNumber
-        if (savingNumber > 99) {
-          // @ts-ignore
-          answer8.innerText = "ответ : слишком большое число только двузначное"
-        }
+        case "2":
+          lowercaseNumber += " два"
+          break;
+        case "3":
+          lowercaseNumber += " три"
+          break;
+        case "4":
+          lowercaseNumber += " четыре"
+          break;
+        case "5":
+          lowercaseNumber += " пять"
+          break;
+        case "6":
+          lowercaseNumber += " шесть"
+          break;
+        case "7":
+          lowercaseNumber += " семь"
+          break;
+        case "8":
+          lowercaseNumber += " восемь"
+          break;
+        case "9":
+          lowercaseNumber += " девять"
+          break;
       }
+    }
+  }
+  // @ts-ignore
+  answer8.innerText = lowercaseNumber
+  if (savingNumber > 99) {
+    // @ts-ignore
+    answer8.innerText = "ответ : слишком большое число только двузначное"
+  }
+}
 
-      
-      // TODO  3
-      
-      
-      function n25() {
-        // @ts-ignore
-        let str = stringInput5.value
-        let array = "ответ : "
-        console.log(str.codePointAt())
-        for (let i in str) {
-          if (1072 <= str[i].codePointAt() && str[i].codePointAt() <= 1103 || 97 <= str[i].codePointAt() && str[i].codePointAt() <= 122) {
-            array += str[i].toUpperCase()
-          }
-          else if (1040 <= str[i].codePointAt() && str[i].codePointAt() <= 1071 || 65 <= str[i].codePointAt() && str[i].codePointAt() <= 90) {
-            array += str[i].toLowerCase()
-          }
-          else if (48 <= str[i].codePointAt() && str[i].codePointAt() <= 57) {
-            array += "_"
-          }
-          else {
-            array += str[i]
-          }
-        }
-        // @ts-ignore
-        answer9.innerText = array
+
+// TODO  3
+
+
+function n25() {
+  // @ts-ignore
+  let str = stringInput5.value
+  let array = "ответ : "
+  console.log(str.codePointAt())
+  for (let i in str) {
+    if (1072 <= str[i].codePointAt() && str[i].codePointAt() <= 1103 || 97 <= str[i].codePointAt() && str[i].codePointAt() <= 122) {
+      array += str[i].toUpperCase()
+    }
+    else if (1040 <= str[i].codePointAt() && str[i].codePointAt() <= 1071 || 65 <= str[i].codePointAt() && str[i].codePointAt() <= 90) {
+      array += str[i].toLowerCase()
+    }
+    else if (48 <= str[i].codePointAt() && str[i].codePointAt() <= 57) {
+      array += "_"
+    }
+    else {
+      array += str[i]
+    }
+  }
+  // @ts-ignore
+  answer9.innerText = array
+}
+
+
+// TODO  4
+
+
+function n26() {
+  // @ts-ignore
+  let str = stringInput6.value
+  let str2 = "ответ : "
+  let memory = ""
+  for (let i in str) {
+    if (str[i] == "-") {
+      memory = str[i + 1]
+    }
+    else {
+      if (memory == "") {
+        str2 += str[i]
       }
-      
-      
-      // TODO  4
-      
-      
-      function n26() {
-        // @ts-ignore
-        let str = stringInput6.value
-        let str2 = "ответ : "
-        let memory = ""
-        for (let i in str) {
-          if (str[i] == "-") {
-            memory = str[i + 1]
-          }
-          else {
-            if (memory == "") {
-              str2 += str[i]
-            }
-            else {
-              memory = ""
-              str2 += str[i].toUpperCase()
-            }
-          }
-        }
-        // @ts-ignore
-        answer10.innerText = str2
-        
+      else {
+        memory = ""
+        str2 += str[i].toUpperCase()
       }
-      
-      
-      // TODO  5
-      
-      
-      function n27() {
-        // @ts-ignore
-        let arr = stringInput7.value.split(' ')
-        let abbreviation = "ответ : "
-        
-        for (let i of arr) {
+    }
+  }
+  // @ts-ignore
+  answer10.innerText = str2
+
+}
+
+
+// TODO  5
+
+
+function n27() {
+  // @ts-ignore
+  let arr = stringInput7.value.split(' ')
+  let abbreviation = "ответ : "
+
+  for (let i of arr) {
     abbreviation += i[0].toUpperCase()
   }
-  
+
   // @ts-ignore
   answer11.innerText = abbreviation
 }
@@ -867,7 +867,7 @@ function n28() {
   let str2 = ""
   let variable
   let reply = "ответ : "
-  
+
   for (let i of str) {
     if (i == '*') {
       variable = i
@@ -889,7 +889,7 @@ function n28() {
     }
   }
   let num = str2.split(variable)
-  
+
   if (variable == '*') {
     reply += +(num[0]) * +(num[1])
   }
@@ -905,7 +905,7 @@ function n28() {
   if (variable == '-') {
     reply += +(num[0]) - +(num[1])
   }
-  
+
   // @ts-ignore
   answer12.innerText = reply
 }
@@ -967,9 +967,9 @@ function n10() {
   else {
     localStorage.objRectangle = JSON.stringify(rectangle)
   }
-  
-  
-  
+
+
+
   // @ts-ignore
   answer3.innerText = 'ответ : площадь - ' + (((rectangle.bottomRightY - rectangle.topLeftY) + 1) * ((rectangle.bottomRightX - rectangle.topLeftX) + 1))
 }
@@ -1034,13 +1034,13 @@ function n14() {
   else {
     localStorage.objRectangle = JSON.stringify(rectangle)
   }
-  
+
   let height = parseInt(prompt('введите высоту') as string)
   let width = parseInt(prompt('введите ширину') as string)
   if (height >= 0 && width >= 0) {
     rectangle.bottomRightY = (rectangle.topLeftY + height) - 1
     localStorage.objRectangle = JSON.stringify(rectangle)
-    
+
     rectangle.bottomRightX = (rectangle.topLeftX + width) - 1
     localStorage.objRectangle = JSON.stringify(rectangle)
     // @ts-ignore
@@ -1061,7 +1061,7 @@ function n15() {
   else {
     localStorage.objRectangle = JSON.stringify(rectangle)
   }
-  
+
   let movementX = parseInt(prompt('на сколько передвинуть прямоугольник по оси X') as string)
   rectangle.topLeftX += movementX
   rectangle.bottomRightX += movementX
@@ -1078,8 +1078,8 @@ function n16() {
   else {
     localStorage.objRectangle = JSON.stringify(rectangle)
   }
-  
-  
+
+
   let movementY = parseInt(prompt('на сколько передвинуть прямоугольник по оси Y') as string)
   rectangle.topLeftY += movementY
   rectangle.bottomRightY += movementY
@@ -1116,8 +1116,8 @@ function n18() {
   else {
     localStorage.objRectangle = JSON.stringify(rectangle)
   }
-  
-  
+
+
   let dotX = parseInt(prompt('введите точку X') as string)
   let dotY = parseInt(prompt('введите точку Y') as string)
   if ((dotX >= rectangle.topLeftX && dotX <= rectangle.bottomRightX) && (dotY >= rectangle.topLeftY && dotY <= rectangle.bottomRightY)) {
@@ -1160,7 +1160,7 @@ function n30() {
   else {
     localStorage.objRandomArray = JSON.stringify(randomArray)
   }
-  
+
   let arr2 = []
   for (let i of randomArray) {
     if (i % 2 == 0) {
@@ -1177,7 +1177,7 @@ function n31() {
   else {
     localStorage.objRandomArray = JSON.stringify(randomArray)
   }
-  
+
   let summ = 0
   for (let i of randomArray) {
     summ += i
@@ -1192,7 +1192,7 @@ function n32() {
   else {
     localStorage.objRandomArray = JSON.stringify(randomArray)
   }
-  
+
   let max = randomArray[0]
   randomArray.forEach((item: any) => {
     if (max < item) {
@@ -1225,7 +1225,7 @@ function n34() {
   else {
     localStorage.objRandomArray = JSON.stringify(randomArray)
   }
-  
+
   randomArray.splice(+(prompt(`напишите индекс который нужно удалить с 0 по ${randomArray.length}`) as string), 1);
   localStorage.objRandomArray = JSON.stringify(randomArray)
   // @ts-ignore
@@ -1564,10 +1564,10 @@ class HtmlElement {
 
 
   constructor(textContentZ: string, tagNameZ: string = "span", stylesZ: string = "", attributesZ: string = "", selfClosingZ: any = true) {
-    if (tagNameZ==""){
-      tagNameZ ="span"
+    if (tagNameZ == "") {
+      tagNameZ = "span"
     }
-    if (selfClosingZ==""){
+    if (selfClosingZ == "") {
       selfClosingZ = true
     }
     this.tagName = tagNameZ
@@ -1576,12 +1576,12 @@ class HtmlElement {
     this.attributes = attributesZ.split(' ')
     this.styles = stylesZ.split(';')
     this.nestedTags.unshift({
-      tagName:this.tagName,
-      selfClosing:this.selfClosing,
-      textContent:this.textContent,
-      attributes:this.attributes,
-      styles:this.styles,
-    }as any)
+      tagName: this.tagName,
+      selfClosing: this.selfClosing,
+      textContent: this.textContent,
+      attributes: this.attributes,
+      styles: this.styles,
+    } as any)
   }
   attributeSetting(attributesZ: string) {
     this.attributes.push(attributesZ)
@@ -1590,38 +1590,38 @@ class HtmlElement {
   styleSetting(stylesZ: string) {
     this.styles.push(stylesZ)
   }
-  
-    prepend(el:HtmlElement) {
-      this.nestedTags.unshift(el)
+
+  prepend(el: HtmlElement) {
+    this.nestedTags.unshift(el)
+  }
+  append(el: HtmlElement) {
+    console.log(el)
+    this.nestedTags.push(el)
+  }
+
+  getHtml(x: any = this.nestedTags, n: number = 0, str: string = ""): any {
+    // if (answer15) answer15.innerHTML =
+    str += "<" + x[n].tagName + ' style="'
+    x[n].styles.find(function (item: any) {
+      str += item + ";"
+    })
+    str += '" '
+    x[n].attributes.find(function (item: any) {
+      str += item
+    })
+    if (x[n].selfClosing) {
+      str += '>' + x[n].textContent + "</" + x[n].tagName + ">"
     }
-    append(el:HtmlElement) {
-      console.log(el)
-      this.nestedTags.push(el)
+    else {
+      str += ">"
     }
-    
-    getHtml(x:any=this.nestedTags, n:number=0, str:string=""):any {
-      // if (answer15) answer15.innerHTML =
-      str += "<" + x[n].tagName + ' style="'
-      x[n].styles.find(function(item:any) {
-        str += item + ";"
-      })
-      str+='" '
-      x[n].attributes.find(function(item:any) {
-        str += item
-      })
-      if (x[n].selfClosing){
-        str +='>'+x[n].textContent+"</" + x[n].tagName + ">"
-      }
-      else{
-        str += ">"
-      }
-      console.log(str)
-      if (n == x.length - 1) {
-        return str
-      } else {
-        return this.getHtml(x, n + 1, str)
-      }
+    console.log(str)
+    if (n == x.length - 1) {
+      return str
+    } else {
+      return this.getHtml(x, n + 1, str)
     }
+  }
 }
 
 let span = new HtmlElement("uuu", "span", "color:red; background:blye")
@@ -1640,25 +1640,26 @@ const itemJ16 = document.querySelector('.block15 #item')
 itemJ16?.addEventListener('click', a16)
 const executor40 = document.querySelector('.block15 #b1')
 // @ts-ignore     
-executor40?.addEventListener('click', () => {if (answer15) answer15.innerHTML ="&#10004;" ; div.attributeSetting(prompt('введите атрибут\nпример:\nhref="/link-element-example.ru"')) })
+executor40?.addEventListener('click', () => { if (answer15) answer15.innerHTML = "&#10004;"; div.attributeSetting(prompt('введите атрибут\nпример:\nhref="/link-element-example.ru"')) })
 const executor41 = document.querySelector('.block15 #b2')
 // @ts-ignore     
-executor41?.addEventListener('click', () => { if (answer15) answer15.innerHTML ="&#10004;" ;  div.styleSetting(prompt('введите style можно несколько через точку с запятой ( ; ) \nпример:\ncolor:blye ; background:blye')) })
+executor41?.addEventListener('click', () => { if (answer15) answer15.innerHTML = "&#10004;"; div.styleSetting(prompt('введите style можно несколько через точку с запятой ( ; ) \nпример:\ncolor:blye ; background:blye')) })
 const executor42 = document.querySelector('.block15 #b3')
 // @ts-ignore     
-executor42?.addEventListener('click', () => { if (answer15) answer15.innerHTML ="&#10004;" ;div.append(new HtmlElement(prompt('добавления элемента в конец\nвведите текстовое содержимое   !! обязательно !!'),prompt('введите название тега по умолчанию = span'),prompt('введите стили не обязательно'),prompt('введите название атрибута не обязательно'),prompt('введите самозакрывающийся тег или false по умолчанию = true'))) })
+executor42?.addEventListener('click', () => { if (answer15) answer15.innerHTML = "&#10004;"; div.append(new HtmlElement(prompt('добавления элемента в конец\nвведите текстовое содержимое   !! обязательно !!'), prompt('введите название тега по умолчанию = span'), prompt('введите стили не обязательно'), prompt('введите название атрибута не обязательно'), prompt('введите самозакрывающийся тег или false по умолчанию = true'))) })
 const executor43 = document.querySelector('.block15 #b4')
 // @ts-ignore     
-executor43?.addEventListener('click', () => { if (answer15) answer15.innerHTML ="&#10004;"; div.prepend(new HtmlElement(prompt('добавления элемента в конец\nвведите текстовое содержимое   !! обязательно !!'),prompt('введите название тега по умолчанию = span'),prompt('введите стили не обязательно'),prompt('введите название атрибута не обязательно'),prompt('введите самозакрывающийся тег или false по умолчанию = true'))) })
+executor43?.addEventListener('click', () => { if (answer15) answer15.innerHTML = "&#10004;"; div.prepend(new HtmlElement(prompt('добавления элемента в конец\nвведите текстовое содержимое   !! обязательно !!'), prompt('введите название тега по умолчанию = span'), prompt('введите стили не обязательно'), prompt('введите название атрибута не обязательно'), prompt('введите самозакрывающийся тег или false по умолчанию = true'))) })
 const executor44 = document.querySelector('.block15 #b5')
-executor44?.addEventListener('click', () => { 
+executor44?.addEventListener('click', () => {
   if (answer15) answer15.innerHTML = ""
- div.getHtml() })
+  div.getHtml()
+})
 
- // TODO 3
- 
- function a17() {
-   alert(`Задание 3
+// TODO 3
+
+function a17() {
+  alert(`Задание 3
 Реализовать класс, который описывает css класс. 
 Класс CssClass должен содержать внутри себя:
 ■ название css класса;
@@ -1668,50 +1669,50 @@ executor44?.addEventListener('click', () => {
 ■ метод getCss(), который возвращает css код в виде строки`)
 }
 class CssClass {
-  name:string
-  cls:boolean
+  name: string
+  cls: boolean
   styles = [] as string[]
-  constructor(name:string , ic:string = "class") {
+  constructor(name: string, ic: string = "class") {
     this.name = name
     ic = ic.toLowerCase()
-    if (ic=="class"){
+    if (ic == "class") {
       this.cls = true
     }
-    else{
+    else {
       this.cls = false
     }
   }
-  styleSetting(x:string){
+  styleSetting(x: string) {
     let y = x.split(';')
-    for (let i of y){
-      if (i!=""){
+    for (let i of y) {
+      if (i != "") {
         this.styles.push(i)
       }
     }
     console.log(this.styles)
   }
-  removeStyle(x:string){
-    if (this.styles.indexOf(x)!=-1){
+  removeStyle(x: string) {
+    if (this.styles.indexOf(x) != -1) {
       this.styles.splice(this.styles.indexOf(x), 1)
     }
     console.log(this.styles)
   }
-  get getCss(){
-    let str=""
-    if (this.cls){
-      str+="."
+  get getCss() {
+    let str = ""
+    if (this.cls) {
+      str += "."
     }
-    else{
-      str+="#"
+    else {
+      str += "#"
     }
-    str+=this.name+" {\n"
-    if(this.styles.length == 0){
+    str += this.name + " {\n"
+    if (this.styles.length == 0) {
       return "массив пуст"
     }
-    for (let i of this.styles){
-      str+=i +";\n"
+    for (let i of this.styles) {
+      str += i + ";\n"
     }
-    str+="}"
+    str += "}"
     return str
   }
 }
@@ -1720,16 +1721,16 @@ let styleDiv = new CssClass('sdf')
 const itemJ17 = document.querySelector('.block16 #item')
 itemJ17?.addEventListener('click', a17)
 const executor48 = document.querySelector('.block16 #b1')
-executor48?.addEventListener('click', () => {styleDiv.styleSetting(prompt('введите стили которые нужно добавить, можно несколько разделяя их через точку с запятой ( ; )')as string)})
- const executor49 = document.querySelector('.block16 #b2')
- executor49?.addEventListener('click', () => {styleDiv.removeStyle(prompt('введите стили которые нужно удалить')as string)})
- const executor50 = document.querySelector('.block16 #b3')
- executor50?.addEventListener('click', () => {alert(styleDiv.getCss); console.log()})
+executor48?.addEventListener('click', () => { styleDiv.styleSetting(prompt('введите стили которые нужно добавить, можно несколько разделяя их через точку с запятой ( ; )') as string) })
+const executor49 = document.querySelector('.block16 #b2')
+executor49?.addEventListener('click', () => { styleDiv.removeStyle(prompt('введите стили которые нужно удалить') as string) })
+const executor50 = document.querySelector('.block16 #b3')
+executor50?.addEventListener('click', () => { alert(styleDiv.getCss); console.log() })
 
- // TODO 4
- 
- function a18() {
-   alert(`Реализовать класс, описывающий блок html документ. 
+// TODO 4
+
+function a18() {
+  alert(`Реализовать класс, описывающий блок html документ. 
 Класс HtmlBlock должен содержать внутри себя:
 ■ коллекцию стилей, описанных с помощью класса CssClass;
 ■ корневой элемент, описанный с помощью класса 
@@ -1739,31 +1740,31 @@ HtmlElement;
 элементов).`)
 }
 
-class HtmlBlock{
-  сssClass:CssClass[]
-  htmlElement :HtmlElement
-  constructor (a:any,b:CssClass[]){
+class HtmlBlock {
+  сssClass: CssClass[]
+  htmlElement: HtmlElement
+  constructor(a: any, b: CssClass[]) {
     this.htmlElement = a
     this.сssClass = b
   }
-  getCode(){
-    document.head.innerHTML+=`<style>${this.сssClass.map(el=>el.getCss).join('')}</style>`    
+  getCode() {
+    document.head.innerHTML += `<style>${this.сssClass.map(el => el.getCss).join('')}</style>`
     const bl17 = document.querySelector('.block17')
-    if(bl17) bl17.innerHTML += this.htmlElement.getHtml()
+    if (bl17) bl17.innerHTML += this.htmlElement.getHtml()
   }
 }
 
 
 const itemJ18 = document.querySelector('.block17 #item')
 itemJ18?.addEventListener('click', a18)
- const executor45 = document.querySelector('.block17 #b1')
- executor45?.addEventListener('click', () => {new HtmlBlock(div,[styleDiv]).getCode()})
+const executor45 = document.querySelector('.block17 #b1')
+executor45?.addEventListener('click', () => { new HtmlBlock(div, [styleDiv]).getCode() })
 
 
 // TODO календарь
 
 let answer18 = document.querySelector('.block18 #s1 table') as HTMLTableElement
-let tableDateNow=new Date()
+let tableDateNow = new Date()
 let table = `<tr><th colspan="7">`
 switch (tableDateNow.getMonth()) {
   case 0:
@@ -1806,228 +1807,232 @@ switch (tableDateNow.getMonth()) {
 }
 
 table += `</th></tr>`
-let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
- table += `<tr>`
- for (let i=0;i!=7;i++){
-   table += `<td>${arrayThTable[i]}</td>`
-  }
-  table += `</tr>`
-  
-  
-  let tableDateOne=new Date((new Date).setDate(1))
-  let tableDateStart = 99
-  let tableDateDay = [1,2,3,4,5,6,0] as any
-  for (let i in tableDateDay){
-    // console.log(tableDateNow.getDay())
-    if (tableDateDay[i]==tableDateOne.getDay()){
-      tableDateStart = +(i)+1
-      console.log(tableDateStart)
-    }
-   }
-   let rangeTable = 0
-   let dayTable = 1
-   let exitInfinityTable = true
-   let tableDateNowNow = new Date()
-   let trimTableHTML = 0
+let arrayThTable = ["ПН", "ВТ", "СР", "ЧТ", "ПТ", "СБ", "ВС"]
+table += `<tr>`
+for (let i = 0; i != 7; i++) {
+  table += `<td>${arrayThTable[i]}</td>`
+}
+table += `</tr>`
 
-   table+="<tr>"
-   while(exitInfinityTable){
-    rangeTable += 1
-    trimTableHTML += 1
-    if (rangeTable<tableDateStart){
-      table+="<td></td>"
+
+let tableDateOne = new Date((new Date).setDate(1))
+let tableDateStart = 99
+let tableDateDay = [1, 2, 3, 4, 5, 6, 0] as any
+for (let i in tableDateDay) {
+  // console.log(tableDateNow.getDay())
+  if (tableDateDay[i] == tableDateOne.getDay()) {
+    tableDateStart = +(i) + 1
+    console.log(tableDateStart)
+  }
+}
+let rangeTable = 0
+let dayTable = 1
+let exitInfinityTable = true
+let tableDateNowNow = new Date()
+let trimTableHTML = 0
+
+table += "<tr>"
+while (exitInfinityTable) {
+  rangeTable += 1
+  trimTableHTML += 1
+  if (rangeTable < tableDateStart) {
+    table += "<td></td>"
+  }
+  else {
+    if (dayTable == tableDateNowNow.getDate()) {
+      table += `<td style="background-color: #dd5959;">${dayTable}</td>`
     }
-    else{
-      if (dayTable==tableDateNowNow.getDate()){
-          table+=`<td style="background-color: #dd5959;">${dayTable}</td>`
-        }
-        else{
-          table+=`<td>${dayTable}</td>`
-        }
-        dayTable+=1
-      if(new Date((new Date).setDate(dayTable)).getDate()==1){
-        exitInfinityTable = false
-        while (trimTableHTML < 7){
-          table+="<td></td>"
-          trimTableHTML += 1
-        }
+    else {
+      table += `<td>${dayTable}</td>`
+    }
+    dayTable += 1
+    if (new Date((new Date).setDate(dayTable)).getDate() == 1) {
+      exitInfinityTable = false
+      while (trimTableHTML < 7) {
+        table += "<td></td>"
+        trimTableHTML += 1
       }
-    }
-    if(rangeTable%7==0 && exitInfinityTable){
-      table+="</tr><tr>"
-      trimTableHTML = 0
     }
   }
-    table+="</tr>"
-   answer18.insertAdjacentHTML('beforeend', table) 
-   
-   // TODO футбольное поле
+  if (rangeTable % 7 == 0 && exitInfinityTable) {
+    table += "</tr><tr>"
+    trimTableHTML = 0
+  }
+}
+table += "</tr>"
+answer18.insertAdjacentHTML('beforeend', table)
 
-   let gameBallRotation = 0
-   const foregroundTranslucent = document.querySelector('.foregroundTranslucent') as HTMLDivElement
-   const executor52 = document.querySelector('.SVG-close') as HTMLDivElement
-   executor52?.addEventListener('click', ()=>{
-     foregroundTranslucent.classList.remove('on')
-     foregroundTranslucent.classList.add('off')
-     document.body.style.overflow = ""
-    })
-    const footballFieldGame = document.querySelector("#field div") as HTMLDivElement //  field
-    const playBall = document.querySelector("#field div div") as HTMLDivElement
-    const executor51 = document.querySelector('.block19 #b1') as HTMLButtonElement
-    executor51?.addEventListener('click', ()=>{
-      foregroundTranslucent.classList.remove('off')
-      foregroundTranslucent.classList.add('on')
-      document.body.style.overflow = "hidden"
-      const rect = footballFieldGame.getBoundingClientRect()
-      if (playBall) {
-        playBall.style.top = (rect.bottom - rect.top ) /2 + rect.y - 25 + 'px'
-        playBall.style.left = (rect.right - rect.left ) /2 + rect.x - 25 + 'px'
-      }
-     })
-    footballFieldGame?.addEventListener('click', (event)=>{
-      
-      let definitionBallRotation = Math.floor(Math.random() * (3 - 1)) + 1
-      switch (Math.floor(Math.random() * (3 - 1)) + 1) {
-        case 1:
-          gameBallRotation -= 50
-          break;
-        case 2:
-          gameBallRotation += 50
-          break;}
-      playBall.style.transform = `rotate(${gameBallRotation}deg)`
-      // playBall.style.transition = `3s`
+// TODO футбольное поле
 
-      const rect = footballFieldGame.getBoundingClientRect()
+let gameBallRotation = 0
+const foregroundTranslucent = document.querySelector('.foregroundTranslucent') as HTMLDivElement
+const executor52 = document.querySelector('.SVG-close') as HTMLDivElement
+executor52?.addEventListener('click', () => {
+  foregroundTranslucent.classList.remove('on')
+  foregroundTranslucent.classList.add('off')
+  document.body.style.overflow = ""
+})
+const footballFieldGame = document.querySelector("#field div") as HTMLDivElement //  field
+const playBall = document.querySelector("#field div div") as HTMLDivElement
+const executor51 = document.querySelector('.block19 #b1') as HTMLButtonElement
+executor51?.addEventListener('click', () => {
+  foregroundTranslucent.classList.remove('off')
+  foregroundTranslucent.classList.add('on')
+  document.body.style.overflow = "hidden"
+  const rect = footballFieldGame.getBoundingClientRect()
+  if (playBall) {
+    playBall.style.top = (rect.bottom - rect.top) / 2 + rect.y - 25 + 'px'
+    playBall.style.left = (rect.right - rect.left) / 2 + rect.x - 25 + 'px'
+  }
+})
+footballFieldGame?.addEventListener('click', (event) => {
 
+  let definitionBallRotation = Math.floor(Math.random() * (3 - 1)) + 1
+  switch (Math.floor(Math.random() * (3 - 1)) + 1) {
+    case 1:
+      gameBallRotation -= 50
+      break;
+    case 2:
+      gameBallRotation += 50
+      break;
+  }
+  playBall.style.transform = `rotate(${gameBallRotation}deg)`
+  // playBall.style.transition = `3s`
 
-      // старый код  логика управлением мячом
-      // if (rect.right <= event.clientX+25){
-      //   playBall.style.left = `${rect.right-51}px`
-      //   if (rect.bottom <= event.clientY+25){
-      //     playBall.style.top = `${rect.bottom-51}px`
-      //   }
-      //   else if (rect.y >= event.clientY-25){
-      //     playBall.style.top = `${rect.y}px`
-      //   }
-      //   else{
-      //     playBall.style.top = `${event.clientY - 25}px`
-      //   }
-      // }
-      // else if (rect.x >= event.clientX-25){
-      //   playBall.style.left = `${rect.x}px`
-      //   if (rect.bottom <= event.clientY+25){
-      //     playBall.style.top = `${rect.bottom-51}px`
-      //   }
-      //   else if (rect.y >= event.clientY-25){
-      //     playBall.style.top = `${rect.y}px`
-      //   }
-      //   else{
-      //     playBall.style.top = `${event.clientY - 25}px`
-      //   }
-      // }
-      // else if (rect.bottom <= event.clientY+25){
-      //   playBall.style.left = `${event.clientX - 25}px`
-      //   playBall.style.top = `${rect.bottom-51}px`
-      // }
-      // else if (rect.y >= event.clientY-25){
-      //   playBall.style.left = `${event.clientX - 25}px`
-      //   playBall.style.top = `${rect.y}px`
-      // }
-      // else{
-      //   playBall.style.top = `${event.clientY - 25}px`
-      //   playBall.style.left = `${event.clientX - 25}px`
-      // }
+  const rect = footballFieldGame.getBoundingClientRect()
 
 
-      // новый код  логика управлением мячом
-        let x = event.clientX-25
-        let y = event.clientY-25
-        if (rect.left>x) x = rect.left + 20 
-        if (rect.right<x+50) x = rect.right-71
-        if (rect.top>y) y = rect.top +20
-        if (rect.bottom<y+50) y = rect.bottom-71
-        
-        playBall.style.top = `${y}px`
-        playBall.style.left = `${x}px`
-    })
+  // старый код  логика управлением мячом
+  // if (rect.right <= event.clientX+25){
+  //   playBall.style.left = `${rect.right-51}px`
+  //   if (rect.bottom <= event.clientY+25){
+  //     playBall.style.top = `${rect.bottom-51}px`
+  //   }
+  //   else if (rect.y >= event.clientY-25){
+  //     playBall.style.top = `${rect.y}px`
+  //   }
+  //   else{
+  //     playBall.style.top = `${event.clientY - 25}px`
+  //   }
+  // }
+  // else if (rect.x >= event.clientX-25){
+  //   playBall.style.left = `${rect.x}px`
+  //   if (rect.bottom <= event.clientY+25){
+  //     playBall.style.top = `${rect.bottom-51}px`
+  //   }
+  //   else if (rect.y >= event.clientY-25){
+  //     playBall.style.top = `${rect.y}px`
+  //   }
+  //   else{
+  //     playBall.style.top = `${event.clientY - 25}px`
+  //   }
+  // }
+  // else if (rect.bottom <= event.clientY+25){
+  //   playBall.style.left = `${event.clientX - 25}px`
+  //   playBall.style.top = `${rect.bottom-51}px`
+  // }
+  // else if (rect.y >= event.clientY-25){
+  //   playBall.style.left = `${event.clientX - 25}px`
+  //   playBall.style.top = `${rect.y}px`
+  // }
+  // else{
+  //   playBall.style.top = `${event.clientY - 25}px`
+  //   playBall.style.left = `${event.clientX - 25}px`
+  // }
 
 
-    // TODO список
+  // новый код  логика управлением мячом
+  let x = event.clientX - 25
+  let y = event.clientY - 25
+  if (rect.left > x) x = rect.left + 20
+  if (rect.right < x + 50) x = rect.right - 71
+  if (rect.top > y) y = rect.top + 20
+  if (rect.bottom < y + 50) y = rect.bottom - 71
+
+  playBall.style.top = `${y}px`
+  playBall.style.left = `${x}px`
+})
 
 
-    const body = document.querySelector('body') as HTMLBodyElement
-    body.addEventListener('click', (event:any)=>{
-      let target = event.target // где был клик?
-    // console.log(target.tagName.style.color);
-    })
-
-    const lists = document.querySelector('#torsion') as HTMLDivElement
-    
-    const foregroundSemi_transparentLists = document.querySelector('.foregroundSemi-transparentLists') as HTMLDivElement
-    const exitFromLists = document.querySelector('.SVG-close2') as HTMLDivElement
-    exitFromLists?.addEventListener('click', ()=>{
-      foregroundSemi_transparentLists.classList.remove('on')
-      foregroundSemi_transparentLists.classList.add('off')
-      document.body.style.overflow = ""
-    })
-    const executor53 = document.querySelector('.block20 #b1') as HTMLButtonElement
-    executor53?.addEventListener('click', ()=>{
-      if (localStorage.objGroceryList) {
-        groceryList = JSON.parse(localStorage.objGroceryList)
-      }
-      else {
-        localStorage.objGroceryList = JSON.stringify(groceryList)
-      }
-      lists.innerHTML = ``
-      for (let i in groceryList) {
-        if (groceryList[i].bought!="куплен") lists.innerHTML += `<div data-id=${groceryList[i].id} class="myclass"><span>${groceryList[i].name +"  "+ groceryList[i].quantity}<br>${groceryList[i].bought}</span><div class="closeList"></div></div>`
-      }
-      foregroundSemi_transparentLists.classList.remove('off')
-      foregroundSemi_transparentLists.classList.add('on')
-      document.body.style.overflow = "hidden"
-    })
-    document.querySelector('#torsion')?.addEventListener('click',function(e){
-      let target = e.target as HTMLElement
-      
-      //@ts-ignore
-      if (target.className!='closeList') return
-      const el = target?.closest('.myclass') as HTMLElement
-      if (el) {
-        el.style.marginLeft = '600px'
-        setTimeout(()=>{
-          el.style.height = '0'
-          el.style.marginTop = '0'
-          setTimeout(()=>{
-            el.remove()
-          },500)
-        },500)
-      }
-      let id = el.dataset
-      for(let i in groceryList){
-        //@ts-ignore
-        if (groceryList[i].id==id.id){
-          groceryList.splice(+(i), 1);
-          localStorage.objGroceryList = JSON.stringify(groceryList)
-        }
-      }
-    })
-    
-
-    // TODO подсказки для кнопки номер n
+// TODO список
 
 
-    const aaa = document.querySelectorAll("#item") as any
-    const comment = document.querySelector("#comment") as HTMLSpanElement
-    for (let i of aaa){
-      i.addEventListener("mouseover",(event:any)=>{
-          setTimeout(()=>{
-          if (i.getBoundingClientRect().y>70) comment.style.top = `${event.pageY-70}px`
-          else comment.style.top = `${event.pageY+70}px`
-        }, 500)
-        })
-      i.addEventListener("mouseout",()=>{comment.style.top = `-100px`})
+const body = document.querySelector('body') as HTMLBodyElement
+body.addEventListener('click', (event: any) => {
+  let target = event.target // где был клик?
+  // console.log(target.tagName.style.color);
+})
 
+const lists = document.querySelector('#torsion') as HTMLDivElement
+
+const foregroundSemi_transparentLists = document.querySelector('.foregroundSemi-transparentLists') as HTMLDivElement
+const exitFromLists = document.querySelector('.SVG-close2') as HTMLDivElement
+exitFromLists?.addEventListener('click', () => {
+  foregroundSemi_transparentLists.classList.remove('on')
+  foregroundSemi_transparentLists.classList.add('off')
+  document.body.style.overflow = ""
+})
+const executor53 = document.querySelector('.block20 #b1') as HTMLButtonElement
+executor53?.addEventListener('click', () => {
+  if (localStorage.objGroceryList) {
+    groceryList = JSON.parse(localStorage.objGroceryList)
+  }
+  else {
+    localStorage.objGroceryList = JSON.stringify(groceryList)
+  }
+  lists.innerHTML = ``
+  for (let i in groceryList) {
+    if (groceryList[i].bought != "куплен") lists.innerHTML += `<div data-id=${groceryList[i].id} class="myclass"><span>${groceryList[i].name + "  " + groceryList[i].quantity}<br>${groceryList[i].bought}</span><div class="closeList"></div></div>`
+  }
+  foregroundSemi_transparentLists.classList.remove('off')
+  foregroundSemi_transparentLists.classList.add('on')
+  document.body.style.overflow = "hidden"
+})
+document.querySelector('#torsion')?.addEventListener('click', function (e) {
+  let target = e.target as HTMLElement
+
+  //@ts-ignore
+  if (target.className != 'closeList') return
+  const el = target?.closest('.myclass') as HTMLElement
+  if (el) {
+    el.style.marginLeft = '600px'
+    setTimeout(() => {
+      el.style.height = '0'
+      el.style.marginTop = '0'
+      setTimeout(() => {
+        el.remove()
+      }, 500)
+    }, 500)
+  }
+  let id = el.dataset
+  for (let i in groceryList) {
+    //@ts-ignore
+    if (groceryList[i].id == id.id) {
+      groceryList.splice(+(i), 1);
+      localStorage.objGroceryList = JSON.stringify(groceryList)
     }
+  }
+})
+
+
+// TODO подсказки для кнопки номер n
+
+
+const aaa = document.querySelectorAll("#item") as any
+const comment = document.querySelector("#comment") as HTMLSpanElement
+for (let i of aaa) {
+  i.addEventListener("mouseover", (event: any) => {
+    // if https://learn.javascript.ru/event-delegation
+    setTimeout(() => {
+      comment.style.display = "inline-block"
+    })
+    const rect = i.getBoundingClientRect()
+    if (rect.y > 120) comment.style.top = `${window.scrollY+rect.y - 50}px`
+    else comment.style.top = `${window.scrollY+rect.bottom + 20}px`
+  }, 50)
+  i.addEventListener("mouseout", () => { comment.style.top = `-100px` })
+
+}
 
 
 
