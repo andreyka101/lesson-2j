@@ -2019,12 +2019,13 @@ let arrayThTable =["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
     const aaa = document.querySelectorAll("#item") as any
     const comment = document.querySelector("#comment") as HTMLSpanElement
     for (let i of aaa){
-      i.addEventListener("mouseover",()=>{
-        console.log(i.getBoundingClientRect().y)
-        if (i.getBoundingClientRect().y>85){
-          comment.style.top = `${i.getBoundingClientRect().y-53}px`
-        }
-      })
+      i.addEventListener("mouseover",(event:any)=>{
+          setTimeout(()=>{
+          if (i.getBoundingClientRect().y>70) comment.style.top = `${event.pageY-70}px`
+          else comment.style.top = `${event.pageY+70}px`
+        }, 500)
+        })
+      i.addEventListener("mouseout",()=>{comment.style.top = `-100px`})
 
     }
 
