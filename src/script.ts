@@ -1990,7 +1990,6 @@ executor53?.addEventListener('click', () => {
 document.querySelector('#torsion')?.addEventListener('click', function (e) {
   let target = e.target as HTMLElement
 
-  //@ts-ignore
   if (target.className != 'closeList') return
   const el = target?.closest('.myclass') as HTMLElement
   if (el) {
@@ -2017,21 +2016,29 @@ document.querySelector('#torsion')?.addEventListener('click', function (e) {
 // TODO подсказки для кнопки номер n
 
 
-const aaa = document.querySelectorAll("#item") as any
 const comment = document.querySelector("#comment") as HTMLSpanElement
-for (let i of aaa) {
-  i.addEventListener("mouseover", (event: any) => {
-    // if https://learn.javascript.ru/event-delegation
-    const rect = i.getBoundingClientRect()
-    if (rect.y > 120) comment.style.top = `${window.scrollY+rect.y - 50}px`
-    else comment.style.top = `${window.scrollY+rect.bottom + 20}px`
+document.querySelector('body')?.addEventListener('mouseover', function (e) {
+  // if https://learn.javascript.ru/event-delegation
+  let target = e.target as HTMLElement
+  
+  if (target.id == 'item' || target.id == 'item1' || target.id == 'item2') {
+    switch(target.id){
+      case():
+      const el = target?.closest('#item') as HTMLElement
+    }
+    const el = target?.closest('#item') as HTMLElement
+    console.log(el);
+    
+    const rect = el.getBoundingClientRect()
+    if (rect.y > 120) comment.style.top = `${window.scrollY + rect.y - 50}px`
+    else comment.style.top = `${window.scrollY + rect.bottom + 20}px`
     setTimeout(() => {
       comment.style.display = "inline-block"
     }, 800)
-  })
-  i.addEventListener("mouseout", () => { comment.style.display = "none" })
+  }
+  else comment.style.display = "none"
+})
 
-}
 
 
 
