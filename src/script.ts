@@ -2022,13 +2022,7 @@ document.querySelector('body')?.addEventListener('mouseover', function (e) {
   let target = e.target as HTMLElement
   
   if (target.id == 'item' || target.id == 'item1' || target.id == 'item2') {
-    switch(target.id){
-      case():
-      const el = target?.closest('#item') as HTMLElement
-    }
-    const el = target?.closest('#item') as HTMLElement
-    console.log(el);
-    
+    const el = target?.closest(`#${target.id}`) as HTMLElement
     const rect = el.getBoundingClientRect()
     if (rect.y > 120) comment.style.top = `${window.scrollY + rect.y - 50}px`
     else comment.style.top = `${window.scrollY + rect.bottom + 20}px`

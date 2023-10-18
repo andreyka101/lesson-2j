@@ -24,11 +24,6 @@ button {
   color:#f0f0f0;
   margin: 5px;
 }
-button:hover {
-  box-shadow: 0px 0px 15px 3px var(--bottonShadow);
-  background-color: #566b60;
-  color: var(--bottonColor);
-}
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none; // Yeah, yeah everybody write about it
@@ -73,11 +68,6 @@ a{
   margin: 5px;
   text-decoration : none;
   margin-left: 15px;
-}
-a:hover {
-  box-shadow: 0px 0px 10px 2px var(--aShadowHOVER);
-  background-color: var(--aBackgroundHOVER);
-  color:var(--aShadowHOVER);
 }
 .itemSS{
   margin-left: 15px;
@@ -130,10 +120,6 @@ td, th {
   background:url("/svg/close_7vixc7bctmok.svg")center/cover;
   transition: 300ms;
   border-radius: 50px;
-}
-.SVG-exit:hover{
-  transform: rotate(-90deg);
-  transition: 300ms;
 }
 .div + div{
   display: flex;
@@ -209,9 +195,6 @@ td, th {
         height: 35px;
         border-radius: 50px;
       }
-      .closeList:hover{
-        background: url("/svg/NOT close_2c9x3mhf0vv6.svg")center/cover;
-      }
     }
   }
 }
@@ -250,5 +233,24 @@ td, th {
   border: solid #000000 3px;
   color: #ffffff;
   box-shadow: -1px -15px 10px #000000b8;
+}
+@media screen and (min-width: 650px) {
+  button:hover {
+    box-shadow: 0px 0px 15px 3px var(--bottonShadow);
+    background-color: #566b60;
+    color: var(--bottonColor);
+  }
+  a:hover {
+    box-shadow: 0px 0px 10px 2px var(--aShadowHOVER);
+    background-color: var(--aBackgroundHOVER);
+    color:var(--aShadowHOVER);
+  }
+  .SVG-exit:hover{
+    transform: rotate(-90deg);
+    transition: 300ms;
+  }
+  .closeList:hover{
+    background: url("/svg/NOT close_2c9x3mhf0vv6.svg")center/cover;
+  }
 }
 
