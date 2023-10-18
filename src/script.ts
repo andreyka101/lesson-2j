@@ -1819,7 +1819,6 @@ let tableDateOne = new Date((new Date).setDate(1))
 let tableDateStart = 99
 let tableDateDay = [1, 2, 3, 4, 5, 6, 0] as any
 for (let i in tableDateDay) {
-  // console.log(tableDateNow.getDay())
   if (tableDateDay[i] == tableDateOne.getDay()) {
     tableDateStart = +(i) + 1
     console.log(tableDateStart)
@@ -2023,14 +2022,14 @@ const comment = document.querySelector("#comment") as HTMLSpanElement
 for (let i of aaa) {
   i.addEventListener("mouseover", (event: any) => {
     // if https://learn.javascript.ru/event-delegation
-    setTimeout(() => {
-      comment.style.display = "inline-block"
-    })
     const rect = i.getBoundingClientRect()
     if (rect.y > 120) comment.style.top = `${window.scrollY+rect.y - 50}px`
     else comment.style.top = `${window.scrollY+rect.bottom + 20}px`
-  }, 50)
-  i.addEventListener("mouseout", () => { comment.style.top = `-100px` })
+    setTimeout(() => {
+      comment.style.display = "inline-block"
+    }, 800)
+  })
+  i.addEventListener("mouseout", () => { comment.style.display = "none" })
 
 }
 
