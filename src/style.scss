@@ -67,6 +67,7 @@ a{
   color:var(--aColor);
   margin: 5px;
   text-decoration : none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   margin-left: 15px;
 }
 .itemSS{
@@ -234,7 +235,7 @@ td, th {
   color: #ffffff;
   box-shadow: -1px -15px 10px #000000b8;
 }
-@media screen and (min-width: 650px) {
+@media screen and (min-width: 800px) {
   button:hover {
     box-shadow: 0px 0px 15px 3px var(--bottonShadow);
     background-color: #566b60;
@@ -253,4 +254,16 @@ td, th {
     background: url("/svg/NOT close_2c9x3mhf0vv6.svg")center/cover;
   }
 }
+.break{
+  display: inline-block;
+}
+@media screen and (max-width:900px){
+.space{
+  margin-top: 35px;
+}
+td, th {
+  padding: 5px 10px;
+}
+}
+
 
