@@ -259,39 +259,101 @@ td, th {
   display: inline-block;
 }
 @media screen and (max-width:900px){
-.space{
-  margin-top: 35px;
+  .space{
+    margin-top: 35px;
+  }
+  td, th {
+    padding: 5px 10px;
+  }
+  #field div{
+    height: 56cqi;
+    width: 84cqi;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    div{
+      height: 5.5cqi;
+      width: 5.5cqi;
+    }
+  }
+  .SVG-exit{
+    height: 68px;
+    width: 68px;
+  }
+  #torsion::-webkit-scrollbar{
+    display: none;
+  }
 }
-td, th {
-  padding: 5px 10px;
+@media screen and (max-width:730px){
+  .SVG-exit{
+    height: 10cqi;
+    width: 10cqi;
+  }
+  #field div{
+    height: 66cqi;
+    width: 99cqi;
+    div{
+      height: 7cqi;
+      width: 7cqi;
+    }
+  }
 }
+@media screen and (max-width:600px){
+  .SVG-exit{
+    height: 12cqi;
+    width: 12cqi;
+  }
+  .myclass{
+    width: 82cqi !important;
+  }
+  #torsion{
+    width: 96cqi !important;
+  }
+  #bottomP{
+    padding: 16px !important;
+  }
+}
+@media screen and (max-width:555px){
+  #field div div{
+    height: 9cqi;
+    width: 9cqi;
+  }
+}
+@media screen and (max-width:470px){
+  .SVG-exit{
+    height: 15cqi;
+    width: 15cqi;
+  }
 }
 @media screen and (max-width:430px){
-td, th {
-  padding: 2px 3px;
-}
-.siteCutout {
-  padding: 10px;
-}
-.leftJS{
-  
-}
-.leftJS{
-
-}
+  td, th {
+    padding: 2px 3px;
+  }
+  .siteCutout {
+    padding: 10px;
+  }
+  #h1{
+    font-size: 26px;
+  }
+  .itemSS{
+    font-size: 21px;
+  }
 }
 @media screen and (max-width:366px){
-.leftJS2{
-  margin-left: 15px;
-}
-.leftJS{
-
-}
+  .SVG-exit{
+    height: 17cqi;
+    width: 17cqi;
+  }
+  #field div div{
+    height: 11cqi;
+    width: 11cqi;
+  }
+  .leftJS{
+    margin-left: 15px;
+  }
 }
 @media screen and (max-width:299px){
-.leftJS1{
-  margin-left: 15px;
-}
+  .myclass{
+    width: 89cqi !important;
+  }
 }
 
 
