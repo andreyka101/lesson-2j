@@ -50,12 +50,6 @@ h1{
   color:#272f2b;
   margin-left: 15px;
 }
-#item{
-  margin-left: 15px;
-}
-#item1{
-  margin-left: 15px;
-}
 .a{
   margin-top: 23px;
 }
@@ -80,6 +74,7 @@ a{
   border-left: 0;
   border-right: 0;
   padding: 20px;
+  margin: 15px 0;
 }
 table, td, th {
   /* задаем границу для всех элементов */
@@ -198,6 +193,12 @@ td, th {
       }
     }
   }
+}
+.left{
+  margin-left: 15px;
+}
+#leftX{
+  padding-left: 15px;
 }
 #torsion::-webkit-scrollbar {
   width: 10px;

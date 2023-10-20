@@ -1652,8 +1652,7 @@ const executor43 = document.querySelector('.block15 #b4')
 executor43?.addEventListener('click', () => { if (answer15) answer15.innerHTML = "&#10004;"; div.prepend(new HtmlElement(prompt('добавления элемента в конец\nвведите текстовое содержимое   !! обязательно !!'), prompt('введите название тега по умолчанию = span'), prompt('введите стили не обязательно'), prompt('введите название атрибута не обязательно'), prompt('введите самозакрывающийся тег или false по умолчанию = true'))) })
 const executor44 = document.querySelector('.block15 #b5')
 executor44?.addEventListener('click', () => {
-  if (answer15) answer15.innerHTML = ""
-  div.getHtml()
+  if (answer15) answer15.innerHTML = div.getHtml()
 })
 
 // TODO 3
