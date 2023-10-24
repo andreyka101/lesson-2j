@@ -282,6 +282,14 @@ td, th {
     display: none;
   }
 }
+#block21DIV{
+  display: inline-block;
+  padding-bottom: 10px;
+  border-bottom: solid antiquewhite;
+  button{
+    position: relative;
+  }
+}
 @media screen and (max-width:730px){
   .SVG-exit{
     height: 10cqi;
