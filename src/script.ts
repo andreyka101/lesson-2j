@@ -2019,20 +2019,25 @@ const comment = document.querySelector("#comment") as HTMLSpanElement
 document.querySelector('body')?.addEventListener('mouseover', function (e) {
   // if https://learn.javascript.ru/event-delegation
   let target = e.target as HTMLElement
-  
-  if (target.id == 'item' || target.id == 'item1' || target.id == 'item2') {
-    const el = target?.closest(`#${target.id}`) as HTMLElement
-    const rect = el.getBoundingClientRect()
-    if (rect.y > 120) comment.style.top = `${window.scrollY + rect.y - 50}px`
-    else comment.style.top = `${window.scrollY + rect.bottom + 20}px`
-    setTimeout(() => {
-      comment.style.display = "inline-block"
-    }, 800)
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+    comment.style.display = "none"
   }
-  else comment.style.display = "none"
-})
-
-
+  else {
+    if (target.id == 'item' || target.id == 'item1' || target.id == 'item2') {
+      const el = target?.closest(`#${target.id}`) as HTMLElement
+      const rect = el.getBoundingClientRect()
+      if (rect.y > 120) comment.style.top = `${window.scrollY + rect.y - 50}px`
+      else comment.style.top = `${window.scrollY + rect.bottom + 20}px`
+      setTimeout(() => {
+        comment.style.display = "inline-block"
+      }, 800)
+    }
+    else comment.style.display = "none"
+    
+  }
+  })
+  
+  
 
 
 
