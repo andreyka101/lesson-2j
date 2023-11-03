@@ -106,7 +106,7 @@ td, th {
   backdrop-filter: blur(4px);
   .div{
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     margin: 38px;
   }
 }
@@ -116,6 +116,11 @@ td, th {
   background:url("/svg/close_7vixc7bctmok.svg")center/cover;
   transition: 300ms;
   border-radius: 50px;
+}
+.checkGravity{
+  width: 75px;
+  height: 75px;
+  transition: 300ms;
 }
 .div + div{
   display: flex;
@@ -266,8 +271,8 @@ td, th {
     padding: 5px 10px;
   }
   #field div{
-    height: 56cqi;
-    width: 84cqi;
+    height: 56px;
+    width: 84px;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     div{
       height: 5.5cqi;
