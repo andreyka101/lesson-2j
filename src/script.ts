@@ -1871,23 +1871,23 @@ executor52?.addEventListener('click', () => {
   document.body.style.overflow = ""
 })
 const footballFieldGame = document.querySelector("#field div") as HTMLDivElement //  field
-const rect = footballFieldGame.getBoundingClientRect()
+// const rect = footballFieldGame.getBoundingClientRect()
 const playBall = document.querySelector("#field div div") as HTMLDivElement
 const executor51 = document.querySelector('.block19 #b1') as HTMLButtonElement
-
 const gravityBall = document.querySelector('.checkGravity') as HTMLInputElement
-gravityBall?.addEventListener('click', () => {
-  if (gravityBall.checked) {
-    console.log(footballFieldGame.style.height);
-    // playBall.style.top = `${footballFieldGame.style.height}px`
-  }
-})
+
 
 executor51?.addEventListener('click', () => {
   foregroundTranslucent.classList.remove('off')
   foregroundTranslucent.classList.add('on')
   document.body.style.overflow = "hidden"
   const rect = footballFieldGame.getBoundingClientRect()
+  gravityBall?.addEventListener('click', () => {
+    if (gravityBall.checked) {
+      console.log(rect.height);
+      playBall.style.top = `${(rect.height + rect.y)-51}px`
+    }
+  })
   if (playBall) {
     playBall.style.top = (rect.bottom - rect.top) / 2 + rect.y - 25 + 'px'
     playBall.style.left = (rect.right - rect.left) / 2 + rect.x - 25 + 'px'

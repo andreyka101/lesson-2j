@@ -274,6 +274,9 @@ td, th {
   display: inline-block;
 }
 @media screen and (max-width:900px){
+  .checkGravity + label::before{
+    display: none;
+  }
   .space{
     margin-top: 35px;
   }
@@ -281,8 +284,8 @@ td, th {
     padding: 5px 10px;
   }
   #field div{
-    height: 56px;
-    width: 84px;
+    height: 56cqi;
+    width: 84cqi;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     div{
       height: 5.5cqi;
