@@ -118,9 +118,19 @@ td, th {
   border-radius: 50px;
 }
 .checkGravity{
+  display: none;
+}
+.checkGravity + label::before{
   width: 75px;
   height: 75px;
+  border-radius: 50px;
   transition: 300ms;
+  content: '';
+	display: inline-block;
+  background: url('/public/svg/gravity_gahaaw3qvutl.svg') center / contain no-repeat;
+}
+.checkGravity:checked + label::before{
+  background: url('/public/svg/gravity_gahaaw3qvutlGreen.svg') center / contain no-repeat;
 }
 .div + div{
   display: flex;

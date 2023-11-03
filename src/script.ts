@@ -1871,8 +1871,18 @@ executor52?.addEventListener('click', () => {
   document.body.style.overflow = ""
 })
 const footballFieldGame = document.querySelector("#field div") as HTMLDivElement //  field
+const rect = footballFieldGame.getBoundingClientRect()
 const playBall = document.querySelector("#field div div") as HTMLDivElement
 const executor51 = document.querySelector('.block19 #b1') as HTMLButtonElement
+
+const gravityBall = document.querySelector('.checkGravity') as HTMLInputElement
+gravityBall?.addEventListener('click', () => {
+  if (gravityBall.checked) {
+    console.log(footballFieldGame.style.height);
+    // playBall.style.top = `${footballFieldGame.style.height}px`
+  }
+})
+
 executor51?.addEventListener('click', () => {
   foregroundTranslucent.classList.remove('off')
   foregroundTranslucent.classList.add('on')
@@ -1885,10 +1895,11 @@ executor51?.addEventListener('click', () => {
 })
 footballFieldGame?.addEventListener('click', (event) => {
 
-  let definitionBallRotation = Math.floor(Math.random() * (3 - 1)) + 1
-  switch (Math.floor(Math.random() * (3 - 1)) + 1) {
-    case 1:
-      gameBallRotation -= 50
+  if (!gravityBall.checked) {
+    let definitionBallRotation = Math.floor(Math.random() * (3 - 1)) + 1
+    switch (Math.floor(Math.random() * (3 - 1)) + 1) {
+      case 1:
+        gameBallRotation -= 50
       break;
     case 2:
       gameBallRotation += 50
@@ -1949,6 +1960,7 @@ footballFieldGame?.addEventListener('click', (event) => {
 
   playBall.style.top = `${y}px`
   playBall.style.left = `${x}px`
+}
 })
 
 
@@ -2033,11 +2045,11 @@ document.querySelector('body')?.addEventListener('mouseover', function (e) {
       }, 800)
     }
     else comment.style.display = "none"
-    
+
   }
-  })
-  
-  
+})
+
+
 
 
 
