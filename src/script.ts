@@ -1877,6 +1877,8 @@ const executor51 = document.querySelector('.block19 #b1') as HTMLButtonElement
 const gravityBall = document.querySelector('.checkGravity') as HTMLInputElement
 
 
+let ballCoordinatesY = 0
+let gravityPermit = false
 executor51?.addEventListener('click', () => {
   foregroundTranslucent.classList.remove('off')
   foregroundTranslucent.classList.add('on')
@@ -1884,83 +1886,133 @@ executor51?.addEventListener('click', () => {
   const rect = footballFieldGame.getBoundingClientRect()
   gravityBall?.addEventListener('click', () => {
     if (gravityBall.checked) {
-      console.log(rect.height);
-      playBall.style.top = `${(rect.height + rect.y)-51}px`
+      gravityPermit = true
+      console.log(rect);
+      playBall.style.transition = "all 0s linear 0s"
+      // TODO анимация js начало
+      let start = Date.now(); // запомнить время начала
+
+      let timer = setInterval(function () {
+        // сколько времени прошло с начала анимации?
+        let timePassed = Date.now() - start;
+
+        function makeEaseOut(timing:any) {
+          return function(timeFraction:any) {
+            return 1 - timing(1 - timeFraction);
+          }
+        }
+    
+        function bounce(timeFraction:any) {
+          for (let a = 0, b = 1; 1; a += b, b /= 2) {
+            if (timeFraction >= (7 - 4 * a) / 11) {
+              return -Math.pow((11 - 6 * a - 11 * timeFraction) / 4, 2) + Math.pow(b, 2)
+            }
+          }
+        }
+    
+        let bounceEaseOut = makeEaseOut(bounce);
+
+        if (ballCoordinatesY >= (rect.height + rect.y) - 51) {
+          // clearInterval(bounceEaseOut); // закончить анимацию через 2 секунды
+          return;
+        }
+        
+        // отрисовать анимацию на момент timePassed, прошедший с начала анимации
+        if (gravityPermit){
+          draw(timePassed);
+        }
+
+      }, 5);
+      
+
+      // в то время как timePassed идёт от 0 до 2000
+      // left изменяет значение от 0px до 400px
+      // @ts-ignore
+      function draw(timePassed) {
+        playBall.style.top = ballCoordinatesY + 1 + 'px';
+        ballCoordinatesY ++
+      }
+      // анимация js конец
+      // playBall.style.top = `${(rect.height + rect.y) - 51}px`
     }
   })
   if (playBall) {
     playBall.style.top = (rect.bottom - rect.top) / 2 + rect.y - 25 + 'px'
+    ballCoordinatesY = (rect.bottom - rect.top) / 2 + rect.y - 25
     playBall.style.left = (rect.right - rect.left) / 2 + rect.x - 25 + 'px'
   }
 })
 footballFieldGame?.addEventListener('click', (event) => {
 
   if (!gravityBall.checked) {
+    gravityPermit = false
+    playBall.style.transition = "1.3s"
     let definitionBallRotation = Math.floor(Math.random() * (3 - 1)) + 1
     switch (Math.floor(Math.random() * (3 - 1)) + 1) {
       case 1:
         gameBallRotation -= 50
-      break;
-    case 2:
-      gameBallRotation += 50
-      break;
+        break;
+      case 2:
+        gameBallRotation += 50
+        break;
+    }
+    playBall.style.transform = `rotate(${gameBallRotation}deg)`
+    // playBall.style.transition = `3s`
+
+    const rect = footballFieldGame.getBoundingClientRect()
+
+
+    // старый код  логика управлением мячом
+    // if (rect.right <= event.clientX+25){
+    //   playBall.style.left = `${rect.right-51}px`
+    //   if (rect.bottom <= event.clientY+25){
+    //     playBall.style.top = `${rect.bottom-51}px`
+    //   }
+    //   else if (rect.y >= event.clientY-25){
+    //     playBall.style.top = `${rect.y}px`
+    //   }
+    //   else{
+    //     playBall.style.top = `${event.clientY - 25}px`
+    //   }
+    // }
+    // else if (rect.x >= event.clientX-25){
+    //   playBall.style.left = `${rect.x}px`
+    //   if (rect.bottom <= event.clientY+25){
+    //     playBall.style.top = `${rect.bottom-51}px`
+    //   }
+    //   else if (rect.y >= event.clientY-25){
+    //     playBall.style.top = `${rect.y}px`
+    //   }
+    //   else{
+    //     playBall.style.top = `${event.clientY - 25}px`
+    //   }
+    // }
+    // else if (rect.bottom <= event.clientY+25){
+    //   playBall.style.left = `${event.clientX - 25}px`
+    //   playBall.style.top = `${rect.bottom-51}px`
+    // }
+    // else if (rect.y >= event.clientY-25){
+    //   playBall.style.left = `${event.clientX - 25}px`
+    //   playBall.style.top = `${rect.y}px`
+    // }
+    // else{
+    //   playBall.style.top = `${event.clientY - 25}px`
+    //   playBall.style.left = `${event.clientX - 25}px`
+    // }
+
+
+    // новый код  логика управлением мячом
+    let x = event.clientX - 25
+    let y = event.clientY - 25
+    if (rect.left > x) x = rect.left + 20
+    if (rect.right < x + 50) x = rect.right - 71
+    if (rect.top > y) y = rect.top + 20
+    if (rect.bottom < y + 50) y = rect.bottom - 71
+
+    playBall.style.top = `${y}px`
+    ballCoordinatesY = y
+    playBall.style.left = `${x}px`
   }
-  playBall.style.transform = `rotate(${gameBallRotation}deg)`
-  // playBall.style.transition = `3s`
-
-  const rect = footballFieldGame.getBoundingClientRect()
-
-
-  // старый код  логика управлением мячом
-  // if (rect.right <= event.clientX+25){
-  //   playBall.style.left = `${rect.right-51}px`
-  //   if (rect.bottom <= event.clientY+25){
-  //     playBall.style.top = `${rect.bottom-51}px`
-  //   }
-  //   else if (rect.y >= event.clientY-25){
-  //     playBall.style.top = `${rect.y}px`
-  //   }
-  //   else{
-  //     playBall.style.top = `${event.clientY - 25}px`
-  //   }
-  // }
-  // else if (rect.x >= event.clientX-25){
-  //   playBall.style.left = `${rect.x}px`
-  //   if (rect.bottom <= event.clientY+25){
-  //     playBall.style.top = `${rect.bottom-51}px`
-  //   }
-  //   else if (rect.y >= event.clientY-25){
-  //     playBall.style.top = `${rect.y}px`
-  //   }
-  //   else{
-  //     playBall.style.top = `${event.clientY - 25}px`
-  //   }
-  // }
-  // else if (rect.bottom <= event.clientY+25){
-  //   playBall.style.left = `${event.clientX - 25}px`
-  //   playBall.style.top = `${rect.bottom-51}px`
-  // }
-  // else if (rect.y >= event.clientY-25){
-  //   playBall.style.left = `${event.clientX - 25}px`
-  //   playBall.style.top = `${rect.y}px`
-  // }
-  // else{
-  //   playBall.style.top = `${event.clientY - 25}px`
-  //   playBall.style.left = `${event.clientX - 25}px`
-  // }
-
-
-  // новый код  логика управлением мячом
-  let x = event.clientX - 25
-  let y = event.clientY - 25
-  if (rect.left > x) x = rect.left + 20
-  if (rect.right < x + 50) x = rect.right - 71
-  if (rect.top > y) y = rect.top + 20
-  if (rect.bottom < y + 50) y = rect.bottom - 71
-
-  playBall.style.top = `${y}px`
-  playBall.style.left = `${x}px`
-}
 })
 
 
