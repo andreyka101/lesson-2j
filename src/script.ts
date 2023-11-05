@@ -1891,12 +1891,7 @@ executor51?.addEventListener('click', () => {
       playBall.style.transition = "all 0s linear 0s"
       // TODO анимация js начало
 
-      if (ballCoordinatesY >= (rect.height + rect.y) - 51) {
-        // clearInterval(bounceEaseOut); // закончить анимацию через 2 секунды
-        return;
-      }
-      // @ts-ignore
-      function draw(timePassed) {
+      if (ballCoordinatesY <= (rect.height + rect.y) - 51) {
         playBall.style.top = ballCoordinatesY + 1 + 'px';
         ballCoordinatesY++
       }
