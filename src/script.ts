@@ -1891,12 +1891,12 @@ executor51?.addEventListener('click', () => {
       playBall.style.transition = "all 0s linear 0s"
       // TODO анимация js начало
 
-      if (ballCoordinatesY <= (rect.height + rect.y) - 51) {
-        playBall.style.top = ballCoordinatesY + 1 + 'px';
-        ballCoordinatesY++
-      }
-      // анимация js конец
-      // playBall.style.top = `${(rect.height + rect.y) - 51}px`
+        // if (ballCoordinatesY <= (rect.height + rect.y) - 51) {
+        //   playBall.style.top = ballCoordinatesY + 1 + 'px';
+        // ballCoordinatesY++
+        // }
+      playBall.style.top = `${(rect.height + rect.y) - 51}px`
+
     }
   })
   if (playBall) {
