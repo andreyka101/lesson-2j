@@ -1878,7 +1878,6 @@ const gravityBall = document.querySelector('.checkGravity') as HTMLInputElement
 
 
 let ballCoordinatesY = 0
-let gravityPermit = false
 executor51?.addEventListener('click', () => {
   foregroundTranslucent.classList.remove('off')
   foregroundTranslucent.classList.add('on')
@@ -1886,16 +1885,68 @@ executor51?.addEventListener('click', () => {
   const rect = footballFieldGame.getBoundingClientRect()
   gravityBall?.addEventListener('click', () => {
     if (gravityBall.checked) {
-      gravityPermit = true
       console.log(rect);
-      playBall.style.transition = "all 0s linear 0s"
+      playBall.style.transition = "all 0.2s linear 0s"
       // TODO анимация js начало
 
-        // if (ballCoordinatesY <= (rect.height + rect.y) - 51) {
-        //   playBall.style.top = ballCoordinatesY + 1 + 'px';
-        // ballCoordinatesY++
-        // }
+      // if (ballCoordinatesY <= (rect.height + rect.y) - 51) {
+      //   playBall.style.top = ballCoordinatesY + 1 + 'px';
+      // ballCoordinatesY++
+      // }
+
+
       playBall.style.top = `${(rect.height + rect.y) - 51}px`
+      if (ballCoordinatesY < (rect.height + rect.y - 51)/2){ 
+        setTimeout(() => {
+          if (ballCoordinatesY + ballCoordinatesY / 3 < rect.height + rect.y - 51) {
+          playBall.style.top = `${ballCoordinatesY + ballCoordinatesY / 3}px`
+        }
+        else if (ballCoordinatesY + ballCoordinatesY / 6 < rect.height + rect.y - 51) {
+          playBall.style.top = `${ballCoordinatesY + ballCoordinatesY / 6  }px`
+        }
+        ballCoordinatesY = ballCoordinatesY + ballCoordinatesY / 2
+        setTimeout(() => {
+          playBall.style.top = `${(rect.height + rect.y) - 51}px`
+          setTimeout(() => {
+            if (ballCoordinatesY + ballCoordinatesY / 2 < rect.height + rect.y - 51) {
+              playBall.style.top = `${ballCoordinatesY + ballCoordinatesY / 2}px`
+            }
+            else if (ballCoordinatesY + ballCoordinatesY / 4 < rect.height + rect.y - 51) {
+              playBall.style.top = `${ballCoordinatesY + ballCoordinatesY / 4  }px`
+            }
+            setTimeout(() => {
+              playBall.style.top = `${(rect.height + rect.y) - 51}px`
+            }, 200)
+          }, 200)
+        }, 200)
+      }, 200)
+    }
+      setTimeout(() => {
+        if (ballCoordinatesY + ballCoordinatesY / 2 < rect.height + rect.y - 51) {
+          playBall.style.top = `${ballCoordinatesY + ballCoordinatesY / 2}px`
+        }
+        else if (ballCoordinatesY + ballCoordinatesY / 4 < rect.height + rect.y - 51) {
+          playBall.style.top = `${ballCoordinatesY + ballCoordinatesY / 4  }px`
+        }
+        else if (ballCoordinatesY + ballCoordinatesY / 12 < rect.height + rect.y - 51) {
+          playBall.style.top = `${ballCoordinatesY + ballCoordinatesY / 12  }px`
+        }
+        ballCoordinatesY = ballCoordinatesY + ballCoordinatesY / 2
+        setTimeout(() => {
+          playBall.style.top = `${(rect.height + rect.y) - 51}px`
+          setTimeout(() => {
+            if (ballCoordinatesY + ballCoordinatesY / 2 < rect.height + rect.y - 51) {
+              playBall.style.top = `${ballCoordinatesY + ballCoordinatesY / 2}px`
+            }
+            else if (ballCoordinatesY + ballCoordinatesY / 4 < rect.height + rect.y - 51) {
+              playBall.style.top = `${ballCoordinatesY + ballCoordinatesY / 4  }px`
+            }
+            setTimeout(() => {
+              playBall.style.top = `${(rect.height + rect.y) - 51}px`
+            }, 200)
+          }, 200)
+        }, 200)
+      }, 200)
 
     }
   })
@@ -1908,7 +1959,6 @@ executor51?.addEventListener('click', () => {
 footballFieldGame?.addEventListener('click', (event) => {
 
   if (!gravityBall.checked) {
-    gravityPermit = false
     playBall.style.transition = "1.3s"
     let definitionBallRotation = Math.floor(Math.random() * (3 - 1)) + 1
     switch (Math.floor(Math.random() * (3 - 1)) + 1) {

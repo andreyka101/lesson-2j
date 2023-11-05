@@ -120,7 +120,7 @@ td, th {
 .checkGravity{
   display: none;
 }
-.checkGravity + label::before{
+.checkGravity + label{
   width: 75px;
   height: 75px;
   border-radius: 50px;
@@ -129,7 +129,11 @@ td, th {
 	display: inline-block;
   background: url('/public/svg/gravity_gahaaw3qvutl.svg') center / contain no-repeat;
 }
-.checkGravity:checked + label::before{
+.checkGravity + label:hover{
+  transition: 300ms;
+  transform: rotate(-180deg);
+}
+.checkGravity:checked + label{
   background: url('/public/svg/gravity_gahaaw3qvutlGreen.svg') center / contain no-repeat;
 }
 .div + div{
