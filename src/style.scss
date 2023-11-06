@@ -200,8 +200,6 @@ td, th {
   transition: 0.5s;
 }
 .foregroundSemi-transparentLists{
-  
-  
   #lists{
     display: flex;
     flex-direction: column;
@@ -230,11 +228,13 @@ td, th {
       }
       .closeList{
         margin: 25px;
-        background-color: #8a8a8a;
         background: url("/svg/close_2c9x3mhf0vv6.svg")center/cover;
         width: 35px;
         height: 35px;
         border-radius: 50px;
+      }
+      .closeList:hover{
+        background: url("/public/svg/NOT\ close_2c9x3mhf0vv6.svg")center/cover;
       }
     }
   }
@@ -289,6 +289,11 @@ td, th {
     margin-left: 15px;
   }
 }
+#levelSelection{
+  div{
+    
+  }
+}
 @media screen and (min-width: 800px) {
   button:hover {
     box-shadow: 0px 0px 15px 3px var(--bottonShadow);
@@ -303,9 +308,6 @@ td, th {
   .SVG-exit:hover{
     transform: rotate(-90deg);
     transition: 300ms;
-  }
-  .closeList:hover{
-    background: url("/svg/NOT close_2c9x3mhf0vv6.svg")center/cover;
   }
 }
 .break{
