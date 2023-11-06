@@ -15,6 +15,7 @@ let answer12 = document.querySelector('.block12 #s1')// as HTMLInputElement
 let answer13 = document.querySelector('.block13 #s1')// as HTMLInputElement
 let answer14 = document.querySelector('.block14 #s1')// as HTMLInputElement
 let answer15 = document.querySelector('.block15 #s1')// as HTMLInputElement
+let answer16 = document.querySelector('.block21 #s1') as HTMLSpanElement
 
 let stringInput1 = document.querySelector('#input1')// as HTMLInputElement
 let stringInput2 = document.querySelector('#input2')// as HTMLInputElement
@@ -1481,7 +1482,7 @@ executor34?.addEventListener('click', n34)
 // TODO 1
 function a15() {
   alert(`Задание 1
-Реализовать класс, описывающий окружность. В классе должны быть следующие компоненты:
+  Реализовать класс, описывающий окружность. В классе должны быть следующие компоненты:
 1 ■ поле, хранящее радиус окружности;
 2 ■ get-свойство, возвращающее радиус окружности;
 3 ■ set-свойство, устанавливающее радиус окружности;
@@ -1760,6 +1761,9 @@ const executor45 = document.querySelector('.block17 #b1')
 executor45?.addEventListener('click', () => { new HtmlBlock(div, [styleDiv]).getCode() })
 
 
+// FIXME  learn.javascript ---9999999999999999999999999999999999999999999999999999999999999999999
+
+
 // TODO календарь
 
 let answer18 = document.querySelector('.block18 #s1 table') as HTMLTableElement
@@ -1864,6 +1868,7 @@ answer18.insertAdjacentHTML('beforeend', table)
 
 let gameBallRotation = 0
 const foregroundTranslucent = document.querySelector('.foregroundTranslucent') as HTMLDivElement
+foregroundTranslucent.style.display = "none"
 const executor52 = document.querySelector('.SVG-close') as HTMLDivElement
 executor52?.addEventListener('click', () => {
   foregroundTranslucent.classList.remove('on')
@@ -1880,6 +1885,7 @@ const gravityBall = document.querySelector('.checkGravity') as HTMLInputElement
 let ballCoordinatesY = 0
 executor51?.addEventListener('click', () => {
   foregroundTranslucent.classList.remove('off')
+  foregroundTranslucent.style.display = "inline-block"
   foregroundTranslucent.classList.add('on')
   document.body.style.overflow = "hidden"
   const rect = footballFieldGame.getBoundingClientRect()
@@ -1887,7 +1893,7 @@ executor51?.addEventListener('click', () => {
     if (gravityBall.checked) {
       console.log(rect);
       playBall.style.transition = "all 0.2s linear 0s"
-      // TODO анимация js начало
+      // TODO анимация js
 
       // if (ballCoordinatesY <= (rect.height + rect.y) - 51) {
       //   playBall.style.top = ballCoordinatesY + 1 + 'px';
@@ -2041,6 +2047,7 @@ body.addEventListener('click', (event: any) => {
 const lists = document.querySelector('#torsion') as HTMLDivElement
 
 const foregroundSemi_transparentLists = document.querySelector('.foregroundSemi-transparentLists') as HTMLDivElement
+foregroundSemi_transparentLists.style.display = "none"
 const exitFromLists = document.querySelector('.SVG-close2') as HTMLDivElement
 exitFromLists?.addEventListener('click', () => {
   foregroundSemi_transparentLists.classList.remove('on')
@@ -2060,6 +2067,7 @@ executor53?.addEventListener('click', () => {
     if (groceryList[i].bought != "куплен") lists.innerHTML += `<div data-id=${groceryList[i].id} class="myclass"><span>${groceryList[i].name + "  " + groceryList[i].quantity}<br>${groceryList[i].bought}</span><div class="closeList"></div></div>`
   }
   foregroundSemi_transparentLists.classList.remove('off')
+  foregroundSemi_transparentLists.style.display = "inline-block"
   foregroundSemi_transparentLists.classList.add('on')
   document.body.style.overflow = "hidden"
 })
@@ -2112,6 +2120,34 @@ document.querySelector('body')?.addEventListener('mouseover', function (e) {
     else comment.style.display = "none"
 
   }
+})
+
+
+//TODO: memory game
+
+
+const numberCardsR = document.querySelector("#numberCards") as HTMLInputElement
+numberCardsR.addEventListener('mousemove', () => {
+  answer16.innerHTML = numberCardsR.value
+})
+
+const foregroundTranslucentBlock21 = document.querySelector('.foregroundTranslucentBlock21') as HTMLDivElement
+foregroundTranslucentBlock21.style.display = "none"
+const exitForeground21 = document.querySelector('.foregroundTranslucentBlock21 .SVG-exit') as HTMLDivElement
+exitForeground21?.addEventListener('click', () => {
+  foregroundTranslucentBlock21.classList.remove('on')
+  foregroundTranslucentBlock21.classList.add('off')
+  document.body.style.overflow = ""
+})
+
+const executor54 = document.querySelector('.block21 #b1') as HTMLButtonElement
+executor54?.addEventListener('click', () => {
+  // foregroundTranslucentBlock21.style.opacity = "0"
+  // foregroundTranslucentBlock21.style.transform = "all 5s linear 0s"
+  foregroundTranslucentBlock21.classList.remove('off')
+  foregroundTranslucentBlock21.style.display = "inline-block"
+  foregroundTranslucentBlock21.classList.add('on')
+  document.body.style.overflow = "hidden"
 })
 
 

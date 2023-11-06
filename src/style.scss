@@ -90,12 +90,6 @@ td, th {
   background-color: #8d8cb9;
 }
 .on{
-  display: inline-block;
-}
-.off{
-  display: none;
-}
-.foregroundTranslucent{
   position: fixed;
   top:0%;
   left:0%;
@@ -104,6 +98,50 @@ td, th {
   height: 100%;
   background-color: #8d8d8d66;
   backdrop-filter: blur(4px);
+  animation: showBlockStart 0.3s linear forwards;
+}
+
+.div{
+  display: flex;
+  justify-content: flex-end;
+  margin: 38px;
+}
+@keyframes showBlockStart {
+  0% {
+    display: inline-block;
+    opacity: 0;
+    // filter: grayscale(1);
+    filter: blur(30px);
+  }
+  100% {
+    opacity: 1;
+    // filter: grayscale(0);
+    filter: blur(0px);
+  }
+}
+.off{
+  z-index: 100;
+  position: fixed;
+  top:0%;
+  left:0%;
+  width: 100%;
+  height: 100%;
+  animation: showBlockEnd 0.3s linear forwards;
+}
+@keyframes showBlockEnd {
+  0% {
+    // opacity: 1;
+    // filter: grayscale(0);
+    filter: blur(0px);
+  }
+  100% {
+    // filter: grayscale(1);
+    filter: blur(30px);
+    opacity: 0;
+    display: none;
+  }
+}
+.foregroundTranslucent{
   .div{
     display: flex;
     justify-content: space-between;
@@ -162,19 +200,8 @@ td, th {
   transition: 0.5s;
 }
 .foregroundSemi-transparentLists{
-  position: fixed;
-  top:0%;
-  left:0%;
-  z-index: 100;
-  width: 100%;
-  height: 100%;
-  background-color: #8d8d8d66;
-  backdrop-filter: blur(4px);
-  .div{
-    display: flex;
-    justify-content: flex-end;
-    margin: 38px;
-  }
+  
+  
   #lists{
     display: flex;
     flex-direction: column;
@@ -253,6 +280,14 @@ td, th {
   border: solid #000000 3px;
   color: #ffffff;
   box-shadow: -1px -15px 10px #000000b8;
+}
+.blockCenter{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  .leftJS{
+    margin-left: 15px;
+  }
 }
 @media screen and (min-width: 800px) {
   button:hover {
@@ -377,9 +412,6 @@ td, th {
   #field div div{
     height: 11cqi;
     width: 11cqi;
-  }
-  .leftJS{
-    margin-left: 15px;
   }
 }
 @media screen and (max-width:299px){
