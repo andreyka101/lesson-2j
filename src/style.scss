@@ -174,7 +174,7 @@ td, th {
 .checkGravity:checked + label{
   background: url('/public/svg/gravity_gahaaw3qvutlGreen.svg') center / contain no-repeat;
 }
-.div + div{
+.foregroundTranslucent .div + div{
   display: flex;
   justify-content: center;
   margin-top: 50px;
@@ -289,9 +289,18 @@ td, th {
     margin-left: 15px;
   }
 }
+.foregroundTranslucentBlock21 .divCards{
+  // display: flex;
+  // justify-content: center;
+}
 #levelSelection{
   div{
-    
+    position: fixed;
+    width: 99px;
+    height: 131px;
+  cursor: pointer;
+  left: calc(50% - 49px);
+  top:calc(35% - 65px);
   }
 }
 @media screen and (min-width: 800px) {
