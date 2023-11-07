@@ -2185,12 +2185,27 @@ executor54?.addEventListener('click', () => {
       }, 400)
     }, 400)
   }, 550)
-  mapAnimations1.addEventListener('mousemove', () => {
-    description
-    // лёгкий уровень сложности , карты попадаются только одной масти
-    // средний уровень сложности , карты попадаются разных мастей , но только цифры 
-    // сложный уровень сложности , карты попадаются разных мастей , но только валет дама король
+  mapAnimations1.addEventListener('mouseover', () => {
+    description.innerHTML = "лёгкий уровень сложности , карты попадаются только одной масти"
   })
+  mapAnimations1.addEventListener('mouseout', () => {
+    description.innerHTML = ""
+  })
+  mapAnimations2.addEventListener('mouseover', () => {
+    description.innerHTML = "средний уровень сложности , карты попадаются разных мастей , но только цифры"
+  })
+  mapAnimations2.addEventListener('mouseout', () => {
+    description.innerHTML = ""
+  })
+  mapAnimations3.addEventListener('mouseover', () => {
+    description.innerHTML = "сложный уровень сложности , карты попадаются разных мастей , но только валет , дама , король"
+  })
+  mapAnimations3.addEventListener('mouseout', () => {
+    description.innerHTML = ""
+  })
+  // лёгкий уровень сложности , карты попадаются только одной масти
+  // средний уровень сложности , карты попадаются разных мастей , но только цифры 
+  // сложный уровень сложности , карты попадаются разных мастей , но только валет дама король
 })
 
 
