@@ -2140,14 +2140,18 @@ exitForeground21?.addEventListener('click', () => {
   document.body.style.overflow = ""
 })
 
+const mapAnimations1 = document.querySelector('.block21 #level1') as HTMLDivElement
+const mapAnimations2 = document.querySelector('.block21 #level2') as HTMLDivElement
+const mapAnimations3 = document.querySelector('.block21 #level3') as HTMLDivElement
 const executor54 = document.querySelector('.block21 #b1') as HTMLButtonElement
 executor54?.addEventListener('click', () => {
-  // foregroundTranslucentBlock21.style.opacity = "0"
-  // foregroundTranslucentBlock21.style.transform = "all 5s linear 0s"
   foregroundTranslucentBlock21.classList.remove('off')
   foregroundTranslucentBlock21.style.display = "inline-block"
   foregroundTranslucentBlock21.classList.add('on')
   document.body.style.overflow = "hidden"
+
+  // left: calc(50% - 49px);
+  // top:calc(35% - 65px);
 })
 
 
