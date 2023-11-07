@@ -307,6 +307,8 @@ td, th {
     border: #000000 solid 4px;
     border-radius: 10px;
     transition: 1s;
+    top: 22%;
+    position: absolute;
   }
 }
 #description{
@@ -324,6 +326,8 @@ td, th {
     border-radius: 10px;
     transition: 1s;
     padding: 0px;
+    top: 66%;
+    position: absolute;
   }
 }
 #levelSelection{
