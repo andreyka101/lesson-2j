@@ -2133,11 +2133,17 @@ numberCardsR.addEventListener('mousemove', () => {
 
 const foregroundTranslucentBlock21 = document.querySelector('.foregroundTranslucentBlock21') as HTMLDivElement
 foregroundTranslucentBlock21.style.display = "none"
+const frameDifficulty = document.querySelector('.foregroundTranslucentBlock21 #frameDifficulty div') as HTMLDivElement
+const description = document.querySelector('.foregroundTranslucentBlock21 #description div') as HTMLDivElement
 const exitForeground21 = document.querySelector('.foregroundTranslucentBlock21 .SVG-exit') as HTMLDivElement
 exitForeground21?.addEventListener('click', () => {
   foregroundTranslucentBlock21.classList.remove('on')
   foregroundTranslucentBlock21.classList.add('off')
   document.body.style.overflow = ""
+  frameDifficulty.style.width = "0px"
+  description.style.width = "0px"
+  description.style.padding = "0px"
+  frameDifficulty.innerHTML = ""
 })
 
 const mapAnimations1 = document.querySelector('.foregroundTranslucentBlock21 #level1') as HTMLDivElement
@@ -2157,6 +2163,14 @@ executor54?.addEventListener('click', () => {
     mapAnimations1.style.left = "calc(25% - 49px)"
     // mapAnimations1.style.top = "calc(35% - 65px)"
     mapAnimations1.style.animation = "mapAnimations1 0.4s"
+    frameDifficulty.style.width = "162px"
+    description.style.width = "550px"
+    setTimeout(() => {
+      frameDifficulty.innerHTML = "выбор сложности"
+      description.style.padding = "10px"
+    }, 500)
+
+
     setTimeout(() => {
       mapAnimations2.style.display = "inline-block"
       mapAnimations2.style.left = "calc(50% - 49px)"
@@ -2167,6 +2181,7 @@ executor54?.addEventListener('click', () => {
         mapAnimations3.style.left = "calc(75% - 49px)"
         // mapAnimations3.style.top = "calc(35% - 65px)"
         mapAnimations3.style.animation = "mapAnimations3 0.4s"
+        frameDifficulty.innerHTML = "выбор сложности"
       }, 400)
     }, 400)
   }, 550)

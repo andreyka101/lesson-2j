@@ -298,12 +298,32 @@ td, th {
   justify-content: center;
   margin-top: 50px;
   div{
-    height: 50px;
-    width: 99px;
-    background-color: #60ffcd;
-    padding: 5px;
-    border: #000000 solid 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 44px;
+    width: 0px;
+    background-color: #141c9a;
+    border: #000000 solid 4px;
     border-radius: 10px;
+    transition: 1s;
+  }
+}
+#description{
+  margin-top: 270px;
+  display: flex;
+  justify-content: center;
+  div{
+    background-color: #971382;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 88px;
+    width: 0px;
+    border: #000000 solid 4px;
+    border-radius: 10px;
+    transition: 1s;
+    padding: 0px;
   }
 }
 #levelSelection{
@@ -321,13 +341,11 @@ td, th {
     filter: blur(10px);
     filter: saturate(0);
     left : calc(45% - 49px);
-    top : calc(35% - 65px);
   }
   100% {
     filter: blur(0px);
     filter: saturate(1);
     left : calc(25% - 49px);
-    top : calc(35% - 65px);
   }
 }
 @keyframes mapAnimations2 {
@@ -335,13 +353,11 @@ td, th {
     filter: blur(10px);
     filter: saturate(0);
     left : calc(70% - 49px);
-    top : calc(35% - 65px);
   }
   100% {
     filter: blur(0px);
     filter: saturate(1);
     left : calc(50% - 49px);
-    top : calc(35% - 65px);
   }
 }
 @keyframes mapAnimations3 {
@@ -349,13 +365,11 @@ td, th {
     filter: blur(10px);
     filter: saturate(0);
     left : calc(95% - 49px);
-    top : calc(35% - 65px);
   }
   100% {
     filter: blur(0px);
     filter: saturate(1);
     left : calc(75% - 49px);
-    top : calc(35% - 65px);
   }
 }
 @media screen and (min-width: 800px) {
