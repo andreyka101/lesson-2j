@@ -399,8 +399,11 @@ td, th {
   display: inline-block;
 }
 @media screen and (max-width:900px){
-  .checkGravity + label::before{
+  .foregroundTranslucent .div{
+  .checkGravity + label{
     display: none;
+  }
+  justify-content: flex-end;
   }
   .space{
     margin-top: 35px;

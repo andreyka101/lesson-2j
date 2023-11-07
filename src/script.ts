@@ -2168,7 +2168,7 @@ executor54?.addEventListener('click', () => {
     setTimeout(() => {
       frameDifficulty.innerHTML = "выбор сложности"
       description.style.padding = "10px"
-    }, 500)
+    }, 510)
 
 
     setTimeout(() => {
@@ -2185,8 +2185,9 @@ executor54?.addEventListener('click', () => {
       }, 400)
     }, 400)
   }, 550)
-  // left: calc(50% - 49px);
-  // top:calc(35% - 65px);
+  mapAnimations1.addEventListener('mousemove', () => {
+    description
+  })
 })
 
 
