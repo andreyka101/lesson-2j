@@ -293,6 +293,19 @@ td, th {
   // display: flex;
   // justify-content: center;
 }
+#frameDifficulty{
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  div{
+    height: 50px;
+    width: 99px;
+    background-color: #60ffcd;
+    padding: 5px;
+    border: #000000 solid 1px;
+    border-radius: 10px;
+  }
+}
 #levelSelection{
   div{
     position: fixed;
@@ -300,7 +313,7 @@ td, th {
     height: 131px;
   cursor: pointer;
   // left: calc(50% - 49px);
-  // top:calc(35% - 65px);
+  top:calc(48% - 65px);
 }
 }
 @keyframes mapAnimations1 {
@@ -345,10 +358,10 @@ td, th {
     top : calc(35% - 65px);
   }
 }
-#levelSelection div:hover{
-  filter: brightness(60%);
-}
 @media screen and (min-width: 800px) {
+  #levelSelection div:hover{
+    filter: brightness(60%);
+  }
   button:hover {
     box-shadow: 0px 0px 15px 3px var(--bottonShadow);
     background-color: #566b60;

@@ -2155,17 +2155,17 @@ executor54?.addEventListener('click', () => {
   setTimeout(() => {
     mapAnimations1.style.display = "inline-block"
     mapAnimations1.style.left = "calc(25% - 49px)"
-    mapAnimations1.style.top = "calc(35% - 65px)"
+    // mapAnimations1.style.top = "calc(35% - 65px)"
     mapAnimations1.style.animation = "mapAnimations1 0.4s"
     setTimeout(() => {
       mapAnimations2.style.display = "inline-block"
       mapAnimations2.style.left = "calc(50% - 49px)"
-      mapAnimations2.style.top = "calc(35% - 65px)"
+      // mapAnimations2.style.top = "calc(35% - 65px)"
       mapAnimations2.style.animation = "mapAnimations2 0.4s"
       setTimeout(() => {
         mapAnimations3.style.display = "inline-block"
         mapAnimations3.style.left = "calc(75% - 49px)"
-        mapAnimations3.style.top = "calc(35% - 65px)"
+        // mapAnimations3.style.top = "calc(35% - 65px)"
         mapAnimations3.style.animation = "mapAnimations3 0.4s"
       }, 400)
     }, 400)
