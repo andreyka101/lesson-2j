@@ -299,9 +299,54 @@ td, th {
     width: 99px;
     height: 131px;
   cursor: pointer;
-  left: calc(50% - 49px);
-  top:calc(35% - 65px);
+  // left: calc(50% - 49px);
+  // top:calc(35% - 65px);
+}
+}
+@keyframes mapAnimations1 {
+  0% {
+    filter: blur(10px);
+    filter: saturate(0);
+    left : calc(45% - 49px);
+    top : calc(35% - 65px);
   }
+  100% {
+    filter: blur(0px);
+    filter: saturate(1);
+    left : calc(25% - 49px);
+    top : calc(35% - 65px);
+  }
+}
+@keyframes mapAnimations2 {
+  0% {
+    filter: blur(10px);
+    filter: saturate(0);
+    left : calc(70% - 49px);
+    top : calc(35% - 65px);
+  }
+  100% {
+    filter: blur(0px);
+    filter: saturate(1);
+    left : calc(50% - 49px);
+    top : calc(35% - 65px);
+  }
+}
+@keyframes mapAnimations3 {
+  0% {
+    filter: blur(10px);
+    filter: saturate(0);
+    left : calc(95% - 49px);
+    top : calc(35% - 65px);
+  }
+  100% {
+    filter: blur(0px);
+    filter: saturate(1);
+    left : calc(75% - 49px);
+    top : calc(35% - 65px);
+  }
+}
+#levelSelection div:hover{
+  filter: brightness(60%);
 }
 @media screen and (min-width: 800px) {
   button:hover {

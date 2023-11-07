@@ -2140,16 +2140,36 @@ exitForeground21?.addEventListener('click', () => {
   document.body.style.overflow = ""
 })
 
-const mapAnimations1 = document.querySelector('.block21 #level1') as HTMLDivElement
-const mapAnimations2 = document.querySelector('.block21 #level2') as HTMLDivElement
-const mapAnimations3 = document.querySelector('.block21 #level3') as HTMLDivElement
+const mapAnimations1 = document.querySelector('.foregroundTranslucentBlock21 #level1') as HTMLDivElement
+const mapAnimations2 = document.querySelector('.foregroundTranslucentBlock21 #level2') as HTMLDivElement
+const mapAnimations3 = document.querySelector('.foregroundTranslucentBlock21 #level3') as HTMLDivElement
 const executor54 = document.querySelector('.block21 #b1') as HTMLButtonElement
 executor54?.addEventListener('click', () => {
   foregroundTranslucentBlock21.classList.remove('off')
   foregroundTranslucentBlock21.style.display = "inline-block"
   foregroundTranslucentBlock21.classList.add('on')
   document.body.style.overflow = "hidden"
-
+  mapAnimations1.style.display = "none"
+  mapAnimations2.style.display = "none"
+  mapAnimations3.style.display = "none"
+  setTimeout(() => {
+    mapAnimations1.style.display = "inline-block"
+    mapAnimations1.style.left = "calc(25% - 49px)"
+    mapAnimations1.style.top = "calc(35% - 65px)"
+    mapAnimations1.style.animation = "mapAnimations1 0.4s"
+    setTimeout(() => {
+      mapAnimations2.style.display = "inline-block"
+      mapAnimations2.style.left = "calc(50% - 49px)"
+      mapAnimations2.style.top = "calc(35% - 65px)"
+      mapAnimations2.style.animation = "mapAnimations2 0.4s"
+      setTimeout(() => {
+        mapAnimations3.style.display = "inline-block"
+        mapAnimations3.style.left = "calc(75% - 49px)"
+        mapAnimations3.style.top = "calc(35% - 65px)"
+        mapAnimations3.style.animation = "mapAnimations3 0.4s"
+      }, 400)
+    }, 400)
+  }, 550)
   // left: calc(50% - 49px);
   // top:calc(35% - 65px);
 })
