@@ -1873,6 +1873,7 @@ const executor52 = document.querySelector('.SVG-close') as HTMLDivElement
 executor52?.addEventListener('click', () => {
   foregroundTranslucent.classList.remove('on')
   foregroundTranslucent.classList.add('off')
+  foregroundTranslucent.classList.add('offNone')
   document.body.style.overflow = ""
 })
 const footballFieldGame = document.querySelector("#field div") as HTMLDivElement //  field
@@ -1885,6 +1886,7 @@ const gravityBall = document.querySelector('.checkGravity') as HTMLInputElement
 let ballCoordinatesY = 0
 executor51?.addEventListener('click', () => {
   foregroundTranslucent.classList.remove('off')
+  foregroundTranslucent.classList.remove('offNone')
   foregroundTranslucent.style.display = "inline-block"
   foregroundTranslucent.classList.add('on')
   document.body.style.overflow = "hidden"
@@ -2052,6 +2054,7 @@ const exitFromLists = document.querySelector('.SVG-close2') as HTMLDivElement
 exitFromLists?.addEventListener('click', () => {
   foregroundSemi_transparentLists.classList.remove('on')
   foregroundSemi_transparentLists.classList.add('off')
+  foregroundSemi_transparentLists.classList.add('offNone')
   document.body.style.overflow = ""
 })
 const executor53 = document.querySelector('.block20 #b1') as HTMLButtonElement
@@ -2067,6 +2070,7 @@ executor53?.addEventListener('click', () => {
     if (groceryList[i].bought != "куплен") lists.innerHTML += `<div data-id=${groceryList[i].id} class="myclass"><span>${groceryList[i].name + "  " + groceryList[i].quantity}<br>${groceryList[i].bought}</span><div class="closeList"></div></div>`
   }
   foregroundSemi_transparentLists.classList.remove('off')
+  foregroundSemi_transparentLists.classList.remove('offNone')
   foregroundSemi_transparentLists.style.display = "inline-block"
   foregroundSemi_transparentLists.classList.add('on')
   document.body.style.overflow = "hidden"
@@ -2139,6 +2143,7 @@ const exitForeground21 = document.querySelector('.foregroundTranslucentBlock21 .
 exitForeground21?.addEventListener('click', () => {
   foregroundTranslucentBlock21.classList.remove('on')
   foregroundTranslucentBlock21.classList.add('off')
+  foregroundTranslucentBlock21.classList.add('offNone')
   document.body.style.overflow = ""
   frameDifficulty.style.width = "0px"
   description.style.width = "0px"
@@ -2152,6 +2157,7 @@ const mapAnimations3 = document.querySelector('.foregroundTranslucentBlock21 #le
 const executor54 = document.querySelector('.block21 #b1') as HTMLButtonElement
 executor54?.addEventListener('click', () => {
   foregroundTranslucentBlock21.classList.remove('off')
+  foregroundTranslucentBlock21.classList.remove('offNone')
   foregroundTranslucentBlock21.style.display = "inline-block"
   foregroundTranslucentBlock21.classList.add('on')
   document.body.style.overflow = "hidden"
