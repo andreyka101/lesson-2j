@@ -2146,23 +2146,25 @@ exitForeground21?.addEventListener('click', () => {
   frameDifficulty.innerHTML = ""
 })
 
-const mapAnimations1 = document.querySelector('.foregroundTranslucentBlock21 #level1') as HTMLDivElement
-const mapAnimations2 = document.querySelector('.foregroundTranslucentBlock21 #level2') as HTMLDivElement
-const mapAnimations3 = document.querySelector('.foregroundTranslucentBlock21 #level3') as HTMLDivElement
+const mapAnimations1a = document.querySelector('.foregroundTranslucentBlock21 #level1a') as HTMLDivElement
+const mapAnimations2a = document.querySelector('.foregroundTranslucentBlock21 #level2a') as HTMLDivElement
+const mapAnimations3a = document.querySelector('.foregroundTranslucentBlock21 #level3a') as HTMLDivElement
+const mapAnimations1b = document.querySelector('.foregroundTranslucentBlock21 #level1b') as HTMLDivElement
+const mapAnimations2b = document.querySelector('.foregroundTranslucentBlock21 #level2b') as HTMLDivElement
+const mapAnimations3b = document.querySelector('.foregroundTranslucentBlock21 #level3b') as HTMLDivElement
 const executor54 = document.querySelector('.block21 #b1') as HTMLButtonElement
 executor54?.addEventListener('click', () => {
   foregroundTranslucentBlock21.classList.remove('off')
   foregroundTranslucentBlock21.style.display = "inline-block"
   foregroundTranslucentBlock21.classList.add('on')
   document.body.style.overflow = "hidden"
-  mapAnimations1.style.display = "none"
-  mapAnimations2.style.display = "none"
-  mapAnimations3.style.display = "none"
+  mapAnimations1a.style.display = "none"
+  mapAnimations2a.style.display = "none"
+  mapAnimations3a.style.display = "none"
   setTimeout(() => {
-    mapAnimations1.style.display = "inline-block"
-    mapAnimations1.style.left = "calc(25% - 49px)"
-    // mapAnimations1.style.top = "calc(35% - 65px)"
-    mapAnimations1.style.animation = "mapAnimations1 0.4s"
+    mapAnimations1a.style.display = "inline-block"
+    mapAnimations1a.style.left = "calc(25% - 49px)"
+    mapAnimations1a.style.animation = "mapAnimations1 0.4s"
     frameDifficulty.style.width = "162px"
     description.style.width = "550px"
     setTimeout(() => {
@@ -2172,35 +2174,40 @@ executor54?.addEventListener('click', () => {
 
 
     setTimeout(() => {
-      mapAnimations2.style.display = "inline-block"
-      mapAnimations2.style.left = "calc(50% - 49px)"
-      // mapAnimations2.style.top = "calc(35% - 65px)"
-      mapAnimations2.style.animation = "mapAnimations2 0.4s"
+      mapAnimations2a.style.display = "inline-block"
+      mapAnimations2a.style.left = "calc(50% - 49px)"
+      mapAnimations2a.style.animation = "mapAnimations2 0.4s"
       setTimeout(() => {
-        mapAnimations3.style.display = "inline-block"
-        mapAnimations3.style.left = "calc(75% - 49px)"
-        // mapAnimations3.style.top = "calc(35% - 65px)"
-        mapAnimations3.style.animation = "mapAnimations3 0.4s"
+        mapAnimations3a.style.display = "inline-block"
+        mapAnimations3a.style.left = "calc(75% - 49px)"
+        mapAnimations3a.style.animation = "mapAnimations3 0.4s"
         frameDifficulty.innerHTML = "выбор сложности"
       }, 400)
     }, 400)
   }, 550)
-  mapAnimations1.addEventListener('mouseover', () => {
+  mapAnimations1a.addEventListener('click', () => {
+    mapAnimations1b.style.display = "inline-block"
+    mapAnimations1a.style.transition = "2s"
+    mapAnimations1b.style.transition = "2s"
+    mapAnimations1a.style.transform = "rotateY(180deg)"
+    mapAnimations1b.style.transform = "rotateY(180deg)"
+  })
+  mapAnimations1a.addEventListener('mouseover', () => {
     description.innerHTML = "лёгкий уровень сложности , карты попадаются только одной масти"
   })
-  mapAnimations1.addEventListener('mouseout', () => {
+  mapAnimations1a.addEventListener('mouseout', () => {
     description.innerHTML = ""
   })
-  mapAnimations2.addEventListener('mouseover', () => {
+  mapAnimations2a.addEventListener('mouseover', () => {
     description.innerHTML = "средний уровень сложности , карты попадаются разных мастей , но только цифры"
   })
-  mapAnimations2.addEventListener('mouseout', () => {
+  mapAnimations2a.addEventListener('mouseout', () => {
     description.innerHTML = ""
   })
-  mapAnimations3.addEventListener('mouseover', () => {
+  mapAnimations3a.addEventListener('mouseover', () => {
     description.innerHTML = "сложный уровень сложности , карты попадаются разных мастей , но только валет , дама , король"
   })
-  mapAnimations3.addEventListener('mouseout', () => {
+  mapAnimations3a.addEventListener('mouseout', () => {
     description.innerHTML = ""
   })
   
