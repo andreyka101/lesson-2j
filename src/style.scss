@@ -379,14 +379,14 @@ th {
 }
 
 #levelSelection {
-  div div {
+  div {
     position: absolute;
     width: 99px;
     height: 131px;
     cursor: pointer;
     // left: calc(50% - 49px);
     top: calc(48% - 65px);
-    transition: 1s;
+    transition: 0.2s;
   }
 }
 
@@ -433,7 +433,7 @@ th {
 }
 
 @media screen and (min-width: 800px) {
-  #levelSelection div div:hover {
+  #levelSelection .levelH:hover {
     filter: brightness(60%);
   }
 

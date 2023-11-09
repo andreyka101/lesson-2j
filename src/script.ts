@@ -2131,6 +2131,13 @@ numberCardsR.addEventListener('mousemove', () => {
   answer16.innerHTML = numberCardsR.value
 })
 
+const mapAnimations1a = document.querySelector('.foregroundTranslucentBlock21 #level1a') as HTMLDivElement
+const mapAnimations2a = document.querySelector('.foregroundTranslucentBlock21 #level2a') as HTMLDivElement
+const mapAnimations3a = document.querySelector('.foregroundTranslucentBlock21 #level3a') as HTMLDivElement
+const mapAnimations1b = document.querySelector('.foregroundTranslucentBlock21 #level1b') as HTMLDivElement
+const mapAnimations2b = document.querySelector('.foregroundTranslucentBlock21 #level2b') as HTMLDivElement
+const mapAnimations3b = document.querySelector('.foregroundTranslucentBlock21 #level3b') as HTMLDivElement
+
 const foregroundTranslucentBlock21 = document.querySelector('.foregroundTranslucentBlock21') as HTMLDivElement
 foregroundTranslucentBlock21.style.display = "none"
 const frameDifficulty = document.querySelector('.foregroundTranslucentBlock21 #frameDifficulty div') as HTMLDivElement
@@ -2144,14 +2151,23 @@ exitForeground21?.addEventListener('click', () => {
   description.style.width = "0px"
   description.style.padding = "0px"
   frameDifficulty.innerHTML = ""
+  setTimeout(() => {
+    flipDifficultyCardReset(mapAnimations1a,mapAnimations1b)
+    flipDifficultyCardReset(mapAnimations2a,mapAnimations2b)
+    flipDifficultyCardReset(mapAnimations3a,mapAnimations3b)
+  }, 100)
 })
 
-const mapAnimations1a = document.querySelector('.foregroundTranslucentBlock21 #level1a') as HTMLDivElement
-const mapAnimations2a = document.querySelector('.foregroundTranslucentBlock21 #level2a') as HTMLDivElement
-const mapAnimations3a = document.querySelector('.foregroundTranslucentBlock21 #level3a') as HTMLDivElement
-const mapAnimations1b = document.querySelector('.foregroundTranslucentBlock21 #level1b') as HTMLDivElement
-const mapAnimations2b = document.querySelector('.foregroundTranslucentBlock21 #level2b') as HTMLDivElement
-const mapAnimations3b = document.querySelector('.foregroundTranslucentBlock21 #level3b') as HTMLDivElement
+function flipDifficultyCardReset(a:any,b:any){
+  b.style.filter = "opacity(0) saturate(1)"
+  a.style.transform = "rotateY(360deg)"
+  b.style.transform = "rotateY(360deg)"
+  a.style.transition = "0.2s"
+  b.style.transition = "0s"
+  a.style.zIndex = "1"
+  b.style.zIndex = "0"
+}
+
 const executor54 = document.querySelector('.block21 #b1') as HTMLButtonElement
 executor54?.addEventListener('click', () => {
   foregroundTranslucentBlock21.classList.remove('off')
@@ -2182,30 +2198,78 @@ executor54?.addEventListener('click', () => {
         mapAnimations3a.style.left = "calc(75% - 49px)"
         mapAnimations3a.style.animation = "mapAnimations3 0.4s"
         frameDifficulty.innerHTML = "выбор сложности"
+        setTimeout(() => {
+          mapAnimations1b.style.filter = "opacity(1)"
+          mapAnimations2b.style.filter = "opacity(1)"
+          mapAnimations3b.style.filter = "opacity(1)"
+        }, 400)
       }, 400)
     }, 400)
   }, 550)
+  function flipDifficultyCard(a:any,b:any){
+    // b.style.display = "inline-block"
+    // b.style.filter = "opacity(1)"
+      a.style.transition = "1s"
+      b.style.transition = "1s"
+      a.style.transform = "rotateY(180deg)"
+      b.style.transform = "rotateY(180deg)"
+      a.style.zIndex = "0"
+      b.style.zIndex = "1"
+  }
+  let difficultySelectionSound = new Audio('public/audio/eeb97203442250b.mp3');
   mapAnimations1a.addEventListener('click', () => {
-    mapAnimations1b.style.display = "inline-block"
-    mapAnimations1a.style.transition = "2s"
-    mapAnimations1b.style.transition = "2s"
-    mapAnimations1a.style.transform = "rotateY(180deg)"
-    mapAnimations1b.style.transform = "rotateY(180deg)"
+    flipDifficultyCard(mapAnimations1a,mapAnimations1b)
+    flipDifficultyCard(mapAnimations2a,mapAnimations2b)
+    flipDifficultyCard(mapAnimations3a,mapAnimations3b)
+    mapAnimations1b.style.filter = "saturate(0)"
+    difficultySelectionSound.pause();
+    difficultySelectionSound.currentTime = 0.0;
+    difficultySelectionSound.play();
   })
+  mapAnimations2a.addEventListener('click', () => {
+    flipDifficultyCard(mapAnimations1a,mapAnimations1b)
+    flipDifficultyCard(mapAnimations2a,mapAnimations2b)
+    flipDifficultyCard(mapAnimations3a,mapAnimations3b)
+    mapAnimations2b.style.filter = "saturate(0)"
+    difficultySelectionSound.pause();
+    difficultySelectionSound.currentTime = 0.0;
+    difficultySelectionSound.play();
+  })
+  mapAnimations3a.addEventListener('click', () => {
+    flipDifficultyCard(mapAnimations1a,mapAnimations1b)
+    flipDifficultyCard(mapAnimations2a,mapAnimations2b)
+    flipDifficultyCard(mapAnimations3a,mapAnimations3b)
+    mapAnimations3b.style.filter = "saturate(0)"
+    difficultySelectionSound.pause();
+    difficultySelectionSound.currentTime = 0.0;
+    difficultySelectionSound.play();
+  })
+  
+
+  let mapPointingSound = new Audio('public/audio/2181b19773767a7.mp3');
   mapAnimations1a.addEventListener('mouseover', () => {
     description.innerHTML = "лёгкий уровень сложности , карты попадаются только одной масти"
+    mapPointingSound.pause();
+    mapPointingSound.currentTime = 0.0;
+    mapPointingSound.play();
   })
   mapAnimations1a.addEventListener('mouseout', () => {
     description.innerHTML = ""
   })
   mapAnimations2a.addEventListener('mouseover', () => {
     description.innerHTML = "средний уровень сложности , карты попадаются разных мастей , но только цифры"
+    mapPointingSound.pause();
+    mapPointingSound.currentTime = 0.0;
+    mapPointingSound.play();
   })
   mapAnimations2a.addEventListener('mouseout', () => {
     description.innerHTML = ""
   })
   mapAnimations3a.addEventListener('mouseover', () => {
     description.innerHTML = "сложный уровень сложности , карты попадаются разных мастей , но только валет , дама , король"
+    mapPointingSound.pause();
+    mapPointingSound.currentTime = 0.0;
+    mapPointingSound.play();
   })
   mapAnimations3a.addEventListener('mouseout', () => {
     description.innerHTML = ""
