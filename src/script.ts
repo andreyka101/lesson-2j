@@ -2155,7 +2155,7 @@ exitForeground21?.addEventListener('click', () => {
     flipDifficultyCardReset(mapAnimations1a,mapAnimations1b)
     flipDifficultyCardReset(mapAnimations2a,mapAnimations2b)
     flipDifficultyCardReset(mapAnimations3a,mapAnimations3b)
-  }, 100)
+  }, 150)
 })
 
 function flipDifficultyCardReset(a:any,b:any){
