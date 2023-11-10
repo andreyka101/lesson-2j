@@ -2216,12 +2216,13 @@ executor54?.addEventListener('click', () => {
     }, 400)
   }, 550)
   function flipDifficultyCard(a:any,b:any){
-    // b.style.display = "inline-block"
-    // b.style.filter = "opacity(1)"
       a.style.transition = "1s"
       b.style.transition = "1s"
+      // a.classList.add("beautifulClosingCards")
+      // b.classList.add("beautifulClosingCards")
       a.style.transform = "rotateY(180deg)"
       b.style.transform = "rotateY(180deg)"
+      // b.style.filter = "blur(10px)"
       a.style.zIndex = "0"
       b.style.zIndex = "1"
   }
@@ -2240,7 +2241,7 @@ executor54?.addEventListener('click', () => {
     flipDifficultyCard(mapAnimations3a,mapAnimations3b)
     mapAnimations2b.style.filter = "saturate(0)"
     difficultySelectionSound.play();
-    closingDivCards(mapAnimations1b)
+    closingDivCards(mapAnimations2b)
   })
   mapAnimations3a.addEventListener('click', () => {
     flipDifficultyCard(mapAnimations1a,mapAnimations1b)
@@ -2248,10 +2249,33 @@ executor54?.addEventListener('click', () => {
     flipDifficultyCard(mapAnimations3a,mapAnimations3b)
     mapAnimations3b.style.filter = "saturate(0)"
     difficultySelectionSound.play();
-    closingDivCards(mapAnimations1b)
+    closingDivCards(mapAnimations3b)
   })
   function closingDivCards(b:any){
     frameDifficulty.innerHTML = ""
+    description.innerHTML = ""
+    frameDifficulty.style.width = "0px"
+    description.style.width = "0px"
+    description.style.padding = "0px"
+    // mapAnimations1b.style.transition = "All 1s"
+    // mapAnimations2b.style.transition = "All 1s"
+    // mapAnimations3b.style.transition = "All 1s"
+    // mapAnimations1a.style.transition = "0s"
+    // mapAnimations2a.style.transition = "0s"
+    // mapAnimations3a.style.transition = "0s"
+    // b.style.transition = "3s"
+    setTimeout(()=>{
+      frameDifficulty.style.filter = "blur(10px) opacity(0)"
+      description.style.filter = "blur(10px) opacity(0)"
+    },100)
+    setTimeout(()=>{
+      // mapAnimations1b.style.filter = "blur(10px)"
+      // mapAnimations2b.style.filter = "blur(10px)"
+      // mapAnimations3b.style.filter = "blur(10px)"
+      // mapAnimations1a.style.filter = "blur(10px) opacity(0)"
+      // mapAnimations2a.style.filter = "blur(10px) opacity(0)"
+      // mapAnimations3a.style.filter = "blur(10px) opacity(0)"
+    },1000)
   }
   let mapPointingSound = new Audio('public/audio/2181b19773767a7.mp3');
   mapAnimations1a.addEventListener('mouseover', () => {
