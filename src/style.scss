@@ -435,6 +435,18 @@ th {
   }
 }
 
+@keyframes cardDisappearance {
+  0% {
+    filter: blur(0px);
+    filter: opacity(1);
+  }
+  
+  100% {
+    filter: blur(20px);
+    filter: opacity(0);
+  }
+}
+
 @media screen and (min-width: 800px) {
   #levelSelection .levelH:hover {
     filter: brightness(60%);
