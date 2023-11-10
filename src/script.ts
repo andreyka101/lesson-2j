@@ -2198,9 +2198,7 @@ executor54?.addEventListener('click', () => {
     setTimeout(() => {
       frameDifficulty.innerHTML = "выбор сложности"
       description.style.padding = "10px"
-    }, 510)
-
-
+    }, 520)
     setTimeout(() => {
       mapAnimations2a.style.display = "inline-block"
       mapAnimations2a.style.left = "calc(50% - 49px)"
@@ -2209,7 +2207,6 @@ executor54?.addEventListener('click', () => {
         mapAnimations3a.style.display = "inline-block"
         mapAnimations3a.style.left = "calc(75% - 49px)"
         mapAnimations3a.style.animation = "mapAnimations3 0.4s"
-        frameDifficulty.innerHTML = "выбор сложности"
         setTimeout(() => {
           mapAnimations1b.style.filter = "opacity(1)"
           mapAnimations2b.style.filter = "opacity(1)"
@@ -2234,30 +2231,28 @@ executor54?.addEventListener('click', () => {
     flipDifficultyCard(mapAnimations2a,mapAnimations2b)
     flipDifficultyCard(mapAnimations3a,mapAnimations3b)
     mapAnimations1b.style.filter = "saturate(0)"
-    difficultySelectionSound.pause();
-    difficultySelectionSound.currentTime = 0.0;
     difficultySelectionSound.play();
+    closingDivCards(mapAnimations1b)
   })
   mapAnimations2a.addEventListener('click', () => {
     flipDifficultyCard(mapAnimations1a,mapAnimations1b)
     flipDifficultyCard(mapAnimations2a,mapAnimations2b)
     flipDifficultyCard(mapAnimations3a,mapAnimations3b)
     mapAnimations2b.style.filter = "saturate(0)"
-    difficultySelectionSound.pause();
-    difficultySelectionSound.currentTime = 0.0;
     difficultySelectionSound.play();
+    closingDivCards(mapAnimations1b)
   })
   mapAnimations3a.addEventListener('click', () => {
     flipDifficultyCard(mapAnimations1a,mapAnimations1b)
     flipDifficultyCard(mapAnimations2a,mapAnimations2b)
     flipDifficultyCard(mapAnimations3a,mapAnimations3b)
     mapAnimations3b.style.filter = "saturate(0)"
-    difficultySelectionSound.pause();
-    difficultySelectionSound.currentTime = 0.0;
     difficultySelectionSound.play();
+    closingDivCards(mapAnimations1b)
   })
-  
-
+  function closingDivCards(b:any){
+    frameDifficulty.innerHTML = ""
+  }
   let mapPointingSound = new Audio('public/audio/2181b19773767a7.mp3');
   mapAnimations1a.addEventListener('mouseover', () => {
     description.innerHTML = "лёгкий уровень сложности , карты попадаются только одной масти"
