@@ -2169,17 +2169,17 @@ exitForeground21?.addEventListener('click', () => {
     flipDifficultyCardReset(mapAnimations2a,mapAnimations2b)
     flipDifficultyCardReset(mapAnimations3a,mapAnimations3b)
   }, 150)
-  function flipDifficultyCardReset(a:any,b:any){
-    b.style.filter = "opacity(0) saturate(1)"
-    a.style.transform = "rotateY(360deg)"
-    b.style.transform = "rotateY(360deg)"
-    a.style.transition = "0.2s"
-    b.style.transition = "0s"
-    a.style.zIndex = "1"
-    b.style.zIndex = "0"
-  }
 })
 
+function flipDifficultyCardReset(a:any,b:any){
+  b.style.filter = "opacity(0) saturate(1)"
+  a.style.transform = "rotateY(360deg)"
+  b.style.transform = "rotateY(360deg)"
+  a.style.transition = "0.2s"
+  b.style.transition = "0s"
+  a.style.zIndex = "1"
+  b.style.zIndex = "0"
+}
 
 const executor54 = document.querySelector('.block21 #b1') as HTMLButtonElement
 executor54?.addEventListener('click', () => {
@@ -2216,100 +2216,102 @@ executor54?.addEventListener('click', () => {
       }, 400)
     }, 400)
   }, 550)
-  
-  
-})
-
-{
-function flipDifficultyCard(a:any,b:any){
-    a.style.transition = "1s"
-    b.style.transition = "1s"
-    a.style.transform = "rotateY(180deg)"
-    b.style.transform = "rotateY(180deg)"
-    a.style.zIndex = "0"
-    b.style.zIndex = "1"
-}
-let difficultySelectionSound = new Audio('public/audio/eeb97203442250b.mp3');
-mapAnimations1a.addEventListener('click', () => {
-  flipDifficultyCard(mapAnimations1a,mapAnimations1b)
-  flipDifficultyCard(mapAnimations2a,mapAnimations2b)
-  flipDifficultyCard(mapAnimations3a,mapAnimations3b)
-  mapAnimations1b.style.filter = "saturate(0)"
-  difficultySelectionSound.play();
-  closingDivCards(mapAnimations1b)
-})
-mapAnimations2a.addEventListener('click', () => {
-  flipDifficultyCard(mapAnimations1a,mapAnimations1b)
-  flipDifficultyCard(mapAnimations2a,mapAnimations2b)
-  flipDifficultyCard(mapAnimations3a,mapAnimations3b)
-  mapAnimations2b.style.filter = "saturate(0)"
-  difficultySelectionSound.play();
-  closingDivCards(mapAnimations2b)
-})
-mapAnimations3a.addEventListener('click', () => {
-  flipDifficultyCard(mapAnimations1a,mapAnimations1b)
-  flipDifficultyCard(mapAnimations2a,mapAnimations2b)
-  flipDifficultyCard(mapAnimations3a,mapAnimations3b)
-  mapAnimations3b.style.filter = "saturate(0)"
-  difficultySelectionSound.play();
-  closingDivCards(mapAnimations3b)
-})
-function closingDivCards(b:any){
-  frameDifficulty.innerHTML = ""
-  description.innerHTML = ""
-  frameDifficulty.style.width = "0px"
-  description.style.width = "0px"
-  description.style.padding = "0px"
-  setTimeout(()=>{
-    frameDifficulty.style.filter = "blur(10px) opacity(0)"
-    description.style.filter = "blur(10px) opacity(0)"
-  },100)
-  setTimeout(()=>{
-    mapAnimations1a.style.display = "none"
-    mapAnimations2a.style.display = "none"
-    mapAnimations3a.style.display = "none"
-    mapAnimations1b.style.animation = "cardDisappearance 0.4s"
-    mapAnimations2b.style.animation = "cardDisappearance 0.4s"
-    mapAnimations3b.style.animation = "cardDisappearance 0.4s"
-    b.style.animation = "cardDisappearance 1s"
+  function flipDifficultyCard(a:any,b:any){
+      a.style.transition = "1s"
+      b.style.transition = "1s"
+      // a.classList.add("beautifulClosingCards")
+      // b.classList.add("beautifulClosingCards")
+      a.style.transform = "rotateY(180deg)"
+      b.style.transform = "rotateY(180deg)"
+      // b.style.filter = "blur(10px)"
+      a.style.zIndex = "0"
+      b.style.zIndex = "1"
+  }
+  let difficultySelectionSound = new Audio('public/audio/eeb97203442250b.mp3');
+  mapAnimations1a.addEventListener('click', () => {
+    flipDifficultyCard(mapAnimations1a,mapAnimations1b)
+    flipDifficultyCard(mapAnimations2a,mapAnimations2b)
+    flipDifficultyCard(mapAnimations3a,mapAnimations3b)
+    mapAnimations1b.style.filter = "saturate(0)"
+    difficultySelectionSound.play();
+    closingDivCards(mapAnimations1b)
+  })
+  mapAnimations2a.addEventListener('click', () => {
+    flipDifficultyCard(mapAnimations1a,mapAnimations1b)
+    flipDifficultyCard(mapAnimations2a,mapAnimations2b)
+    flipDifficultyCard(mapAnimations3a,mapAnimations3b)
+    mapAnimations2b.style.filter = "saturate(0)"
+    difficultySelectionSound.play();
+    closingDivCards(mapAnimations2b)
+  })
+  mapAnimations3a.addEventListener('click', () => {
+    flipDifficultyCard(mapAnimations1a,mapAnimations1b)
+    flipDifficultyCard(mapAnimations2a,mapAnimations2b)
+    flipDifficultyCard(mapAnimations3a,mapAnimations3b)
+    mapAnimations3b.style.filter = "saturate(0)"
+    difficultySelectionSound.play();
+    closingDivCards(mapAnimations3b)
+  })
+  function closingDivCards(b:any){
+    frameDifficulty.innerHTML = ""
+    description.innerHTML = ""
+    frameDifficulty.style.width = "0px"
+    description.style.width = "0px"
+    description.style.padding = "0px"
+    // mapAnimations1b.style.transition = "All 1s"
+    // mapAnimations2b.style.transition = "All 1s"
+    // mapAnimations3b.style.transition = "All 1s"
+    // mapAnimations1a.style.transition = "0s"
+    // mapAnimations2a.style.transition = "0s"
+    // mapAnimations3a.style.transition = "0s"
+    // b.style.transition = "3s"
     setTimeout(()=>{
-      mapAnimations1b.style.zIndex = "-500"
-      mapAnimations2b.style.zIndex = "-500"
-      mapAnimations3b.style.zIndex = "-500"
+      frameDifficulty.style.filter = "blur(10px) opacity(0)"
+      description.style.filter = "blur(10px) opacity(0)"
+    },100)
+    setTimeout(()=>{
+      // mapAnimations1b.style.filter = "blur(10px)"
+      // mapAnimations2b.style.filter = "blur(10px)"
+      // mapAnimations3b.style.filter = "blur(10px)"
+      // mapAnimations1a.style.filter = "blur(10px) opacity(0)"
+      // mapAnimations2a.style.filter = "blur(10px) opacity(0)"
+      // mapAnimations3a.style.filter = "blur(10px) opacity(0)"
     },1000)
-  },1000)
-}
+  }
+  let mapPointingSound = new Audio('public/audio/2181b19773767a7.mp3');
+  mapAnimations1a.addEventListener('mouseover', () => {
+    description.innerHTML = "лёгкий уровень сложности , карты попадаются только одной масти"
+    mapPointingSound.pause();
+    mapPointingSound.currentTime = 0.0;
+    mapPointingSound.play();
+  })
+  mapAnimations1a.addEventListener('mouseout', () => {
+    description.innerHTML = ""
+  })
+  mapAnimations2a.addEventListener('mouseover', () => {
+    description.innerHTML = "средний уровень сложности , карты попадаются разных мастей , но только цифры"
+    mapPointingSound.pause();
+    mapPointingSound.currentTime = 0.0;
+    mapPointingSound.play();
+  })
+  mapAnimations2a.addEventListener('mouseout', () => {
+    description.innerHTML = ""
+  })
+  mapAnimations3a.addEventListener('mouseover', () => {
+    description.innerHTML = "сложный уровень сложности , карты попадаются разных мастей , но только валет , дама , король"
+    mapPointingSound.pause();
+    mapPointingSound.currentTime = 0.0;
+    mapPointingSound.play();
+  })
+  mapAnimations3a.addEventListener('mouseout', () => {
+    description.innerHTML = ""
+  })
+  
+  
+})
 
 
-let mapPointingSound = new Audio('public/audio/2181b19773767a7.mp3');
-mapAnimations1a.addEventListener('mouseover', () => {
-  description.innerHTML = "лёгкий уровень сложности , карты попадаются только одной масти"
-  mapPointingSound.pause();
-  mapPointingSound.currentTime = 0.0;
-  mapPointingSound.play();
-})
-mapAnimations1a.addEventListener('mouseout', () => {
-  description.innerHTML = ""
-})
-mapAnimations2a.addEventListener('mouseover', () => {
-  description.innerHTML = "средний уровень сложности , карты попадаются разных мастей , но только цифры"
-  mapPointingSound.pause();
-  mapPointingSound.currentTime = 0.0;
-  mapPointingSound.play();
-})
-mapAnimations2a.addEventListener('mouseout', () => {
-  description.innerHTML = ""
-})
-mapAnimations3a.addEventListener('mouseover', () => {
-  description.innerHTML = "сложный уровень сложности , карты попадаются разных мастей , но только валет , дама , король"
-  mapPointingSound.pause();
-  mapPointingSound.currentTime = 0.0;
-  mapPointingSound.play();
-})
-mapAnimations3a.addEventListener('mouseout', () => {
-  description.innerHTML = ""
-})
-}
+
 
 
 
