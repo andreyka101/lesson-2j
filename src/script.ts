@@ -1,4 +1,16 @@
 import './style.scss'
+
+let img1 = document.createElement('img');
+
+// мы можем загрузить картинку
+img1.src = "public/foto/Fussballfeld.gif"
+document.head.append(img1);
+// img1.onload = function() {
+//   alert(`Изображение загружено, размеры ${img1.width}x${img1.height}`);
+// };
+// img1.onerror = function() {
+//   alert("Ошибка во время загрузки изображения");
+// };
 // ANCHOR -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 let answer1 = document.querySelector('.block1 #s1')// as HTMLInputElement
