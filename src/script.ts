@@ -2198,7 +2198,7 @@ executor54?.addEventListener('click', () => {
     setTimeout(() => {
       frameDifficulty.innerHTML = "выбор сложности"
       description.style.padding = "10px"
-    }, 520)
+    }, 530)
     setTimeout(() => {
       mapAnimations2a.style.display = "inline-block"
       mapAnimations2a.style.left = "calc(50% - 49px)"
