@@ -2179,7 +2179,8 @@ function flipDifficultyCardReset(a:any,b:any){
   a.style.zIndex = "1"
   b.style.zIndex = "0"
 }
-
+let difficultySelectionSound = new Audio('audio/eeb97203442250b.mp3');
+let mapPointingSound = new Audio('audio/2181b19773767a7.mp3');
 const executor54 = document.querySelector('.block21 #b1') as HTMLButtonElement
 executor54?.addEventListener('click', () => {
   foregroundTranslucentBlock21.classList.remove('off')
@@ -2218,15 +2219,12 @@ executor54?.addEventListener('click', () => {
   function flipDifficultyCard(a:any,b:any){
       a.style.transition = "1s"
       b.style.transition = "1s"
-      // a.classList.add("beautifulClosingCards")
-      // b.classList.add("beautifulClosingCards")
       a.style.transform = "rotateY(180deg)"
       b.style.transform = "rotateY(180deg)"
-      // b.style.filter = "blur(10px)"
       a.style.zIndex = "0"
       b.style.zIndex = "1"
   }
-  let difficultySelectionSound = new Audio('public/audio/eeb97203442250b.mp3');
+  
   mapAnimations1a.addEventListener('click', () => {
     flipDifficultyCard(mapAnimations1a,mapAnimations1b)
     flipDifficultyCard(mapAnimations2a,mapAnimations2b)
@@ -2257,27 +2255,20 @@ executor54?.addEventListener('click', () => {
     frameDifficulty.style.width = "0px"
     description.style.width = "0px"
     description.style.padding = "0px"
-    // mapAnimations1b.style.transition = "All 1s"
-    // mapAnimations2b.style.transition = "All 1s"
-    // mapAnimations3b.style.transition = "All 1s"
-    // mapAnimations1a.style.transition = "0s"
-    // mapAnimations2a.style.transition = "0s"
-    // mapAnimations3a.style.transition = "0s"
-    // b.style.transition = "3s"
     setTimeout(()=>{
       frameDifficulty.style.filter = "blur(10px) opacity(0)"
       description.style.filter = "blur(10px) opacity(0)"
     },100)
     setTimeout(()=>{
-      // mapAnimations1b.style.filter = "blur(10px)"
-      // mapAnimations2b.style.filter = "blur(10px)"
-      // mapAnimations3b.style.filter = "blur(10px)"
+      mapAnimations1a.style.display = "none"
+      mapAnimations2a.style.display = "none"
+      mapAnimations3a.style.display = "none"
       // mapAnimations1a.style.filter = "blur(10px) opacity(0)"
       // mapAnimations2a.style.filter = "blur(10px) opacity(0)"
       // mapAnimations3a.style.filter = "blur(10px) opacity(0)"
     },1000)
   }
-  let mapPointingSound = new Audio('public/audio/2181b19773767a7.mp3');
+  
   mapAnimations1a.addEventListener('mouseover', () => {
     description.innerHTML = "лёгкий уровень сложности , карты попадаются только одной масти"
     mapPointingSound.pause();
