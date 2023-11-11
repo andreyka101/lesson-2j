@@ -332,10 +332,10 @@ th {
   }
 }
 
-.foregroundTranslucentBlock21 .divCards {
+// .foregroundTranslucentBlock21 .divCards {
   // display: flex;
   // justify-content: center;
-}
+// }
 
 #frameDifficulty {
   display: flex;
@@ -356,10 +356,10 @@ th {
     position: absolute;
   }
 }
-.beautifulClosingCards{
+// .beautifulClosingCards{
   // transition: 1s;
   // filter: blur(10px);
-}
+// }
 #description {
   margin-top: 270px;
   display: flex;
@@ -432,6 +432,28 @@ th {
     filter: blur(0px);
     filter: saturate(1);
     left: calc(75% - 49px);
+  }
+}
+@keyframes mapAnimationsChoice_1s {
+  0% {
+    filter: blur(0px);
+    filter: opacity(1);
+  }
+  
+  100% {
+    filter: blur(20px);
+    filter: opacity(0);
+  }
+}
+@keyframes mapAnimationsChoice_2s {
+  0% {
+    filter: blur(0px);
+    filter: opacity(1) saturate(0);
+  }
+  
+  100% {
+    filter: blur(30px);
+    filter: opacity(0) saturate(0);
   }
 }
 
