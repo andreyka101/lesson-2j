@@ -2369,7 +2369,7 @@ function complexityGeneration(num:number) {
   
   
   arr.forEach((item) => {
-    conclusionHTML +='<div><div style="background:' + item +'.svg)center/cover"></div><div style="background:url(svg/poker_am5vxqpezjmq.svg)center/cover;transform: rotateY(180deg); display:none;"></div></div>'
+    conclusionHTML +='<div><div style="background:' + item +'.svg)center/cover; display:none;"></div><div style="background:url(svg/poker_am5vxqpezjmq.svg)center/cover;transform: rotateY(180deg);cursor: pointer;"></div></div>'
   })
   gameCards.innerHTML = conclusionHTML
   
@@ -2388,6 +2388,10 @@ function complexityGeneration(num:number) {
     return ran
   }
 }
+gameCards?.addEventListener('click', (event) => {
+  let target = event.target
+})
+
 
 }
 //@ts-ignore
