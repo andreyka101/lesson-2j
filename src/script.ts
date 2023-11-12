@@ -2368,8 +2368,8 @@ function complexityGeneration(num:number) {
   shuffle(arr)
   
   
-  arr.forEach((item) => {
-    conclusionHTML +='<div><div id="" style="background:' + item +'.svg)center/cover; display:none;"></div><div style="background:url(svg/poker_am5vxqpezjmq.svg)center/cover;transform: rotateY(180deg);cursor: pointer;"></div></div>'
+  arr.forEach((item, index) => {
+    conclusionHTML +='<div><div class="id-'+index+'-'+arrNum[index]+'" style="background:' + item +'.svg)center/cover; display:none;"></div><div style="background:url(svg/poker_am5vxqpezjmq.svg)center/cover;transform: rotateY(180deg);cursor: pointer;"></div></div>'
   })
   gameCards.innerHTML = conclusionHTML
   
@@ -2392,7 +2392,7 @@ function complexityGeneration(num:number) {
 
 gameCards?.addEventListener('click', function (event) {
   let target = event.target as HTMLElement
-  if (target.className != 'TD') return;
+  if (target.className != '') return;
 })
 }
 //@ts-ignore
