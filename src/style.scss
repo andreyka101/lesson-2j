@@ -340,7 +340,7 @@ th {
 #frameDifficulty {
   display: flex;
   justify-content: center;
-  margin-top: 50px;
+  // margin-top: 50px;
 
   div {
     display: flex;
@@ -352,7 +352,7 @@ th {
     border: #000000 solid 4px;
     border-radius: 10px;
     transition: 1s;
-    top: 22%;
+    top: -114%;
     position: absolute;
   }
 }
@@ -361,7 +361,7 @@ th {
   // filter: blur(10px);
 // }
 #description {
-  margin-top: 270px;
+  // margin-top: 270px;
   display: flex;
   justify-content: center;
 
@@ -376,12 +376,15 @@ th {
     border-radius: 10px;
     transition: 1s;
     padding: 0px;
-    top: 66%;
+    top: 167%;
     position: absolute;
   }
 }
 
-#levelSelection {
+.divCards {
+  // display: none;
+  display: flex;
+    justify-content: center;
   div {
     position: absolute;
     width: 99px;
@@ -468,9 +471,25 @@ th {
     filter: opacity(0);
   }
 }
+#gameCards{
+  display: flex;
+  div {
+   display: flex;
+
+   div{
+     // position: absolute;
+     width: 99px;
+     height: 131px;
+     cursor: pointer;
+     // left: calc(50% - 49px);
+     // top: calc(48% - 65px);
+     transition: 0.2s;
+    }
+}
+}
 
 @media screen and (min-width: 800px) {
-  #levelSelection .levelH:hover {
+  .divCards .levelH:hover {
     filter: brightness(60%);
   }
 

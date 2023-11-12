@@ -2139,6 +2139,7 @@ document.querySelector('body')?.addEventListener('mouseover', function (e) {
 //TODO: memory game
 
 
+const gameCards = document.querySelector("#gameCards") as HTMLDivElement
 const numberCardsR = document.querySelector("#numberCards") as HTMLInputElement
 numberCardsR.addEventListener('mousemove', () => {
   answer16.innerHTML = numberCardsR.value
@@ -2229,7 +2230,6 @@ executor54?.addEventListener('click', () => {
 })
 
 {
-let difficultySelection:number
 function flipDifficultyCard(a:any,b:any){
     a.style.transition = "1s"
     b.style.transition = "1s"
@@ -2249,7 +2249,7 @@ mapAnimations1a.addEventListener('click', () => {
   mapAnimations1b.style.filter = "saturate(0)"
   difficultySelectionSound.play();
   closingDivCards(mapAnimations1b)
-  difficultySelection = 1
+  complexityGeneration(1)
 })
 mapAnimations2a.addEventListener('click', () => {
   flipDifficultyCard(mapAnimations1a,mapAnimations1b)
@@ -2258,7 +2258,7 @@ mapAnimations2a.addEventListener('click', () => {
   mapAnimations2b.style.filter = "saturate(0)"
   difficultySelectionSound.play();
   closingDivCards(mapAnimations2b)
-  difficultySelection = 2
+  complexityGeneration(2)
 })
 mapAnimations3a.addEventListener('click', () => {
   flipDifficultyCard(mapAnimations1a,mapAnimations1b)
@@ -2267,7 +2267,7 @@ mapAnimations3a.addEventListener('click', () => {
   mapAnimations3b.style.filter = "saturate(0)"
   difficultySelectionSound.play();
   closingDivCards(mapAnimations3b)
-  difficultySelection = 3
+  complexityGeneration(3)
 })
 function closingDivCards(b:any){
   frameDifficulty.innerHTML = ""
@@ -2325,7 +2325,69 @@ mapAnimations3a.addEventListener('mouseout', () => {
 
 
 
+function complexityGeneration(num:number) {
+  let arrNum = [] as number[]
+  let arr = [] as string[]
+  let arrCopy = [] as string[]
+  let ran:number
+  let maxRan=0
+  let strRan = ""
+  switch (num) {
+    case 1:
+      maxRan = 13
+      strRan = "url(svg/easy_level/poker_easy_"
+      break;
+    case 2:
+      maxRan = 16
+      strRan = "url(svg/average_level/poker_average_"
+      break;
+      case 3:
+        maxRan = 12
+        strRan = "url(svg/difficult_level/poker_difficult_"
+      break;
+  }
+  for (let i=1;i!=+(numberCardsR.value)/2+1;i++ ){
+    ran = Math.round(Math.random() * (maxRan - 1) + 1)
+    if (arrNum.length != 0){
+      ran = +(checkingRandomNumbers(ran))
+    }
+    arrNum.push(ran)
+    arr.push(strRan + ran)
+  }
+  // gameCards.style.background = arr[1]
+  // gameCards.innerHTML="<div>"
+  let conclusionHTML = ""
+  arr.forEach((item) => {
+    conclusionHTML +='<div style="background:' + item +'.svg)center/cover"></div>'
+  })
+  gameCards.innerHTML = "<div>" + conclusionHTML + '</div>'
 
+  arrCopy = arr.slice()
+  shuffle(arrCopy)
+  shuffle(arr)
+  shuffle(arrCopy)
+  conclusionHTML = ""
+  arrCopy.forEach((item) => {
+    conclusionHTML +='<div style="background:' + item +'.svg)center/cover"></div>'
+  })
+  
+  gameCards.innerHTML += "<div>" + conclusionHTML + '</div>'
+  
+
+
+
+  function shuffle(array:any) {
+    array.sort(() => Math.random() - 0.5);
+  }
+  function checkingRandomNumbers(ran:number){
+    arrNum.forEach((item) => {
+      if (item==ran){
+        ran = +(checkingRandomNumbers(Math.round(Math.random() * (13 - 1) + 1)))
+      }
+    })
+    return ran
+  }
+}
 }
 
 
