@@ -471,21 +471,25 @@ th {
     filter: opacity(0);
   }
 }
-#gameCards{
+.divCards2{
   display: flex;
-  div {
-   display: flex;
-
-   div{
-     // position: absolute;
-     width: 99px;
-     height: 131px;
-     cursor: pointer;
-     // left: calc(50% - 49px);
-     // top: calc(48% - 65px);
-     transition: 0.2s;
+  justify-content: center;
+  #gameCards{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 450px;
+    div div{
+      position: relative;
+      width: 99px;
+      height: 131px;
+      //  cursor: pointer;
+      transition: 0.2s;
+      margin: 6px;
     }
-}
+  }
 }
 
 @media screen and (min-width: 800px) {

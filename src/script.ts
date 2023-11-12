@@ -2357,21 +2357,21 @@ function complexityGeneration(num:number) {
   // gameCards.style.background = arr[1]
   // gameCards.innerHTML="<div>"
   let conclusionHTML = ""
-  arr.forEach((item) => {
-    conclusionHTML +='<div style="background:' + item +'.svg)center/cover"></div>'
-  })
-  gameCards.innerHTML = "<div>" + conclusionHTML + '</div>'
-
+  
   arrCopy = arr.slice()
   shuffle(arrCopy)
   shuffle(arr)
   shuffle(arrCopy)
-  conclusionHTML = ""
-  arrCopy.forEach((item) => {
-    conclusionHTML +='<div style="background:' + item +'.svg)center/cover"></div>'
-  })
+  arr = arr.concat(arrCopy)
+  shuffle(arr)
+  shuffle(arr)
+  shuffle(arr)
   
-  gameCards.innerHTML += "<div>" + conclusionHTML + '</div>'
+  
+  arr.forEach((item) => {
+    conclusionHTML +='<div><div style="background:' + item +'.svg)center/cover"></div><div style="background:url(svg/poker_am5vxqpezjmq.svg)center/cover;transform: rotateY(180deg); display:none;"></div></div>'
+  })
+  gameCards.innerHTML = conclusionHTML
   
 
 
@@ -2382,14 +2382,17 @@ function complexityGeneration(num:number) {
   function checkingRandomNumbers(ran:number){
     arrNum.forEach((item) => {
       if (item==ran){
-        ran = +(checkingRandomNumbers(Math.round(Math.random() * (13 - 1) + 1)))
+        ran = +(checkingRandomNumbers(Math.round(Math.random() * (maxRan - 1) + 1)))
       }
     })
     return ran
   }
 }
-}
 
+}
+//@ts-ignore
+let detect = new MobileDetect(window.navigator.userAgent)
+console.log("Mobile: " + detect.mobile()); 
 
 
 
