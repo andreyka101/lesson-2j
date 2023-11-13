@@ -2327,8 +2327,7 @@ mapAnimations3a.addEventListener('mouseout', () => {
 
 function complexityGeneration(num:number) {
   let arrNum = [] as number[]
-  let arr = [] as string[]
-  let arrCopy = [] as string[]
+  let arrCopy = [] as number[]
   let ran:number
   let maxRan=0
   let strRan = ""
@@ -2352,24 +2351,24 @@ function complexityGeneration(num:number) {
       ran = +(checkingRandomNumbers(ran))
     }
     arrNum.push(ran)
-    arr.push(strRan + ran)
+    // arr.push(strRan + ran)
   }
   // gameCards.style.background = arr[1]
   // gameCards.innerHTML="<div>"
   let conclusionHTML = ""
   
-  arrCopy = arr.slice()
+  arrCopy = arrNum.slice()
   shuffle(arrCopy)
-  shuffle(arr)
+  shuffle(arrNum)
   shuffle(arrCopy)
-  arr = arr.concat(arrCopy)
-  shuffle(arr)
-  shuffle(arr)
-  shuffle(arr)
+  arrNum = arrNum.concat(arrCopy)
+  shuffle(arrNum)
+  shuffle(arrNum)
+  shuffle(arrNum)
   
   
-  arr.forEach((item) => {
-    conclusionHTML +='<div><div style="background:' + item +'.svg)center/cover; display:none;"></div><div style="background:url(svg/poker_am5vxqpezjmq.svg)center/cover;transform: rotateY(180deg);cursor: pointer;"></div></div>'
+  arrNum.forEach((item) => {
+    conclusionHTML +='<div><div style="background:' + strRan + item +'.svg)center/cover; display:none;"></div><div style="background:url(svg/poker_am5vxqpezjmq.svg)center/cover;transform: rotateY(180deg);cursor: pointer;"></div></div>'
   })
   gameCards.innerHTML = conclusionHTML
   
