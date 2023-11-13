@@ -2367,13 +2367,8 @@ function complexityGeneration(num:number) {
   shuffle(arrNum)
   
   
-<<<<<<< HEAD
-  arrNum.forEach((item) => {
-    conclusionHTML +='<div><div style="background:' + strRan + item +'.svg)center/cover; display:none;"></div><div style="background:url(svg/poker_am5vxqpezjmq.svg)center/cover;transform: rotateY(180deg);cursor: pointer;"></div></div>'
-=======
-  arr.forEach((item, index) => {
-    conclusionHTML +='<div><div class="id-'+index+'-'+arrNum[index]+'" style="background:' + item +'.svg)center/cover; display:none;"></div><div style="background:url(svg/poker_am5vxqpezjmq.svg)center/cover;transform: rotateY(180deg);cursor: pointer;"></div></div>'
->>>>>>> 73468da95177d947a5c36d95509791b910b64b7a
+  arrNum.forEach((item, index) => {
+    conclusionHTML +='<div><div class="num-'+index+' id-'+ arrNum[index] +'" style="background:' + strRan + item +'.svg)center/cover; display:none;"></div><div class="num-'+index+' id-'+ arrNum[index] +' style="background:url(svg/poker_am5vxqpezjmq.svg)center/cover;transform: rotateY(180deg);cursor: pointer;"></div></div>'
   })
   gameCards.innerHTML = conclusionHTML
   
