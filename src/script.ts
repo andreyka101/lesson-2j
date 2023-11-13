@@ -2367,8 +2367,13 @@ function complexityGeneration(num:number) {
   shuffle(arrNum)
   
   
+<<<<<<< HEAD
   arrNum.forEach((item) => {
     conclusionHTML +='<div><div style="background:' + strRan + item +'.svg)center/cover; display:none;"></div><div style="background:url(svg/poker_am5vxqpezjmq.svg)center/cover;transform: rotateY(180deg);cursor: pointer;"></div></div>'
+=======
+  arr.forEach((item, index) => {
+    conclusionHTML +='<div><div class="id-'+index+'-'+arrNum[index]+'" style="background:' + item +'.svg)center/cover; display:none;"></div><div style="background:url(svg/poker_am5vxqpezjmq.svg)center/cover;transform: rotateY(180deg);cursor: pointer;"></div></div>'
+>>>>>>> 73468da95177d947a5c36d95509791b910b64b7a
   })
   gameCards.innerHTML = conclusionHTML
   
@@ -2387,11 +2392,12 @@ function complexityGeneration(num:number) {
     return ran
   }
 }
-gameCards?.addEventListener('click', (event) => {
-  let target = event.target
+
+
+gameCards?.addEventListener('click', function (event) {
+  let target = event.target as HTMLElement
+  if (target.className != '') return;
 })
-
-
 }
 //@ts-ignore
 let detect = new MobileDetect(window.navigator.userAgent)
