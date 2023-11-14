@@ -2397,7 +2397,9 @@ function complexityGeneration(num:number) {
     return ran
   }
 }
-
+let victorySign = 0
+const cardsMatchedAudio = new Audio('audio/d0aff48f9f2bbf7.mp3');
+const victoryAudio = new Audio('audio/388d369504aaa1a.mp3');
 const closingCards = document.querySelector("#closingCards") as HTMLDivElement
 gameCards?.addEventListener('click', function (event) {
   var wholeDeckOfCards = document.querySelectorAll('#gameCards div .cardButtonFace') as any //Record<number,HTMLDivElement>
@@ -2436,17 +2438,35 @@ gameCards?.addEventListener('click', function (event) {
       },1000)
     }
     else{
-      setTimeout(()=>{
-        for (let i=0;i !=wholeDeckOfCards.length;i++){
-          if (target.dataset.num == wholeDeckOfCards[i].dataset.num || firstMoveBuffer.dataset.num == wholeDeckOfCards[i].dataset.num){
-            wholeDeckOfCards[i].style.filter = "saturate(0)"
+      victorySign+=2
+      console.log(victorySign);
+      if(victorySign == +(numberCardsR.value)){
+        victorySign = 0
+        setTimeout(()=>{
+          victoryAudio.pause();
+          victoryAudio.currentTime = 0.0;
+          victoryAudio.play();
+          
+          for (let i=0;i !=wholeDeckOfCards.length;i++){
+            wholeDeckOfCards[i].style.filter = "saturate(0.4)"
           }
-        }
-      },200)
-
+        },250)
+        
+      }
+      else{
+        setTimeout(()=>{
+          cardsMatchedAudio.pause();
+          cardsMatchedAudio.currentTime = 0.0;
+          cardsMatchedAudio.play();
+          for (let i=0;i !=wholeDeckOfCards.length;i++){
+            if (target.dataset.num == wholeDeckOfCards[i].dataset.num || firstMoveBuffer.dataset.num == wholeDeckOfCards[i].dataset.num){
+              wholeDeckOfCards[i].style.filter = "saturate(0)"
+            }
+          }
+        },200)
+      }
     }
   }
-  console.log(numberMoves);
   if (numberMoves==1)firstMoveBuffer = target
 })
 }
