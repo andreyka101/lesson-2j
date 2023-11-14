@@ -1,3 +1,4 @@
+import { NULL } from 'sass';
 import './style.scss'
 
 let img1 = document.createElement('img');
@@ -2139,6 +2140,8 @@ document.querySelector('body')?.addEventListener('mouseover', function (e) {
 //TODO: memory game
 
 
+
+const divCards2 = document.querySelector(".divCards2") as HTMLDivElement
 const gameCards = document.querySelector("#gameCards") as HTMLDivElement
 const numberCardsR = document.querySelector("#numberCards") as HTMLInputElement
 numberCardsR.addEventListener('mousemove', () => {
@@ -2167,6 +2170,8 @@ exitForeground21?.addEventListener('click', () => {
   frameDifficulty.innerHTML = ""
   frameDifficulty.style.filter = "blur(0px) opacity(1)"
   description.style.filter = "blur(0px) opacity(1)"
+  divCards2.style.filter = "blur(10px)"
+  divCards2.style.top = "100%"
   setTimeout(() => {
     mapAnimations1b.style.display = "inline-block"
     mapAnimations2b.style.display = "inline-block"
@@ -2230,6 +2235,8 @@ executor54?.addEventListener('click', () => {
 })
 
 {
+ let numberMoves = 0
+ let firstMoveBuffer : any
 function flipDifficultyCard(a:any,b:any){
     a.style.transition = "1s"
     b.style.transition = "1s"
@@ -2291,6 +2298,9 @@ function closingDivCards(b:any){
       mapAnimations1b.style.display = "none"
       mapAnimations2b.style.display = "none"
       mapAnimations3b.style.display = "none"
+      divCards2.style.transition = "1s"
+      divCards2.style.top = "0"
+      divCards2.style.filter = "blur(0px)"
     },1500)
   },1000)
 }
@@ -2368,7 +2378,7 @@ function complexityGeneration(num:number) {
   
   
   arrNum.forEach((item, index) => {
-    conclusionHTML +='<div><div class="num-'+index+' id-'+ arrNum[index] +'" style="background:' + strRan + item +'.svg)center/cover; display:none;"></div><div class="num-'+index+' id-'+ arrNum[index] +' style="background:url(svg/poker_am5vxqpezjmq.svg)center/cover;transform: rotateY(180deg);cursor: pointer;"></div></div>'
+    conclusionHTML +='<div style="position: relative;width: 99px;height: 131px;margin: 6px;"><div class="cardButtonFace" data-num="'+index+'" style="background:' + strRan + item +'.svg)center/cover; z-index: 0;transition: 0.5s;position: absolute;"></div><div class="cardButton" data-num="'+index+'" data-id="'+ arrNum[index] +'" style="background:url(svg/poker_am5vxqpezjmq.svg)center/cover;cursor: pointer;transition: 0.5s;z-index: 1;position: absolute;"></div></div>'
   })
   gameCards.innerHTML = conclusionHTML
   
@@ -2388,12 +2398,61 @@ function complexityGeneration(num:number) {
   }
 }
 
-
+const closingCards = document.querySelector("#closingCards") as HTMLDivElement
 gameCards?.addEventListener('click', function (event) {
+  var wholeDeckOfCards = document.querySelectorAll('#gameCards div .cardButtonFace') as any //Record<number,HTMLDivElement>
   let target = event.target as HTMLElement
-  if (target.className != '') return;
+  if (target.className != 'cardButton') return;
+  for (let i=0;i !=wholeDeckOfCards.length;i++){
+    if (target.dataset.num == wholeDeckOfCards[i].dataset.num){
+      wholeDeckOfCards[i].style.transform = "rotateY(360deg)"
+      target.style.transform = "rotateY(360deg)"
+      target.style.zIndex = "0"
+      wholeDeckOfCards[i].style.zIndex = "1"
+      numberMoves ++
+    }
+  }
+  if (numberMoves==2){
+    numberMoves = 0
+    if (firstMoveBuffer.dataset.id != target.dataset.id){
+      closingCards.style.zIndex = "20"
+      setTimeout(()=>{
+        for (let i=0;i !=wholeDeckOfCards.length;i++){
+          if (target.dataset.num == wholeDeckOfCards[i].dataset.num){
+            wholeDeckOfCards[i].style.transform = "rotateY(180deg)"
+            target.style.transform = "rotateY(180deg)"
+            target.style.zIndex = "1"
+            wholeDeckOfCards[i].style.zIndex = "0"
+            closingCards.style.zIndex = "-1"
+          }
+          if (firstMoveBuffer.dataset.num == wholeDeckOfCards[i].dataset.num){
+            wholeDeckOfCards[i].style.transform = "rotateY(180deg)"
+            firstMoveBuffer.style.transform = "rotateY(180deg)"
+            firstMoveBuffer.style.zIndex = "1"
+            wholeDeckOfCards[i].style.zIndex = "0"
+            closingCards.style.zIndex = "-1"
+          }
+        }
+      },1000)
+    }
+    else{
+      setTimeout(()=>{
+        for (let i=0;i !=wholeDeckOfCards.length;i++){
+          if (target.dataset.num == wholeDeckOfCards[i].dataset.num || firstMoveBuffer.dataset.num == wholeDeckOfCards[i].dataset.num){
+            wholeDeckOfCards[i].style.filter = "saturate(0)"
+          }
+        }
+      },200)
+
+    }
+  }
+  console.log(numberMoves);
+  if (numberMoves==1)firstMoveBuffer = target
 })
 }
+
+
+
 //@ts-ignore
 let detect = new MobileDetect(window.navigator.userAgent)
 console.log("Mobile: " + detect.mobile()); 

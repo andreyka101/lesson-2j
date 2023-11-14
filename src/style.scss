@@ -354,6 +354,7 @@ th {
     transition: 1s;
     top: -114%;
     position: absolute;
+    cursor: default;
   }
 }
 // .beautifulClosingCards{
@@ -378,13 +379,14 @@ th {
     padding: 0px;
     top: 167%;
     position: absolute;
+    cursor: default;
   }
 }
 
 .divCards {
   // display: none;
   display: flex;
-    justify-content: center;
+  justify-content: center;
   div {
     position: absolute;
     width: 99px;
@@ -474,6 +476,15 @@ th {
 .divCards2{
   display: flex;
   justify-content: center;
+  position: relative;
+  top:100%;
+  filter: blur(10px);
+  #closingCards{
+    position: absolute;
+    width: 450px;
+    height: 100%;
+    z-index: -1;
+  }
   #gameCards{
     display: flex;
     justify-content: center;
@@ -487,7 +498,7 @@ th {
       height: 131px;
       //  cursor: pointer;
       transition: 0.2s;
-      margin: 6px;
+      transform: rotateY(180deg);
     }
   }
 }
