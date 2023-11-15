@@ -2482,18 +2482,20 @@ gameCards?.addEventListener('click', function (event) {
   if (numberMoves==1)firstMoveBuffer = target
 })
 let rotate = 0
-let timer
+let timer : any
 playCardsAgain.addEventListener('mouseover', () => {
   if (!timer) {
-    timer = setInterval()
+    timer = setInterval(()=>{
       rotate+=5
       playCardsAgain.style.transform = `rotate(${rotate}deg)`
-
+    })
   }
+})
+playCardsAgain.addEventListener('mouseout', () => {
+      clearInterval(timer)
 })
 }
 
-// clearInterval(timer)
 
 
 //@ts-ignore
