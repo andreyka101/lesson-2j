@@ -189,7 +189,7 @@ th {
   transition: 300ms;
   content: "";
   display: inline-block;
-  background: url("/public/svg/gravity_gahaaw3qvutl.svg") center / contain no-repeat;
+  background: url("svg/gravity_gahaaw3qvutl.svg") center / contain no-repeat;
 }
 
 .checkGravity+label:hover {
@@ -198,7 +198,7 @@ th {
 }
 
 .checkGravity:checked+label {
-  background: url("/public/svg/gravity_gahaaw3qvutlGreen.svg") center / contain no-repeat;
+  background: url("svg/gravity_gahaaw3qvutlGreen.svg") center / contain no-repeat;
 }
 
 .foregroundTranslucent .div+div {
@@ -269,7 +269,7 @@ th {
       }
 
       .closeList:hover {
-        background: url("/public/svg/NOT\ close_2c9x3mhf0vv6.svg") center/cover;
+        background: url("svg/NOT\ close_2c9x3mhf0vv6.svg") center/cover;
       }
     }
   }

@@ -2460,7 +2460,7 @@ gameCards?.addEventListener('click', function (event) {
             victorySignHTML.style.animation = "0.5s endGame2 both"
             setTimeout(()=>{
               victoryTransparentHTML.style.animation = "0.5s endGame1 both"
-            },500)
+            },10)
           },200)
         },250)
         
@@ -2482,12 +2482,18 @@ gameCards?.addEventListener('click', function (event) {
   if (numberMoves==1)firstMoveBuffer = target
 })
 let rotate = 0
-playCardsAgain.addEventListener('mousemove', () => {
-  rotate+=5
-  playCardsAgain.style.transform = `rotate(${rotate}deg)`
+let timer
+playCardsAgain.addEventListener('mouseover', () => {
+  if (!timer) {
+    timer = setInterval()
+      rotate+=5
+      playCardsAgain.style.transform = `rotate(${rotate}deg)`
+
+  }
 })
 }
 
+// clearInterval(timer)
 
 
 //@ts-ignore
