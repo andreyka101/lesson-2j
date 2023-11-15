@@ -9,7 +9,10 @@
   --bottonShadow: #ffffff;
   --bottonColor: #ffffff;
 }
-
+@font-face{
+  font-family: Pixel_fonts;
+  src: url(font/pixel_fonts/3d_thirteen_pixel_fonts_regular.ttf);
+}
 body {
   background-color: #8fb5a2;
   font-family: system-ui;
@@ -502,12 +505,72 @@ th {
     }
   }
 }
-
+#victorySign{
+  height: 401px;
+  width: 201px;
+  top: calc(50% - 200px);
+  left: calc(50% - 100px);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: -21;
+  filter: opacity(0);
+  div:nth-child(1){
+    height: 150px;
+    width: 150px;
+    background: url(svg/crown_dgp5gr0a0no3.svg)center/cover;
+  }
+  span{
+    font-family: Pixel_fonts;
+    font-size: 66px;
+    color: #000000;
+    margin-bottom: 73px;
+  }
+  div:nth-child(3){
+    height: 80px;
+    width: 80px;
+    background: url(svg/redo_wc3fa5h1g13c.svg)center/cover;
+  }
+}
+@keyframes endGame2 {
+  0% {
+    z-index: -20;
+    filter: opacity(0);
+  }
+  
+  100% {
+    z-index: 20;
+    filter: opacity(0);
+  }
+}
+@keyframes endGame2 {
+  0% {
+    z-index: -21;
+    filter: opacity(0);
+  }
+  
+  100% {
+    z-index: 21;
+    filter: opacity(0);
+  }
+}
+#victoryTransparent{
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #c0a6d5c9;
+  z-index: -20;
+  filter: opacity(0);
+}
 @media screen and (min-width: 800px) {
   .divCards .levelH:hover {
     filter: brightness(60%);
   }
-
+  
   button:hover {
     box-shadow: 0px 0px 15px 3px var(--bottonShadow);
     background-color: #566b60;

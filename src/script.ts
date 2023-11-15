@@ -2298,10 +2298,13 @@ function closingDivCards(b:any){
       mapAnimations1b.style.display = "none"
       mapAnimations2b.style.display = "none"
       mapAnimations3b.style.display = "none"
+    },1300)
+    setTimeout(()=>{
+      mapAnimations3b.style.display = "none"
       divCards2.style.transition = "1s"
       divCards2.style.top = "0"
       divCards2.style.filter = "blur(0px)"
-    },1500)
+    },500)
   },1000)
 }
 let mapPointingSound = new Audio('audio/2181b19773767a7.mp3');
@@ -2401,6 +2404,8 @@ let victorySign = 0
 const cardsMatchedAudio = new Audio('audio/d0aff48f9f2bbf7.mp3');
 const victoryAudio = new Audio('audio/388d369504aaa1a.mp3');
 const closingCards = document.querySelector("#closingCards") as HTMLDivElement
+const victorySignHTML = document.querySelector("#victorySign") as HTMLDivElement
+const victoryTransparentHTML = document.querySelector("#victoryTransparent") as HTMLDivElement
 gameCards?.addEventListener('click', function (event) {
   var wholeDeckOfCards = document.querySelectorAll('#gameCards div .cardButtonFace') as any //Record<number,HTMLDivElement>
   let target = event.target as HTMLElement
@@ -2463,6 +2468,9 @@ gameCards?.addEventListener('click', function (event) {
               wholeDeckOfCards[i].style.filter = "saturate(0)"
             }
           }
+          setTimeout(()=>{
+
+          },200)
         },200)
       }
     }
