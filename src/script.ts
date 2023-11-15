@@ -2406,6 +2406,7 @@ const victoryAudio = new Audio('audio/388d369504aaa1a.mp3');
 const closingCards = document.querySelector("#closingCards") as HTMLDivElement
 const victorySignHTML = document.querySelector("#victorySign") as HTMLDivElement
 const victoryTransparentHTML = document.querySelector("#victoryTransparent") as HTMLDivElement
+const playCardsAgain = document.querySelector("#playCardsAgain") as HTMLDivElement
 gameCards?.addEventListener('click', function (event) {
   var wholeDeckOfCards = document.querySelectorAll('#gameCards div .cardButtonFace') as any //Record<number,HTMLDivElement>
   let target = event.target as HTMLElement
@@ -2455,6 +2456,12 @@ gameCards?.addEventListener('click', function (event) {
           for (let i=0;i !=wholeDeckOfCards.length;i++){
             wholeDeckOfCards[i].style.filter = "saturate(0.4)"
           }
+          setTimeout(()=>{
+            victorySignHTML.style.animation = "0.5s endGame2 both"
+            setTimeout(()=>{
+              victoryTransparentHTML.style.animation = "0.5s endGame1 both"
+            },500)
+          },200)
         },250)
         
       }
@@ -2468,14 +2475,16 @@ gameCards?.addEventListener('click', function (event) {
               wholeDeckOfCards[i].style.filter = "saturate(0)"
             }
           }
-          setTimeout(()=>{
-
-          },200)
         },200)
       }
     }
   }
   if (numberMoves==1)firstMoveBuffer = target
+})
+let rotate = 0
+playCardsAgain.addEventListener('mousemove', () => {
+  rotate+=5
+  playCardsAgain.style.transform = `rotate(${rotate}deg)`
 })
 }
 

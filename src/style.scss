@@ -175,6 +175,7 @@ th {
   background: url("/svg/close_7vixc7bctmok.svg") center/cover;
   transition: 300ms;
   border-radius: 50px;
+  z-index: 21;
 }
 
 .checkGravity {
@@ -534,7 +535,7 @@ th {
     background: url(svg/redo_wc3fa5h1g13c.svg)center/cover;
   }
 }
-@keyframes endGame2 {
+@keyframes endGame1 {
   0% {
     z-index: -20;
     filter: opacity(0);
@@ -542,7 +543,7 @@ th {
   
   100% {
     z-index: 20;
-    filter: opacity(0);
+    filter: opacity(1);
   }
 }
 @keyframes endGame2 {
@@ -553,7 +554,7 @@ th {
   
   100% {
     z-index: 21;
-    filter: opacity(0);
+    filter: opacity(1);
   }
 }
 #victoryTransparent{
