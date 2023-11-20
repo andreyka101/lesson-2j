@@ -189,7 +189,7 @@ th {
   transition: 300ms;
   content: "";
   display: inline-block;
-  background: url("svg/gravity_gahaaw3qvutl.svg") center / contain no-repeat;
+  background: url("/svg/gravity_gahaaw3qvutl.svg") center / contain no-repeat;
 }
 
 .checkGravity+label:hover {
@@ -198,7 +198,7 @@ th {
 }
 
 .checkGravity:checked+label {
-  background: url("svg/gravity_gahaaw3qvutlGreen.svg") center / contain no-repeat;
+  background: url("/svg/gravity_gahaaw3qvutlGreen.svg") center / contain no-repeat;
 }
 
 .foregroundTranslucent .div+div {
@@ -533,6 +533,7 @@ th {
     height: 80px;
     width: 80px;
     background: url(/svg/redo_wc3fa5h1g13c.svg)center/cover;
+    border-radius: 50px;
   }
 }
 @keyframes endGame1 {
