@@ -11,7 +11,7 @@
 }
 @font-face{
   font-family: Pixel_fonts;
-  src: url(font/pixel_fonts/3d_thirteen_pixel_fonts_regular.ttf);
+  src: url(/font/pixel_fonts/3d_thirteen_pixel_fonts_regular.ttf);
 }
 body {
   background-color: #8fb5a2;
@@ -269,7 +269,7 @@ th {
       }
 
       .closeList:hover {
-        background: url("svg/NOT\ close_2c9x3mhf0vv6.svg") center/cover;
+        background: url("/svg/NOT\ close_2c9x3mhf0vv6.svg") center/cover;
       }
     }
   }
@@ -521,7 +521,7 @@ th {
   div:nth-child(1){
     height: 150px;
     width: 150px;
-    background: url(svg/crown_dgp5gr0a0no3.svg)center/cover;
+    background: url(/svg/crown_dgp5gr0a0no3.svg)center/cover;
   }
   span{
     font-family: Pixel_fonts;
@@ -532,7 +532,7 @@ th {
   div:nth-child(3){
     height: 80px;
     width: 80px;
-    background: url(svg/redo_wc3fa5h1g13c.svg)center/cover;
+    background: url(/svg/redo_wc3fa5h1g13c.svg)center/cover;
   }
 }
 @keyframes endGame1 {
