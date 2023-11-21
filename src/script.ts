@@ -2486,6 +2486,7 @@ let timer : any
 playCardsAgain.addEventListener('mouseover', () => {
     timer = setInterval(()=>{
       rotate+=1
+      if (rotate == 360) rotate = 0
       playCardsAgain.style.transform = `rotate(${rotate}deg)`
     })
 })

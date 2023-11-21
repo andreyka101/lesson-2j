@@ -532,9 +532,9 @@ th {
   div:nth-child(3){
     height: 80px;
     width: 80px;
-    background: url(/svg/redo_wc3fa5h1g13c.svg)center/cover;
-    border-radius: 50px;
-    // css background уменьшить изображение
+    background: url(/svg/redo_wc3fa5h1g13c.svg)center/cover no-repeat;
+    border-radius: 100px;
+    background-size: 70px 70px;
   }
 }
 @keyframes endGame1 {
