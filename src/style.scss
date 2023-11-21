@@ -529,11 +529,10 @@ th {
     color: #000000;
     margin-bottom: 73px;
   }
-  div:nth-child(3){
+  #playCardsAgain{
     height: 80px;
     width: 80px;
-    background: url(/svg/redo_wc3fa5h1g13c.svg)center/cover;
-    border-radius: 50px;
+    // border-radius: 50px;
   }
 }
 @keyframes endGame1 {
