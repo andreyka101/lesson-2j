@@ -570,6 +570,11 @@ th {
   filter: opacity(0);
 }
 @media screen and (min-width: 800px) {
+
+  .cardButton:hover{
+    filter: brightness(60%);
+  }
+
   .divCards .levelH:hover {
     filter: brightness(60%);
   }

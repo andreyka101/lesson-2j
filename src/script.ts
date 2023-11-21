@@ -2159,6 +2159,8 @@ const foregroundTranslucentBlock21 = document.querySelector('.foregroundTransluc
 foregroundTranslucentBlock21.style.display = "none"
 const frameDifficulty = document.querySelector('.foregroundTranslucentBlock21 #frameDifficulty div') as HTMLDivElement
 const description = document.querySelector('.foregroundTranslucentBlock21 #description div') as HTMLDivElement
+const victorySignHTML = document.querySelector("#victorySign") as HTMLDivElement
+const victoryTransparentHTML = document.querySelector("#victoryTransparent") as HTMLDivElement
 const exitForeground21 = document.querySelector('.foregroundTranslucentBlock21 .SVG-exit') as HTMLDivElement
 exitForeground21?.addEventListener('click', () => {
   foregroundTranslucentBlock21.classList.remove('on')
@@ -2172,6 +2174,8 @@ exitForeground21?.addEventListener('click', () => {
   description.style.filter = "blur(0px) opacity(1)"
   divCards2.style.filter = "blur(10px)"
   divCards2.style.top = "100%"
+  victoryTransparentHTML.style.animation = "none"
+  victorySignHTML.style.animation = "none"
   setTimeout(() => {
     mapAnimations1b.style.display = "inline-block"
     mapAnimations2b.style.display = "inline-block"
@@ -2404,8 +2408,6 @@ let victorySign = 0
 const cardsMatchedAudio = new Audio('audio/d0aff48f9f2bbf7.mp3');
 const victoryAudio = new Audio('audio/388d369504aaa1a.mp3');
 const closingCards = document.querySelector("#closingCards") as HTMLDivElement
-const victorySignHTML = document.querySelector("#victorySign") as HTMLDivElement
-const victoryTransparentHTML = document.querySelector("#victoryTransparent") as HTMLDivElement
 const playCardsAgain = document.querySelector("#playCardsAgain") as HTMLDivElement
 gameCards?.addEventListener('click', function (event) {
   var wholeDeckOfCards = document.querySelectorAll('#gameCards div .cardButtonFace') as any //Record<number,HTMLDivElement>
@@ -2460,7 +2462,7 @@ gameCards?.addEventListener('click', function (event) {
             victorySignHTML.style.animation = "0.5s endGame2 both"
             setTimeout(()=>{
               victoryTransparentHTML.style.animation = "0.5s endGame1 both"
-            },10)
+            },30)
           },200)
         },250)
         
@@ -2485,8 +2487,8 @@ let rotate = 0
 let timer : any
 playCardsAgain.addEventListener('mouseover', () => {
     timer = setInterval(()=>{
-      rotate+=1
-      if (rotate == 360) rotate = 0
+      rotate+=0.7
+      if (rotate >= 360) rotate = 0
       playCardsAgain.style.transform = `rotate(${rotate}deg)`
     })
 })
