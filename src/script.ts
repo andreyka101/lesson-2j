@@ -2495,6 +2495,67 @@ playCardsAgain.addEventListener('mouseover', () => {
 playCardsAgain.addEventListener('mouseout', () => {
       clearInterval(timer)
 })
+playCardsAgain.addEventListener('click', () => {
+  frameDifficulty.style.width = "0px"
+  description.style.width = "0px"
+  description.style.padding = "0px"
+  frameDifficulty.innerHTML = ""
+  frameDifficulty.style.filter = "blur(0px) opacity(1)"
+  description.style.filter = "blur(0px) opacity(1)"
+  divCards2.style.filter = "blur(10px)"
+  divCards2.style.top = "100%"
+  victoryTransparentHTML.style.animation = "none"
+  victorySignHTML.style.animation = "none"
+  setTimeout(() => {
+    mapAnimations1b.style.display = "inline-block"
+    mapAnimations2b.style.display = "inline-block"
+    mapAnimations3b.style.display = "inline-block"
+    mapAnimations1b.style.animation = ""
+    mapAnimations2b.style.animation = ""
+    mapAnimations3b.style.animation = ""
+    flipDifficultyCardReset(mapAnimations1a,mapAnimations1b)
+    flipDifficultyCardReset(mapAnimations2a,mapAnimations2b)
+    flipDifficultyCardReset(mapAnimations3a,mapAnimations3b)
+    mapAnimations1a.style.display = "none"
+    mapAnimations2a.style.display = "none"
+    mapAnimations3a.style.display = "none"
+    setTimeout(() => {
+    mapAnimations1a.style.display = "inline-block"
+    mapAnimations1a.style.left = "calc(25% - 49px)"
+    mapAnimations1a.style.animation = "mapAnimations1 0.4s"
+    frameDifficulty.style.width = "162px"
+    description.style.width = "550px"
+    setTimeout(() => {
+      frameDifficulty.innerHTML = "выбор сложности"
+      description.style.padding = "10px"
+    }, 550)
+    setTimeout(() => {
+      mapAnimations2a.style.display = "inline-block"
+      mapAnimations2a.style.left = "calc(50% - 49px)"
+      mapAnimations2a.style.animation = "mapAnimations2 0.4s"
+      setTimeout(() => {
+        mapAnimations3a.style.display = "inline-block"
+        mapAnimations3a.style.left = "calc(75% - 49px)"
+        mapAnimations3a.style.animation = "mapAnimations3 0.4s"
+        setTimeout(() => {
+          mapAnimations1b.style.filter = "opacity(1)"
+          mapAnimations2b.style.filter = "opacity(1)"
+          mapAnimations3b.style.filter = "opacity(1)"
+        }, 400)
+      }, 400)
+    }, 400)
+  }, 550)
+  }, 150)
+  function flipDifficultyCardReset(a:any,b:any){
+    b.style.filter = "opacity(0) saturate(1)"
+    a.style.transform = "rotateY(360deg)"
+    b.style.transform = "rotateY(360deg)"
+    a.style.transition = "0.2s"
+    b.style.transition = "0s"
+    a.style.zIndex = "1"
+    b.style.zIndex = "0"
+  }
+})
 }
 
 
