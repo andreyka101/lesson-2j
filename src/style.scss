@@ -8,8 +8,6 @@
 
   --bottonShadow: #ffffff;
   --bottonColor: #ffffff;
-
-  // --descriptionWidth:
 }
 @font-face{
   font-family: Pixel_fonts;
@@ -707,6 +705,10 @@ th {
 }
 
 @media screen and (max-width: 430px) {
+  .divCards div {
+      width: 64px;
+      height: 84px;
+  }
 
   td,
   th {

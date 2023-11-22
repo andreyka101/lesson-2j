@@ -15,6 +15,8 @@ document.head.append(img1);
 
 // ANCHOR -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
+let detect = new MobileDetect(window.navigator.userAgent)
+
 let answer1 = document.querySelector('.block1 #s1')// as HTMLInputElement
 let answer2 = document.querySelector('.block2 #s1')// as HTMLInputElement
 let answer3 = document.querySelector('.block3 #s1')// as HTMLInputElement
@@ -2210,21 +2212,29 @@ executor54?.addEventListener('click', () => {
   mapAnimations3a.style.display = "none"
   setTimeout(() => {
     mapAnimations1a.style.display = "inline-block"
-    mapAnimations1a.style.left = "calc(25% - 49px)"
+    mapAnimations1a.style.left = `calc(25% - ${mapAnimations1a.scrollWidth/2}px)`
     mapAnimations1a.style.animation = "mapAnimations1 0.4s"
     frameDifficulty.style.width = "162px"
-    description.style.width = "550px"
+    if (window.innerWidth <= 450){
+      description.style.width = "223px"
+    }
+    else if (window.innerWidth <= 700){
+      description.style.width = "400px"
+    }
+    else{
+      description.style.width = "550px"
+    }
     setTimeout(() => {
       frameDifficulty.innerHTML = "выбор сложности"
       description.style.padding = "10px"
     }, 550)
     setTimeout(() => {
       mapAnimations2a.style.display = "inline-block"
-      mapAnimations2a.style.left = "calc(50% - 49px)"
+      mapAnimations2a.style.left = `calc(50% - ${mapAnimations1a.scrollWidth/2}px)`
       mapAnimations2a.style.animation = "mapAnimations2 0.4s"
       setTimeout(() => {
         mapAnimations3a.style.display = "inline-block"
-        mapAnimations3a.style.left = "calc(75% - 49px)"
+        mapAnimations3a.style.left = `calc(75% - ${mapAnimations1a.scrollWidth/2}px)`
         mapAnimations3a.style.animation = "mapAnimations3 0.4s"
         setTimeout(() => {
           mapAnimations1b.style.filter = "opacity(1)"
@@ -2521,21 +2531,30 @@ playCardsAgain.addEventListener('click', () => {
     mapAnimations3a.style.display = "none"
     setTimeout(() => {
     mapAnimations1a.style.display = "inline-block"
-    mapAnimations1a.style.left = "calc(25% - 49px)"
+    mapAnimations1a.style.left = `calc(25% - ${mapAnimations1a.scrollWidth/2}px)`
     mapAnimations1a.style.animation = "mapAnimations1 0.4s"
     frameDifficulty.style.width = "162px"
-    description.style.width = "550px"
+    if (window.innerWidth <= 450){
+      description.style.width = "223px"
+    }
+    else if (window.innerWidth <= 700){
+      description.style.width = "400px"
+    }
+    else{
+      description.style.width = "550px"
+    }
+
     setTimeout(() => {
       frameDifficulty.innerHTML = "выбор сложности"
       description.style.padding = "10px"
     }, 550)
     setTimeout(() => {
       mapAnimations2a.style.display = "inline-block"
-      mapAnimations2a.style.left = "calc(50% - 49px)"
+      mapAnimations2a.style.left = `calc(50% - ${mapAnimations1a.scrollWidth/2}px)`
       mapAnimations2a.style.animation = "mapAnimations2 0.4s"
       setTimeout(() => {
         mapAnimations3a.style.display = "inline-block"
-        mapAnimations3a.style.left = "calc(75% - 49px)"
+        mapAnimations3a.style.left = `calc(75% - ${mapAnimations1a.scrollWidth/2}px)`
         mapAnimations3a.style.animation = "mapAnimations3 0.4s"
         setTimeout(() => {
           mapAnimations1b.style.filter = "opacity(1)"
@@ -2559,10 +2578,13 @@ playCardsAgain.addEventListener('click', () => {
 }
 
 
+// width: 63px;
+// height: 84px;
+
 
 //@ts-ignore
-let detect = new MobileDetect(window.navigator.userAgent)
 console.log("Mobile: " + detect.mobile()); 
+console.log(window.innerWidth); 
 
 
 
