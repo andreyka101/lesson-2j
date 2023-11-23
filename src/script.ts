@@ -1905,11 +1905,17 @@ executor51?.addEventListener('click', () => {
   foregroundTranslucent.classList.add('on')
   document.body.style.overflow = "hidden"
   const rect = footballFieldGame.getBoundingClientRect()
+
+
+
+  // TODO анимация js
+
+
+
   gravityBall?.addEventListener('click', () => {
     if (gravityBall.checked) {
       console.log(rect);
       playBall.style.transition = "all 0.2s linear 0s"
-      // TODO анимация js
 
       // if (ballCoordinatesY <= (rect.height + rect.y) - 51) {
       //   playBall.style.top = ballCoordinatesY + 1 + 'px';
@@ -1972,6 +1978,11 @@ executor51?.addEventListener('click', () => {
 
     }
   })
+
+
+
+
+
   if (playBall) {
     playBall.style.top = (rect.bottom - rect.top) / 2 + rect.y - 25 + 'px'
     ballCoordinatesY = (rect.bottom - rect.top) / 2 + rect.y - 25
