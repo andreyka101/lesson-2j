@@ -1908,76 +1908,84 @@ executor51?.addEventListener('click', () => {
 
 
 
-  // TODO анимация js
+  // TODO анимация js v1
+
+
+
+  // gravityBall?.addEventListener('click', () => {
+  //   if (gravityBall.checked) {
+  //     console.log(rect);
+  //     playBall.style.transition = "all 0.2s linear 0s"
+
+
+  //     playBall.style.top = `${(rect.height + rect.y) - 51}px`
+  //     if (ballCoordinatesY < (rect.height + rect.y - 51)/2){ 
+  //       setTimeout(() => {
+  //         if (ballCoordinatesY + ballCoordinatesY / 3 < rect.height + rect.y - 51) {
+  //         playBall.style.top = `${ballCoordinatesY + ballCoordinatesY / 3}px`
+  //       }
+  //       else if (ballCoordinatesY + ballCoordinatesY / 6 < rect.height + rect.y - 51) {
+  //         playBall.style.top = `${ballCoordinatesY + ballCoordinatesY / 6  }px`
+  //       }
+  //       ballCoordinatesY = ballCoordinatesY + ballCoordinatesY / 2
+  //       setTimeout(() => {
+  //         playBall.style.top = `${(rect.height + rect.y) - 51}px`
+  //         setTimeout(() => {
+  //           if (ballCoordinatesY + ballCoordinatesY / 2 < rect.height + rect.y - 51) {
+  //             playBall.style.top = `${ballCoordinatesY + ballCoordinatesY / 2}px`
+  //           }
+  //           else if (ballCoordinatesY + ballCoordinatesY / 4 < rect.height + rect.y - 51) {
+  //             playBall.style.top = `${ballCoordinatesY + ballCoordinatesY / 4  }px`
+  //           }
+  //           setTimeout(() => {
+  //             playBall.style.top = `${(rect.height + rect.y) - 51}px`
+  //           }, 200)
+  //         }, 200)
+  //       }, 200)
+  //     }, 200)
+  //   }
+  //     setTimeout(() => {
+  //       if (ballCoordinatesY + ballCoordinatesY / 2 < rect.height + rect.y - 51) {
+  //         playBall.style.top = `${ballCoordinatesY + ballCoordinatesY / 2}px`
+  //       }
+  //       else if (ballCoordinatesY + ballCoordinatesY / 4 < rect.height + rect.y - 51) {
+  //         playBall.style.top = `${ballCoordinatesY + ballCoordinatesY / 4  }px`
+  //       }
+  //       else if (ballCoordinatesY + ballCoordinatesY / 12 < rect.height + rect.y - 51) {
+  //         playBall.style.top = `${ballCoordinatesY + ballCoordinatesY / 12  }px`
+  //       }
+  //       ballCoordinatesY = ballCoordinatesY + ballCoordinatesY / 2
+  //       setTimeout(() => {
+  //         playBall.style.top = `${(rect.height + rect.y) - 51}px`
+  //         setTimeout(() => {
+  //           if (ballCoordinatesY + ballCoordinatesY / 2 < rect.height + rect.y - 51) {
+  //             playBall.style.top = `${ballCoordinatesY + ballCoordinatesY / 2}px`
+  //           }
+  //           else if (ballCoordinatesY + ballCoordinatesY / 4 < rect.height + rect.y - 51) {
+  //             playBall.style.top = `${ballCoordinatesY + ballCoordinatesY / 4  }px`
+  //           }
+  //           setTimeout(() => {
+  //             playBall.style.top = `${(rect.height + rect.y) - 51}px`
+  //           }, 200)
+  //         }, 200)
+  //       }, 200)
+  //     }, 200)
+
+  //   }
+  // })
+
+
+
+  // TODO анимация js v2
 
 
 
   gravityBall?.addEventListener('click', () => {
     if (gravityBall.checked) {
-      console.log(rect);
-      playBall.style.transition = "all 0.2s linear 0s"
-
-      // if (ballCoordinatesY <= (rect.height + rect.y) - 51) {
-      //   playBall.style.top = ballCoordinatesY + 1 + 'px';
-      // ballCoordinatesY++
-      // }
-
-
-      playBall.style.top = `${(rect.height + rect.y) - 51}px`
-      if (ballCoordinatesY < (rect.height + rect.y - 51)/2){ 
-        setTimeout(() => {
-          if (ballCoordinatesY + ballCoordinatesY / 3 < rect.height + rect.y - 51) {
-          playBall.style.top = `${ballCoordinatesY + ballCoordinatesY / 3}px`
-        }
-        else if (ballCoordinatesY + ballCoordinatesY / 6 < rect.height + rect.y - 51) {
-          playBall.style.top = `${ballCoordinatesY + ballCoordinatesY / 6  }px`
-        }
-        ballCoordinatesY = ballCoordinatesY + ballCoordinatesY / 2
-        setTimeout(() => {
-          playBall.style.top = `${(rect.height + rect.y) - 51}px`
-          setTimeout(() => {
-            if (ballCoordinatesY + ballCoordinatesY / 2 < rect.height + rect.y - 51) {
-              playBall.style.top = `${ballCoordinatesY + ballCoordinatesY / 2}px`
-            }
-            else if (ballCoordinatesY + ballCoordinatesY / 4 < rect.height + rect.y - 51) {
-              playBall.style.top = `${ballCoordinatesY + ballCoordinatesY / 4  }px`
-            }
-            setTimeout(() => {
-              playBall.style.top = `${(rect.height + rect.y) - 51}px`
-            }, 200)
-          }, 200)
-        }, 200)
-      }, 200)
-    }
-      setTimeout(() => {
-        if (ballCoordinatesY + ballCoordinatesY / 2 < rect.height + rect.y - 51) {
-          playBall.style.top = `${ballCoordinatesY + ballCoordinatesY / 2}px`
-        }
-        else if (ballCoordinatesY + ballCoordinatesY / 4 < rect.height + rect.y - 51) {
-          playBall.style.top = `${ballCoordinatesY + ballCoordinatesY / 4  }px`
-        }
-        else if (ballCoordinatesY + ballCoordinatesY / 12 < rect.height + rect.y - 51) {
-          playBall.style.top = `${ballCoordinatesY + ballCoordinatesY / 12  }px`
-        }
-        ballCoordinatesY = ballCoordinatesY + ballCoordinatesY / 2
-        setTimeout(() => {
-          playBall.style.top = `${(rect.height + rect.y) - 51}px`
-          setTimeout(() => {
-            if (ballCoordinatesY + ballCoordinatesY / 2 < rect.height + rect.y - 51) {
-              playBall.style.top = `${ballCoordinatesY + ballCoordinatesY / 2}px`
-            }
-            else if (ballCoordinatesY + ballCoordinatesY / 4 < rect.height + rect.y - 51) {
-              playBall.style.top = `${ballCoordinatesY + ballCoordinatesY / 4  }px`
-            }
-            setTimeout(() => {
-              playBall.style.top = `${(rect.height + rect.y) - 51}px`
-            }, 200)
-          }, 200)
-        }, 200)
-      }, 200)
-
+      
     }
   })
+
 
 
 
