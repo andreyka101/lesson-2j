@@ -1980,24 +1980,17 @@ executor51?.addEventListener('click', () => {
 
 
 
-  const animationBox = document.querySelector('.box_for_animation') as any
-const animationButton = document.querySelector('.button_for_animation') as any
 
 
 function startAnimation() {
-  // requestId = window.requestAnimationFrame(animate)
-  animate({timing:makeEaseOut(bounce),duration:1000,draw(progress:number) {
-    const width = document.documentElement.clientWidth - 120
-    animationBox.style.transform = `translateX(${progress*width}px)`
-  }})
-  animationButton.style.opacity = 0
+  // if (gravityBall.checked) {
+    animate({timing:makeEaseOut(bounce),duration:1000,draw(progress:number) {
+      const width = document.documentElement.clientWidth - 120
+      playBall.style.transform = `translateX(${progress*width}px)`
+    }})
+  // }
 }
 // выбор анимации 
-function elastic(timeFraction:number) {
-  const x = 1.5
-  return Math.pow(2, 10 * (timeFraction - 1)) * Math.cos(20 * Math.PI * x / 3 * timeFraction)
-}
-
 function bounce(timeFraction:number) {
   for (let a = 0, b = 1; 1; a += b, b /= 2) {
     if (timeFraction >= (7 - 4 * a) / 11) {
@@ -2013,7 +2006,7 @@ function makeEaseOut(timing:any) {
 }
 // выбор анимации ^^^^^^^^^
 
-animationButton.addEventListener('click', startAnimation, { once: true })
+// animationButton.addEventListener('click', startAnimation, { once: true })
 
 type AnimationObj = {
   timing: Function,
@@ -2043,13 +2036,7 @@ function animate({timing, draw, duration}:AnimationObj) {
 }
 
 
-  gravityBall?.addEventListener('click', () => {
-    if (gravityBall.checked) {
-      
-
-      
-    }
-  })
+  gravityBall?.addEventListener('click', startAnimation)
 
 
 
