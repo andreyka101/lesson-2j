@@ -1993,10 +1993,10 @@ executor51?.addEventListener('click', () => {
   function startAnimation() {
     // if (gravityBall.checked) {
       animate({timing:makeEaseOut(bounce),duration:1000,draw(progress:number) {
-        const width = document.documentElement.clientWidth - (rect.right - rect.left) / 2 + rect.x - 25 + 59
+        const width = document.documentElement.clientWidth - (rect.right - rect.left) / 2 + rect.x - 25 - 59
         console.log(width);
         
-        playBall.style.transform = `translateX(${progress*width}px)`
+        playBall.style.left = `${progress*width}px`
       }})
     // }
   }
@@ -2045,10 +2045,10 @@ executor51?.addEventListener('click', () => {
     });
   }
   
-  if (playBall) {
+  if (playBall) { 
     playBall.style.top = (rect.bottom - rect.top) / 2 + rect.y - 25 + 'px'
     ballCoordinatesY = (rect.bottom - rect.top) / 2 + rect.y - 25
-    playBall.style.left = (rect.right - rect.left) / 2 + rect.x - 25 + 'px'
+    playBall.style.left = ((rect.right - rect.left) / 2 + rect.x - 25) + 'px'
   }
 })
 
