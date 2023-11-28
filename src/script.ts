@@ -1,4 +1,4 @@
-import { NULL } from 'sass';
+// import { NULL } from 'sass';
 import './style.scss'
 
 let img1 = document.createElement('img');
@@ -14,6 +14,8 @@ document.head.append(img1);
 // };
 
 // ANCHOR -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+// @ts-ignore
 
 let detect = new MobileDetect(window.navigator.userAgent)
 
