@@ -1990,14 +1990,14 @@ executor51?.addEventListener('click', () => {
   
   
   
-  gravityBall?.addEventListener('click', startAnimation, { once: true })
+  gravityBall?.addEventListener('click', startAnimation)
   function startAnimation() {
   // if (gravityBall.checked) {
     animate({timing:makeEaseOut(bounce),duration:1000,draw(progress:number) {
       const rect2 = playBall.getBoundingClientRect()
-      const width = (document.documentElement.clientWidth - 59) + rect2.x
-      console.log(progress*width);
-      playBall.style.left = `${progress+width}px`
+      const width = (document.documentElement.clientWidth - rect2.x) - 59
+      console.log(rect2.x + progress*width);
+      playBall.style.left = `${rect2.x + progress*width}px`
     }})
   // }
   }
@@ -2019,7 +2019,6 @@ executor51?.addEventListener('click', () => {
   // function draw(timePassed:any) {
   //   playBall.style.left = timePassed / 5 + 'px';
   // }
-  // animationButton.addEventListener('click', startAnimation, { once: true })
   
   type AnimationObj = {
   timing: Function,
