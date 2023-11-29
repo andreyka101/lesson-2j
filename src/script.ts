@@ -1983,7 +1983,6 @@ executor51?.addEventListener('click', () => {
 
 
 
-
   
   
   
@@ -1993,66 +1992,69 @@ executor51?.addEventListener('click', () => {
   
   gravityBall?.addEventListener('click', startAnimation, { once: true })
   function startAnimation() {
-    // if (gravityBall.checked) {
-      animate({timing:makeEaseOut(bounce),duration:1000,draw(progress:number) {
-        const width = document.documentElement.clientWidth - (rect.right - rect.left) / 2 + rect.x - 25 - 59
-        console.log(width);
-        
-        playBall.style.left = `${progress*width}px`
-      }})
-    // }
+  // if (gravityBall.checked) {
+    animate({timing:makeEaseOut(bounce),duration:1000,draw(progress:number) {
+      const rect2 = playBall.getBoundingClientRect()
+      const width = (document.documentElement.clientWidth - 59) + rect2.x
+      console.log(progress*width);
+      playBall.style.left = `${progress+width}px`
+    }})
+  // }
   }
   // выбор анимации 
   function bounce(timeFraction:number) {
-    for (let a = 0, b = 1; 1; a += b, b /= 2) {
-      if (timeFraction >= (7 - 4 * a) / 11) {
-        return -Math.pow((11 - 6 * a - 11 * timeFraction) / 4, 2) + Math.pow(b, 2)
-      }
-    }
+  for (let a = 0, b = 1; 1; a += b, b /= 2) {
+  if (timeFraction >= (7 - 4 * a) / 11) {
+    return -Math.pow((11 - 6 * a - 11 * timeFraction) / 4, 2) + Math.pow(b, 2)
+  }
+  }
   }
   
   function makeEaseOut(timing:any) {
-    return function(timeFraction:number) {
-      return 1 - timing(1 - timeFraction);
-    }
+  return function(timeFraction:number) {
+    return 1 - timing(1 - timeFraction);
+  }
   }
   // выбор анимации ^^^^^^^^^
-  
+  // function draw(timePassed:any) {
+  //   playBall.style.left = timePassed / 5 + 'px';
+  // }
   // animationButton.addEventListener('click', startAnimation, { once: true })
   
   type AnimationObj = {
-    timing: Function,
-    draw: Function,
-    duration: number
+  timing: Function,
+  draw: Function,
+  duration: number
   }
   
   function animate({timing, draw, duration}:AnimationObj) {
   
-    let start = performance.now()
+  let start = performance.now()
   
-    requestAnimationFrame(function animate(time) {
-      // timeFraction изменяется от 0 до 1
-      let timeFraction = (time - start) / duration;
-      if (timeFraction > 1) timeFraction = 1;
+  requestAnimationFrame(function animate(time) {
+    // timeFraction изменяется от 0 до 1
+    let timeFraction = (time - start) / duration;
+    if (timeFraction > 1) timeFraction = 1;
   
-      // вычисление текущего состояния анимации
-      let progress = timing(timeFraction);
+    // вычисление текущего состояния анимации
+    let progress = timing(timeFraction);
   
-      draw(progress); // отрисовать её
+    draw(progress); // отрисовать её
   
-      if (timeFraction < 1) {
-        requestAnimationFrame(animate);
-      }
-  
-    });
+    if (timeFraction < 1) {
+      requestAnimationFrame(animate);
+    }
+  })
   }
+  
   
   if (playBall) { 
-    playBall.style.top = (rect.bottom - rect.top) / 2 + rect.y - 25 + 'px'
-    ballCoordinatesY = (rect.bottom - rect.top) / 2 + rect.y - 25
-    playBall.style.left = ((rect.right - rect.left) / 2 + rect.x - 25) + 'px'
-  }
-})
+      playBall.style.top = (rect.bottom - rect.top) / 2 + rect.y - 25 + 'px'
+      ballCoordinatesY = (rect.bottom - rect.top) / 2 + rect.y - 25
+      playBall.style.left = ((rect.right - rect.left) / 2 + rect.x - 25) + 'px'
+    }
+  })
+  
 
 
 
