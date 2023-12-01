@@ -1980,13 +1980,6 @@ executor51?.addEventListener('click', () => {
 
   // TODO анимация js v2
 
-
-
-
-  
-  
-  
-  
   
   
   
