@@ -1,5 +1,6 @@
 // import { NULL } from 'sass';
 import './style.scss'
+import anime from 'animejs'
 
 let img1 = document.createElement('img');
 
@@ -1990,62 +1991,18 @@ executor51?.addEventListener('click', () => {
   
   
   
-  gravityBall?.addEventListener('click', startAnimation)
-  function startAnimation() {
-  // if (gravityBall.checked) {
-    animate({timing:makeEaseOut(bounce),duration:1000,draw(progress:number) {
-      const rect2 = playBall.getBoundingClientRect()
-      const width = (document.documentElement.clientWidth - rect2.x) - 59
-      // let zxc = progress*width
-      console.log(rect2.x + progress*width);
-      playBall.style.left = `${rect2.x + progress*width}px`
-    }})
-  // }
-  }
-  // выбор анимации 
-  function bounce(timeFraction:number) {
-  for (let a = 0, b = 1; 1; a += b, b /= 2) {
-  if (timeFraction >= (7 - 4 * a) / 11) {
-    return -Math.pow((11 - 6 * a - 11 * timeFraction) / 4, 2) + Math.pow(b, 2)
-  }
-  }
-  }
-  
-  function makeEaseOut(timing:any) {
-  return function(timeFraction:number) {
-    return 1 - timing(1 - timeFraction);
-  }
-  }
-  // выбор анимации ^^^^^^^^^
-  // function draw(timePassed:any) {
-  //   playBall.style.left = timePassed / 5 + 'px';
-  // }
-  
-  type AnimationObj = {
-  timing: Function,
-  draw: Function,
-  duration: number
-  }
-  
-  function animate({timing, draw, duration}:AnimationObj) {
-  
-  let start = performance.now()
-  
-  requestAnimationFrame(function animate(time) {
-    // timeFraction изменяется от 0 до 1
-    let timeFraction = (time - start) / duration;
-    if (timeFraction > 1) timeFraction = 1;
-  
-    // вычисление текущего состояния анимации
-    let progress = timing(timeFraction);
-  
-    draw(progress); // отрисовать её
-  
-    if (timeFraction < 1) {
-      requestAnimationFrame(animate);
+  gravityBall?.addEventListener('click', ()=>{
+    if(gravityBall.checked){
+      console.log("pop");
+      anime({
+        targets: '#field div div',
+        translateX: 1000,
+        duration: 2500,
+        easing: 'easeOutBounce'
+        })
     }
   })
-  }
+  
   
   
   if (playBall) { 
@@ -2071,7 +2028,7 @@ footballFieldGame?.addEventListener('click', (event) => {
         gameBallRotation += 50
         break;
     }
-    playBall.style.transform = `rotate(${gameBallRotation}deg)`
+    // playBall.style.transform = `rotate(${gameBallRotation}deg)`
     // playBall.style.transition = `3s`
 
     const rect = footballFieldGame.getBoundingClientRect()
@@ -2117,16 +2074,27 @@ footballFieldGame?.addEventListener('click', (event) => {
 
 
     // новый код  логика управлением мячом
-    let x = event.clientX - 25
-    let y = event.clientY - 25
+    let x = event.clientX
+    let y = event.clientY
     if (rect.left > x) x = rect.left + 20
     if (rect.right < x + 50) x = rect.right - 71
     if (rect.top > y) y = rect.top + 20
     if (rect.bottom < y + 50) y = rect.bottom - 71
 
-    playBall.style.top = `${y}px`
-    ballCoordinatesY = y
-    playBall.style.left = `${x}px`
+    // playBall.style.top = `${y}px`
+    // ballCoordinatesY = y
+    // playBall.style.left = `${x}px`
+
+    anime({
+      // элементы
+      targets: playBall,
+      translateX: x,
+      translateY: y,
+      // время анимации
+      // duration: 2500,
+      easing: 'linear'
+      // easing: 'easeInQuad'
+      });
   }
 })
 
