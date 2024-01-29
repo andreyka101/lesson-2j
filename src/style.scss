@@ -192,10 +192,6 @@ th {
   background: url("/svg/gravity_gahaaw3qvutl.svg") center / contain no-repeat;
 }
 
-.checkGravity+label:hover {
-  transition: 300ms;
-  transform: rotate(-180deg);
-}
 
 .checkGravity:checked+label {
   background: url("/svg/gravity_gahaaw3qvutlGreen.svg") center / contain no-repeat;
@@ -577,6 +573,11 @@ th {
 
   .divCards .levelH:hover {
     filter: brightness(60%);
+  }
+
+  .checkGravity+label:hover {
+    transition: 300ms;
+    transform: rotate(-180deg);
   }
   
   button:hover {
