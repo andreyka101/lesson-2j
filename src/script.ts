@@ -1988,7 +1988,7 @@ executor51?.addEventListener('click', () => {
       anime({
         targets: '#field div div',
         translateY: (rect.bottom - rect.top)-51,
-        duration: 4000,
+        duration: 2000,
         easing: 'easeOutBounce'
         })
     }
@@ -2092,7 +2092,7 @@ footballFieldGame?.addEventListener('click', (event) => {
       targets: '#field div div',
       translateY: y-25,
       translateX: x-25,
-      duration: 200,
+      duration: 700,
       easing: 'easeOutBounce'
       })
   }
