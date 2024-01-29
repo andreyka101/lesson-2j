@@ -1988,7 +1988,7 @@ executor51?.addEventListener('click', () => {
       anime({
         targets: '#field div div',
         translateY: (rect.bottom - rect.top)-51,
-        duration: 2000,
+        duration: 1000,
         easing: 'easeOutBounce'
         })
     }
