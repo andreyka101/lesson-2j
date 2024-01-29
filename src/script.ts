@@ -2093,7 +2093,7 @@ footballFieldGame?.addEventListener('click', (event) => {
       translateY: y-25,
       translateX: x-25,
       duration: 700,
-      easing: 'steps(20)'
+      easing: 'steps(40)'
       })
   }
 })
