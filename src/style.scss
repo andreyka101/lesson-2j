@@ -687,6 +687,11 @@ th {
     width: 10cqi;
   }
 
+  :root{
+    --widthCard: 72px;
+    --heightCard: 96px;
+}
+
   .checkGravity+label {
     height: 10cqi;
     width: 10cqi;
