@@ -2263,7 +2263,7 @@ executor54?.addEventListener('click', () => {
   setTimeout(() => {
     mapAnimations1a.style.display = "inline-block"
     // mapAnimations1a.style.left = `calc(25% - ${(mapAnimations1a.scrollWidth-1)/2}px)`
-    mapAnimations1a.style.left = `calc(25% - 49px)`
+    mapAnimations1a.style.left = `calc(25% - var(--widthCard)/2)`
     mapAnimations1a.style.animation = "mapAnimations1 0.4s"
     frameDifficulty.style.width = "162px"
     if (window.innerWidth <= 450) {
@@ -2281,13 +2281,13 @@ executor54?.addEventListener('click', () => {
     }, 550)
     setTimeout(() => {
       mapAnimations2a.style.display = "inline-block"
-      // mapAnimations2a.style.left = `calc(50% - ${(mapAnimations1a.scrollWidth-1)/2}px)`
-      mapAnimations2a.style.left = `calc(50% - 49px)`
+      mapAnimations2a.style.left = `calc(50% - ${(mapAnimations1a.scrollWidth-1)/2}px)`
+      mapAnimations2a.style.left = `calc(50% - var(--widthCard)/2))`
       mapAnimations2a.style.animation = "mapAnimations2 0.4s"
       setTimeout(() => {
         mapAnimations3a.style.display = "inline-block"
-        // mapAnimations3a.style.left = `calc(75% - ${(mapAnimations1a.scrollWidth-1)/2}px)`
-        mapAnimations3a.style.left = `calc(75% - 49px)`
+        mapAnimations3a.style.left = `calc(75% - ${(mapAnimations1a.scrollWidth-1)/2}px)`
+        mapAnimations3a.style.left = `calc(75% - var(--widthCard)/2))`
         mapAnimations3a.style.animation = "mapAnimations3 0.4s"
         setTimeout(() => {
           mapAnimations1b.style.filter = "opacity(1)"
@@ -2448,7 +2448,7 @@ executor54?.addEventListener('click', () => {
 
 
     arrNum.forEach((item, index) => {
-      conclusionHTML += '<div style="position: relative;width: 99px;height: 131px;margin: 6px;"><div class="cardButtonFace" data-num="' + index + '" style="background:' + strRan + item + '.svg)center/cover; z-index: 0;transition: 0.5s;position: absolute;"></div><div class="cardButton" data-num="' + index + '" data-id="' + arrNum[index] + '" style="background:url(svg/poker_am5vxqpezjmq.svg)center/cover;cursor: pointer;transition: 0.5s;z-index: 1;position: absolute;"></div></div>'
+      conclusionHTML += '<div style="position: relative;width: var(--widthCard);height: var(--heightCard);margin: 6px;"><div class="cardButtonFace" data-num="' + index + '" style="background:' + strRan + item + '.svg)center/cover; z-index: 0;transition: 0.5s;position: absolute;"></div><div class="cardButton" data-num="' + index + '" data-id="' + arrNum[index] + '" style="background:url(svg/poker_am5vxqpezjmq.svg)center/cover;cursor: pointer;transition: 0.5s;z-index: 1;position: absolute;"></div></div>'
     })
     gameCards.innerHTML = conclusionHTML
 

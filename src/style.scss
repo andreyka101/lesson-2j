@@ -8,6 +8,9 @@
 
   --bottonShadow: #ffffff;
   --bottonColor: #ffffff;
+
+  --widthCard: 99px;
+  --heightCard: 131px;
 }
 
 @font-face {
@@ -393,11 +396,11 @@ th {
 
   div {
     position: absolute;
-    width: 99px;
-    height: 131px;
+    width: var(--widthCard);
+    height: var(--heightCard);
     cursor: pointer;
     // left: calc(50% - 49px);
-    top: calc(48% - 65px);
+    top: calc(48% - var(--heightCard)/2);
     transition: 0.2s;
   }
 }
@@ -406,13 +409,13 @@ th {
   0% {
     filter: blur(10px);
     filter: saturate(0);
-    left: calc(45% - 49px);
+    left: calc(45% - var(--widthCard)/2);
   }
 
   100% {
     filter: blur(0px);
     filter: saturate(1);
-    left: calc(25% - 49px);
+    left: calc(25% - var(--widthCard)/2);
   }
 }
 
@@ -420,13 +423,13 @@ th {
   0% {
     filter: blur(10px);
     filter: saturate(0);
-    left: calc(70% - 49px);
+    left: calc(70% - var(--widthCard)/2);
   }
 
   100% {
     filter: blur(0px);
     filter: saturate(1);
-    left: calc(50% - 49px);
+    left: calc(50% - var(--widthCard)/2);
   }
 }
 
@@ -434,13 +437,13 @@ th {
   0% {
     filter: blur(10px);
     filter: saturate(0);
-    left: calc(95% - 49px);
+    left: calc(95% - var(--widthCard)/2);
   }
 
   100% {
     filter: blur(0px);
     filter: saturate(1);
-    left: calc(75% - 49px);
+    left: calc(75% - var(--widthCard)/2);
   }
 }
 
@@ -504,8 +507,8 @@ th {
 
     div div {
       position: relative;
-      width: 99px;
-      height: 131px;
+      width: var(--widthCard);
+      height: var(--heightCard);
       //  cursor: pointer;
       transition: 0.2s;
       transform: rotateY(180deg);
@@ -743,9 +746,9 @@ th {
   }
 }
   @media screen and (max-width: 430px) {
-    .divCards div {
-      width: 64px;
-      height: 84px;
+    :root{
+        --widthCard: 64px;
+        --heightCard: 84px;
     }
 
     td,
