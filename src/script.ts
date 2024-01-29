@@ -1983,16 +1983,14 @@ executor51?.addEventListener('click', () => {
 
   
   
-  function ani(ap:number){
-    anime({
-    targets: '#field div div',
-    translateY: ap,
-    duration: 4000,
-    easing: 'easeOutBounce'
-    })}
   gravityBall?.addEventListener('click', ()=>{
     if(gravityBall.checked){
-      ani((rect.bottom - rect.top)-51)
+      anime({
+        targets: '#field div div',
+        translateY: (rect.bottom - rect.top)-51,
+        duration: 4000,
+        easing: 'easeOutBounce'
+        })
     }
   })
   
@@ -2015,7 +2013,7 @@ executor51?.addEventListener('click', () => {
 footballFieldGame?.addEventListener('click', (event) => {
   
   if (!gravityBall.checked) {
-    playBall.style.transition = "1.3s"
+    // playBall.style.transition = "1.3s"
     let definitionBallRotation = Math.floor(Math.random() * (3 - 1)) + 1
     switch (Math.floor(Math.random() * (3 - 1)) + 1) {
       case 1:
