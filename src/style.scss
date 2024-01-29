@@ -9,10 +9,12 @@
   --bottonShadow: #ffffff;
   --bottonColor: #ffffff;
 }
-@font-face{
+
+@font-face {
   font-family: Pixel_fonts;
   src: url(/font/pixel_fonts/3d_thirteen_pixel_fonts_regular.ttf);
 }
+
 body {
   background-color: #8fb5a2;
   font-family: system-ui;
@@ -333,8 +335,8 @@ th {
 }
 
 // .foregroundTranslucentBlock21 .divCards {
-  // display: flex;
-  // justify-content: center;
+// display: flex;
+// justify-content: center;
 // }
 
 #frameDifficulty {
@@ -357,9 +359,10 @@ th {
     cursor: default;
   }
 }
+
 // .beautifulClosingCards{
-  // transition: 1s;
-  // filter: blur(10px);
+// transition: 1s;
+// filter: blur(10px);
 // }
 #description {
   // margin-top: 270px;
@@ -387,6 +390,7 @@ th {
   // display: none;
   display: flex;
   justify-content: center;
+
   div {
     position: absolute;
     width: 99px;
@@ -439,23 +443,25 @@ th {
     left: calc(75% - 49px);
   }
 }
+
 @keyframes mapAnimationsChoice_1s {
   0% {
     filter: blur(0px);
     filter: opacity(1);
   }
-  
+
   100% {
     filter: blur(20px);
     filter: opacity(0);
   }
 }
+
 @keyframes mapAnimationsChoice_2s {
   0% {
     filter: blur(0px);
     filter: opacity(1) saturate(0);
   }
-  
+
   100% {
     filter: blur(30px);
     filter: opacity(0) saturate(0);
@@ -467,32 +473,36 @@ th {
     filter: blur(0px);
     filter: opacity(1);
   }
-  
+
   100% {
     filter: blur(20px);
     filter: opacity(0);
   }
 }
-.divCards2{
+
+.divCards2 {
   display: flex;
   justify-content: center;
   position: relative;
-  top:100%;
+  top: 100%;
   filter: blur(10px);
-  #closingCards{
+
+  #closingCards {
     position: absolute;
     width: 450px;
     height: 100%;
     z-index: -1;
   }
-  #gameCards{
+
+  #gameCards {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     width: 450px;
-    div div{
+
+    div div {
       position: relative;
       width: 99px;
       height: 131px;
@@ -502,7 +512,8 @@ th {
     }
   }
 }
-#victorySign{
+
+#victorySign {
   height: 401px;
   width: 201px;
   top: calc(50% - 200px);
@@ -514,18 +525,21 @@ th {
   flex-direction: column;
   z-index: -21;
   filter: opacity(0);
-  div:nth-child(1){
+
+  div:nth-child(1) {
     height: 150px;
     width: 150px;
     background: url(/svg/crown_dgp5gr0a0no3.svg)center/cover;
   }
-  span{
+
+  span {
     font-family: Pixel_fonts;
     font-size: 66px;
     color: #000000;
     margin-bottom: 73px;
   }
-  div:nth-child(3){
+
+  div:nth-child(3) {
     height: 80px;
     width: 80px;
     background: url(/svg/redo_wc3fa5h1g13c.svg)center/cover no-repeat;
@@ -533,29 +547,32 @@ th {
     background-size: 70px 70px;
   }
 }
+
 @keyframes endGame1 {
   0% {
     z-index: -20;
     filter: opacity(0);
   }
-  
+
   100% {
     z-index: 20;
     filter: opacity(1);
   }
 }
+
 @keyframes endGame2 {
   0% {
     z-index: -21;
     filter: opacity(0);
   }
-  
+
   100% {
     z-index: 21;
     filter: opacity(1);
   }
 }
-#victoryTransparent{
+
+#victoryTransparent {
   top: 0;
   left: 0;
   position: absolute;
@@ -565,9 +582,10 @@ th {
   z-index: -20;
   filter: opacity(0);
 }
+
 @media screen and (min-width: 800px) {
 
-  .cardButton:hover{
+  .cardButton:hover {
     filter: brightness(60%);
   }
 
@@ -579,7 +597,7 @@ th {
     transition: 300ms;
     transform: rotate(-180deg);
   }
-  
+
   button:hover {
     box-shadow: 0px 0px 15px 3px var(--bottonShadow);
     background-color: #566b60;
@@ -636,6 +654,11 @@ th {
     width: 68px;
   }
 
+  .checkGravity+label {
+    height: 68px;
+    width: 68px;
+  }
+
   #torsion::-webkit-scrollbar {
     display: none;
   }
@@ -661,6 +684,11 @@ th {
     width: 10cqi;
   }
 
+  .checkGravity+label {
+    height: 10cqi;
+    width: 10cqi;
+  }
+
   #field div {
     height: 66cqi;
     width: 99cqi;
@@ -674,6 +702,11 @@ th {
 
 @media screen and (max-width: 600px) {
   .SVG-exit {
+    height: 12cqi;
+    width: 12cqi;
+  }
+
+  .checkGravity+label {
     height: 12cqi;
     width: 12cqi;
   }
@@ -703,52 +736,55 @@ th {
     height: 15cqi;
     width: 15cqi;
   }
-  .foregroundTranslucent .div {
-    .checkGravity+label {
-      height: 15cqi;
-      width: 15cqi;
-    }
+
+  .checkGravity+label {
+    height: 15cqi;
+    width: 15cqi;
   }
 }
-
-@media screen and (max-width: 430px) {
-  .divCards div {
+  @media screen and (max-width: 430px) {
+    .divCards div {
       width: 64px;
       height: 84px;
+    }
+
+    td,
+    th {
+      padding: 2px 3px;
+    }
+
+    .siteCutout {
+      padding: 10px;
+    }
+
+    #h1 {
+      font-size: 26px;
+    }
+
+    .itemSS {
+      font-size: 21px;
+    }
   }
 
-  td,
-  th {
-    padding: 2px 3px;
+  @media screen and (max-width: 366px) {
+    .SVG-exit {
+      height: 17cqi;
+      width: 17cqi;
+    }
+
+    .checkGravity+label {
+      height: 17cqi;
+      width: 17cqi;
+    }
+
+    #field div div {
+      height: 11cqi;
+      width: 11cqi;
+    }
   }
 
-  .siteCutout {
-    padding: 10px;
+  @media screen and (max-width: 299px) {
+    .myclass {
+      width: 89cqi !important;
+    }
   }
-
-  #h1 {
-    font-size: 26px;
-  }
-
-  .itemSS {
-    font-size: 21px;
-  }
-}
-
-@media screen and (max-width: 366px) {
-  .SVG-exit {
-    height: 17cqi;
-    width: 17cqi;
-  }
-
-  #field div div {
-    height: 11cqi;
-    width: 11cqi;
-  }
-}
-
-@media screen and (max-width: 299px) {
-  .myclass {
-    width: 89cqi !important;
-  }
-}

@@ -1981,37 +1981,37 @@ executor51?.addEventListener('click', () => {
 
   // TODO анимация js v2
 
-  
-  
-  gravityBall?.addEventListener('click', ()=>{
-    if(gravityBall.checked){
+
+
+  gravityBall?.addEventListener('click', () => {
+    if (gravityBall.checked) {
       anime({
         targets: '#field div div',
-        translateY: (rect.bottom - rect.top)-51,
+        translateY: (rect.bottom - rect.top) - 51,
         duration: 1000,
         easing: 'easeOutBounce'
-        })
+      })
     }
   })
-  
-  
-  
-  if (playBall) { 
-    // ballCoordinatesY = (rect.bottom - rect.top) / 2 + rect.y - 25
-      // playBall.style.top = (rect.bottom - rect.top) + 'px'
-      // playBall.style.left = ((rect.right - rect.left)) + 'px'
 
-      playBall.style.transform = `translateX(${((rect.right - rect.left)/2)-25}px)`
-      playBall.style.transform += `translateY(${((rect.bottom - rect.top)/2)-25}px)`
-      // playBall.style.transform = `translate(${((rect.right - rect.left)/2)-25}px, ${((rect.bottom - rect.top)/2)-25}px)`
-    }
-  })
-  
+
+
+  if (playBall) {
+    // ballCoordinatesY = (rect.bottom - rect.top) / 2 + rect.y - 25
+    // playBall.style.top = (rect.bottom - rect.top) + 'px'
+    // playBall.style.left = ((rect.right - rect.left)) + 'px'
+
+    playBall.style.transform = `translateX(${((rect.right - rect.left) / 2) - 25}px)`
+    playBall.style.transform += `translateY(${((rect.bottom - rect.top) / 2) - 25}px)`
+    // playBall.style.transform = `translate(${((rect.right - rect.left)/2)-25}px, ${((rect.bottom - rect.top)/2)-25}px)`
+  }
+})
+
 
 
 
 footballFieldGame?.addEventListener('click', (event) => {
-  
+
   if (!gravityBall.checked) {
     // playBall.style.transition = "1.3s"
     let definitionBallRotation = Math.floor(Math.random() * (3 - 1)) + 1
@@ -2073,12 +2073,12 @@ footballFieldGame?.addEventListener('click', (event) => {
     let y = event.clientY
     x = x - rect.left
     y = y - rect.top
-    console.log(x,y);
+    console.log(x, y);
     console.log(rect.right - rect.left);
-    
+
     if (rect.left > x) x = x + 20
     if (rect.right - rect.left < x + 25) x = x - 20
-    
+
     if (rect.top > y) y = y + 20
     if (rect.bottom - rect.top < y + 25) y = y - 20
 
@@ -2090,11 +2090,13 @@ footballFieldGame?.addEventListener('click', (event) => {
 
     anime({
       targets: '#field div div',
-      translateY: y-25,
-      translateX: x-25,
+      translateY: y - 25,
+      translateX: x - 25,
       duration: 700,
-      easing: 'easeOutExpo'
-      })
+      easing: 'easeOutExpo',
+      // scale: 2,
+      rotate: `${gameBallRotation}deg`
+    })
   }
 })
 
@@ -2233,11 +2235,11 @@ exitForeground21?.addEventListener('click', () => {
     mapAnimations1b.style.animation = ""
     mapAnimations2b.style.animation = ""
     mapAnimations3b.style.animation = ""
-    flipDifficultyCardReset(mapAnimations1a,mapAnimations1b)
-    flipDifficultyCardReset(mapAnimations2a,mapAnimations2b)
-    flipDifficultyCardReset(mapAnimations3a,mapAnimations3b)
+    flipDifficultyCardReset(mapAnimations1a, mapAnimations1b)
+    flipDifficultyCardReset(mapAnimations2a, mapAnimations2b)
+    flipDifficultyCardReset(mapAnimations3a, mapAnimations3b)
   }, 150)
-  function flipDifficultyCardReset(a:any,b:any){
+  function flipDifficultyCardReset(a: any, b: any) {
     b.style.filter = "opacity(0) saturate(1)"
     a.style.transform = "rotateY(360deg)"
     b.style.transform = "rotateY(360deg)"
@@ -2264,13 +2266,13 @@ executor54?.addEventListener('click', () => {
     mapAnimations1a.style.left = `calc(25% - 49px)`
     mapAnimations1a.style.animation = "mapAnimations1 0.4s"
     frameDifficulty.style.width = "162px"
-    if (window.innerWidth <= 450){
+    if (window.innerWidth <= 450) {
       description.style.width = "223px"
     }
-    else if (window.innerWidth <= 700){
+    else if (window.innerWidth <= 700) {
       description.style.width = "400px"
     }
-    else{
+    else {
       description.style.width = "550px"
     }
     setTimeout(() => {
@@ -2295,14 +2297,14 @@ executor54?.addEventListener('click', () => {
       }, 400)
     }, 400)
   }, 550)
-  
-  
+
+
 })
 
 {
- let numberMoves = 0
- let firstMoveBuffer : any
-function flipDifficultyCard(a:any,b:any){
+  let numberMoves = 0
+  let firstMoveBuffer: any
+  function flipDifficultyCard(a: any, b: any) {
     a.style.transition = "1s"
     b.style.transition = "1s"
     // a.classList.add("beautifulClosingCards")
@@ -2312,320 +2314,320 @@ function flipDifficultyCard(a:any,b:any){
     // b.style.filter = "blur(10px)"
     a.style.zIndex = "0"
     b.style.zIndex = "1"
-}
-let difficultySelectionSound = new Audio('audio/eeb97203442250b.mp3');
-mapAnimations1a.addEventListener('click', () => {
-  flipDifficultyCard(mapAnimations1a,mapAnimations1b)
-  flipDifficultyCard(mapAnimations2a,mapAnimations2b)
-  flipDifficultyCard(mapAnimations3a,mapAnimations3b)
-  mapAnimations1b.style.filter = "saturate(0)"
-  difficultySelectionSound.play();
-  closingDivCards(mapAnimations1b)
-  complexityGeneration(1)
-})
-mapAnimations2a.addEventListener('click', () => {
-  flipDifficultyCard(mapAnimations1a,mapAnimations1b)
-  flipDifficultyCard(mapAnimations2a,mapAnimations2b)
-  flipDifficultyCard(mapAnimations3a,mapAnimations3b)
-  mapAnimations2b.style.filter = "saturate(0)"
-  difficultySelectionSound.play();
-  closingDivCards(mapAnimations2b)
-  complexityGeneration(2)
-})
-mapAnimations3a.addEventListener('click', () => {
-  flipDifficultyCard(mapAnimations1a,mapAnimations1b)
-  flipDifficultyCard(mapAnimations2a,mapAnimations2b)
-  flipDifficultyCard(mapAnimations3a,mapAnimations3b)
-  mapAnimations3b.style.filter = "saturate(0)"
-  difficultySelectionSound.play();
-  closingDivCards(mapAnimations3b)
-  complexityGeneration(3)
-})
-function closingDivCards(b:any){
-  frameDifficulty.innerHTML = ""
-  description.innerHTML = ""
-  frameDifficulty.style.width = "0px"
-  description.style.width = "0px"
-  description.style.padding = "0px"
-  setTimeout(()=>{
-    frameDifficulty.style.filter = "blur(10px) opacity(0)"
-    description.style.filter = "blur(10px) opacity(0)"
-  },100)
-  setTimeout(()=>{
-    mapAnimations1a.style.display = "none"
-    mapAnimations2a.style.display = "none"
-    mapAnimations3a.style.display = "none"
-    mapAnimations1b.style.animation = "mapAnimationsChoice_1s 0.5s both"
-    mapAnimations2b.style.animation = "mapAnimationsChoice_1s 0.5s both"
-    mapAnimations3b.style.animation = "mapAnimationsChoice_1s 0.5s both"
-    b.style.animation = "mapAnimationsChoice_2s 1.5s both"
-    setTimeout(()=>{
-      mapAnimations1b.style.display = "none"
-      mapAnimations2b.style.display = "none"
-      mapAnimations3b.style.display = "none"
-    },1300)
-    setTimeout(()=>{
-      mapAnimations3b.style.display = "none"
-      divCards2.style.transition = "1s"
-      divCards2.style.top = "0"
-      divCards2.style.filter = "blur(0px)"
-    },500)
-  },1000)
-}
-let mapPointingSound = new Audio('audio/2181b19773767a7.mp3');
-mapAnimations1a.addEventListener('mouseover', () => {
-  description.innerHTML = "лёгкий уровень сложности , карты попадаются только одной масти"
-  mapPointingSound.pause();
-  mapPointingSound.currentTime = 0.0;
-  mapPointingSound.play();
-})
-mapAnimations1a.addEventListener('mouseout', () => {
-  description.innerHTML = ""
-})
-mapAnimations2a.addEventListener('mouseover', () => {
-  description.innerHTML = "средний уровень сложности , карты попадаются разных мастей , но только цифры"
-  mapPointingSound.pause();
-  mapPointingSound.currentTime = 0.0;
-  mapPointingSound.play();
-})
-mapAnimations2a.addEventListener('mouseout', () => {
-  description.innerHTML = ""
-})
-mapAnimations3a.addEventListener('mouseover', () => {
-  description.innerHTML = "сложный уровень сложности , карты попадаются разных мастей , но только валет , дама , король"
-  mapPointingSound.pause();
-  mapPointingSound.currentTime = 0.0;
-  mapPointingSound.play();
-})
-mapAnimations3a.addEventListener('mouseout', () => {
-  description.innerHTML = ""
-})
+  }
+  let difficultySelectionSound = new Audio('audio/eeb97203442250b.mp3');
+  mapAnimations1a.addEventListener('click', () => {
+    flipDifficultyCard(mapAnimations1a, mapAnimations1b)
+    flipDifficultyCard(mapAnimations2a, mapAnimations2b)
+    flipDifficultyCard(mapAnimations3a, mapAnimations3b)
+    mapAnimations1b.style.filter = "saturate(0)"
+    difficultySelectionSound.play();
+    closingDivCards(mapAnimations1b)
+    complexityGeneration(1)
+  })
+  mapAnimations2a.addEventListener('click', () => {
+    flipDifficultyCard(mapAnimations1a, mapAnimations1b)
+    flipDifficultyCard(mapAnimations2a, mapAnimations2b)
+    flipDifficultyCard(mapAnimations3a, mapAnimations3b)
+    mapAnimations2b.style.filter = "saturate(0)"
+    difficultySelectionSound.play();
+    closingDivCards(mapAnimations2b)
+    complexityGeneration(2)
+  })
+  mapAnimations3a.addEventListener('click', () => {
+    flipDifficultyCard(mapAnimations1a, mapAnimations1b)
+    flipDifficultyCard(mapAnimations2a, mapAnimations2b)
+    flipDifficultyCard(mapAnimations3a, mapAnimations3b)
+    mapAnimations3b.style.filter = "saturate(0)"
+    difficultySelectionSound.play();
+    closingDivCards(mapAnimations3b)
+    complexityGeneration(3)
+  })
+  function closingDivCards(b: any) {
+    frameDifficulty.innerHTML = ""
+    description.innerHTML = ""
+    frameDifficulty.style.width = "0px"
+    description.style.width = "0px"
+    description.style.padding = "0px"
+    setTimeout(() => {
+      frameDifficulty.style.filter = "blur(10px) opacity(0)"
+      description.style.filter = "blur(10px) opacity(0)"
+    }, 100)
+    setTimeout(() => {
+      mapAnimations1a.style.display = "none"
+      mapAnimations2a.style.display = "none"
+      mapAnimations3a.style.display = "none"
+      mapAnimations1b.style.animation = "mapAnimationsChoice_1s 0.5s both"
+      mapAnimations2b.style.animation = "mapAnimationsChoice_1s 0.5s both"
+      mapAnimations3b.style.animation = "mapAnimationsChoice_1s 0.5s both"
+      b.style.animation = "mapAnimationsChoice_2s 1.5s both"
+      setTimeout(() => {
+        mapAnimations1b.style.display = "none"
+        mapAnimations2b.style.display = "none"
+        mapAnimations3b.style.display = "none"
+      }, 1300)
+      setTimeout(() => {
+        mapAnimations3b.style.display = "none"
+        divCards2.style.transition = "1s"
+        divCards2.style.top = "0"
+        divCards2.style.filter = "blur(0px)"
+      }, 500)
+    }, 1000)
+  }
+  let mapPointingSound = new Audio('audio/2181b19773767a7.mp3');
+  mapAnimations1a.addEventListener('mouseover', () => {
+    description.innerHTML = "лёгкий уровень сложности , карты попадаются только одной масти"
+    mapPointingSound.pause();
+    mapPointingSound.currentTime = 0.0;
+    mapPointingSound.play();
+  })
+  mapAnimations1a.addEventListener('mouseout', () => {
+    description.innerHTML = ""
+  })
+  mapAnimations2a.addEventListener('mouseover', () => {
+    description.innerHTML = "средний уровень сложности , карты попадаются разных мастей , но только цифры"
+    mapPointingSound.pause();
+    mapPointingSound.currentTime = 0.0;
+    mapPointingSound.play();
+  })
+  mapAnimations2a.addEventListener('mouseout', () => {
+    description.innerHTML = ""
+  })
+  mapAnimations3a.addEventListener('mouseover', () => {
+    description.innerHTML = "сложный уровень сложности , карты попадаются разных мастей , но только валет , дама , король"
+    mapPointingSound.pause();
+    mapPointingSound.currentTime = 0.0;
+    mapPointingSound.play();
+  })
+  mapAnimations3a.addEventListener('mouseout', () => {
+    description.innerHTML = ""
+  })
 
 
 
-function complexityGeneration(num:number) {
-  let arrNum = [] as number[]
-  let arrCopy = [] as number[]
-  let ran:number
-  let maxRan=0
-  let strRan = ""
-  switch (num) {
-    case 1:
-      maxRan = 13
-      strRan = "url(svg/easy_level/poker_easy_"
-      break;
-    case 2:
-      maxRan = 16
-      strRan = "url(svg/average_level/poker_average_"
-      break;
+  function complexityGeneration(num: number) {
+    let arrNum = [] as number[]
+    let arrCopy = [] as number[]
+    let ran: number
+    let maxRan = 0
+    let strRan = ""
+    switch (num) {
+      case 1:
+        maxRan = 13
+        strRan = "url(svg/easy_level/poker_easy_"
+        break;
+      case 2:
+        maxRan = 16
+        strRan = "url(svg/average_level/poker_average_"
+        break;
       case 3:
         maxRan = 12
         strRan = "url(svg/difficult_level/poker_difficult_"
-      break;
-  }
-  for (let i=1;i!=+(numberCardsR.value)/2+1;i++ ){
-    ran = Math.round(Math.random() * (maxRan - 1) + 1)
-    if (arrNum.length != 0){
-      ran = +(checkingRandomNumbers(ran))
+        break;
     }
-    arrNum.push(ran)
-    // arr.push(strRan + ran)
-  }
-  // gameCards.style.background = arr[1]
-  // gameCards.innerHTML="<div>"
-  let conclusionHTML = ""
-  
-  arrCopy = arrNum.slice()
-  shuffle(arrCopy)
-  shuffle(arrNum)
-  shuffle(arrCopy)
-  arrNum = arrNum.concat(arrCopy)
-  shuffle(arrNum)
-  shuffle(arrNum)
-  shuffle(arrNum)
-  
-  
-  arrNum.forEach((item, index) => {
-    conclusionHTML +='<div style="position: relative;width: 99px;height: 131px;margin: 6px;"><div class="cardButtonFace" data-num="'+index+'" style="background:' + strRan + item +'.svg)center/cover; z-index: 0;transition: 0.5s;position: absolute;"></div><div class="cardButton" data-num="'+index+'" data-id="'+ arrNum[index] +'" style="background:url(svg/poker_am5vxqpezjmq.svg)center/cover;cursor: pointer;transition: 0.5s;z-index: 1;position: absolute;"></div></div>'
-  })
-  gameCards.innerHTML = conclusionHTML
-  
-
-
-
-  function shuffle(array:any) {
-    array.sort(() => Math.random() - 0.5);
-  }
-  function checkingRandomNumbers(ran:number){
-    arrNum.forEach((item) => {
-      if (item==ran){
-        ran = +(checkingRandomNumbers(Math.round(Math.random() * (maxRan - 1) + 1)))
+    for (let i = 1; i != +(numberCardsR.value) / 2 + 1; i++) {
+      ran = Math.round(Math.random() * (maxRan - 1) + 1)
+      if (arrNum.length != 0) {
+        ran = +(checkingRandomNumbers(ran))
       }
+      arrNum.push(ran)
+      // arr.push(strRan + ran)
+    }
+    // gameCards.style.background = arr[1]
+    // gameCards.innerHTML="<div>"
+    let conclusionHTML = ""
+
+    arrCopy = arrNum.slice()
+    shuffle(arrCopy)
+    shuffle(arrNum)
+    shuffle(arrCopy)
+    arrNum = arrNum.concat(arrCopy)
+    shuffle(arrNum)
+    shuffle(arrNum)
+    shuffle(arrNum)
+
+
+    arrNum.forEach((item, index) => {
+      conclusionHTML += '<div style="position: relative;width: 99px;height: 131px;margin: 6px;"><div class="cardButtonFace" data-num="' + index + '" style="background:' + strRan + item + '.svg)center/cover; z-index: 0;transition: 0.5s;position: absolute;"></div><div class="cardButton" data-num="' + index + '" data-id="' + arrNum[index] + '" style="background:url(svg/poker_am5vxqpezjmq.svg)center/cover;cursor: pointer;transition: 0.5s;z-index: 1;position: absolute;"></div></div>'
     })
-    return ran
-  }
-}
-let victorySign = 0
-const cardsMatchedAudio = new Audio('audio/d0aff48f9f2bbf7.mp3');
-const victoryAudio = new Audio('audio/388d369504aaa1a.mp3');
-const closingCards = document.querySelector("#closingCards") as HTMLDivElement
-const playCardsAgain = document.querySelector("#playCardsAgain") as HTMLDivElement
-gameCards?.addEventListener('click', function (event) {
-  var wholeDeckOfCards = document.querySelectorAll('#gameCards div .cardButtonFace') as any //Record<number,HTMLDivElement>
-  let target = event.target as HTMLElement
-  if (target.className != 'cardButton') return;
-  for (let i=0;i !=wholeDeckOfCards.length;i++){
-    if (target.dataset.num == wholeDeckOfCards[i].dataset.num){
-      wholeDeckOfCards[i].style.transform = "rotateY(360deg)"
-      target.style.transform = "rotateY(360deg)"
-      target.style.zIndex = "0"
-      wholeDeckOfCards[i].style.zIndex = "1"
-      numberMoves ++
+    gameCards.innerHTML = conclusionHTML
+
+
+
+
+    function shuffle(array: any) {
+      array.sort(() => Math.random() - 0.5);
     }
-  }
-  if (numberMoves==2){
-    numberMoves = 0
-    if (firstMoveBuffer.dataset.id != target.dataset.id){
-      closingCards.style.zIndex = "20"
-      setTimeout(()=>{
-        for (let i=0;i !=wholeDeckOfCards.length;i++){
-          if (target.dataset.num == wholeDeckOfCards[i].dataset.num){
-            wholeDeckOfCards[i].style.transform = "rotateY(180deg)"
-            target.style.transform = "rotateY(180deg)"
-            target.style.zIndex = "1"
-            wholeDeckOfCards[i].style.zIndex = "0"
-            closingCards.style.zIndex = "-1"
-          }
-          if (firstMoveBuffer.dataset.num == wholeDeckOfCards[i].dataset.num){
-            wholeDeckOfCards[i].style.transform = "rotateY(180deg)"
-            firstMoveBuffer.style.transform = "rotateY(180deg)"
-            firstMoveBuffer.style.zIndex = "1"
-            wholeDeckOfCards[i].style.zIndex = "0"
-            closingCards.style.zIndex = "-1"
-          }
+    function checkingRandomNumbers(ran: number) {
+      arrNum.forEach((item) => {
+        if (item == ran) {
+          ran = +(checkingRandomNumbers(Math.round(Math.random() * (maxRan - 1) + 1)))
         }
-      },1000)
+      })
+      return ran
     }
-    else{
-      victorySign+=2
-      console.log(victorySign);
-      if(victorySign == +(numberCardsR.value)){
-        victorySign = 0
-        setTimeout(()=>{
-          victoryAudio.pause();
-          victoryAudio.currentTime = 0.0;
-          victoryAudio.play();
-          
-          for (let i=0;i !=wholeDeckOfCards.length;i++){
-            wholeDeckOfCards[i].style.filter = "saturate(0.4)"
-          }
-          setTimeout(()=>{
-            victorySignHTML.style.animation = "0.5s endGame2 both"
-            setTimeout(()=>{
-              victoryTransparentHTML.style.animation = "0.5s endGame1 both"
-            },30)
-          },200)
-        },250)
-        
+  }
+  let victorySign = 0
+  const cardsMatchedAudio = new Audio('audio/d0aff48f9f2bbf7.mp3');
+  const victoryAudio = new Audio('audio/388d369504aaa1a.mp3');
+  const closingCards = document.querySelector("#closingCards") as HTMLDivElement
+  const playCardsAgain = document.querySelector("#playCardsAgain") as HTMLDivElement
+  gameCards?.addEventListener('click', function (event) {
+    var wholeDeckOfCards = document.querySelectorAll('#gameCards div .cardButtonFace') as any //Record<number,HTMLDivElement>
+    let target = event.target as HTMLElement
+    if (target.className != 'cardButton') return;
+    for (let i = 0; i != wholeDeckOfCards.length; i++) {
+      if (target.dataset.num == wholeDeckOfCards[i].dataset.num) {
+        wholeDeckOfCards[i].style.transform = "rotateY(360deg)"
+        target.style.transform = "rotateY(360deg)"
+        target.style.zIndex = "0"
+        wholeDeckOfCards[i].style.zIndex = "1"
+        numberMoves++
       }
-      else{
-        setTimeout(()=>{
-          cardsMatchedAudio.pause();
-          cardsMatchedAudio.currentTime = 0.0;
-          cardsMatchedAudio.play();
-          for (let i=0;i !=wholeDeckOfCards.length;i++){
-            if (target.dataset.num == wholeDeckOfCards[i].dataset.num || firstMoveBuffer.dataset.num == wholeDeckOfCards[i].dataset.num){
-              wholeDeckOfCards[i].style.filter = "saturate(0)"
+    }
+    if (numberMoves == 2) {
+      numberMoves = 0
+      if (firstMoveBuffer.dataset.id != target.dataset.id) {
+        closingCards.style.zIndex = "20"
+        setTimeout(() => {
+          for (let i = 0; i != wholeDeckOfCards.length; i++) {
+            if (target.dataset.num == wholeDeckOfCards[i].dataset.num) {
+              wholeDeckOfCards[i].style.transform = "rotateY(180deg)"
+              target.style.transform = "rotateY(180deg)"
+              target.style.zIndex = "1"
+              wholeDeckOfCards[i].style.zIndex = "0"
+              closingCards.style.zIndex = "-1"
+            }
+            if (firstMoveBuffer.dataset.num == wholeDeckOfCards[i].dataset.num) {
+              wholeDeckOfCards[i].style.transform = "rotateY(180deg)"
+              firstMoveBuffer.style.transform = "rotateY(180deg)"
+              firstMoveBuffer.style.zIndex = "1"
+              wholeDeckOfCards[i].style.zIndex = "0"
+              closingCards.style.zIndex = "-1"
             }
           }
-        },200)
+        }, 1000)
+      }
+      else {
+        victorySign += 2
+        console.log(victorySign);
+        if (victorySign == +(numberCardsR.value)) {
+          victorySign = 0
+          setTimeout(() => {
+            victoryAudio.pause();
+            victoryAudio.currentTime = 0.0;
+            victoryAudio.play();
+
+            for (let i = 0; i != wholeDeckOfCards.length; i++) {
+              wholeDeckOfCards[i].style.filter = "saturate(0.4)"
+            }
+            setTimeout(() => {
+              victorySignHTML.style.animation = "0.5s endGame2 both"
+              setTimeout(() => {
+                victoryTransparentHTML.style.animation = "0.5s endGame1 both"
+              }, 30)
+            }, 200)
+          }, 250)
+
+        }
+        else {
+          setTimeout(() => {
+            cardsMatchedAudio.pause();
+            cardsMatchedAudio.currentTime = 0.0;
+            cardsMatchedAudio.play();
+            for (let i = 0; i != wholeDeckOfCards.length; i++) {
+              if (target.dataset.num == wholeDeckOfCards[i].dataset.num || firstMoveBuffer.dataset.num == wholeDeckOfCards[i].dataset.num) {
+                wholeDeckOfCards[i].style.filter = "saturate(0)"
+              }
+            }
+          }, 200)
+        }
       }
     }
-  }
-  if (numberMoves==1)firstMoveBuffer = target
-})
-let rotate = 0
-let timer : any
-playCardsAgain.addEventListener('mouseover', () => {
-    timer = setInterval(()=>{
-      rotate+=0.7
+    if (numberMoves == 1) firstMoveBuffer = target
+  })
+  let rotate = 0
+  let timer: any
+  playCardsAgain.addEventListener('mouseover', () => {
+    timer = setInterval(() => {
+      rotate += 0.7
       if (rotate >= 360) rotate = 0
       playCardsAgain.style.transform = `rotate(${rotate}deg)`
     })
-})
-playCardsAgain.addEventListener('mouseout', () => {
-      clearInterval(timer)
-})
-playCardsAgain.addEventListener('click', () => {
-  frameDifficulty.style.width = "0px"
-  description.style.width = "0px"
-  description.style.padding = "0px"
-  frameDifficulty.innerHTML = ""
-  frameDifficulty.style.filter = "blur(0px) opacity(1)"
-  description.style.filter = "blur(0px) opacity(1)"
-  divCards2.style.filter = "blur(10px)"
-  divCards2.style.top = "100%"
-  victoryTransparentHTML.style.animation = "none"
-  victorySignHTML.style.animation = "none"
-  setTimeout(() => {
-    mapAnimations1b.style.display = "inline-block"
-    mapAnimations2b.style.display = "inline-block"
-    mapAnimations3b.style.display = "inline-block"
-    mapAnimations1b.style.animation = ""
-    mapAnimations2b.style.animation = ""
-    mapAnimations3b.style.animation = ""
-    flipDifficultyCardReset(mapAnimations1a,mapAnimations1b)
-    flipDifficultyCardReset(mapAnimations2a,mapAnimations2b)
-    flipDifficultyCardReset(mapAnimations3a,mapAnimations3b)
-    mapAnimations1a.style.display = "none"
-    mapAnimations2a.style.display = "none"
-    mapAnimations3a.style.display = "none"
+  })
+  playCardsAgain.addEventListener('mouseout', () => {
+    clearInterval(timer)
+  })
+  playCardsAgain.addEventListener('click', () => {
+    frameDifficulty.style.width = "0px"
+    description.style.width = "0px"
+    description.style.padding = "0px"
+    frameDifficulty.innerHTML = ""
+    frameDifficulty.style.filter = "blur(0px) opacity(1)"
+    description.style.filter = "blur(0px) opacity(1)"
+    divCards2.style.filter = "blur(10px)"
+    divCards2.style.top = "100%"
+    victoryTransparentHTML.style.animation = "none"
+    victorySignHTML.style.animation = "none"
     setTimeout(() => {
-    mapAnimations1a.style.display = "inline-block"
-    mapAnimations1a.style.left = `calc(25% - ${mapAnimations1a.scrollWidth/2}px)`
-    mapAnimations1a.style.animation = "mapAnimations1 0.4s"
-    frameDifficulty.style.width = "162px"
-    if (window.innerWidth <= 450){
-      description.style.width = "223px"
-    }
-    else if (window.innerWidth <= 700){
-      description.style.width = "400px"
-    }
-    else{
-      description.style.width = "550px"
-    }
-
-    setTimeout(() => {
-      frameDifficulty.innerHTML = "выбор сложности"
-      description.style.padding = "10px"
-    }, 550)
-    setTimeout(() => {
-      mapAnimations2a.style.display = "inline-block"
-      mapAnimations2a.style.left = `calc(50% - ${mapAnimations1a.scrollWidth/2}px)`
-      mapAnimations2a.style.animation = "mapAnimations2 0.4s"
+      mapAnimations1b.style.display = "inline-block"
+      mapAnimations2b.style.display = "inline-block"
+      mapAnimations3b.style.display = "inline-block"
+      mapAnimations1b.style.animation = ""
+      mapAnimations2b.style.animation = ""
+      mapAnimations3b.style.animation = ""
+      flipDifficultyCardReset(mapAnimations1a, mapAnimations1b)
+      flipDifficultyCardReset(mapAnimations2a, mapAnimations2b)
+      flipDifficultyCardReset(mapAnimations3a, mapAnimations3b)
+      mapAnimations1a.style.display = "none"
+      mapAnimations2a.style.display = "none"
+      mapAnimations3a.style.display = "none"
       setTimeout(() => {
-        mapAnimations3a.style.display = "inline-block"
-        mapAnimations3a.style.left = `calc(75% - ${mapAnimations1a.scrollWidth/2}px)`
-        mapAnimations3a.style.animation = "mapAnimations3 0.4s"
+        mapAnimations1a.style.display = "inline-block"
+        mapAnimations1a.style.left = `calc(25% - ${mapAnimations1a.scrollWidth / 2}px)`
+        mapAnimations1a.style.animation = "mapAnimations1 0.4s"
+        frameDifficulty.style.width = "162px"
+        if (window.innerWidth <= 450) {
+          description.style.width = "223px"
+        }
+        else if (window.innerWidth <= 700) {
+          description.style.width = "400px"
+        }
+        else {
+          description.style.width = "550px"
+        }
+
         setTimeout(() => {
-          mapAnimations1b.style.filter = "opacity(1)"
-          mapAnimations2b.style.filter = "opacity(1)"
-          mapAnimations3b.style.filter = "opacity(1)"
+          frameDifficulty.innerHTML = "выбор сложности"
+          description.style.padding = "10px"
+        }, 550)
+        setTimeout(() => {
+          mapAnimations2a.style.display = "inline-block"
+          mapAnimations2a.style.left = `calc(50% - ${mapAnimations1a.scrollWidth / 2}px)`
+          mapAnimations2a.style.animation = "mapAnimations2 0.4s"
+          setTimeout(() => {
+            mapAnimations3a.style.display = "inline-block"
+            mapAnimations3a.style.left = `calc(75% - ${mapAnimations1a.scrollWidth / 2}px)`
+            mapAnimations3a.style.animation = "mapAnimations3 0.4s"
+            setTimeout(() => {
+              mapAnimations1b.style.filter = "opacity(1)"
+              mapAnimations2b.style.filter = "opacity(1)"
+              mapAnimations3b.style.filter = "opacity(1)"
+            }, 400)
+          }, 400)
         }, 400)
-      }, 400)
-    }, 400)
-  }, 550)
-  }, 150)
-  function flipDifficultyCardReset(a:any,b:any){
-    b.style.filter = "opacity(0) saturate(1)"
-    a.style.transform = "rotateY(360deg)"
-    b.style.transform = "rotateY(360deg)"
-    a.style.transition = "0.2s"
-    b.style.transition = "0s"
-    a.style.zIndex = "1"
-    b.style.zIndex = "0"
-  }
-})
+      }, 550)
+    }, 150)
+    function flipDifficultyCardReset(a: any, b: any) {
+      b.style.filter = "opacity(0) saturate(1)"
+      a.style.transform = "rotateY(360deg)"
+      b.style.transform = "rotateY(360deg)"
+      a.style.transition = "0.2s"
+      b.style.transition = "0s"
+      a.style.zIndex = "1"
+      b.style.zIndex = "0"
+    }
+  })
 }
 
 
@@ -2634,8 +2636,8 @@ playCardsAgain.addEventListener('click', () => {
 
 
 //@ts-ignore
-console.log("Mobile: " + detect.mobile()); 
-console.log(window.innerWidth); 
+console.log("Mobile: " + detect.mobile());
+console.log(window.innerWidth);
 
 
 
