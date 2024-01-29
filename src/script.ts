@@ -1988,7 +1988,7 @@ executor51?.addEventListener('click', () => {
     if(gravityBall.checked){
       anime({
         targets: '#field div div',
-        translateY: ((rect.bottom - rect.top)/2)-25,
+        translateY: (rect.bottom - rect.top)-51,
         duration: 4000,
         easing: 'easeOutBounce'
         })
@@ -2002,7 +2002,9 @@ executor51?.addEventListener('click', () => {
       // playBall.style.top = (rect.bottom - rect.top) + 'px'
       // playBall.style.left = ((rect.right - rect.left)) + 'px'
 
-      playBall.style.transform = `translate(${((rect.right - rect.left)/2)-25}px, ${((rect.bottom - rect.top)/2)-25}px)`
+      playBall.style.transform = `translateX(${((rect.right - rect.left)/2)-25}px)`
+      playBall.style.transform += `translateY(${((rect.bottom - rect.top)/2)-25}px)`
+      // playBall.style.transform = `translate(${((rect.right - rect.left)/2)-25}px, ${((rect.bottom - rect.top)/2)-25}px)`
     }
   })
   
@@ -2091,7 +2093,7 @@ footballFieldGame?.addEventListener('click', (event) => {
       targets: '#field div div',
       translateY: y-25,
       translateX: x-25,
-      duration: 2000,
+      duration: 200,
       easing: 'easeOutBounce'
       })
   }
