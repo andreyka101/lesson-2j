@@ -1986,11 +1986,10 @@ executor51?.addEventListener('click', () => {
   let ap = ((rect.bottom - rect.top)/2)-25
   gravityBall?.addEventListener('click', ()=>{
     if(gravityBall.checked){
-      console.log("pop");
       anime({
         targets: '#field div div',
-        translateY: ap,
-        duration: 500,
+        translateY: ((rect.bottom - rect.top)/2)-25,
+        duration: 4000,
         easing: 'easeOutBounce'
         })
     }
@@ -2086,7 +2085,15 @@ footballFieldGame?.addEventListener('click', (event) => {
     // ballCoordinatesY = y
     // playBall.style.left = `${x}px`
 
-    playBall.style.transform = `translate(${(x)-25}px, ${(y)-25}px)`
+    // playBall.style.transform = `translate(${(x)-25}px, ${(y)-25}px)`
+
+    anime({
+      targets: '#field div div',
+      translateY: y-25,
+      translateX: x-25,
+      duration: 2000,
+      easing: 'easeOutBounce'
+      })
   }
 })
 
