@@ -1983,14 +1983,14 @@ executor51?.addEventListener('click', () => {
 
   
   
-  
+  let ap = ((rect.bottom - rect.top)/2)-25
   gravityBall?.addEventListener('click', ()=>{
     if(gravityBall.checked){
       console.log("pop");
       anime({
         targets: '#field div div',
-        translateX: 1000,
-        duration: 2500,
+        translateY: ap,
+        duration: 500,
         easing: 'easeOutBounce'
         })
     }
@@ -1999,9 +1999,11 @@ executor51?.addEventListener('click', () => {
   
   
   if (playBall) { 
-      playBall.style.top = (rect.bottom - rect.top) / 2 + rect.y - 25 + 'px'
-      ballCoordinatesY = (rect.bottom - rect.top) / 2 + rect.y - 25
-      playBall.style.left = ((rect.right - rect.left) / 2 + rect.x - 25) + 'px'
+    // ballCoordinatesY = (rect.bottom - rect.top) / 2 + rect.y - 25
+      // playBall.style.top = (rect.bottom - rect.top) + 'px'
+      // playBall.style.left = ((rect.right - rect.left)) + 'px'
+
+      playBall.style.transform = `translate(${((rect.right - rect.left)/2)-25}px, ${((rect.bottom - rect.top)/2)-25}px)`
     }
   })
   
@@ -2069,25 +2071,22 @@ footballFieldGame?.addEventListener('click', (event) => {
     // новый код  логика управлением мячом
     let x = event.clientX
     let y = event.clientY
-    if (rect.left > x) x = rect.left + 20
-    if (rect.right < x + 50) x = rect.right - 71
-    if (rect.top > y) y = rect.top + 20
-    if (rect.bottom < y + 50) y = rect.bottom - 71
+    x = x - rect.left
+    y = y - rect.top
+    console.log(x,y);
+    console.log(rect.right - rect.left);
+    
+    if (rect.left > x) x = x + 20
+    if (rect.right - rect.left < x + 25) x = x - 20
+    
+    if (rect.top > y) y = y + 20
+    if (rect.bottom - rect.top < y + 25) y = y - 20
 
     // playBall.style.top = `${y}px`
     // ballCoordinatesY = y
     // playBall.style.left = `${x}px`
 
-    anime({
-      // элементы
-      targets: playBall,
-      translateX: x,
-      translateY: y,
-      // время анимации
-      // duration: 2500,
-      easing: 'linear'
-      // easing: 'easeInQuad'
-      });
+    playBall.style.transform = `translate(${(x)-25}px, ${(y)-25}px)`
   }
 })
 
