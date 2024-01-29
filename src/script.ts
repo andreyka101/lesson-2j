@@ -1983,15 +1983,16 @@ executor51?.addEventListener('click', () => {
 
   
   
-  let ap = ((rect.bottom - rect.top)/2)-25
+  function ani(ap:number){
+    anime({
+    targets: '#field div div',
+    translateY: ap,
+    duration: 4000,
+    easing: 'easeOutBounce'
+    })}
   gravityBall?.addEventListener('click', ()=>{
     if(gravityBall.checked){
-      ()=>{anime({
-        targets: '#field div div',
-        translateY: (rect.bottom - rect.top)-51,
-        duration: 4000,
-        easing: 'easeOutBounce'
-        })}
+      ani((rect.bottom - rect.top)-51)
     }
   })
   
