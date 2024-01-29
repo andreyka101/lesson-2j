@@ -2092,8 +2092,7 @@ footballFieldGame?.addEventListener('click', (event) => {
       targets: '#field div div',
       translateY: y-25,
       translateX: x-25,
-      duration: 700,
-      easing: 'easeOutBounce'
+      duration: 500
       })
   }
 })
