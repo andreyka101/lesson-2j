@@ -2375,33 +2375,46 @@ executor54?.addEventListener('click', () => {
     }, 1000)
   }
   let mapPointingSound = new Audio('audio/2181b19773767a7.mp3');
-  mapAnimations1a.addEventListener('mouseover', () => {
-    description.innerHTML = "лёгкий уровень сложности , карты попадаются только одной масти"
-    mapPointingSound.pause();
-    mapPointingSound.currentTime = 0.0;
-    mapPointingSound.play();
-  })
-  mapAnimations1a.addEventListener('mouseout', () => {
-    description.innerHTML = ""
-  })
-  mapAnimations2a.addEventListener('mouseover', () => {
-    description.innerHTML = "средний уровень сложности , карты попадаются разных мастей , но только цифры"
-    mapPointingSound.pause();
-    mapPointingSound.currentTime = 0.0;
-    mapPointingSound.play();
-  })
-  mapAnimations2a.addEventListener('mouseout', () => {
-    description.innerHTML = ""
-  })
-  mapAnimations3a.addEventListener('mouseover', () => {
-    description.innerHTML = "сложный уровень сложности , карты попадаются разных мастей , но только валет , дама , король"
-    mapPointingSound.pause();
-    mapPointingSound.currentTime = 0.0;
-    mapPointingSound.play();
-  })
-  mapAnimations3a.addEventListener('mouseout', () => {
-    description.innerHTML = ""
-  })
+  if (window.innerWidth>=800){
+    mapAnimations1a.addEventListener('mouseover', () => {
+      description.innerHTML = "лёгкий уровень сложности , карты попадаются только одной масти"
+      mapPointingSound.pause();
+      mapPointingSound.currentTime = 0.0;
+      mapPointingSound.play();
+    })
+    mapAnimations1a.addEventListener('mouseout', () => {
+      description.innerHTML = ""
+    })
+    mapAnimations2a.addEventListener('mouseover', () => {
+      description.innerHTML = "средний уровень сложности , карты попадаются разных мастей , но только цифры"
+      mapPointingSound.pause();
+      mapPointingSound.currentTime = 0.0;
+      mapPointingSound.play();
+    })
+    mapAnimations2a.addEventListener('mouseout', () => {
+      description.innerHTML = ""
+    })
+    mapAnimations3a.addEventListener('mouseover', () => {
+      description.innerHTML = "сложный уровень сложности , карты попадаются разных мастей , но только валет , дама , король"
+      mapPointingSound.pause();
+      mapPointingSound.currentTime = 0.0;
+      mapPointingSound.play();
+    })
+    mapAnimations3a.addEventListener('mouseout', () => {
+      description.innerHTML = ""
+    })
+  }
+  else{
+    mapAnimations1a.addEventListener('mouseover', () => {
+      description.innerHTML = "лёгкий уровень сложности , карты попадаются только одной масти"
+      mapPointingSound.pause();
+      mapPointingSound.currentTime = 0.0;
+      mapPointingSound.play();
+    })
+    mapAnimations1a.addEventListener('mouseout', () => {
+      description.innerHTML = ""
+    })
+  }
 
 
 
