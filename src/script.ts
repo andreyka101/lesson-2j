@@ -2420,13 +2420,14 @@ executor54?.addEventListener('click', () => {
         difficultySelectionSound.play();
         closingDivCards(mapAnimations1b)
         complexityGeneration(1)
-      },500)
+        description.innerHTML = ""
+      },600)
     });
     mapAnimations1a?.addEventListener("pointerup", () => {
       clearTimeout(time)
     });
     
-    mapAnimations1a?.addEventListener("pointerdown", () => {
+    mapAnimations2a?.addEventListener("pointerdown", () => {
       description.innerHTML = "средний уровень сложности , карты попадаются разных мастей , но только цифры"
       mapPointingSound.pause();
       mapPointingSound.currentTime = 0.0;
@@ -2439,13 +2440,14 @@ executor54?.addEventListener('click', () => {
       difficultySelectionSound.play();
       closingDivCards(mapAnimations2b)
       complexityGeneration(2)
-      },700)
+      description.innerHTML = ""
+      },600)
     });
-    mapAnimations1a?.addEventListener("pointerup", () => {
+    mapAnimations2a?.addEventListener("pointerup", () => {
       clearTimeout(time)
     });
     
-    mapAnimations1a?.addEventListener("pointerdown", () => {
+    mapAnimations3a?.addEventListener("pointerdown", () => {
       description.innerHTML = "сложный уровень сложности , карты попадаются разных мастей , но только валет , дама , король"
       mapPointingSound.pause();
       mapPointingSound.currentTime = 0.0;
@@ -2458,9 +2460,10 @@ executor54?.addEventListener('click', () => {
         difficultySelectionSound.play();
         closingDivCards(mapAnimations3b)
         complexityGeneration(3)
-      },1000)
+        description.innerHTML = ""
+      },700)
     });
-    mapAnimations1a?.addEventListener("pointerup", () => {
+    mapAnimations3a?.addEventListener("pointerup", () => {
       clearTimeout(time)
     });
 
