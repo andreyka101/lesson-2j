@@ -2316,33 +2316,6 @@ executor54?.addEventListener('click', () => {
     b.style.zIndex = "1"
   }
   let difficultySelectionSound = new Audio('audio/eeb97203442250b.mp3');
-  mapAnimations1a.addEventListener('click', () => {
-    flipDifficultyCard(mapAnimations1a, mapAnimations1b)
-    flipDifficultyCard(mapAnimations2a, mapAnimations2b)
-    flipDifficultyCard(mapAnimations3a, mapAnimations3b)
-    mapAnimations1b.style.filter = "saturate(0)"
-    difficultySelectionSound.play();
-    closingDivCards(mapAnimations1b)
-    complexityGeneration(1)
-  })
-  mapAnimations2a.addEventListener('click', () => {
-    flipDifficultyCard(mapAnimations1a, mapAnimations1b)
-    flipDifficultyCard(mapAnimations2a, mapAnimations2b)
-    flipDifficultyCard(mapAnimations3a, mapAnimations3b)
-    mapAnimations2b.style.filter = "saturate(0)"
-    difficultySelectionSound.play();
-    closingDivCards(mapAnimations2b)
-    complexityGeneration(2)
-  })
-  mapAnimations3a.addEventListener('click', () => {
-    flipDifficultyCard(mapAnimations1a, mapAnimations1b)
-    flipDifficultyCard(mapAnimations2a, mapAnimations2b)
-    flipDifficultyCard(mapAnimations3a, mapAnimations3b)
-    mapAnimations3b.style.filter = "saturate(0)"
-    difficultySelectionSound.play();
-    closingDivCards(mapAnimations3b)
-    complexityGeneration(3)
-  })
   function closingDivCards(b: any) {
     frameDifficulty.innerHTML = ""
     description.innerHTML = ""
@@ -2376,6 +2349,34 @@ executor54?.addEventListener('click', () => {
   }
   let mapPointingSound = new Audio('audio/2181b19773767a7.mp3');
   if (window.innerWidth>=800){
+    mapAnimations1a.addEventListener('click', () => {
+      flipDifficultyCard(mapAnimations1a, mapAnimations1b)
+      flipDifficultyCard(mapAnimations2a, mapAnimations2b)
+      flipDifficultyCard(mapAnimations3a, mapAnimations3b)
+      mapAnimations1b.style.filter = "saturate(0)"
+      difficultySelectionSound.play();
+      closingDivCards(mapAnimations1b)
+      complexityGeneration(1)
+    })
+    mapAnimations2a.addEventListener('click', () => {
+      flipDifficultyCard(mapAnimations1a, mapAnimations1b)
+      flipDifficultyCard(mapAnimations2a, mapAnimations2b)
+      flipDifficultyCard(mapAnimations3a, mapAnimations3b)
+      mapAnimations2b.style.filter = "saturate(0)"
+      difficultySelectionSound.play();
+      closingDivCards(mapAnimations2b)
+      complexityGeneration(2)
+    })
+    mapAnimations3a.addEventListener('click', () => {
+      flipDifficultyCard(mapAnimations1a, mapAnimations1b)
+      flipDifficultyCard(mapAnimations2a, mapAnimations2b)
+      flipDifficultyCard(mapAnimations3a, mapAnimations3b)
+      mapAnimations3b.style.filter = "saturate(0)"
+      difficultySelectionSound.play();
+      closingDivCards(mapAnimations3b)
+      complexityGeneration(3)
+    })
+    
     mapAnimations1a.addEventListener('mouseover', () => {
       description.innerHTML = "лёгкий уровень сложности , карты попадаются только одной масти"
       mapPointingSound.pause();
