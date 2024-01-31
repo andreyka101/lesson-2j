@@ -2405,15 +2405,26 @@ executor54?.addEventListener('click', () => {
     })
   }
   else{
-    mapAnimations1a.addEventListener('mouseover', () => {
-      description.innerHTML = "лёгкий уровень сложности , карты попадаются только одной масти"
-      mapPointingSound.pause();
-      mapPointingSound.currentTime = 0.0;
-      mapPointingSound.play();
-    })
-    mapAnimations1a.addEventListener('mouseout', () => {
-      description.innerHTML = ""
-    })
+    mapAnimations1a?.addEventListener(
+      "pointerdown",
+      (ev) => {
+        // Calculate the contact area
+        const area = ev.width * ev.height;
+        console.log(area);
+        
+      },
+      false,
+    );
+
+    // mapAnimations1a.addEventListener('pointermove', () => {
+    //   description.innerHTML = "лёгкий уровень сложности , карты попадаются только одной масти"
+    //   mapPointingSound.pause();
+    //   mapPointingSound.currentTime = 0.0;
+    //   mapPointingSound.play();
+    // })
+    // mapAnimations1a.addEventListener('mouseout', () => {
+    //   description.innerHTML = ""
+    // })
   }
 
 
