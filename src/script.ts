@@ -2281,12 +2281,12 @@ executor54?.addEventListener('click', () => {
     }, 550)
     setTimeout(() => {
       mapAnimations2a.style.display = "inline-block"
-      mapAnimations2a.style.left = `calc(50% - ${(mapAnimations1a.scrollWidth-1)/2}px)`
+      mapAnimations2a.style.left = `calc(50% - ${(mapAnimations1a.scrollWidth - 1) / 2}px)`
       mapAnimations2a.style.left = `calc(50% - var(--widthCard)/2))`
       mapAnimations2a.style.animation = "mapAnimations2 0.4s"
       setTimeout(() => {
         mapAnimations3a.style.display = "inline-block"
-        mapAnimations3a.style.left = `calc(75% - ${(mapAnimations1a.scrollWidth-1)/2}px)`
+        mapAnimations3a.style.left = `calc(75% - ${(mapAnimations1a.scrollWidth - 1) / 2}px)`
         mapAnimations3a.style.left = `calc(75% - var(--widthCard)/2))`
         mapAnimations3a.style.animation = "mapAnimations3 0.4s"
         setTimeout(() => {
@@ -2348,7 +2348,7 @@ executor54?.addEventListener('click', () => {
     }, 1000)
   }
   let mapPointingSound = new Audio('audio/2181b19773767a7.mp3');
-  if (window.innerWidth>=800){
+  if (window.innerWidth >= 800) {
     mapAnimations1a.addEventListener('click', () => {
       flipDifficultyCard(mapAnimations1a, mapAnimations1b)
       flipDifficultyCard(mapAnimations2a, mapAnimations2b)
@@ -2376,7 +2376,7 @@ executor54?.addEventListener('click', () => {
       closingDivCards(mapAnimations3b)
       complexityGeneration(3)
     })
-    
+
     mapAnimations1a.addEventListener('mouseover', () => {
       description.innerHTML = "лёгкий уровень сложности , карты попадаются только одной масти"
       mapPointingSound.pause();
@@ -2405,26 +2405,65 @@ executor54?.addEventListener('click', () => {
       description.innerHTML = ""
     })
   }
-  else{
-    mapAnimations1a?.addEventListener(
-      "pointerdown",
-      (ev) => {
-        // Calculate the contact area
-        const area = ev.width * ev.height;
-        console.log(area);
-        
-      }
-    );
+  else {
+    let time:any
+    mapAnimations1a?.addEventListener("pointerdown", () => {
+      description.innerHTML = "лёгкий уровень сложности , карты попадаются только одной масти"
+      mapPointingSound.pause();
+      mapPointingSound.currentTime = 0.0;
+      mapPointingSound.play();
+      time = setTimeout(() => {
+        flipDifficultyCard(mapAnimations1a, mapAnimations1b)
+        flipDifficultyCard(mapAnimations2a, mapAnimations2b)
+        flipDifficultyCard(mapAnimations3a, mapAnimations3b)
+        mapAnimations1b.style.filter = "saturate(0)"
+        difficultySelectionSound.play();
+        closingDivCards(mapAnimations1b)
+        complexityGeneration(1)
+      },500)
+    });
+    mapAnimations1a?.addEventListener("pointerup", () => {
+      clearTimeout(time)
+    });
+    
+    mapAnimations1a?.addEventListener("pointerdown", () => {
+      description.innerHTML = "средний уровень сложности , карты попадаются разных мастей , но только цифры"
+      mapPointingSound.pause();
+      mapPointingSound.currentTime = 0.0;
+      mapPointingSound.play();
+      time = setTimeout(() => {
+      flipDifficultyCard(mapAnimations1a, mapAnimations1b)
+      flipDifficultyCard(mapAnimations2a, mapAnimations2b)
+      flipDifficultyCard(mapAnimations3a, mapAnimations3b)
+      mapAnimations2b.style.filter = "saturate(0)"
+      difficultySelectionSound.play();
+      closingDivCards(mapAnimations2b)
+      complexityGeneration(2)
+      },700)
+    });
+    mapAnimations1a?.addEventListener("pointerup", () => {
+      clearTimeout(time)
+    });
+    
+    mapAnimations1a?.addEventListener("pointerdown", () => {
+      description.innerHTML = "сложный уровень сложности , карты попадаются разных мастей , но только валет , дама , король"
+      mapPointingSound.pause();
+      mapPointingSound.currentTime = 0.0;
+      mapPointingSound.play();
+      time = setTimeout(() => {
+        flipDifficultyCard(mapAnimations1a, mapAnimations1b)
+        flipDifficultyCard(mapAnimations2a, mapAnimations2b)
+        flipDifficultyCard(mapAnimations3a, mapAnimations3b)
+        mapAnimations3b.style.filter = "saturate(0)"
+        difficultySelectionSound.play();
+        closingDivCards(mapAnimations3b)
+        complexityGeneration(3)
+      },1000)
+    });
+    mapAnimations1a?.addEventListener("pointerup", () => {
+      clearTimeout(time)
+    });
 
-    // mapAnimations1a.addEventListener('pointermove', () => {
-    //   description.innerHTML = "лёгкий уровень сложности , карты попадаются только одной масти"
-    //   mapPointingSound.pause();
-    //   mapPointingSound.currentTime = 0.0;
-    //   mapPointingSound.play();
-    // })
-    // mapAnimations1a.addEventListener('mouseout', () => {
-    //   description.innerHTML = ""
-    // })
   }
 
 
