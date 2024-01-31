@@ -2413,8 +2413,7 @@ executor54?.addEventListener('click', () => {
         const area = ev.width * ev.height;
         console.log(area);
         
-      },
-      false,
+      }
     );
 
     // mapAnimations1a.addEventListener('pointermove', () => {
