@@ -2196,9 +2196,16 @@ document.querySelector('body')?.addEventListener('mouseover', function (e) {
 const divCards2 = document.querySelector(".divCards2") as HTMLDivElement
 const gameCards = document.querySelector("#gameCards") as HTMLDivElement
 const numberCardsR = document.querySelector("#numberCards") as HTMLInputElement
-numberCardsR.addEventListener('mousemove', () => {
-  answer16.innerHTML = numberCardsR.value
-})
+if (window.innerWidth >= 800) {
+  numberCardsR.addEventListener('mousemove', () => {
+    answer16.innerHTML = numberCardsR.value
+  })
+}
+else{
+  numberCardsR.addEventListener('pointermove', () => {
+    answer16.innerHTML = numberCardsR.value
+  })
+}
 
 const mapAnimations1a = document.querySelector('.foregroundTranslucentBlock21 #level1a') as HTMLDivElement
 const mapAnimations2a = document.querySelector('.foregroundTranslucentBlock21 #level2a') as HTMLDivElement
