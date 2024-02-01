@@ -2248,6 +2248,7 @@ exitForeground21?.addEventListener('click', () => {
     a.style.zIndex = "1"
     b.style.zIndex = "0"
   }
+  description.innerHTML = ""
 })
 
 
