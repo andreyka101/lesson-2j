@@ -2421,6 +2421,7 @@ executor54?.addEventListener('click', () => {
         closingDivCards(mapAnimations1b)
         complexityGeneration(1)
         description.innerHTML = ""
+        navigator.vibrate(200);
       },600)
     });
     mapAnimations1a?.addEventListener("pointerup", () => {
@@ -2441,6 +2442,7 @@ executor54?.addEventListener('click', () => {
       closingDivCards(mapAnimations2b)
       complexityGeneration(2)
       description.innerHTML = ""
+      navigator.vibrate(200);
       },600)
     });
     mapAnimations2a?.addEventListener("pointerup", () => {
@@ -2461,6 +2463,7 @@ executor54?.addEventListener('click', () => {
         closingDivCards(mapAnimations3b)
         complexityGeneration(3)
         description.innerHTML = ""
+        navigator.vibrate(200);
       },700)
     });
     mapAnimations3a?.addEventListener("pointerup", () => {
