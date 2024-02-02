@@ -453,39 +453,41 @@
         играть
       </button>
       <span>
-        выберите количество карт
+        количество карт
       </span>
-      <input type="range" id="numberCards" name="numberCards" min="4" max="16" step="2"/>
-      <span id="s1">
-        10
-      </span>
+      <div style="display: flex; align-items: center;">
+        <input type="range" id="numberCards" name="numberCards" min="4" max="16" step="2" />
+        <span id="s1">
+          10
+        </span>
+      </div>
     </div>
 
 
   </div>
 
-  
+
   <p style="margin: 0px;padding: 6px;" id="bottomP"></p>
 
 
 
 
-<!-- REVIEW -block19- передний план ---------------------- -->
-<div class="foregroundTranslucent off offNone">
-  <div class="div">
-    <input type="checkbox" class="checkGravity" id="check1" name="ChBoxGroup">
-    <label class="inline" for="check1"></label>
-    <div class="SVG-close SVG-exit"></div>
-  </div>
-  <div id="field">
-    <div>
-      <div></div>
+  <!-- REVIEW -block19- передний план ---------------------- -->
+  <div class="foregroundTranslucent off offNone">
+    <div class="div">
+      <input type="checkbox" class="checkGravity" id="check1" name="ChBoxGroup">
+      <label class="inline" for="check1"></label>
+      <div class="SVG-close SVG-exit"></div>
+    </div>
+    <div id="field">
+      <div>
+        <div></div>
+      </div>
     </div>
   </div>
-</div>
 
 
-<!-- REVIEW -block20- передний план ---------------------- -->
+  <!-- REVIEW -block20- передний план ---------------------- -->
   <div class="foregroundSemi-transparentLists off offNone">
     <div class="div">
       <div class="SVG-close2 SVG-exit"></div>
@@ -496,20 +498,33 @@
   </div>
 
 
-<!-- REVIEW -block21- передний план ---------------------- -->
+  <!-- REVIEW -block21- передний план ---------------------- -->
   <div class="foregroundTranslucentBlock21 off offNone">
     <div class="div">
       <div class="SVG-exit"></div>
     </div>
     <div class="divCards">
-      <div id="frameDifficulty"><div></div></div>
-          <div id="level1a" class="levelH" style="background: url(svg/poker_030bx2gaq2sf.svg)center/cover; z-index: 1;"></div>
-          <div id="level1b" style="background: url(svg/poker_am5vxqpezjmq.svg)center/cover; z-index: 0;filter: opacity(0);cursor: default; left:calc(25% - var(--widthCard)/2);"></div>
-          <div id="level2a" class="levelH" style="background: url(svg/poker_zip9b0ots8i8.svg)center/cover; z-index: 1;"></div>
-          <div id="level2b" style="background: url(svg/poker_am5vxqpezjmq.svg)center/cover; z-index: 0;filter: opacity(0);cursor: default; left:calc(50% - var(--widthCard)/2);"></div>
-          <div id="level3a" class="levelH" style="background: url(svg/poker_y9mbwnllxdq8.svg)center/cover; z-index: 1;"></div>
-          <div id="level3b" style="background: url(svg/poker_am5vxqpezjmq.svg)center/cover; z-index: 0;filter: opacity(0);cursor: default; left:calc(75% - var(--widthCard)/2);"></div>
-      <div id="description"><div></div></div>
+      <div id="frameDifficulty">
+        <div></div>
+      </div>
+      <div id="level1a" class="levelH" style="background: url(svg/poker_030bx2gaq2sf.svg)center/cover; z-index: 1;">
+      </div>
+      <div id="level1b"
+        style="background: url(svg/poker_am5vxqpezjmq.svg)center/cover; z-index: 0;filter: opacity(0);cursor: default; left:calc(25% - var(--widthCard)/2);">
+      </div>
+      <div id="level2a" class="levelH" style="background: url(svg/poker_zip9b0ots8i8.svg)center/cover; z-index: 1;">
+      </div>
+      <div id="level2b"
+        style="background: url(svg/poker_am5vxqpezjmq.svg)center/cover; z-index: 0;filter: opacity(0);cursor: default; left:calc(50% - var(--widthCard)/2);">
+      </div>
+      <div id="level3a" class="levelH" style="background: url(svg/poker_y9mbwnllxdq8.svg)center/cover; z-index: 1;">
+      </div>
+      <div id="level3b"
+        style="background: url(svg/poker_am5vxqpezjmq.svg)center/cover; z-index: 0;filter: opacity(0);cursor: default; left:calc(75% - var(--widthCard)/2);">
+      </div>
+      <div id="description">
+        <div></div>
+      </div>
     </div>
     <div class="divCards2">
       <div id="gameCards"></div>
@@ -525,7 +540,7 @@
 
 
 
-  
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.4/mobile-detect.min.js"></script>
   <script type="module" src="/src/script.ts"></script>
 </body>
