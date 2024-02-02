@@ -2416,7 +2416,7 @@ executor54?.addEventListener('click', () => {
   else {
     let time:any
     mapAnimations1a?.addEventListener("pointerdown", () => {
-      // mapAnimations1a.style.filter = "brightness(60%)"
+      mapAnimations1a.style.filter = "brightness(60%)"
       // mapAnimations2a.style.filter = "brightness(100%)"
       // mapAnimations3a.style.filter = "brightness(100%)"
       // mapAnimations1a.style.filter = "brightness(60%)"
