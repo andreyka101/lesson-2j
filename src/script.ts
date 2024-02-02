@@ -2651,6 +2651,9 @@ executor54?.addEventListener('click', () => {
     clearInterval(timer)
   })
   playCardsAgain.addEventListener('click', () => {
+    mapAnimations1a.style.filter = "brightness(100%)"
+    mapAnimations2a.style.filter = "brightness(100%)"
+    mapAnimations3a.style.filter = "brightness(100%)"
     frameDifficulty.style.width = "0px"
     description.style.width = "0px"
     description.style.padding = "0px"
