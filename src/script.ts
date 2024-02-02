@@ -2436,7 +2436,7 @@ executor54?.addEventListener('click', () => {
         closingDivCards(mapAnimations1b)
         complexityGeneration(1)
         description.innerHTML = ""
-        navigator.vibrate(200);
+        navigator.vibrate(20000);
       },600)
     });
     mapAnimations1a?.addEventListener("pointerup", () => {
