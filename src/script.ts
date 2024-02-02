@@ -2416,9 +2416,9 @@ executor54?.addEventListener('click', () => {
   else {
     let time:any
     mapAnimations1a?.addEventListener("pointerdown", () => {
-      mapAnimations1a.style.filter = "brightness(0%)"
-      mapAnimations2a.style.filter = "brightness(0%)"
-      mapAnimations3a.style.filter = "brightness(0%)"
+      mapAnimations1a.style.filter = "brightness(100%)"
+      mapAnimations2a.style.filter = "brightness(100%)"
+      mapAnimations3a.style.filter = "brightness(100%)"
       mapAnimations1a.style.filter = "brightness(60%)"
       description.innerHTML = "лёгкий уровень сложности , карты попадаются только одной масти"
       mapPointingSound.pause();
@@ -2441,10 +2441,10 @@ executor54?.addEventListener('click', () => {
     });
     
     mapAnimations2a?.addEventListener("pointerdown", () => {
-      mapAnimations2a.style.filter = "brightness(0%)"
-      mapAnimations2a.style.filter = "brightness(0%)"
-      mapAnimations3a.style.filter = "brightness(0%)"
-      mapAnimations1a.style.filter = "brightness(60%)"
+      mapAnimations2a.style.filter = "brightness(100%)"
+      mapAnimations2a.style.filter = "brightness(100%)"
+      mapAnimations3a.style.filter = "brightness(100%)"
+      mapAnimations2a.style.filter = "brightness(60%)"
       description.innerHTML = "средний уровень сложности , карты попадаются разных мастей , но только цифры"
       mapPointingSound.pause();
       mapPointingSound.currentTime = 0.0;
@@ -2466,10 +2466,10 @@ executor54?.addEventListener('click', () => {
     });
     
     mapAnimations3a?.addEventListener("pointerdown", () => {
-      mapAnimations3a.style.filter = "brightness(0%)"
-      mapAnimations2a.style.filter = "brightness(0%)"
-      mapAnimations3a.style.filter = "brightness(0%)"
-      mapAnimations1a.style.filter = "brightness(60%)"
+      mapAnimations3a.style.filter = "brightness(100%)"
+      mapAnimations2a.style.filter = "brightness(100%)"
+      mapAnimations3a.style.filter = "brightness(100%)"
+      mapAnimations3a.style.filter = "brightness(60%)"
       description.innerHTML = "сложный уровень сложности , карты попадаются разных мастей , но только валет , дама , король"
       mapPointingSound.pause();
       mapPointingSound.currentTime = 0.0;
