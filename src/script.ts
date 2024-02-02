@@ -2256,6 +2256,9 @@ exitForeground21?.addEventListener('click', () => {
     b.style.zIndex = "0"
   }
   description.innerHTML = ""
+  mapAnimations1a.style.filter = "brightness(100%)"
+  mapAnimations2a.style.filter = "brightness(100%)"
+  mapAnimations3a.style.filter = "brightness(100%)"
 })
 
 
