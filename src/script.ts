@@ -2448,7 +2448,7 @@ executor54?.addEventListener('click', () => {
       mapAnimations2a.style.filter = "brightness(60%)"
       mapAnimations3a.style.filter = "brightness(100%)"
       // mapAnimations2a.style.filter = "brightness(60%)"
-      description.innerHTML = "средний уровень сложности , карты попадаются разных мастей , но только цифры"
+      description.innerHTML = "средний уровень сложности , карты попадаются разных мастей , но только цифры <p>зажмите чтобы играть</p>"
       mapPointingSound.pause();
       mapPointingSound.currentTime = 0.0;
       mapPointingSound.play();
@@ -2473,7 +2473,7 @@ executor54?.addEventListener('click', () => {
       mapAnimations2a.style.filter = "brightness(100%)"
       mapAnimations3a.style.filter = "brightness(60%)"
       // mapAnimations3a.style.filter = "brightness(60%)"
-      description.innerHTML = "сложный уровень сложности , карты попадаются разных мастей , но только валет , дама , король"
+      description.innerHTML = "сложный уровень сложности , карты попадаются разных мастей , но только валет , дама , король <p>зажмите чтобы играть</p>"
       mapPointingSound.pause();
       mapPointingSound.currentTime = 0.0;
       mapPointingSound.play();
