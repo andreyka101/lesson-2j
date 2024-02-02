@@ -2423,7 +2423,7 @@ executor54?.addEventListener('click', () => {
       mapAnimations2a.style.filter = "brightness(100%)"
       mapAnimations3a.style.filter = "brightness(100%)"
       // mapAnimations1a.style.filter = "brightness(60%)"
-      description.innerHTML = "лёгкий уровень сложности , карты попадаются только одной масти"
+      description.innerHTML = "лёгкий уровень сложности , карты попадаются только одной масти <p>зажмите чтобы играть</p>"
       mapPointingSound.pause();
       mapPointingSound.currentTime = 0.0;
       mapPointingSound.play();
