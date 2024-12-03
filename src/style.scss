@@ -401,7 +401,9 @@ th {
     cursor: default;
   }
 }
-
+input[type="range"] {
+  accent-color: rgb(133, 133, 133)
+}
 .divCards {
   // display: none;
   display: flex;
@@ -681,6 +683,29 @@ th {
 
   #torsion {
     height: 405px !important;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #description div{
+    background-color: #971382;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 168px;
+    width: 0px;
+    border: #000000 solid 4px;
+    border-radius: 10px;
+    transition: 1s;
+    padding: 0px;
+    top: 167%;
+    position: absolute;
+    cursor: default;
+    p{
+      margin: 0;
+      margin-top: 40px;
+    }
   }
 }
 
