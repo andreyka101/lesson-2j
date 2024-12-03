@@ -13,6 +13,18 @@
   --heightCard: 131px;
 }
 
+
+.psevdo_n1::before {
+  content: "«6";
+  color: blue;
+}
+
+.psevdo_n1::after {
+  content: "*»";
+  color: red;
+}
+
+
 @font-face {
   font-family: Pixel_fonts;
   src: url(/font/pixel_fonts/3d_thirteen_pixel_fonts_regular.ttf);
